@@ -1,0 +1,10 @@
+
+PhantasiaRemake/.vs/PhantasiaRemake/v15/
+PhantasiaRemake/Assembly-CSharp.csproj
+*.meta
+PhantasiaRemake/Library/
+PhantasiaRemake/obj/
+PhantasiaRemake/Packages/manifest.json
+PhantasiaRemake/PhantasiaRemake.csproj
+PhantasiaRemake/PhantasiaRemake.Editor.csproj
+PhantasiaRemake/PhantasiaRemake.sln

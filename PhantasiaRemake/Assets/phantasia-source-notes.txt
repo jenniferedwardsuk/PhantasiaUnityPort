@@ -1,0 +1,12 @@
+phant functionality notes
+
+
+java > IThread > run()
+	receives packets and updates panes accordingly. parent is pClient
+
+events:
+
+java > chatPne > keyPressed() (unreferenced) 
+java > pClient > keyPressed() (only reffed by chatPne version)
+	expects to handle keyboard press events
+	chatPne defers Fnums 1 to 8 to pClient

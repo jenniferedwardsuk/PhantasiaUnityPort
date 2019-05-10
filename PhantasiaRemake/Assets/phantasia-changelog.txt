@@ -1,0 +1,407 @@
+
+Phantasia Remake changelog
+
+todo list:
+- reduce todos
+- finish unity-java interface
+- finish unity-c/linux interface
+- check all c methods for ref argument intention
+- java UI must update via main thread
+- check for object arguments called with subclass instances; won't update at source; replace with generic method + ref arg
+
+bugs:
+	- trove and grail x,y are maxed out ints	- fixed but needs testing
+	- \0 string interrupt is a potential problem
+	- .Length on strings may need to be replaced with CFUNCTIONS.strlen
+	- a socket issue remains? machineID is being set to 1004. may be intentional.
+- hexdigest is all null
+- Confirmation code for testacc3£ is 22222222££££££££   but this is never requested
+- workaround: ignore password validation
+- workaround: ignore account existence file check
+- starting chara stats always the same
+- testmu chara is not recognised as already existing (likely due to account workaround)
+
+one-off issues?:
+
+done:
+- set up project 
+- added placeholders for 118_client
+- added placeholders for phantasiadata
+- added placeholders for phantasiautilities
+- converted src files
+- converted 118_client files
+- interfaced 118_client files
+- converted bin files
+
+
+08-may-2019
+- bugfix: added interrupts to thread loop and play loop
+- bugfix: fscanf returns actual number of items found
+- bugfix: more Java UI method enqueueing 
+- added: implemented selection in JavaLists
+- added: set account expected size to 550
+
+can fake-login, create a character, and start playing
+
+07-may-2019
+- workaround: ignore password validation
+- workaround: ignore account existence file check
+- bugfix: handling for null-only socket strings
+- bugfix: handling for unterminated socket strings 
+- bugfix: handling for unlinebroken socket strings 
+- bugfix: CFUNCTIONS.strcmp can now handle null strings
+- bugfix: CFUNCTIONS.strcmp now returns inverted value per C
+
+can 'login' (fake) and mostly create a character, but it fails in the limbo check (character.Do_release_name) and locks up unity
+
+06-may-2019
+- bugfix: moved file remove calls to below file close calls to avoid share violation error
+- bugfix: out buffer is updated correctly when sending out data
+- bugfix: added receive buffer and string-splitting in java socket
+- bugfix: more Java UI method enqueueing 
+- bugfix: added string-splitting in C socket
+- bugfix: retrieve text from input field, not input field text component
+- bugfix: replaced some .Length calls with CFUNCTIONS.strlen
+- added: created missing empty backup file (bug in orig??)
+- added: populate sort order when instantiating popup canvas
+- added: scroll area content text object with slight offset
+- added: java UI: interim layout for popups
+- added: java UI: default font for buttons
+- added: CFUNCTIONS.memcmp implemented
+- added: email send sidestepped for now
+- added: CFUNCTIONS.free implemented x2
+- modified: resized uncontrolled scroll area to approx fit
+
+client-server communication is now fairly stable.
+game allows account creation but fails to recognise password on login. md5 sidestep issue.
+
+05-may-2019
+- bugfix: allow index-based writing of buffer in SOCKETrecv
+- bugfix: CFUNCTIONS.strlen should only return length up to a null-terminator \0
+- bugfix: md5c corrections
+- bugfix: added string null checks to supplement C string null check [0]='\0'
+- added: CFUNCTIONS.memmove implemented
+
+client-server communication is now two-way but buggy
+
+04-may-2019
+- added: UI methods can be deferred to main thread via enqueueing
+
+03-may-2019
+- added: client params for handshake
+- added: thread signalling on socket delivery
+- added: capped threads to 30fps (equivalent) to alleviate CPU usage
+- modified: thread ID set to player network ID
+- modified: generic signal activation for pthreads
+
+02-may-2019
+- bugfix: separated single and refstring sprintf calls into separate methods
+- bugfix: replaced tostring on char arrays with new string()
+- bugfix: prevented string interrupt via \0 in sprintf
+- added: UnityCServer instance in scene to manage socket messages
+- added: more communication setup
+- added: CFUNCTIONS.kill
+- added: error logging for java threads
+- modified: moved Rpc/Cmd calls to main thread
+
+server client now sends data to java client, which receives it. 
+java client sends data back, but this is not noticed (sig 0 or 4 needed - waitingdata should trigger one?)
+
+01-may-2019
+- modified: socket-based communication rather than thread-based
+- added: unity-c interface: rand functions implemented
+- added: unity-c interface: some data-manipulating C functions implemented
+- added: socket close function implemented
+- added: pthread_attr class papered over
+- added: error logging for client threads
+
+server now notices a new connection properly and starts a client thread for it.
+
+30-apr-2019
+- bugfix: serialization tag for written classes
+- bugfix: string format hd (short) -> d
+- bugfix: fread now generic to ensure source object update
+- added: support for writing and reading multi-object datafiles 
+
+29-apr-2019
+- added: java thread creation and some management
+- added: stop command now universal
+
+server and java both now wait for messages on connect. server fails to notice new connection.
+
+27-apr-2019
+- bugfix: fwrite appends text when appropriate
+- added: basic infinite loop handling for threads
+- added: CFUNCTIONS.ctime_r implementation
+- reduced some src todos
+
+server thread now stops (somewhat) gracefully when interrupted.
+
+25-apr-2019
+- added: functional sigwait
+- added: some more thread management
+- modified: commented java thread coroutine (freezes unity)
+
+24-apr-2019
+- added: links between client-server message methods and interface methods
+- added: thread name set to network player ID
+- added: more LinuxLibSocket methods
+- added: slightly better thread management tactic
+
+server now creates a 'socket' and waits for a player-connection signal. unity freezes on player connect.
+
+22-apr-2019
+- added: many LinuxLibSocket method implementations
+- added: ref intention on strcpy
+- added: member object initialisation on sockaddr_in
+- added: term handling for IP addresses
+- modified: no sizeof for sockaddr_in
+
+17-apr-2019
+- added: basic network message send/receive for players and server
+- added: unity-java interface: some basic socket handling
+
+15-apr-2019
+- added: LinuxLibSocket method info and some implementations
+
+14-apr-2019
+- bugfix: replaced string.format with cfunctions.sprintf and made corrections
+- added: CFILE type
+- added: initialised arrays in phantstruct classes
+- added: implemented all CLibFile functionality
+- modified: better encapsulation of file functions
+- added: some CFUNCTIONS implementations
+
+server now finishes setup, then falls down at socket creation (unimplemented).
+
+13-apr-2019
+- bugfix: don't try to log error if error is due to being unable to open log
+- bugfix: filepath population
+- modified: removed monobehaviour inheritance for src scripts
+- modified: made src scripts singleton
+- added: initialised class instances for each src file
+- added: debug.log reporting of do_log calls
+- added: CFUNCTIONS.exit with thread management
+
+12-apr-2019
+- C/Linux interface: implemented most of CLibPThread
+
+10-apr-2019
+- C/Linux interface: implemented LinuxLibSIGIO
+- some pthread setup
+
+08-apr-2019
+- CFUNCTIONS: offloaded file functions to CLibFile
+- CFUNCTIONS: offloaded pthread functions to CLibPThread
+- CFUNCTIONS: offloaded socket functions to LinuxLibSocket
+- added: logfile folder
+- reverted data files
+- populated utilities files (unneeded?)
+- tidyup of src files / comment reduction
+
+07-apr-2019
+- modified: many ref keywords added
+- traced most execution paths for socket and loops
+
+03-apr-2019
+- added: many more CFUNCTIONS function placeholders
+- modified: File operations deferred to CFUNCTIONS
+- in progress: LinuxLibSIGIO infrastructure
+- in progress: reducing C todos
+
+02-apr-2019
+- added: CFUNCTIONS: system 
+- added: unity-c interface: infrastructure for email send (all bin files)
+
+01-apr-2019
+- converted md5c.c
+- partial implementation of md5 in other files
+- some ref keyword additions to c src functions
+
+31-mar-2019
+- general tidyup of C src files
+
+30-mar-2019
+- general tidyup, better layout refresh on start
+
+29-mar-2019
+- added: java-unity interface: interfaced JavaThread, JavaURL, JavaApplet
+- added: listenthread management via UIcontroller coroutine
+
+BASIC JAVA-UNITY INTERFACE COMPLETE
+
+28-mar-2019
+- added: java-unity interface: interfaced JavaList, Dialog, JavaChoice, Socket, DataOutputStream, BufferedReader
+- added: unity-java interface: templated creation of scroll list, popups (with basic layout management)
+- added: unity-java interface: infrastructure for socket management
+- added: button text properties
+- modified: tidied up dlog file initialisations
+
+27-mar-19
+- added: java-unity interface: interfaced TextArea, TextField
+- general interface tidyup
+- in progress: Dialog functionality
+
+26-mar-19
+- added: java-unity interface: interfaced MediaTracker
+- added: java-unity interface: interfaced JavaGraphics, JavaCanvas, InputStream, InputStreamReader
+- general interface tidyup
+- in progress: gridbag refined layout control
+
+23-mar-19
+- added: frame's layout
+- added: basic gridbag layout control
+- added: basic border layout control
+- added: grid layout control
+- added: layout refreshing
+- added: subcomponent layout control
+- added: button properties
+
+22-mar-19
+- in progress: layout control
+
+21-mar-19
+- added: java-unity interface: interfaced setLayout FlowLayout
+- added: java-unity interface: parenting via panel add and remove methods 
+- added: java-unity interface: setup for JavaGraphics and painting
+- added: unity-java interface: added templated creation of scrollviews, input fields
+- added: unity-java interface: linked JavaList, TextArea, TextField to unity equivalents
+- added: unity-java interface: image resource loading
+- added: partial implementation of Frame
+
+19-mar-19
+- bugfix: unity-java interface: panel parenting tweaks
+- implemented java files: GridBagLayout, GridBagConstraints, FlowLayout, JavaGridLayout
+
+18-mar-19
+- implemented java file: InterruptedException, FontMetrics, BorderLayout
+
+17-mar-19
+- refined network manager
+- added network HUD, confirmed UI input from lan
+- added unity-java interface: button and keyboard presses
+- java-unity interface: interfaced JavaButton, JavaLabel
+- implemented java files: Rectangle, ActionEvent, KeyEvent, JavaColor
+- in progress: java implementing/interfacing
+
+
+08-nov-18
+- added network manager and player prefab
+- added popup OK and Cancel buttons
+- created player UI controller and game controller
+
+07-nov-18
+- implemented JavaVector.cs
+- tidied up redundant unimplemented methods
+
+29-oct-18
+- UI colour/image tweaks for accuracy
+- tidied up unimplemented method locations
+- populated java interfaces
+
+28-oct-18
+- added basic UI layout for main window
+- templated all panels
+
+27-oct-18
+- retrieved screenshots and UI images from phantasia 4
+
+24-oct-18
+- converted headPne.java
+- converted imagePne.java
+- converted labelPne.java
+- converted lThread.java
+- converted msgPne.java
+- converted numberPne.java
+- converted pClient.java
+- converted playerDlog.java
+- converted scoreDlog.java
+- converted statusPne.java
+- converted stdDlog.java
+- converted stringDlog.java
+- converted titlePne.java
+- converted userPne.java (all java files converted!)
+
+22-oct-18
+- converted barGraph.java
+- converted buttonPne.java
+- converted chatPne.java
+- converted compassPne.java
+- converted coordDlog.java
+- converted detailDlog.java
+- converted errorDlog.java
+- converted examineDlog.java
+
+14-oct-18
+- finished converting misc.c (1029 to 3559)
+- converted socket.c (0 to 1845)
+- converted stats.c (0 to 1842)
+- converted tags.c (0 to 1901)
+- converted treasure.c (0 to 2017) (all main c files converted!)
+- started reducing todos (~350 to 241)
+
+11-oct-18
+- converted main.c (0 to 1149)
+- started converting misc.c (0 to 1029)
+
+09-oct-18
+- converted init.c (0 to 1182)
+- converted io.c (0 to 1632)
+- converted itcombat.c (0 to 1202)
+
+07-oct-18
+- converted file.c (0 to 603)
+- converted hack.c (0 to 842)
+- converted commands.c (0 to 5367)
+- converted eventsrc.c (0 to 1424)
+- converted fight.c (0 to 3768)
+- converted info.c (0 to 2046)
+
+06-oct-18
+- finished converting character.c (1971 to 3057)
+
+05-oct-18
+- continued converting character.c (678 to 830, 870 to 1971)
+
+04-oct-18
+- converted macros.c
+- continued converting character.c (451 to 678, 830 to 870)
+
+03-oct-18
+- finished converting account.c (973 to 1332)
+- started converting character.c (0 to 451)
+
+02-oct-18
+- continued converting account.c (472 to 973)
+
+01-oct-18
+- updated VS to fix solution generation bugs
+
+30-sep-18
+- continued converting account.c (~100 to 472)
+
+28-sep-18
+- finished populating references to phantdefs
+
+27-sep-18
+- fixed VS project issue
+- started converting account.c (0 to ~100)
+- started populating references to phantdefs
+
+26-sep-18
+- templated remaining src files
+
+25-sep-18
+- finished templating account.c
+- templated character.c
+- templated commands.c
+
+24-sep-18
+- ported struct and defs src files
+- started templating account.c
+
+23-sep-18
+- set up unity project with original source code folder structure
+- imported data files as string classes
+- imported v118 java scripts as inactive
+- added blank classes for src files and utilities files
