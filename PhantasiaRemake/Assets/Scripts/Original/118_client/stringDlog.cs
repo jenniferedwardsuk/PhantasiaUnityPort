@@ -19,25 +19,25 @@ public class stringDlog : Dialog , IJavaActionListener
     JavaButton okJavaButton;
     JavaButton cancelJavaButton;
 
-    internal stringDlog(pClient c, bool hidden)
+    internal stringDlog(pClient c, bool maskTextChars)
     {
         if (UnityGameController.inSetup)
         {
-            init(c, hidden, "DUMMY STRING");
+            init(c, maskTextChars, "DUMMY STRING");
         }
         else
         {
-            init_deferred(c, hidden);
+            init_deferred(c, maskTextChars);
         }
     }
 
-    internal void init_deferred(pClient c, bool hidden)
+    internal void init_deferred(pClient c, bool maskTextChars)
     {
         parent = c;
         string labelString = parent.readString();
-        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(init, c, hidden, labelString);
+        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(init, c, maskTextChars, labelString);
     }
-    internal void init(pClient c, bool hidden, string labelString)
+    internal void init(pClient c, bool maskTextChars, string labelString)
     { 
         top_panel = new JavaPanel("Top", false);
         middle_panel = new JavaPanel("Middle", false);
@@ -70,7 +70,7 @@ public class stringDlog : Dialog , IJavaActionListener
         add("South", bottom_panel);
         setLayout(new BorderLayout());
 
-        if (hidden)
+        if (maskTextChars)
         {
             textField.setEchoChar('X');
         }

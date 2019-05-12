@@ -91,7 +91,7 @@ public class UnityGameController : NetworkBehaviour {
     private static bool stopApplication = false;
 
     internal static bool DebugLogEnqueueing = false;
-    internal static bool MUTEX_DEBUG = true;
+    internal static bool MUTEX_DEBUG = false; //todo
     internal static bool SUSPEND_DEBUG = true;
     internal static bool SEND_DEBUG = true;
     internal static bool SEND_PACKET_DEBUG = true;

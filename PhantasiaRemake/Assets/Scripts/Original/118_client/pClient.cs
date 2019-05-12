@@ -46,7 +46,7 @@ public class pClient : JavaApplet, IJavaKeyListener
         users = new userPne(this);
         chat = new chatPne(this);
         compass = new compassPne(this);
-        errorDialog = new errorDlog(this);
+        errorDialog = new errorDlog(this, true);
         
         init();
     }

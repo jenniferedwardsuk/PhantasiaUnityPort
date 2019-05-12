@@ -830,7 +830,7 @@ namespace phantasiaclasses
 
         internal void Do_send_string(client_t c, string theMessage)
         {
-            Debug.Log("Thread " + System.Threading.Thread.CurrentThread.Name + ": phantasia.socket.Do_send_string");
+            //Debug.Log("Thread " + System.Threading.Thread.CurrentThread.Name + ": phantasia.socket.Do_send_string");
 
             if (theMessage != null && theMessage.Length > 0 && theMessage[theMessage.Length - 1] != '\n') //todo: this is a quick fix for unlinebroken strings
             {

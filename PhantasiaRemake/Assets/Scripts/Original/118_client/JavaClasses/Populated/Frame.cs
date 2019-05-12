@@ -60,8 +60,17 @@ public class Frame : JavaComponent
     internal void setVisible(bool v)
     {
         //UnityJavaInterface.HideMainCanvas();
-        if (UnityJavaUIFuncQueue.GetInstance())
-            UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(UnityJavaInterface.HideMainCanvas);
+        if (!v)
+        {
+            if (UnityJavaUIFuncQueue.GetInstance())
+                UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(UnityJavaInterface.HideMainCanvas);
+        }
+        else
+        {
+            if (UnityJavaUIFuncQueue.GetInstance())
+                UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(UnityJavaInterface.ShowMainCanvas);
+
+        }
     }
 
     internal void add(JavaComponent component)

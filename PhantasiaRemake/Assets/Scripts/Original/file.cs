@@ -82,6 +82,7 @@ namespace phantasiaclasses
 
             /* open the character file */
             int errno = 0;
+            Debug.LogError("CHAR FILE DEBUG: purging");
             if ((character_file = CLibFile.fopen(pathnames.CHARACTER_FILE, "w", ref errno)) == null)
             {
                 error_msg = CFUNCTIONS.sprintfSinglestring(

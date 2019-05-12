@@ -450,6 +450,7 @@ if Return value = 0 then it indicates str1 is equal to str2.*/
         if (Thread.CurrentThread == CLibPThread.unityThread)
         {
             Debug.Log("quitting application");
+            UnityGameController.StopApplication = true;
             Application.Quit(); //not thread compatible
         }
         else

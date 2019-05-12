@@ -2184,8 +2184,11 @@ namespace phantasiaclasses
 
                     fileclass.Do_log_error(error_msg);
 
-                    ioclass.Do_send_line(c,
-                    "1\nCurrently, there is nobody on the scoreboard.\n");
+                    //ioclass.Do_send_line(c,
+                    //"1\nCurrently, there is nobody on the scoreboard.\n"); //bugfix: split into two messages instead
+                    ioclass.Do_send_line(c, "1\n");
+                    ioclass.Do_send_line(c, "Currently, there is nobody on the scoreboard.\n");
+
                     Do_unlock_mutex(c.realm.scoreboard_lock);
                     return;
                 }
@@ -2198,7 +2201,7 @@ namespace phantasiaclasses
             }
             else
             {
-                if ((scoreboard_file = CLibFile.fopen(pathnames.OLD_SCOREBOARD_FILE, "r", ref errno)) == null)
+                if ((scoreboard_file = CLibFile.fopen(pathnames.OLD_SCOREBOARD_FILE, "w+", ref errno)) == null) //changed r to w+ to allow creation. bug in original?
                 {
 
                     error_msg = CFUNCTIONS.sprintfSinglestring("[%s] CLibFile.fopen of %s failed in Do_scoreboard: %s\n",
@@ -2206,8 +2209,10 @@ namespace phantasiaclasses
 
                     fileclass.Do_log_error(error_msg);
 
-                    ioclass.Do_send_line(c,
-                    "1\nCurrently, there is nobody on the scoreboard.\n");
+                    //ioclass.Do_send_line(c,
+                    //"1\nCurrently, there is nobody on the scoreboard.\n");
+                    ioclass.Do_send_line(c, "1\n");
+                    ioclass.Do_send_line(c, "Currently, there is nobody on the scoreboard.\n");
 
                     Do_unlock_mutex(c.realm.scoreboard_lock);
                     return;
@@ -3183,7 +3188,7 @@ namespace phantasiaclasses
             ioclass.Do_send_line(c,
                         "W e l c o m e   t o   P h a n t a s i a (vers. 4.03)!\n");
             ioclass.Do_send_line(c,
-                "http://Your address here\n");
+                " "); //"http://Your address here\n"); //todo: commented address for now
             ioclass.Do_send_line(c,
                 "\n");
             /* lock the realm */

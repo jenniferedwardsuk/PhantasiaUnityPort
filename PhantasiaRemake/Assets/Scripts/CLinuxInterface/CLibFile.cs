@@ -86,6 +86,9 @@ public class CLibFile : MonoBehaviour {
         //Debug.Log("CLibFile.fopen");
         //Debug.Log("filename " + filename + " mode " + mode);
 
+        //if (!filename.Contains("debug"))
+           // Debug.LogError("FOPEN DEBUG: OPENING " + filename);
+
         filename = filesLocation + filename;
         CLibFile.CFILE file = null;
         try
@@ -95,13 +98,33 @@ public class CLibFile : MonoBehaviour {
                 file = new CFILE(File.OpenRead(filename));
                 file.mode = mode;
             }
-            else if (mode == "w" || mode == "r+")
+            else if (mode == "w")
             {
+                if (!File.Exists(filename) && mode == "w")
+                {
+                    FileStream filestr = File.Create(filename);
+                    filestr.Close();
+                }
                 file = new CFILE(File.OpenWrite(filename));
+                file.mode = mode;
+            }
+            else if (mode == "w+" || mode == "r+")
+            {
+                if (!File.Exists(filename) && mode == "w+")
+                {
+                    FileStream filestr = File.Create(filename);
+                    filestr.Close();
+                }
+                file = new CFILE(File.Open(filename, FileMode.Open, FileAccess.ReadWrite));
                 file.mode = mode;
             }
             else if (mode == "a")
             {
+                if (!File.Exists(filename))
+                {
+                    FileStream filestr = File.Create(filename);
+                    filestr.Close();
+                }
                 file = new CFILE(new FileStream(filename, FileMode.Append));
                 file.mode = mode;
             }
@@ -117,8 +140,9 @@ public class CLibFile : MonoBehaviour {
                 return null;
             }
         }
-        catch
+        catch (Exception e)
         {
+            Debug.LogError("fopen exception: " + e.InnerException + " || " + e.Message + " || " + e.StackTrace);
             errno = 1;
             return null;
         }
@@ -127,12 +151,14 @@ public class CLibFile : MonoBehaviour {
     internal static void remove(string filepath)
     {
         Debug.Log("CLibFile.remove");
+        //Debug.LogError("DEBUG: CLibFile.remove: " + filepath);
         File.Delete(filesLocation + filepath);
     }
 
     internal static void rename(string oldname, string newname)
     {
         Debug.Log("CLibFile.rename");
+        //Debug.LogError("DEBUG: CLibFile.rename: " + oldname + " || to || " + newname);
         if (File.Exists(filesLocation + newname))
         {
             File.Delete(filesLocation + newname);

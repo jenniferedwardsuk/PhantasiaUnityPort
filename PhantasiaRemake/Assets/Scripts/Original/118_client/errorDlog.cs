@@ -17,24 +17,24 @@ public class errorDlog : Dialog , IJavaActionListener
     JavaLabel textJavaLabel3;
     public JavaButton theJavaButton;
 
-    public errorDlog(pClient c)
+    public errorDlog(pClient c, bool hideByDefault = false)
     {
         if (UnityGameController.inSetup)
         {
-            init(c);
+            init(c, hideByDefault);
         }
         else
         {
-            init_deferred(c);
+            init_deferred(c, hideByDefault);
         }
     }
 
-    internal void init_deferred(pClient c)
+    internal void init_deferred(pClient c, bool hideByDefault)
     {
         parent = c;
-        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(init, c);
+        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(init, c, hideByDefault);
     }
-    public void init(pClient c)
+    public void init(pClient c, bool hideByDefault)
     {
         top_panel = new JavaPanel("Top", false);
         bottom_panel = new JavaPanel("Bottom", false);
@@ -61,6 +61,11 @@ public class errorDlog : Dialog , IJavaActionListener
         add("North", top_panel);
         add("South", bottom_panel);
         setLayout(new BorderLayout());
+
+        pack();
+
+        if (hideByDefault)
+            setVisible(false);
     }
 
     internal void bringUp(string string1, string string2, string string3)

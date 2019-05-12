@@ -23,22 +23,25 @@ public class TextArea : JavaComponent
     //TextArea(String text, int rows, int columns, int scrollbars)    //Constructs a new text area with the specified text, and with the rows, columns, and scroll bar visibility as specified.
     public TextArea(string text, int rows, int columns, int scrollbars)
     {
-        this.text = text;
-        this.rows = rows;
-        this.columns = columns;
-        this.scrollbars = scrollbars;
-
-        unityComponentGroup = UnityJavaInterface.AddScrollArea();
-        scrollcomponents = (UnityScrollComponents)unityComponentGroup;
+        init(text, rows, columns, scrollbars);
     }
 
     //TextArea(int rows, int columns)
     public TextArea(int rows, int columns)
     {
-        this.rows = rows;
-        this.columns = columns;
+        init("", rows, columns, 0);
     }
 
+    public void init(string text, int rows, int columns, int scrollbars)
+    {
+        this.text = text;
+        this.rows = rows;
+        this.columns = columns;
+        this.scrollbars = scrollbars; //todo: update component, is either TextArea.SCROLLBARS_VERTICAL_ONLY or default for scoreboard (should be both?)
+
+        unityComponentGroup = UnityJavaInterface.AddScrollArea();
+        scrollcomponents = (UnityScrollComponents)unityComponentGroup;
+    }
 
     internal void setFont(JavaFont chatFont)
     {

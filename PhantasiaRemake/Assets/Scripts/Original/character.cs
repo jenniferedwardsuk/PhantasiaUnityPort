@@ -1175,7 +1175,7 @@ namespace phantasiaclasses
             /* open the real backup file */
           errno = 0;
             
-            if ((backup_file = CLibFile.fopen(pathnames.BACKUP_FILE, "r", ref errno)) == null)
+            if ((backup_file = CLibFile.fopen(pathnames.BACKUP_FILE, "w+", ref errno)) == null) //switched from r to w+ (otherwise doesn't create file). bug in original?
             {
                 error_msg = CFUNCTIONS.sprintfSinglestring("[%s] CLibFile.fopen of %s failed in Do_backup_save: %s\n", c.connection_id, pathnames.BACKUP_FILE, CFUNCTIONS.strerror(errno));
 

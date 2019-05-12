@@ -83,7 +83,7 @@ public class scoreDlog : Dialog , IJavaActionListener
         /* print out all the high scores */
         for (int i = 0; i < records; i++)
         {
-            textArea.append(parent.readString() + "\n");
+            textArea.append(parent.readString() + "\n"); 
         }
 
         pack();

@@ -12,7 +12,9 @@ using System.Linq.Expressions;
 public class UnityJavaInterface
 {
     //todo: on connection stop, destroy javacanvas children and popups
-    
+
+    [SerializeField] HUDController networkHUD;
+
     UnityPlayerUIController UnityUIController;
     UnityPlayerController UnityPlayer;
     public pClient JavaClient;
@@ -277,6 +279,16 @@ public class UnityJavaInterface
         //javathread.Interrupt();
         //javathread.Abort();
         // relying on java thread stopping itself
+
+        //todo: destroy popups
+
+        // disconnect player from networkserver, so that they can reconnect if they want
+        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(DisconnectClient);
+    }
+    internal static void DisconnectClient()
+    {
+        if (HUDController.GetInstance())
+            HUDController.GetInstance().Disconnect();
     }
     //internal IEnumerator RunThread(lThread thread)
     //{
@@ -348,15 +360,23 @@ public class UnityJavaInterface
     {
         if (mainCanvas != null)
         {
-#if !UNITY_EDITOR
             mainCanvas.gameObject.SetActive(false);
-#endif
         }
         else
         {
             Debug.Log("Error: Main canvas not ready for hiding");
         }
-        //throw new NotImplementedException();
+    }
+    internal static void ShowMainCanvas()
+    {
+        if (mainCanvas != null)
+        {
+            mainCanvas.gameObject.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("Error: Main canvas not ready for showing");
+        }
     }
     #endregion main canvas
 

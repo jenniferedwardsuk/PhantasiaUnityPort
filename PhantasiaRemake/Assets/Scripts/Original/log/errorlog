@@ -1474,3 +1474,130 @@ DD-Apr-YYYY 10:22:09 [0.0.0.0:0] CLibFile.fwrite of data/realmdata failed in Do_
 10-May-2019 20:14:47 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
 10-May-2019 20:15:40 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
 10-May-2019 20:15:40 UNITY: STOPPING GAME
+10-May-2019 22:05:04 UNITY: STARTING GAME
+10-May-2019 22:05:20 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
+10-May-2019 22:05:30 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
+10-May-2019 22:05:31 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
+10-May-2019 22:05:54 UNITY: STARTING GAME
+10-May-2019 22:06:40 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+10-May-2019 22:06:40 UNITY: STOPPING GAME
+10-May-2019 22:06:50 UNITY: STARTING GAME
+10-May-2019 22:07:05 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
+11-May-2019 11:59:00 UNITY: STARTING GAME
+11-May-2019 11:59:28 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
+11-May-2019 11:59:32 [1004:0?:0] CLibFile.fopen of data/scoreboard.old failed in Do_scoreboard: (C Error Code 1)
+11-May-2019 11:59:32 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
+11-May-2019 11:59:42 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+11-May-2019 11:59:42 UNITY: STOPPING GAME
+11-May-2019 11:59:44 UNITY: STARTING GAME
+11-May-2019 11:59:58 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
+11-May-2019 12:01:14 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
+11-May-2019 12:04:48 UNITY: STARTING GAME
+11-May-2019 12:05:07 [1004:0?:0] Couldn't find account "Neighbour?" to modify in Do_modify_account.
+11-May-2019 12:05:28 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
+11-May-2019 12:05:32 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
+11-May-2019 12:05:57 UNITY: STARTING GAME
+11-May-2019 12:06:09 [1004:0?:0] Couldn't find account "Neighbour?" to modify in Do_modify_account.
+11-May-2019 12:06:23 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
+11-May-2019 12:12:28 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
+11-May-2019 12:14:28 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+11-May-2019 12:14:28 UNITY: STOPPING GAME
+11-May-2019 12:16:37 UNITY: STARTING GAME
+11-May-2019 12:17:53 [1004:0?:0] Couldn't find account "Neighbour?" to modify in Do_modify_account.
+11-May-2019 12:19:42 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+11-May-2019 12:19:42 UNITY: STOPPING GAME
+12-May-2019 10:26:17 UNITY: STARTING GAME
+12-May-2019 10:26:41 [1004:0?:0] CLibFile.fopen of data/tagged.tmp failed in Do_look_tagged: (C Error Code 1).
+12-May-2019 10:26:48 [1004:0?:0] CLibFile.fopen of data/accounts.tmp failed in Do_modify_account(2): (C Error Code 1).
+12-May-2019 10:28:37 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 10:28:37 UNITY: STOPPING GAME
+12-May-2019 10:30:10 UNITY: STARTING GAME
+12-May-2019 10:30:29 [1004:0?:0] CLibFile.fopen of data/tagged.tmp failed in Do_look_tagged: (C Error Code 1).
+12-May-2019 10:31:06 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 10:31:06 UNITY: STOPPING GAME
+12-May-2019 10:35:00 UNITY: STARTING GAME
+12-May-2019 10:35:19 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 10:35:19 UNITY: STOPPING GAME
+12-May-2019 10:35:48 UNITY: STARTING GAME
+12-May-2019 10:35:53 [1004:0?:0] CLibFile.fopen of data/tagged.tmp failed in Do_look_tagged: (C Error Code 1).
+12-May-2019 10:36:11 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 10:36:11 UNITY: STOPPING GAME
+12-May-2019 10:37:01 UNITY: STARTING GAME
+12-May-2019 10:37:23 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
+12-May-2019 10:38:16 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
+12-May-2019 10:41:15 UNITY: STARTING GAME
+12-May-2019 10:41:32 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
+12-May-2019 10:42:07 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
+12-May-2019 10:43:46 UNITY: STARTING GAME
+12-May-2019 10:45:40 UNITY: STARTING GAME
+12-May-2019 10:45:59 [1004:0?:0] CLibFile.fopen of data/backup failed in Do_backup_save: (C Error Code 1)
+12-May-2019 10:46:27 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 10:46:27 UNITY: STOPPING GAME
+12-May-2019 10:52:07 UNITY: STARTING GAME
+12-May-2019 10:59:46 UNITY: STARTING GAME
+12-May-2019 11:00:18 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 11:00:18 UNITY: STOPPING GAME
+12-May-2019 11:00:27 UNITY: STARTING GAME
+12-May-2019 11:01:24 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 11:01:24 UNITY: STOPPING GAME
+12-May-2019 11:02:11 UNITY: STARTING GAME
+12-May-2019 11:02:55 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 11:02:55 UNITY: STOPPING GAME
+12-May-2019 11:03:08 UNITY: STARTING GAME
+12-May-2019 18:15:54 UNITY: STARTING GAME
+12-May-2019 18:16:03 [1004:0?:0] CLibFile.fopen of data/scoreboard.old failed in Do_scoreboard: (C Error Code 1)
+12-May-2019 18:16:41 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 18:16:41 UNITY: STOPPING GAME
+12-May-2019 18:41:14 UNITY: STARTING GAME
+12-May-2019 18:41:22 [1004:0?:0] CLibFile.fopen of data/scoreboard.old failed in Do_scoreboard: (C Error Code 1)
+12-May-2019 18:41:49 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 18:41:49 UNITY: STOPPING GAME
+12-May-2019 18:43:19 UNITY: STARTING GAME
+12-May-2019 18:43:42 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 18:43:42 UNITY: STOPPING GAME
+12-May-2019 18:46:39 UNITY: STARTING GAME
+12-May-2019 18:47:30 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 18:47:30 UNITY: STOPPING GAME
+12-May-2019 18:54:47 UNITY: STARTING GAME
+12-May-2019 18:54:56 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 18:54:56 UNITY: STOPPING GAME
+12-May-2019 18:55:22 UNITY: STARTING GAME
+12-May-2019 18:55:28 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 18:55:28 UNITY: STOPPING GAME
+12-May-2019 18:56:26 UNITY: STARTING GAME
+12-May-2019 18:56:50 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 18:56:50 UNITY: STOPPING GAME
+12-May-2019 19:04:03 UNITY: STARTING GAME
+12-May-2019 19:04:15 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 19:04:15 UNITY: STOPPING GAME
+12-May-2019 19:07:13 UNITY: STARTING GAME
+12-May-2019 19:07:38 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 19:07:38 UNITY: STOPPING GAME
+12-May-2019 19:07:56 UNITY: STARTING GAME
+12-May-2019 19:08:18 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 19:08:18 UNITY: STOPPING GAME
+12-May-2019 19:12:57 UNITY: STARTING GAME
+12-May-2019 19:13:19 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 19:13:19 UNITY: STOPPING GAME
+12-May-2019 19:13:50 UNITY: STARTING GAME
+12-May-2019 19:22:03 UNITY: STARTING GAME
+12-May-2019 19:23:04 UNITY: STARTING GAME
+12-May-2019 19:23:12 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 19:23:12 UNITY: STOPPING GAME
+12-May-2019 19:24:31 UNITY: STARTING GAME
+12-May-2019 19:25:42 UNITY: STARTING GAME
+12-May-2019 19:43:25 UNITY: STARTING GAME
+12-May-2019 19:55:37 UNITY: STARTING GAME
+12-May-2019 20:05:01 UNITY: STARTING GAME
+12-May-2019 20:05:36 UNITY: STARTING GAME
+12-May-2019 20:07:04 UNITY: STARTING GAME
+12-May-2019 20:07:37 UNITY: STARTING GAME
+12-May-2019 20:07:47 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+12-May-2019 20:07:47 UNITY: STOPPING GAME
+12-May-2019 20:10:42 UNITY: STARTING GAME
+12-May-2019 20:11:02 UNITY: STARTING GAME
+12-May-2019 20:14:04 UNITY: STARTING GAME
+12-May-2019 20:14:41 UNITY: STARTING GAME
+12-May-2019 20:15:27 UNITY: STARTING GAME
+12-May-2019 20:17:49 UNITY: STARTING GAME
+12-May-2019 20:19:17 UNITY: STARTING GAME
