@@ -142,7 +142,7 @@ public class CLibFile : MonoBehaviour {
         }
         catch (Exception e)
         {
-            Debug.LogError("fopen exception: " + e.InnerException + " || " + e.Message + " || " + e.StackTrace);
+            Debug.Log("fopen exception: " + e.InnerException + " || " + e.Message + " || " + e.StackTrace);
             errno = 1;
             return null;
         }
@@ -378,7 +378,7 @@ stream − This is the pointer to a FILE object that specifies an output stream.
             }
             if (objectData.Length > size)
             {
-                Debug.LogError("Size update needed for " + destinationobj + " - from " + size + " to " + objectData.Length);
+                Debug.Log("Size update needed for " + destinationobj + " - from " + size + " to " + objectData.Length); //error
                 size = objectData.Length; //update size - C sizes may not be accurate
             }
             file.datafile.Write(objectData, 0, objectData.Length); //0 is the offset into the array, not the file

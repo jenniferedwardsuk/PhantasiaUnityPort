@@ -24,13 +24,20 @@ public class UnityPlayerUIController : NetworkBehaviour {
         {
             SubscribeFields();
             JavaInterface = new UnityJavaInterface();
-            JavaInterface.StartClient(this);
+            StartCoroutine(JavaSetup());
         }
         else
         {
             if (isLocalPlayer)
                 Debug.LogError(Thread.CurrentThread.Name + ": Error: game controller script not found.");
         }
+    }
+
+    IEnumerator JavaSetup()
+    {
+        JavaInterface.StartClient(this);
+        yield return null;
+        JavaInterface.RefreshUI();
     }
 
     public bool retrieveAllUI = false; //for debug

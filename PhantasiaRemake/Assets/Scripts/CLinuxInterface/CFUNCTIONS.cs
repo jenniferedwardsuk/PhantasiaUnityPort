@@ -59,7 +59,6 @@ public class CFUNCTIONS
        language.*/
 
         return "(C Error Code " + errno + ")";
-        //throw new NotImplementedException();
     }
 
     internal static bool isalpha(string strToCheck)
@@ -584,7 +583,7 @@ if Return value = 0 then it indicates str1 is equal to str2.*/
 
         long ret;
         if (indexOfEndOfLong != null)
-            throw new NotImplementedException();
+            throw new NotImplementedException(); //indexOfEndOfLong is always null in phantasia
         else
         {
             int numberLength = 0;
@@ -611,12 +610,10 @@ if Return value = 0 then it indicates str1 is equal to str2.*/
     {
         /*The C library function double strtod(const char *str, char **endptr) converts the string pointed to by the argument str to a floating-point number (type double). 
          * If endptr is not NULL, a pointer to the character after the last character used in the conversion is stored in the location referenced by endptr.*/
-
-        //endptr is always null in phantasia
-
+         
         double ret;
         if (endptr != null)
-            throw new NotImplementedException();
+            throw new NotImplementedException(); //endptr is always null in phantasia
         else
         {
             int numberLength = 0;

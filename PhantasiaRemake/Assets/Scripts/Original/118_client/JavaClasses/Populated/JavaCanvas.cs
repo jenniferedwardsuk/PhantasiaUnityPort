@@ -17,18 +17,36 @@ public abstract class JavaCanvas : JavaComponent
         foregroundColor = new JavaColor(new Color(0.784f, 0.796f, 0.588f));
         backgroundColor = new JavaColor(new Color(1, 1, 0.8f));
 
-        AddPanelToCanvas("-Canvas" + name, parent);
         //unityComponentGroup = UnityJavaInterface.AddPanel("-Canvas" + name, parent);
         //if (!unityComponentGroup.rectComponent) //deferred to main thread
         //{
         //    Debug.LogError("Unity object not created");
         //}
+
+        if (UnityGameController.inSetup)
+        {
+            init(name, parent);
+        }
+        else
+        {
+            init_deferred(name, parent);
+        }
     }
 
-    //internal void AddPanelToCanvas(string v1, bool v2)
-    //{
-    //    UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(M_AddPanelToCanvas, v1, v2);
-    //}
+
+    internal void init_deferred(string name, bool parent)
+    {
+        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(init, name, parent);
+    }
+    internal void init(string name, bool parent)
+    {
+        AddPanelToCanvas("-Canvas" + name, parent);
+    }
+
+        //internal void AddPanelToCanvas(string v1, bool v2)
+        //{
+        //    UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(M_AddPanelToCanvas, v1, v2);
+        //}
     internal void AddPanelToCanvas(string v1, bool v2)
     {
         UnityJavaInterface.AddPanel(v1, v2, this);

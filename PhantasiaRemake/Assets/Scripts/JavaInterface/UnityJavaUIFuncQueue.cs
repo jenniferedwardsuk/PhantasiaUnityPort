@@ -96,6 +96,18 @@ public class UnityJavaUIFuncQueue : MonoBehaviour {
         yield return null;
     }
 
+    //generic 4 param
+    public void QueueUIMethod<T1, T2, T3, T4>(Action<T1, T2, T3, T4> method, T1 param1, T2 param2, T3 param3, T4 param4)
+    {
+        Debug.Log("<color=blue> Queueing UI method: " + method + "</color>");
+        UnityMainThreadDispatcher.Instance().Enqueue(EnumeratorWrapper(method, param1, param2, param3, param4));
+    }
+    public IEnumerator EnumeratorWrapper<T1, T2, T3, T4>(Action<T1, T2, T3, T4> a, T1 param1, T2 param2, T3 param3, T4 param4)
+    {
+        a(param1, param2, param3, param4);
+        yield return null;
+    }
+
     //void with no params
     public void QueueUIMethod(Action method)
     {

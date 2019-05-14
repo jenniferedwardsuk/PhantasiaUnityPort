@@ -38,7 +38,8 @@ public class stringDlog : Dialog , IJavaActionListener
         UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(init, c, maskTextChars, labelString);
     }
     internal void init(pClient c, bool maskTextChars, string labelString)
-    { 
+    {
+        //JavaCanvas canvas = this;
         top_panel = new JavaPanel("Top", false);
         middle_panel = new JavaPanel("Middle", false);
         bottom_panel = new JavaPanel("Bottom", false);
@@ -46,6 +47,8 @@ public class stringDlog : Dialog , IJavaActionListener
         textField = new TextField(12);
         okJavaButton = new JavaButton(constants.OK_LABEL);
         cancelJavaButton = new JavaButton(constants.CANCEL_LABEL);
+
+        textJavaLabel = new JavaLabel(null, labelString, JavaLabel.CENTER); //todo: gets parented to previous panel, not popup
 
         super(c.f, false);
 
@@ -56,8 +59,6 @@ public class stringDlog : Dialog , IJavaActionListener
         textField.addActionListener(this);
 
         cancelJavaButton.setActionCommand("Cancel");
-
-        textJavaLabel = new JavaLabel(null, labelString, JavaLabel.CENTER);
 
         top_panel.add(textJavaLabel);
         middle_panel.add(textField);

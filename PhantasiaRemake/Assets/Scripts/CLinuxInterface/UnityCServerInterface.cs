@@ -250,12 +250,6 @@ public class UnityCServerInterface : NetworkBehaviour {
         }
         //todo: identify player's C thread, set message as waiting data? and signal it
     }
-
-    internal void DoSIGALRMCountdownForSocket(int time, LinuxLibSocket.LinuxSocket linuxSocket)
-    {
-        //StartCoroutine(SIGALRMCountdownSocket(time, linuxSocket));
-        throw new NotImplementedException();
-    }
     internal void DoSIGALRMCountdownForThread(int time, Thread relevantThread)
     {
         if (ThreadSIGALRMflags.ContainsKey(relevantThread.Name))

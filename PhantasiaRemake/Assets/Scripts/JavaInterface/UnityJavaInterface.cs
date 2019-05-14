@@ -71,6 +71,12 @@ public class UnityJavaInterface
 
         if (!mainCanvas)
             mainCanvas = GameObject.FindGameObjectWithTag("MainCanvas");
+        
+    }
+
+    public void RefreshUI()
+    {
+        //Thread.Sleep(1000); //wait for UI to generate before resizing   //currently unnecessary
 
         RefreshAllLayouts(JavaClient.status);
         RefreshAllLayouts(JavaClient.messages);
@@ -78,8 +84,7 @@ public class UnityJavaInterface
         RefreshAllLayouts(JavaClient.chat);
         RefreshAllLayouts(JavaClient.rightPane);
 
-        //RetrieveAllWanderingComponents(mainCanvas); //doesn't work - too soon?
-
+        RetrieveAllWanderingComponents(mainCanvas); //todo: doesn't work - too soon?
         GameObject[] popups = GameObject.FindGameObjectsWithTag("PopupCanvas");
         foreach (GameObject obj in popups)
         {
@@ -89,9 +94,8 @@ public class UnityJavaInterface
                 RetrieveAllWanderingComponents(obj);
             }
         }
-        //todo: same for popups
     }
-    
+
     public static string clientVersion = "1004";
     internal static string GetClientVersion()
     {
@@ -336,7 +340,6 @@ public class UnityJavaInterface
         {
             Debug.LogError("Main canvas not ready for resize");
         }
-        //throw new NotImplementedException();
     }
 
     internal static void setMainCanvasBackground(JavaColor backgroundColor)
@@ -353,7 +356,6 @@ public class UnityJavaInterface
         {
             Debug.Log("Main canvas not ready for image color");
         }
-        //throw new NotImplementedException();
     }
 
     internal static void HideMainCanvas()
@@ -785,11 +787,13 @@ public class UnityJavaInterface
     }
     internal static void M_AddPopup(Dialog source)
     {
-        GameObject popupTemplateCanvas = GameObject.FindGameObjectWithTag("PopupCanvas"); //todo - include blocking image behind popup panel to prevent input elsewhere
+        GameObject popupTemplateCanvas = GameObject.FindGameObjectWithTag("PopupCanvas");
         if (popupTemplateCanvas)
         {
             GameObject popupCanvas = GameObject.Instantiate(popupTemplateCanvas);
             popupCanvas.GetComponent<Canvas>().sortingOrder = 3; //todo: arbitrary
+            latestPanel.transform.parent = popupCanvas.transform;
+
             UnityPopupComponents popupComponents = new UnityPopupComponents();
 
             popupComponents.rectComponent = popupCanvas.GetComponent<RectTransform>();
@@ -823,6 +827,7 @@ public class UnityJavaInterface
                 mainCanvas = GameObject.FindGameObjectWithTag("MainCanvas");
             panelComponents.rectComponent = mainCanvas.GetComponent<RectTransform>();
             panelComponents.imageComponent = mainCanvas.GetComponent<Image>();
+            
             //return panelComponents;
             source.SetComponentGroup(panelComponents);
         }
@@ -845,6 +850,11 @@ public class UnityJavaInterface
         panelComponents.imageComponent = Panel.AddComponent<Image>();
         Color imgcolor = new Color(1, 1, 1, 1); //todo: only works sometimes
         panelComponents.imageComponent.color = imgcolor;
+
+        if (name == "-CanvasDialog")
+        {
+            panelComponents.imageComponent.enabled = false;
+        }
 
         //set parent
         if (isCanvasParent || !latestPanel) //first panel, or new top level
@@ -935,7 +945,8 @@ public class UnityJavaInterface
             buttonComponents.rectComponent.anchorMax = new Vector2(0, 1); //top left
             Button.AddComponent<CanvasRenderer>();
             Image image = Button.AddComponent<Image>();
-            Sprite img = UnityEditor.AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
+            //Sprite img = UnityEditor.AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd"); //doesn't work in build
+            Sprite img = Resources.Load("dummybutton", typeof(Sprite)) as Sprite;
             image.sprite = img;
             image.type = Image.Type.Sliced;
             buttonComponents.buttonComponent = Button.AddComponent<Button>();

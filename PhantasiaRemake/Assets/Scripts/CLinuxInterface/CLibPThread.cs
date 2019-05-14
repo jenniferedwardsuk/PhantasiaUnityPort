@@ -200,13 +200,11 @@ public class CLibPThread : MonoBehaviour {
             Debug.LogError("Could not find pid for current thread");
         }
         return pid;
-        //throw new NotImplementedException();
     }
 
     internal static void sleep(int v)
     {
         /*sleep() makes the calling thread sleep until seconds seconds have elapsed or a signal arrives which is not ignored.*/
-        //throw new NotImplementedException();
 
         Thread.Sleep(v * 1000); //todo: make interruptible?
     }

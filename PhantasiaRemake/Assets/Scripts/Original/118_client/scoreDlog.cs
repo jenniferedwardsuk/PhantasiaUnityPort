@@ -23,7 +23,7 @@ public class scoreDlog : Dialog , IJavaActionListener
     {
         if (UnityGameController.inSetup)
         {
-            init(c);
+            init(c, 0, 50, "DUMMY STRING");
         }
         else
         {
@@ -34,9 +34,12 @@ public class scoreDlog : Dialog , IJavaActionListener
     internal void init_deferred(pClient c)
     {
         parent = c;
-        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(init, c);
+        long long1 = parent.readLong();
+        long long2 = parent.readLong();
+        string textstring = parent.readString();
+        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(init, c, long1, long2, textstring);
     }
-    public void init(pClient c)
+    public void init(pClient c, long long1, long long2, string textstring)
     {
         top_panel = new JavaPanel("Top", false);
         bottom_panel = new JavaPanel("Bottom", false);
@@ -66,8 +69,8 @@ public class scoreDlog : Dialog , IJavaActionListener
         add("Center", textArea);
         setLayout(new BorderLayout());
 
-        start = parent.readLong();  /* Starting record */
-        records = parent.readLong();          /* Records to print */
+        start = long1;  /* Starting record */
+        records = long2;          /* Records to print */
         setTitle("Scoreboard");
 
         if (start == 0)
@@ -83,7 +86,7 @@ public class scoreDlog : Dialog , IJavaActionListener
         /* print out all the high scores */
         for (int i = 0; i < records; i++)
         {
-            textArea.append(parent.readString() + "\n"); 
+            textArea.append(textstring + "\n"); 
         }
 
         pack();

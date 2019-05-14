@@ -6,11 +6,11 @@
 using System;
 using UnityEngine;
 
-public class Dialog : JavaComponent
+public class Dialog : JavaCanvas //JavaComponent
 {
     UnityPopupComponents unityComponents;
 
-    public Dialog()
+    public Dialog() : base("Dialog", true)
     {
         UnityJavaInterface.AddPopup(this);
         //if (!unityComponentGroup.rectComponent) //deferred to main thread
@@ -63,6 +63,8 @@ public class Dialog : JavaComponent
     internal void M_setVisible(bool v)
     {
         unityComponentGroup.rectComponent.gameObject.GetComponent<Canvas>().enabled = v;
+        if (!v)
+            GameObject.DestroyImmediate(unityComponentGroup.rectComponent.gameObject);
     }
 
     internal void add(string location, JavaComponent component)

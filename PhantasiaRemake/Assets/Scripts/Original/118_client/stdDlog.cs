@@ -19,7 +19,7 @@ public class stdDlog : Dialog , IJavaActionListener
     {
         if (UnityGameController.inSetup)
         {
-            init(c);
+            init(c, "DUMMY STRING");
         }
         else
         {
@@ -30,9 +30,10 @@ public class stdDlog : Dialog , IJavaActionListener
     internal void init_deferred(pClient c)
     {
         parent = c;
-        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(init, c);
+        string labelstring = parent.readString();
+        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(init, c, labelstring);
     }
-    public void init(pClient c)
+    public void init(pClient c, string labelstring)
     {
         top_panel = new JavaPanel("Top", false);
         bottom_panel = new JavaPanel("Bottom", false);
@@ -45,7 +46,7 @@ public class stdDlog : Dialog , IJavaActionListener
 
         theJavaButton.addActionListener(this);
 
-        textJavaLabel.setText(parent.readString());
+        textJavaLabel.setText(labelstring);
         top_panel.add(textJavaLabel);
         bottom_panel.add(theJavaButton);
 

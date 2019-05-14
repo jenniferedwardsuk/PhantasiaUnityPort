@@ -29,7 +29,7 @@ public class coordDlog : Dialog, IJavaActionListener
     {
         if (UnityGameController.inSetup)
         {
-            init(c);
+            init(c, "DUMMY STRING");
         }
         else
         {
@@ -40,16 +40,17 @@ public class coordDlog : Dialog, IJavaActionListener
     internal void init_deferred(pClient c)
     {
         parent = c;
-        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(init, c);
+        string readstring = parent.readString();
+        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(init, c, readstring);
     }
-    public void init(pClient c)
+    public void init(pClient c, string readstring)
     { 
         top_panel = new JavaPanel("Top", false);
         middle_panel = new JavaPanel("Middle", false);
         bottom_panel = new JavaPanel("Bottom", false);
         x_panel = new JavaPanel("X", false);
         y_panel = new JavaPanel("Y", false);
-        topJavaLabel = new JavaLabel(null, parent.readString(), JavaLabel.CENTER);
+        topJavaLabel = new JavaLabel(null, readstring, JavaLabel.CENTER);
         xJavaLabel = new JavaLabel(null, "X Coordinate:");
         yJavaLabel = new JavaLabel(null, "Y Coordinate:");
         xField = new TextField(15);

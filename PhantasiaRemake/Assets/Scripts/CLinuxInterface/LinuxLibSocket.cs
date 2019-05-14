@@ -347,7 +347,7 @@ FIN_WAIT2	TCP; the connection has been closed; our socket is waiting for the rem
         else
             Debug.LogError("Unanticipated setsockopt call");
 
-        //unnecessary for unity? //throw new NotImplementedException();
+        //unnecessary for unity
         return 0;
 
     }
@@ -451,7 +451,6 @@ FIN_WAIT2	TCP; the connection has been closed; our socket is waiting for the rem
             if (UnityGameController.StopApplication)
             {
                 Debug.Log("Thread " + System.Threading.Thread.CurrentThread.Name + " stopping in SOCKETselect");
-                //throw new NotImplementedException(); //todo: better control
             }
         }
 
@@ -674,7 +673,6 @@ FIN_WAIT2	TCP; the connection has been closed; our socket is waiting for the rem
             //unnecessary for unity; signals are received on the relevant pthread; threads are already linked to linuxsockets at linuxsocket creation
             //requestedSocket.sourceThread = CLibPThread.knownThreads[clientPid.ToString()].associatedThread; //if replacement is wanted. nb: can't recall if clientPid is knownThreads key, check if needed
             result = 0;
-            //throw new NotImplementedException();
         }
         else
         {
@@ -752,8 +750,6 @@ FIN_WAIT2	TCP; the connection has been closed; our socket is waiting for the rem
             errno = -1;
             result = -1;
         }
-
-        //throw new NotImplementedException();
 
         return result;
     }
