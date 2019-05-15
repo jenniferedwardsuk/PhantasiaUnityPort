@@ -16,6 +16,7 @@ public class headPne : JavaCanvas
     JavaFont theFont = new JavaFont("TimesRoman", JavaFont.BOLD, 14);
     JavaFont theFont2 = new JavaFont("Helvetica", JavaFont.PLAIN, 12);
     JavaLabel textJavaLabel;
+    JavaLabel textJavaLabel2; //unity: added
 
     public headPne(string message) : base("Head", false)
     {
@@ -41,6 +42,7 @@ public class headPne : JavaCanvas
 
         //added for unity
         textJavaLabel = new JavaLabel(this, message);
+        textJavaLabel2 = new JavaLabel(this, ""); //unity: added
     }
 
     internal void paint(JavaGraphics g)
@@ -67,7 +69,12 @@ public class headPne : JavaCanvas
         cx = (int)((canvasWidth - fm.stringWidth(title2)) / 2);
 
         g.setFont(theFont2);
-        g.drawString(title2, cx, canvasHeight - 6, (UnityTextComponents)textJavaLabel.unityComponentGroup);
+        g.drawString(title2, cx, canvasHeight - 6, (UnityTextComponents)textJavaLabel2.unityComponentGroup); //unity: amended
+
+        //unity: added: manual offset for now
+        UnityTextComponents label1 = (UnityTextComponents)textJavaLabel.unityComponentGroup;
+        UnityTextComponents label2 = (UnityTextComponents)textJavaLabel2.unityComponentGroup;
+        label2.textComponent.transform.position = label1.textComponent.transform.position - new Vector3(0, 15, 0);
     }
 
     internal void changeHead(string message)

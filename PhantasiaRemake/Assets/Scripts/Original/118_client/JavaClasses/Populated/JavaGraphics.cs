@@ -106,11 +106,12 @@ internal class JavaGraphics
         if (sourceText)
         {
             sourceText.text = theValue;
-            sourceText.transform.position += new Vector3(x, y, 0); //todo: valid?
+            //sourceText.transform.position += new Vector3(x, y, 0); //todo: doesn't work as intended
         }
         else if (alternativeText != null)
         {
             alternativeText.textComponent.text = theValue;
+            //alternativeText.textComponent.transform.position += new Vector3(x, y, 0); //todo: doesn't work as intended
         }
         else
             Debug.LogError("drawString called without a Text reference");

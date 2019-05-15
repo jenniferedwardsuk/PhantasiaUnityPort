@@ -363,13 +363,13 @@ if Return value = 0 then it indicates str1 is equal to str2.*/
 
     internal static int floor(double expr)
     {
-        int result = (int)Mathf.Floor((float)expr);
+        int result = Mathf.FloorToInt((float)expr);
         return result;
     }
 
     internal static int floor(long expr)
     {
-        int result = (int)Mathf.Floor((float)expr);
+        int result = Mathf.FloorToInt((float)expr);
         return result;
     }
 
@@ -619,7 +619,7 @@ if Return value = 0 then it indicates str1 is equal to str2.*/
             int numberLength = 0;
             for (int i = 0; i < tmpDouble.Length; i++)
             {
-                if (Char.IsDigit(tmpDouble[i]))
+                if (Char.IsDigit(tmpDouble[i]) || (i == 0 && tmpDouble[i] == '-'))
                 {
                     numberLength++;
                 }

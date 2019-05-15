@@ -1632,7 +1632,9 @@ namespace phantasiaclasses
                 return rc;
             }
 
+            //Debug.LogError("Retrieved tmp debug: " + tmpDouble);
             theDouble = CFUNCTIONS.floor(CFUNCTIONS.strtod(tmpDouble, null));
+            //Debug.LogError("Retrieved double debug: " + theDouble);
 
             /* insure that the number is finite */
             if (!LinuxLibSocket.finite(theDouble))

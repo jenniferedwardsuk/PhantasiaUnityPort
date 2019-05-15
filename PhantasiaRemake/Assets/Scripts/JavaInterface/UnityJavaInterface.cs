@@ -398,16 +398,31 @@ public class UnityJavaInterface
         CreateOrRefreshBorderLayout(sourceComponent, true);
 
         //todo - packing. expand children to the minimum size for their content, then resize popup panel accordingly
+
         GameObject panel = popupComponents.panelComponent.gameObject;
         RectTransform parent = panel.GetComponent<RectTransform>();
-        if (!panel.GetComponent<GridLayoutGroup>())
+        if (!panel.GetComponent<GridLayoutGroup>() && !panel.GetComponent<UnityBorderLayoutManager>())
             panel.AddComponent<GridLayoutGroup>(); //this is an interim solution
         int componentsInPanel = parent.childCount;
         for (int i = 0; i < parent.childCount; i++)
         {
             GameObject child = parent.GetChild(i).gameObject;
-            if (!child.GetComponent<GridLayoutGroup>())
-                child.AddComponent<GridLayoutGroup>();
+            if (!child.GetComponent<GridLayoutGroup>() && !child.GetComponent<UnityBorderLayoutManager>())
+            {
+                GridLayoutGroup grid = child.AddComponent<GridLayoutGroup>();
+                grid.cellSize = new Vector2(100, 50);
+            }
+
+            for (int j = 0; j < child.transform.childCount; j++)
+            {
+                GameObject grandchild = child.transform.GetChild(j).gameObject;
+                if (!grandchild.GetComponent<GridLayoutGroup>() && !grandchild.GetComponent<UnityBorderLayoutManager>())
+                {
+                    GridLayoutGroup grid = grandchild.AddComponent<GridLayoutGroup>();
+                    grid.cellSize = new Vector2(100, 50);
+                }
+            }
+
             //RectTransform child = parent.GetChild(i).gameObject.GetComponent<RectTransform>();
             //child.sizeDelta = new Vector2(parent.sizeDelta.x / componentsInPanel, parent.sizeDelta.y / componentsInPanel);
             //child.position = parent.position;

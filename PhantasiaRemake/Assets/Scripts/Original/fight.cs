@@ -2853,7 +2853,7 @@ namespace phantasiaclasses
                     else
                     {
                         /* prompt for amount to expend */
-                        if (ioclass.Do_double_dialog(c, dtemp, "How much mana for bolt?\n") != 0)
+                        if (ioclass.Do_double_dialog(c, ref dtemp, "How much mana for bolt?\n") != 0)
                         {
 
 
@@ -3724,7 +3724,7 @@ namespace phantasiaclasses
                         event_ptr.type = (short)phantdefs.MONSTER_EVENT;
                         event_ptr.arg1 = phantdefs.MONSTER_SPECIFY;
 
-                        if (ioclass.Do_long_dialog(c, event_ptr.arg3, "Which monster [0-99]?\n") != 0)
+                        if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "Which monster [0-99]?\n") != 0)
                         {
                             event_ptr = null;//free((void*)event_ptr);
                             return;

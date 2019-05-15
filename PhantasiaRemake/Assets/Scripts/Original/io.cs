@@ -253,7 +253,7 @@ namespace phantasiaclasses
         /
         *************************************************************************/
 
-        internal int Do_double_dialog(client_t c, double theDouble, string theMessage)
+        internal int Do_double_dialog(client_t c, ref double theDouble, string theMessage)
         {
             /* send the player a string request packet */
             socketclass.Do_send_int(c, phantdefs.STRING_DIALOG_PACKET);
@@ -291,7 +291,7 @@ namespace phantasiaclasses
         /
         *************************************************************************/
 
-        internal int Do_long_dialog(client_t c, long theLong, string theMessage)
+        internal int Do_long_dialog(client_t c, ref long theLong, string theMessage)
         {
             /* send the player a string request packet */
             socketclass.Do_send_int(c, phantdefs.STRING_DIALOG_PACKET);
@@ -331,7 +331,7 @@ namespace phantasiaclasses
         /
         *************************************************************************/
 
-        internal int Do_coords_dialog(client_t c, double x, double y, string message)
+        internal int Do_coords_dialog(client_t c, ref double x, ref double y, string message)
         {
             int rc;
 

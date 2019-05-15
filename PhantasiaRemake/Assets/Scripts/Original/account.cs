@@ -141,7 +141,7 @@ namespace phantasiaclasses
             button_t buttons = new button_t();
 
             ioclass.Do_send_clear(c);
-            ioclass.Do_send_line(c, "To get an account, you will need an account name, a password and an active e-mail address.  Are you ready to provide those things?\n");
+            ioclass.Do_send_line(c, "To get an account, you will need an account name, a password and an active e-mail address.  Are you ready to provide those things?\n \n- NOTE FROM UNITY PORT: emailing is not yet active, so an email address is unnecessary.\n");
 
             buttons.button[0] = "Yes\n";
             buttons.button[1] = "No\n";
@@ -235,7 +235,7 @@ namespace phantasiaclasses
                 return;
             }
 
-            ioclass.Do_send_line(c, "Finally, I need your e-mail address.  I will use it to send you a confirmation code as well as password resets you request, but nothing else.\n");
+            ioclass.Do_send_line(c, "Finally, I need your e-mail address.  I will use it to send you a confirmation code as well as password resets you request, but nothing else.\n \n- NOTE FROM UNITY PORT: emailing is not yet active. Provide any text in 'a@b.com' format to proceed.\n");
 
             ioclass.Do_more(c);
             ioclass.Do_send_clear(c);
@@ -340,7 +340,9 @@ namespace phantasiaclasses
 
             fileclass.Do_log(pathnames.CONNECTION_LOG, string_buffer);
 
-            ioclass.Do_send_line(c, "Your account has been created and your confirmation code has been e-mailed to the address you provided.  To activate the account, log in with the information you provided, but have the confirmation code handy as you will need it.\n");
+            string formattedConfCode = new string(theAccount.confirmation);
+            formattedConfCode = formattedConfCode.Substring(0, CFUNCTIONS.strlen(formattedConfCode));
+            ioclass.Do_send_line(c, "Your account has been created and your confirmation code has been e-mailed to the address you provided.  To activate the account, log in with the information you provided, but have the confirmation code handy as you will need it. \n \n- NOTE FROM UNITY PORT: emailing is not yet active. Your confirmation code is: " + formattedConfCode + "\n");
 
             ioclass.Do_more(c);
             ioclass.Do_send_clear(c);

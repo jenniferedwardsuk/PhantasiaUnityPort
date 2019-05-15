@@ -477,7 +477,7 @@ public class statusPne : JavaPanel
                 location = parent.readString();
                 if (name != null && name.Length > 0)
                 {
-                    titleCanvas.changeHead(name + " is in " + location);
+                    titleCanvas.changeHead(name + " is in " + location); //todo
                 }
                 else
                 {

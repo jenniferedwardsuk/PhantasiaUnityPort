@@ -1838,7 +1838,7 @@ namespace phantasiaclasses
 
             miscclass.Do_lowercase(ref tagee, tagee);
 
-            if (ioclass.Do_long_dialog(c, tagNumber, "What is the tag number to remove?\n") != 0)
+            if (ioclass.Do_long_dialog(c, ref tagNumber, "What is the tag number to remove?\n") != 0)
             {
                 return;
             }

@@ -668,7 +668,7 @@ namespace phantasiaclasses
                                     event_ptr = eventclass.Do_create_event();
                                     event_ptr.type = (short)phantdefs.MONSTER_EVENT;
                                     event_ptr.arg1 = phantdefs.MONSTER_SPECIFY;
-                                    if (ioclass.Do_long_dialog(c, event_ptr.arg3,
+                                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3,
                                 "Which monster do you want [0-99]?\n") != 0)
                                     {
 
@@ -1184,7 +1184,7 @@ namespace phantasiaclasses
                                             event_ptr = eventclass.Do_create_event();
                                             event_ptr.type = (short)phantdefs.MONSTER_EVENT;
                                             event_ptr.arg1 = phantdefs.MONSTER_SPECIFY;
-                                            if (ioclass.Do_long_dialog(c, event_ptr.arg3,
+                                            if (ioclass.Do_long_dialog(c, ref event_ptr.arg3,
                                     "Which monster do you want [0-99]?\n") != 0)
                                             {
 

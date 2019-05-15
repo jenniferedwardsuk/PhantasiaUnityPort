@@ -113,6 +113,7 @@ public class coordDlog : Dialog, IJavaActionListener
             }
             else
             {
+                //Debug.LogError("x y debug: Java sending: x " + xField.getText() + ", y " + yField.getText());
                 parent.sendString(constants.C_RESPONSE_PACKET + xField.getText() + "\0" +
                 constants.C_RESPONSE_PACKET + yField.getText() + "\0");
             }

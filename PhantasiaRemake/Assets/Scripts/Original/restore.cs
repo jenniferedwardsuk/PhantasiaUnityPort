@@ -170,7 +170,7 @@ namespace phantasiaclasses
                     event_ptr.type = (short)phantdefs.AGING_EVENT;
                     CFUNCTIONS.strcpy(ref string_buffer2, "age to");
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "How much age would you like to increase?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "How much age would you like to increase?\n") != 0)
                     {
 
 
@@ -232,7 +232,7 @@ namespace phantasiaclasses
                     event_ptr.type = (short)phantdefs.EXPERIENCE_EVENT;
                     CFUNCTIONS.strcpy(ref string_buffer2, "experience to");
 
-                    if (ioclass.Do_double_dialog(c, event_ptr.arg1, "How much experience would you like to increase?\n") != 0)
+                    if (ioclass.Do_double_dialog(c, ref event_ptr.arg1, "How much experience would you like to increase?\n") != 0)
                     {
 
 
@@ -360,7 +360,7 @@ namespace phantasiaclasses
                     event_ptr.arg1 = 0;
                     CFUNCTIONS.strcpy(ref string_buffer2, "base energy");
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "How much would you like to increase for base energy?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "How much would you like to increase for base energy?\n") != 0)
                     {
                         event_ptr = null; //free((void*) event_ptr);
                         return;
@@ -381,7 +381,7 @@ namespace phantasiaclasses
                     event_ptr.arg1 = 1;
                     CFUNCTIONS.strcpy(ref string_buffer2, "base strength");
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "How much would you like to increase for base strength?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "How much would you like to increase for base strength?\n") != 0)
                     {
 
 
@@ -404,7 +404,7 @@ namespace phantasiaclasses
                     event_ptr.arg1 = 2;
                     CFUNCTIONS.strcpy(ref string_buffer2, "base speed");
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "How much would you like to increase for base speed?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "How much would you like to increase for base speed?\n") != 0)
                     {
 
 
@@ -427,7 +427,7 @@ namespace phantasiaclasses
                     event_ptr.arg1 = 3;
                     CFUNCTIONS.strcpy(ref string_buffer2, "magic level");
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "How much would you like to increase for magic level?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "How much would you like to increase for magic level?\n") != 0)
                     {
 
 
@@ -449,7 +449,7 @@ namespace phantasiaclasses
                     event_ptr.arg1 = 4;
                     CFUNCTIONS.strcpy(ref string_buffer2, "brains");
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "How much would you like to increase for brains?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "How much would you like to increase for brains?\n") != 0)
                     {
 
 
@@ -472,7 +472,7 @@ namespace phantasiaclasses
                     event_ptr.arg1 = 5;
                     CFUNCTIONS.strcpy(ref string_buffer2, "lives");
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "How much would you like to increase for lives?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "How much would you like to increase for lives?\n") != 0)
                     {
 
 
@@ -496,7 +496,7 @@ namespace phantasiaclasses
                     event_ptr.arg1 = 6;
                     CFUNCTIONS.strcpy(ref string_buffer2, "poison");
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "How much poison would you like to increase?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "How much poison would you like to increase?\n") != 0)
                     {
 
 
@@ -726,7 +726,7 @@ namespace phantasiaclasses
                     event_ptr.arg1 = 0;
                     CFUNCTIONS.strcpy(ref string_buffer2, "shield");
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "How much would you like to increase for shield?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "How much would you like to increase for shield?\n") != 0)
                     {
 
 
@@ -749,7 +749,7 @@ namespace phantasiaclasses
                     event_ptr.arg1 = 1;
                     CFUNCTIONS.strcpy(ref string_buffer2, "sword");
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "How much would you like to increase for sword?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "How much would you like to increase for sword?\n") != 0)
                     {
 
 
@@ -772,7 +772,7 @@ namespace phantasiaclasses
                     event_ptr.arg1 = 2;
                     CFUNCTIONS.strcpy(ref string_buffer2, "quicksilver");
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "How much would you like to increase for quicksilver?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "How much would you like to increase for quicksilver?\n") != 0)
                     {
 
 
@@ -795,7 +795,7 @@ namespace phantasiaclasses
                     event_ptr.arg1 = 3;
                     CFUNCTIONS.strcpy(ref string_buffer2, "charms");
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "How much would you like to increase for charms?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "How much would you like to increase for charms?\n") != 0)
                     {
 
 
@@ -818,7 +818,7 @@ namespace phantasiaclasses
                     event_ptr.arg1 = 4;
                     CFUNCTIONS.strcpy(ref string_buffer2, "amulets");
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "How much would you like to increase for amulets?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "How much would you like to increase for amulets?\n") != 0)
                     {
 
 
@@ -841,7 +841,7 @@ namespace phantasiaclasses
                     event_ptr.arg1 = 5;
                     CFUNCTIONS.strcpy(ref string_buffer2, "holy water");
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "How much would you like to increase for holy water?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "How much would you like to increase for holy water?\n") != 0)
                     {
 
 
@@ -865,7 +865,7 @@ namespace phantasiaclasses
                     event_ptr.arg1 = 6;
                     CFUNCTIONS.strcpy(ref string_buffer2, "crowns");
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "How much would you like to increase for crowns?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "How much would you like to increase for crowns?\n") != 0)
                     {
 
 
@@ -1076,7 +1076,7 @@ namespace phantasiaclasses
                     event_ptr.arg1 = 0;
                     CFUNCTIONS.strcpy(ref string_buffer2, "gems");
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "How much would you like to increase for gems?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "How much would you like to increase for gems?\n") != 0)
                     {
 
 
@@ -1099,7 +1099,7 @@ namespace phantasiaclasses
                     event_ptr.arg1 = 1;
                     CFUNCTIONS.strcpy(ref string_buffer2, "gold");
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "How much would you like to increase for gold?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "How much would you like to increase for gold?\n") != 0)
                     {
 
 

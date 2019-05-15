@@ -608,7 +608,7 @@ namespace phantasiaclasses
                         System.Threading.Thread.Sleep(33); //30fps
                     }
 
-                    if (ioclass.Do_coords_dialog(c, x, y,
+                    if (ioclass.Do_coords_dialog(c, ref x, ref y,
                         "Enter the approximate X Y coordinates of your experimento?\n") != 0)
                     {
                         return;

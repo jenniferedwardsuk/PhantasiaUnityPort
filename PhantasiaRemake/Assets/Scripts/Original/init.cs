@@ -1204,7 +1204,7 @@ namespace phantasiaclasses
             {
 
                 /* write the character to the charcter file */
-                Debug.LogError("CHAR FILE DEBUG: appending");
+                //Debug.LogError("CHAR FILE DEBUG: appending");
                 if (CLibFile.fwrite(the_player, ref phantdefs.SZ_PLAYER, 1, character_file) != 1)
                 {
 

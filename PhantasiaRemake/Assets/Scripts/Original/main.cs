@@ -1016,7 +1016,7 @@ namespace phantasiaclasses
 
                 case 1:               /* move */
 
-                    if (ioclass.Do_coords_dialog(c, event_ptr.arg1, event_ptr.arg2,
+                    if (ioclass.Do_coords_dialog(c, ref event_ptr.arg1, ref event_ptr.arg2,
                     "Where do you wish to move to?\n") != 0)
                     {
 

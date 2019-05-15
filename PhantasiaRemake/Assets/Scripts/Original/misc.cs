@@ -512,6 +512,7 @@ namespace phantasiaclasses
             deltay = y1 - y2;
 
             answer = CFUNCTIONS.sqrt(deltax * deltax + deltay * deltay);
+            //Debug.LogError("x y debug: Do_distance: " + answer + ", with x1 " + x1 + ", x2 " + x2 + ", y1 " + y1 + ", y2 " + y2);
             return;
         }
 
@@ -1221,7 +1222,7 @@ namespace phantasiaclasses
 
                 ioclass.Do_send_line(c, "You've found a medic!\n");
 
-                if (ioclass.Do_double_dialog(c, gold, "How much will you offer to heal your blindness?\n") != 0)
+                if (ioclass.Do_double_dialog(c, ref gold, "How much will you offer to heal your blindness?\n") != 0)
                 {
 
                     ioclass.Do_send_clear(c);
@@ -1261,7 +1262,7 @@ namespace phantasiaclasses
 
                 ioclass.Do_send_line(c, "You've found a medic!\n");
 
-                if (ioclass.Do_double_dialog(c, gold, "How much will you offer to be cured?\n") != 0)
+                if (ioclass.Do_double_dialog(c, ref gold, "How much will you offer to be cured?\n") != 0)
                 {
 
                     ioclass.Do_send_clear(c);
@@ -3479,12 +3480,12 @@ namespace phantasiaclasses
             char[] cstringchar = cstring;
 
             /* choose a password length */
-            len = 5 * CFUNCTIONS.floor(macros.RND()) + 8;
+            len = 4;// CFUNCTIONS.floor(5 * macros.RND()) + 8;  //todo: fixed at 4 until user can copy conf code from scroll area
 
             /* pick a random character */
             for (i = 0; i < len; i++)
             {
-                letter = 50 + CFUNCTIONS.floor(macros.RND()) * 55;
+                letter = 50 + CFUNCTIONS.floor(macros.RND() * 55);
 
                 /* skip over non characters and numbers plus "01IOilo" */
                 if (letter > 57)
@@ -3740,10 +3741,12 @@ namespace phantasiaclasses
         {
             if ((c.player.circle > 19) && (c.player.circle < 36))
             {
+                //Debug.LogError("x y debug: Do_maxmove: " + (int)CFUNCTIONS.MIN(CFUNCTIONS.ceil(c.player.level / 50.0) + 1.5, 10.0));
                 return (int)CFUNCTIONS.MIN(CFUNCTIONS.ceil(c.player.level / 50.0) + 1.5, 10.0);
             }
             else
             {
+                //Debug.LogError("x y debug: Do_maxmove: " + (int)CFUNCTIONS.MIN(CFUNCTIONS.floor((c.player.level * 1.5) + 1.5), 100.0));
                 return (int)CFUNCTIONS.MIN(CFUNCTIONS.floor((c.player.level * 1.5) + 1.5), 100.0);
             }
         }

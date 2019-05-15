@@ -2303,7 +2303,7 @@ namespace phantasiaclasses
                     object_ptr = new realm_object_t();// (struct realm_object_t *) Do_malloc(phantdefs.SZ_REALM_OBJECT);
                     object_ptr.type = (short)phantdefs.ENERGY_VOID;
 
-                    if (ioclass.Do_coords_dialog(c, object_ptr.x, object_ptr.y,
+                    if (ioclass.Do_coords_dialog(c, ref object_ptr.x, ref object_ptr.y,
                         "What should the coordinates of the void be?\n") != 0)
                     {
 
@@ -2340,7 +2340,7 @@ namespace phantasiaclasses
                     event_ptr.type = (short)phantdefs.BESTOW_EVENT;
                     CFUNCTIONS.strcpy(ref string_buffer2, "give gems to");
 
-                    if (ioclass.Do_double_dialog(c, event_ptr.arg1, "How many gems to bestow(0-5) ?\n") != 0)
+                    if (ioclass.Do_double_dialog(c, ref event_ptr.arg1, "How many gems to bestow(0-5) ?\n") != 0)
                     {
 
 
@@ -3209,7 +3209,7 @@ namespace phantasiaclasses
                     event_ptr.type = (short)phantdefs.RELOCATE_EVENT;
                     CFUNCTIONS.strcpy(ref string_buffer2, "relocate");
 
-                    if (ioclass.Do_coords_dialog(c, event_ptr.arg1, event_ptr.arg2,
+                    if (ioclass.Do_coords_dialog(c, ref event_ptr.arg1, ref event_ptr.arg2,
                         "Relocate to where?\n") != 0)
                     {
 
@@ -3544,7 +3544,7 @@ namespace phantasiaclasses
 
                     event_ptr = eventclass.Do_create_event();
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "Event number?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "Event number?\n") != 0)
                     {
 
                         event_ptr = null; // free((void*) event_ptr);
@@ -3553,14 +3553,14 @@ namespace phantasiaclasses
 
                     event_ptr.type = (short)event_ptr.arg3;
 
-                    if (ioclass.Do_double_dialog(c, event_ptr.arg1, "Argument 1?\n") != 0)
+                    if (ioclass.Do_double_dialog(c, ref event_ptr.arg1, "Argument 1?\n") != 0)
                     {
 
                         event_ptr = null; // free((void*) event_ptr);
                         return;
                     }
 
-                    if (ioclass.Do_double_dialog(c, event_ptr.arg2, "Argument 2?\n") != 0)
+                    if (ioclass.Do_double_dialog(c, ref event_ptr.arg2, "Argument 2?\n") != 0)
                     {
 
                         event_ptr = null; // free((void*) event_ptr);
@@ -3568,7 +3568,7 @@ namespace phantasiaclasses
                     }
 
 
-                    if (ioclass.Do_long_dialog(c, event_ptr.arg3, "Argument 3?\n") != 0)
+                    if (ioclass.Do_long_dialog(c, ref event_ptr.arg3, "Argument 3?\n") != 0)
                     {
 
                         event_ptr = null; // free((void*) event_ptr);
@@ -4686,7 +4686,7 @@ namespace phantasiaclasses
 
                                 c.realm.shop_item[0].cost));
 
-                                    if (ioclass.Do_double_dialog(c, numitems, string_buffer) != 0)
+                                    if (ioclass.Do_double_dialog(c, ref numitems, string_buffer) != 0)
                                     {
 
                                         ioclass.Do_send_clear(c);
@@ -4736,7 +4736,7 @@ namespace phantasiaclasses
 
                                 c.realm.shop_item[1].cost));
 
-                                    if (ioclass.Do_double_dialog(c, numitems, string_buffer) != 0)
+                                    if (ioclass.Do_double_dialog(c, ref numitems, string_buffer) != 0)
                                     {
 
                                         ioclass.Do_send_clear(c);
@@ -4804,7 +4804,7 @@ namespace phantasiaclasses
 
                            c.realm.shop_item[2].cost));
 
-                                    if (ioclass.Do_double_dialog(c, numitems, string_buffer) != 0)
+                                    if (ioclass.Do_double_dialog(c, ref numitems, string_buffer) != 0)
                                     {
 
                                         ioclass.Do_send_clear(c);
@@ -4854,7 +4854,7 @@ namespace phantasiaclasses
 
                         amuletcost));
 
-                                    if (ioclass.Do_double_dialog(c, numitems, string_buffer) != 0)
+                                    if (ioclass.Do_double_dialog(c, ref numitems, string_buffer) != 0)
                                     {
 
                                         ioclass.Do_send_clear(c);
@@ -4905,7 +4905,7 @@ namespace phantasiaclasses
                                         CFUNCTIONS.floor(c.player.gold /
                                             c.realm.shop_item[4].cost));
 
-                                    if (ioclass.Do_double_dialog(c, numitems, string_buffer) != 0)
+                                    if (ioclass.Do_double_dialog(c, ref numitems, string_buffer) != 0)
                                     {
 
                                         ioclass.Do_send_clear(c);
@@ -4961,7 +4961,7 @@ namespace phantasiaclasses
                     "Quicksilver is %.0f gp per +1.  How many + do you want (%.0f max)?\n",
                     c.realm.shop_item[5].cost, CFUNCTIONS.floor(c.player.gold / c.realm.shop_item[5].cost));
 
-                                    if (ioclass.Do_double_dialog(c, numitems, string_buffer) != 0)
+                                    if (ioclass.Do_double_dialog(c, ref numitems, string_buffer) != 0)
                                     {
 
                                         ioclass.Do_send_clear(c);
@@ -5068,7 +5068,7 @@ namespace phantasiaclasses
                         CFUNCTIONS.sprintf(ref string_buffer, "A gem is worth %.0f gp.  How many do you want to sell (%.0f max)?\n",
                             (double)phantdefs.N_GEMVALUE, c.player.gems);
 
-                        if (ioclass.Do_double_dialog(c, numitems, string_buffer) != 0)
+                        if (ioclass.Do_double_dialog(c, ref numitems, string_buffer) != 0)
                         {
 
                             ioclass.Do_send_clear(c);
@@ -5245,7 +5245,7 @@ namespace phantasiaclasses
             event_ptr.type = (short)phantdefs.MOVE_EVENT;
             event_ptr.arg3 = phantdefs.A_FORCED;
 
-            if (ioclass.Do_coords_dialog(c, event_ptr.arg1, event_ptr.arg2,
+            if (ioclass.Do_coords_dialog(c, ref event_ptr.arg1, ref event_ptr.arg2,
                 "Where do you wish to teleport to?\n") != 0)
             {
 
