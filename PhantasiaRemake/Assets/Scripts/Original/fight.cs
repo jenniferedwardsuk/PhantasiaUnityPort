@@ -699,7 +699,7 @@ namespace phantasiaclasses
                 CFUNCTIONS.sprintf(ref string_buffer2, " -  (Size: %.0f)\n",
                 c.battle.opponent.size);
 
-                CFUNCTIONS.strcat(string_buffer, string_buffer2);
+                CFUNCTIONS.strcat(ref string_buffer, string_buffer2);
                 ioclass.Do_send_line(c, string_buffer);
             }
 

@@ -506,7 +506,7 @@ namespace phantasiaclasses
                 }
 
                 /* reEmove trailing blanks */
-                miscclass.Do_truncstring(the_realm.monster[i].name);
+                miscclass.Do_truncstring(ref the_realm.monster[i].name);
 
                 /* read the stat line for each monster */
                 string[] extractedValues;
@@ -612,7 +612,7 @@ namespace phantasiaclasses
                 }
 
                 /* reEmove trailing blanks */
-                miscclass.Do_truncstring(the_realm.charstats[i].class_name);
+                miscclass.Do_truncstring(ref the_realm.charstats[i].class_name);
 
                 /* read the stat line for each charstats */
                 string[] extractedValues;
@@ -758,7 +758,7 @@ namespace phantasiaclasses
                 }
 
                 /* reEmove trailing blanks */
-                miscclass.Do_truncstring(the_realm.shop_item[i].item);
+                miscclass.Do_truncstring(ref the_realm.shop_item[i].item);
 
                 //CLibFile.FscanfObjectWrapper costWrapper = new CLibFile.FscanfObjectWrapper(the_realm.shop_item[i].cost);
                 /* read the stat line for each item */

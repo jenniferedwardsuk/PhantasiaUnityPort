@@ -842,6 +842,10 @@ namespace phantasiaclasses
             /* determine the string size */
             theSize = CFUNCTIONS.strlen(theMessage);
 
+            //added for unity debug
+            if (theSize == 0 && (theMessage == null || theMessage.Length == 0))
+                Debug.LogError("Warning: sending message of size 0");
+
             /* send the data */
             Do_send_out(c, theMessage, theSize);
 

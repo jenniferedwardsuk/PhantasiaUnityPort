@@ -197,7 +197,7 @@ namespace phantasiaclasses
             theTag.type = (short)phantdefs.T_BAN;
             theTag.validUntil = timeNow + tagTimes[hackCount];
             theTag.affectNetwork = false;
-            Do_get_hack_string(theReason, theTag.description);
+            Do_get_hack_string(theReason, ref theTag.description);
 
             /* send it */
             tagsclass.Do_tag_self(c, theTag);
@@ -504,7 +504,7 @@ namespace phantasiaclasses
 
                         /* drop out expired connections */
                         Do_drop_expired(connection_ptr.connections,
-                            connection_ptr.connectionCount, timeNow - 900);
+                            ref connection_ptr.connectionCount, timeNow - 900);
 
                         /* see if this connection will be too many */
                         if (connection_ptr.connectionCount > 19)
@@ -531,7 +531,7 @@ namespace phantasiaclasses
 
                         /* drop out expired missed passwords */
                         Do_drop_expired(connection_ptr.badPasswords,
-                            connection_ptr.badPasswordCount, timeNow - 1800);
+                            ref connection_ptr.badPasswordCount, timeNow - 1800);
 
                         /* see if these additions will be too many */
                         if (connection_ptr.badPasswordCount + badPasswords > 9)
@@ -648,7 +648,7 @@ namespace phantasiaclasses
         /
         *************************************************************************/
 
-        void Do_drop_expired(int[] theArray, int elements, int dropBefore)
+        void Do_drop_expired(int[] theArray, ref int elements, int dropBefore)
         {
             int i, j;
 
@@ -711,7 +711,7 @@ namespace phantasiaclasses
         /
         *************************************************************************/
 
-        void Do_get_hack_string(int number, string theString)
+        void Do_get_hack_string(int number, ref string theString)
         {
             switch (number)
             {
@@ -859,7 +859,7 @@ namespace phantasiaclasses
             theTag.validUntil = timeNow + muteTimes[c.player.muteCount];
             theTag.affectNetwork = false;
             theTag.contagious = false;
-            Do_get_hack_string(theReason, theTag.description);
+            Do_get_hack_string(theReason, ref theTag.description);
 
             /* send it */
             tagsclass.Do_tag_self(c, theTag);

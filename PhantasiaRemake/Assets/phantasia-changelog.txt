@@ -1,27 +1,60 @@
 
-Phantasia Remake changelog
+Phantasia Port changelog
+
 
 todo list:
 - reduce todos
 - finish unity-java interface
 - finish unity-c/linux interface
-- check all c methods for ref argument intention
-- java UI must update via main thread
 - check for object arguments called with subclass instances; won't update at source; replace with generic method + ref arg
+- file decompile and edit tool for debug purposes
 
 bugs:
-	- trove and grail x,y are maxed out ints	- fixed but needs testing
-	- \0 string interrupt is a potential problem
-	- .Length on strings may need to be replaced with CFUNCTIONS.strlen
-	- a socket issue remains? machineID is being set to 1004. may be intentional.
-- hexdigest is all null
-- Confirmation code for testacc3£ is 22222222££££££££   but this is never requested
-- workaround: ignore password validation
-- workaround: ignore account existence file check
-- starting chara stats always the same
-- testmu chara is not recognised as already existing (likely due to account workaround)
 
-one-off issues?:
+GENERAL
+- \0 string interrupt is a potential problem
+- .Length on strings may need to be replaced with CFUNCTIONS.strlen
+
+MINOR
+- char[] strings may need to be initialised to particular sizes per commented code
+- a socket issue remains? machineID is being set to 1004. may be intentional.
+- hexdigest is all nulls	- workaround: ignore password validation
+- scoreboard popup throws non-fatal packet errors after clicking next or prev
+- scoreboard always blank?
+
+MODERATE
+- chat input field throws index error after pressing button
+- player list only shows prefix, and does not clear out exited characters
+- monsters can attack many times or not at all?
+- long battles can max out main scroll area, it doesn't extend
+
+MAJOR
+
+VISUAL
+- main scrollview text component is too wide on the right side
+- layout issues remain on:
+	- popups (border layout expansion/minimums trouble, info>stats scrollview is too small and can't scroll)
+	- right (whole thing too wide)
+	- statuspne > PanelEnergy (and str, speed): GenRect is off edge, lines are too high		
+	- buttonpne (button height)
+	- chatpne (buttons overlap)
+  so: border layout to fill space when unused areas exist
+      some components need to take their min required size/height/width. add 'resize type' to border/gridbag?
+
+BUILD ONLY
+- exception popup would be good
+- create necessary files/folders in build folder (or appdata?) if they don't exist
+
+
+one-off issues:
+- none
+
+resolved:
+- non-experimento character doesn't start at 0,0 	- intentional per Do_roll_new_player
+- monsters are only encountered by Hunting 		- intentional per misc.Do_move
+- no penalty for moving; energy, hunger, ?	- seems intentional per misc.Do_move
+- grail x,y can be very large (186893,622523)	- intentional per init hides. trove 600 to 1400, grail 300k-1mill
+
 
 done:
 - set up project 
@@ -32,16 +65,81 @@ done:
 - converted 118_client files
 - interfaced 118_client files
 - converted bin files
+- interfaced src files
 
+
+16-may-2019
+- bugfix: ref intention on CFUNCTIONS.strcat and info.Do_true_false (fixes info stats bad packets)
+- bugfix: interim: popups: only put gridlayout on panels
+- modified: phantstruct tidied up
+- modified: did quick check for ref intentions throughout
+- modified: better interim popup packing
+- in progress: stretchable borderlayouts
+
+15-may-2019
+- bugfix: confirmation codes are randomised, and user is given their code on-screen
+- bugfix: interim: popups: don't add grid layout if already border layout
+- bugfix: interim: popups: add grid layout on grandchildren as well (fixes input fields offscreen)
+- bugfix: handle negatives correctly in CFUNCTIONS.strtod (fixes 'move to' refusing)
+- bugfix: ref intention on double/long dialog (fixes unable to buy or spell)
+- bugfix: display Head location info
+- added: user is told that an email address is unnecessary
+
+14-may-2019
+- bugfix: layouts auto-refresh at startup
+- bugfix: dialog inherits from canvas and parents its gen components
+- bugfix: closed dialogs are destroyed
+
+13-may-2019
+(early)
+- tidied up NotImplementedException calls
+- bugfix: don't read from socket in deferred init UI calls
+(regular)
+- added: dummy button image (to allow build)
+
+FIRST BUILD (nb: in build folder, had to create \Assets\Scripts\Original with \log\ and \data\)
+
+12-may-2019
+- bugfix: creation of opened files when appropriate
+- bugfix: creation of character backup file if needed
+- bugfix: stopped scoreboard from sending combo message
+- bugfix: don't show empty error dialog at start
+- bugfix: initialise scoreboard textarea properly
+- added: hide template canvases, show/hide main canvas when appropriate
+- added: simple HUD for 1-player LAN
+
+10-may-2019
+- bugfix: strcmp usage corrected throughout
+- bugfix: retain character info when Looking
+- bugfix: append to files rather than overwriting, when appropriate
+- added: sizing for scrollarea text component
+- added: string initialisation for examine_t
+- git cleanup
+
+can now have multiple accounts/characters (though there's a file data loss issue)
+
+09-may-2019
+- bugfix: chara password should start with \0, not be set to \0 only
+- bugfix: retain account info when Looking
+- bugfix: some strcmp reversal corrections
+- bugfix: moved fclose calls above rename calls to avoid share violation
+- bugfix: file move can now overwrite existing
+- added: ifdef debug fields
+- added: set account expected size to 550 again. just needed to clear the file beforehand
+- added: set player/character expected size to 1500.
+
+can now load account details, view characters, and load a previous character
 
 08-may-2019
 - bugfix: added interrupts to thread loop and play loop
 - bugfix: fscanf returns actual number of items found
 - bugfix: more Java UI method enqueueing 
 - added: implemented selection in JavaLists
-- added: set account expected size to 550
+- added: set account expected size to 550 - and then commented. causes read issue if larger than file
+- modified: RNG adjustment
+- moved to github repo
 
-can fake-login, create a character, and start playing
+can fake-login, create a character, and start playing. all buttons superficially functional
 
 07-may-2019
 - workaround: ignore password validation

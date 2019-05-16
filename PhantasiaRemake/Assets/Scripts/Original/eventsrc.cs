@@ -422,7 +422,7 @@ namespace phantasiaclasses
                 case phantdefs.KICK_EVENT:
 
                     CFUNCTIONS.strcpy(ref error_msg, (string)the_event.arg4);
-                    CFUNCTIONS.strcat(error_msg, " has kicked you out of the game.\n");
+                    CFUNCTIONS.strcat(ref error_msg, " has kicked you out of the game.\n");
 
                     /* send an error packet */
                     socketclass.Do_send_error(c, error_msg);

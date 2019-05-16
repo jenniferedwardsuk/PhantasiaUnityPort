@@ -1082,9 +1082,9 @@ namespace phantasiaclasses
                     if (c.characterLoaded)
                     {
                         CFUNCTIONS.strcpy(ref string_buffer, theTag.description);
-                        CFUNCTIONS.strcat(string_buffer, " ");
+                        CFUNCTIONS.strcat(ref string_buffer, " ");
 
-                        CFUNCTIONS.strcat(string_buffer, c.player.name);
+                        CFUNCTIONS.strcat(ref string_buffer, c.player.name);
 
                         if (c.characterAnnounced)
                         {
@@ -1109,8 +1109,8 @@ namespace phantasiaclasses
                     {
 
                         CFUNCTIONS.strcpy(ref string_buffer, c.player.name);
-                        CFUNCTIONS.strcat(string_buffer, " ");
-                        CFUNCTIONS.strcat(string_buffer, theTag.description);
+                        CFUNCTIONS.strcat(ref string_buffer, " ");
+                        CFUNCTIONS.strcat(ref string_buffer, theTag.description);
 
                         if (c.characterAnnounced)
                         {

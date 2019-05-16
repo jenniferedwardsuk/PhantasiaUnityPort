@@ -1106,7 +1106,7 @@ namespace phantasiaclasses
                 }
 
                 /* remove extra characters */
-                miscclass.Do_replace_repetition(message);
+                miscclass.Do_replace_repetition(ref message);
             }
 
             /* add the player name */
@@ -1115,22 +1115,22 @@ namespace phantasiaclasses
             /* mention it if this is a proclaimed message */
             if (c.broadcast)
             {
-                CFUNCTIONS.strcat(uncensored_msg, " proclaims");
+                CFUNCTIONS.strcat(ref uncensored_msg, " proclaims");
             }
 
             /* add the message */
-            CFUNCTIONS.strcat(uncensored_msg, ": ");
-            CFUNCTIONS.strcat(uncensored_msg, message);
+            CFUNCTIONS.strcat(ref uncensored_msg, ": ");
+            CFUNCTIONS.strcat(ref uncensored_msg, message);
 
             /* log the chat message */
             CFUNCTIONS.sprintf(ref censored_msg, "(%d) %s\n", c.channel, uncensored_msg);
             fileclass.Do_log(pathnames.CHAT_LOG, censored_msg);
 
-            CFUNCTIONS.strcat(uncensored_msg, "\n");
+            CFUNCTIONS.strcat(ref uncensored_msg, "\n");
             uncensoredLength = CFUNCTIONS.strlen(uncensored_msg) + 1;
 
             /* create a censored message */
-            if (miscclass.Do_censor(censored_msg, uncensored_msg) != 0)
+            if (miscclass.Do_censor(ref censored_msg, uncensored_msg) != 0)
             {
 
                 /* if it contains excessive swearing, don't print it */

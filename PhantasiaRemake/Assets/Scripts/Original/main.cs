@@ -109,7 +109,7 @@ namespace phantasiaclasses
         /       tradingpost(), adjuststats(), recallplayer(), displaystats(), checktampe
         red(),
         /       Mathf.Abs(), rollnewplayer(), time(), exit(), cfunctions.sqrt(), cfunctions.floor(), wmove(),
-        /       signal(), cfunctions.strcat(), purgeoldplayers(), getuid(), isatty(), wclear(),
+        /       signal(), CFUNCTIONS.strcat(ref ), purgeoldplayers(), getuid(), isatty(), wclear(),
         /       CFUNCTIONS.strcpy(ref ), system(), altercoordinates(), cleanup(), waddstr(), procmain()
         ,
         /       playinit(), leavegame(), localtime(), getanswer(), neatstuff(), initials
@@ -233,7 +233,7 @@ namespace phantasiaclasses
         /       tradingpost(), adjuststats(), recallplayer(), displaystats(), checktampe
         red(),
         /       Mathf.Abs(), rollnewplayer(), time(), exit(), cfunctions.sqrt(), cfunctions.floor(), wmove(),
-        /       signal(), cfunctions.strcat(), purgeoldplayers(), getuid(), isatty(), wclear(),
+        /       signal(), CFUNCTIONS.strcat(ref ), purgeoldplayers(), getuid(), isatty(), wclear(),
         /       CFUNCTIONS.strcpy(ref ), system(), altercoordinates(), cleanup(), waddstr(), procmain()
         ,
         /       playinit(), leavegame(), localtime(), getanswer(), neatstuff(), initials

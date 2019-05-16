@@ -43,6 +43,17 @@ public class UnityBorderLayoutManager : MonoBehaviour {
         //if (components != null)
         //Debug.Log("child component count for setlayout: " + sourceComponent.childComponents.Count);
 
+        string allLocations = "";
+        foreach (JavaComponent component in components)
+        {
+            allLocations += component.layoutLocation.ToLower();
+        }
+        bool hasCenter = allLocations.Contains("center");
+        bool hasNorth = allLocations.Contains("north");
+        bool hasSouth = allLocations.Contains("south");
+        bool hasEast = allLocations.Contains("east");
+        bool hasWest = allLocations.Contains("west");
+
         foreach (JavaComponent component in components)
         {
             RectTransform unityObj;
@@ -63,31 +74,59 @@ public class UnityBorderLayoutManager : MonoBehaviour {
             switch (component.layoutLocation.ToLower())
             {
                 case "center": //75% of layout
-                    unityObj.sizeDelta = new Vector2(rect.sizeDelta.x * 0.75f, rect.sizeDelta.y * 0.75f);
-                    unityObj.position = panelCorners[1];// + new Vector3(unityObj.sizeDelta.x / 2, -1 * unityObj.sizeDelta.y / 2, 0); //top left + size offset
+                    unityObj.sizeDelta = new Vector2( //stretch if any component missing
+                        rect.sizeDelta.x * 0.75f, //+ (!hasEast ? rect.sizeDelta.x * 0.125f : 0) + (!hasWest ? rect.sizeDelta.x * 0.125f : 0), //todo: wip 
+                        rect.sizeDelta.y * 0.75f //+ (!hasNorth ? rect.sizeDelta.x * 0.125f : 0) + (!hasSouth ? rect.sizeDelta.x * 0.125f : 0)
+                        );
+                    unityObj.position = panelCorners[1]; //top left
                     unityObj.position += new Vector3(rect.sizeDelta.x / 2, -1 * rect.sizeDelta.y / 2, 0); //move to center
+                    //fill any empty space
+                    //unityObj.position += !hasEast ? new Vector3(rect.sizeDelta.x * (0.125f / 2), 0, 0) : new Vector3(0, 0, 0); //todo: wip 
+                    //unityObj.position -= !hasWest ? new Vector3(rect.sizeDelta.x * (0.125f / 2), 0, 0) : new Vector3(0, 0, 0);
+                    //unityObj.position -= !hasNorth ? new Vector3(0, -1 * (rect.sizeDelta.y * 0.125f / 2), 0) : new Vector3(0, 0, 0);
+                    //unityObj.position += !hasSouth ? new Vector3(0, -1 * (rect.sizeDelta.y * 0.125f / 2), 0) : new Vector3(0, 0, 0);
                     break;
+
                 case "north": //12.5% of layout
-                    unityObj.sizeDelta = new Vector2(rect.sizeDelta.x, rect.sizeDelta.y * 0.125f);
-                    unityObj.position = panelCorners[1];// + new Vector3(unityObj.sizeDelta.x / 2, -1 * unityObj.sizeDelta.y / 2, 0); //top left + size offset
+                    unityObj.sizeDelta = new Vector2(
+                        rect.sizeDelta.x,
+                        rect.sizeDelta.y * 0.125f //+ ((!hasCenter && !hasEast && !hasWest) ? (!hasSouth ? rect.sizeDelta.y * 0.75f : rect.sizeDelta.y * 0.75f / 2) : 0) //stretch if no middle components
+                        );
+                    unityObj.position = panelCorners[1]; //top left
                     unityObj.position += new Vector3(rect.sizeDelta.x / 2, -1 * (rect.sizeDelta.y * 0.125f / 2), 0); //move to top center
 
+                    //unityObj.position = (!hasCenter && !hasEast && !hasWest) ?
+                    //    (!hasSouth ? new Vector3(unityObj.position.x, -1 * rect.sizeDelta.y / 2, unityObj.position.z) //move to center
+                    //                : new Vector3(unityObj.position.x, (-1 * rect.sizeDelta.y / 2) / 2, unityObj.position.z)) //move to middle upper half
+                    //    : unityObj.position;
                     break;
+
                 case "south":
-                    unityObj.sizeDelta = new Vector2(rect.sizeDelta.x, rect.sizeDelta.y * 0.125f);
-                    unityObj.position = panelCorners[1];// + new Vector3(unityObj.sizeDelta.x / 2, -1 * unityObj.sizeDelta.y / 2, 0); //top left + size offset
+                    unityObj.sizeDelta = new Vector2(
+                        rect.sizeDelta.x, 
+                        rect.sizeDelta.y * 0.125f //+ ((!hasCenter && !hasEast && !hasWest) ? (!hasSouth ? rect.sizeDelta.y * 0.75f : rect.sizeDelta.y * 0.75f / 2) : 0) //stretch if no middle components
+                        );
+                    unityObj.position = panelCorners[1]; //top left
                     unityObj.position += new Vector3(rect.sizeDelta.x / 2, -1 * (rect.sizeDelta.y * (1 - 0.125f / 2)), 0); //move to bottom center
+                    
+                    //unityObj.position = (!hasCenter && !hasEast && !hasWest) ?
+                    //    (!hasNorth ? new Vector3(unityObj.position.x, -1 * rect.sizeDelta.y / 2, unityObj.position.z) //move to center
+                    //                : new Vector3(unityObj.position.x, (-1 * rect.sizeDelta.y / 2) * 3 / 2, unityObj.position.z)) //move to middle lower half
+                    //    : unityObj.position;
                     break;
+
                 case "east":
                     unityObj.sizeDelta = new Vector2(rect.sizeDelta.x * 0.125f, rect.sizeDelta.y * 0.75f);
-                    unityObj.position = panelCorners[1];// + new Vector3(unityObj.sizeDelta.x / 2, -1 * unityObj.sizeDelta.y / 2, 0); //top left + size offset
+                    unityObj.position = panelCorners[1]; //top left
                     unityObj.position += new Vector3(rect.sizeDelta.x * (1 - 0.125f / 2), -1 * (rect.sizeDelta.y) / 2, 0); //move to left center
                     break;
+
                 case "west":
                     unityObj.sizeDelta = new Vector2(rect.sizeDelta.x * 0.125f, rect.sizeDelta.y * 0.75f);
-                    unityObj.position = panelCorners[1];// + new Vector3(unityObj.sizeDelta.x / 2, -1 * unityObj.sizeDelta.y / 2, 0); //top left + size offset
+                    unityObj.position = panelCorners[1]; //top left
                     unityObj.position += new Vector3(rect.sizeDelta.x * (0.125f / 2), -1 * (rect.sizeDelta.y) / 2, 0); //move to right center
                     break;
+
                 default:
                     break;
             }

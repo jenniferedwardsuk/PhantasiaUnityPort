@@ -119,14 +119,14 @@ namespace phantasiaclasses
         public player_t(player_t orig)
         {
             /* player information */
-             name = orig.name;  //[phantdefs.SZ_NAME];         /* player name */
-             lcname = orig.lcname;  //[phantdefs.SZ_NAME];   /* player name in lowercase */
-             password = orig.password;//;// = new char[16];     /* password hash */
+             name = orig.name;       /* player name */
+             lcname = orig.lcname;   /* player name in lowercase */
+             password = orig.password;     /* password hash */
 
             /* player location */
              x = orig.x;           /* x coord */
              y = orig.y;           /* y coord */
-             area = orig.area;  //[phantdefs.SZ_AREA];     /* name of the area player is in */
+             area = orig.area;    /* name of the area player is in */
              circle = orig.circle;          /* current circle player is in */
              beyond = orig.beyond;            /* is the character past no return */
              location = orig.location;     /* codes for special all locations */
@@ -180,14 +180,14 @@ namespace phantasiaclasses
              ring_duration = orig.ring_duration;      /* duration of ring */
 
             /* creation information */
-             parent_account = orig.parent_account;  //[phantdefs.SZ_NAME];   /* created by this account */
-             parent_network = orig.parent_network;  //[phantdefs.SZ_FROM];   /* created from this address */
+             parent_account = orig.parent_account;   /* created by this account */
+             parent_network = orig.parent_network;;   /* created from this address */
              date_created = orig.date_created;        /* created at this time */
              faithful = orig.faithful;      /* may other accounts load? */
 
             /* current or previous user information */
-             last_IP = orig.last_IP;  //[phantdefs.SZ_FROM];  /* last IP or DNS address */
-             last_account = orig.last_account;  //[phantdefs.SZ_NAME]; /* last account accessed */
+             last_IP = orig.last_IP;   /* last IP or DNS address */
+             last_account = orig.last_account; /* last account accessed */
              last_load = orig.last_load;       /* time last accessed */
              last_reset = orig.last_reset;      /* time password was last reset */
              load_count = orig.load_count;     /* times character has been loaded */
@@ -267,7 +267,7 @@ namespace phantasiaclasses
         internal bool ring_in_use;       /* ring flag */
 
         /* opponent information */
-        internal opponent_t opponent;//*opponent;	/* pointer to opponent info */
+        internal opponent_t opponent;	/* pointer to opponent info */
 
         /* battle information */
         internal double melee_damage;        /* damage done in melee */
@@ -281,14 +281,14 @@ namespace phantasiaclasses
     {
         internal CLibPThread.pthread_mutex_t theLock;
 
-        internal opponent_t[] opponent;// = new opponent_t[2];	/* structures to attack */
-        internal bool[] opponentFlag;// = new bool[2];
+        internal opponent_t[] opponent;	/* structures to attack */
+        internal bool[] opponentFlag;
         internal short message;
         internal double arg1;
-        internal player_t player_ptr;//*player_ptr;
+        internal player_t player_ptr;
 
         /* other battles */
-        internal it_combat_t next_opponent;//*next_opponent;	/* pointer to next player to fight */
+        internal it_combat_t next_opponent;	/* pointer to next player to fight */
 
         internal it_combat_t() //initialise arrays ready for data loads
         {
@@ -308,9 +308,9 @@ namespace phantasiaclasses
         internal int socket;         /* the client-player socket */
         internal bool socket_up;     /* flag if socket is active */
         internal LinuxLibSocket.sockaddr_in address;		/* player address */   //from #include <netinet/in.h>
-        internal string out_buffer = new string(new char[phantdefs.SZ_OUT_BUFFER]);  //[phantdefs.SZ_OUT_BUFFER]; /* storage for outgoing messages */
+        internal string out_buffer = new string(new char[phantdefs.SZ_OUT_BUFFER]); /* storage for outgoing messages */
         internal uint out_buffer_size;     /* number of bytes in out_buffer */
-        internal string in_buffer = new string(new char[phantdefs.SZ_IN_BUFFER]);  //[phantdefs.SZ_IN_BUFFER];   /* storage for outgoing messages */
+        internal string in_buffer = new string(new char[phantdefs.SZ_IN_BUFFER]);   /* storage for outgoing messages */
         internal uint in_buffer_size;      /* number of bytes in in_buffer */
 
         /* connection information */
@@ -353,16 +353,16 @@ namespace phantasiaclasses
         internal bool characterAnnounced;    /* has the character been accounced? */
 
         /* hack information */
-        internal int[] chatTimes; // = new int[10];
-        internal int[] chatLength;// = new int[10];
+        internal int[] chatTimes;
+        internal int[] chatLength;
         internal short swearCount;
 
         /* directory to important information */
         internal player_t player;		/* the main player structure */
         internal battle_t battle;		/* structure used for battles */
-        internal event_t events;//*events;		/* pointer to character events */
-        internal realm_t realm;//*realm;		/* pointer to server realm variables */
-        internal game_t game;//*game;		/* pointer to game's game_t struct */
+        internal event_t events;		/* pointer to character events */
+        internal realm_t realm;		/* pointer to server realm variables */
+        internal game_t game;		/* pointer to game's game_t struct */
 
         internal client_t()
         { 
@@ -420,15 +420,15 @@ namespace phantasiaclasses
         internal bool chatFilter;
         internal bool sendEvents;        /* include this player on broadcasts? */
 
-        internal player_desc_t description;//*description;	/* pointer to the player description */
-        internal it_combat_t it_combat;//*it_combat;	/* pointer to character's it_combat */
+        internal player_desc_t description;	/* pointer to the player description */
+        internal it_combat_t it_combat;	/* pointer to character's it_combat */
 
         /* event traffic */
-        internal event_t events_in;//*events_in;		/* queue for events to the thread */
+        internal event_t events_in;		/* queue for events to the thread */
         internal CLibPThread.pthread_mutex_t events_in_lock; /* lock on events in */
 
         /* server info */
-        internal game_t next_game;//*next_game;		/* pointer to the next game */
+        internal game_t next_game;		/* pointer to the next game */
     };
 
     internal class event_t      /* structure to describe actions */
@@ -440,9 +440,9 @@ namespace phantasiaclasses
         internal object arg4; //void*         /* and more arguments */
 
         /* addressing information */
-        internal game_t from;//*from;		/* who created the event */
-        internal game_t to;//*to;			/* where the event is going */
-        internal event_t next_event;//*next_event;		/* pointer to the next event */
+        internal game_t from;		/* who created the event */
+        internal game_t to;			/* where the event is going */
+        internal event_t next_event;		/* pointer to the next event */
     };
 
     [Serializable]
@@ -524,7 +524,7 @@ namespace phantasiaclasses
         internal double y;			/* y coordinate */
         internal short type;			/* what the object is */
         internal player_t arg1;	//void*		/* item pointer argument */
-        internal realm_object_t next_object;//*next_object;	/* pointer to the next object */
+        internal realm_object_t next_object;	/* pointer to the next object */
     };
 
     internal class realm_t		/* variables for the entire realm */
@@ -533,10 +533,10 @@ namespace phantasiaclasses
         internal CLibPThread.pid_t serverPid;            /* the process ID of the server */
 
         /* the linked list of games */
-        internal game_t games;//*games;		/* begin linked list of games */
-        internal game_t knight;//*knight;		/* pointer to current knight */
-        internal game_t king;//*king;		/* pointer to current king */
-        internal game_t valar;//*valar;		/* pointer to current valar */
+        internal game_t games;		/* begin linked list of games */
+        internal game_t knight;		/* pointer to current knight */
+        internal game_t king;		/* pointer to current king */
+        internal game_t valar;		/* pointer to current valar */
         internal bool king_flag;			/* true when there is a king */
         internal string king_name;//;//[phantdefs.SZ_NAME];		/* name of old king */
         internal string valar_name;//; //[phantdefs.SZ_NAME];       /* name of old valar */
@@ -562,7 +562,7 @@ namespace phantasiaclasses
 
         /* changing game variables */
         internal monster_t[] monster; /* list of all monsters */
-        internal realm_object_t objects;//*objects;	/* list of objects in realm */
+        internal realm_object_t objects;	/* list of objects in realm */
         internal double kings_gold;		/* amount of gold in kings coffers */
         internal double steward_gold;		/* amount of gold in stewards coffers */
         internal int nextTagNumber;          /* numbers for session tags */
@@ -572,11 +572,11 @@ namespace phantasiaclasses
         internal shop_item_t[] shop_item; /* shop items */
 
         /* linked lists */
-        internal connection_t connections;//*connections;	/* counts of logins and passwords */
+        internal connection_t connections;	/* counts of logins and passwords */
 
         /* names and e-mail addresses in limbo */
-        internal linked_list_t name_limbo;//*name_limbo;
-        internal linked_list_t email_limbo;//*email_limbo;
+        internal linked_list_t name_limbo;
+        internal linked_list_t email_limbo;
 
         internal realm_t() //initialise arrays ready for data loads
         {
@@ -607,7 +607,7 @@ namespace phantasiaclasses
         /* main information */
         internal string name;  //[phantdefs.SZ_NAME];		/* account name */
         internal string lcname; //[phantdefs.SZ_NAME];	/* name in lowercase */
-        internal char[] password; /* password hash */
+        internal char[] password;   /* password hash */
         internal int last_reset;		/* time of last password reset */
         internal string email; //[phantdefs.SZ_FROM];	/* creator e-mail */
         internal string lcemail; //[phantdefs.SZ_FROM]; /* e-mail in lowercase */
@@ -874,7 +874,7 @@ namespace phantasiaclasses
         internal int[] badPasswords;
         internal int badPasswordCount;
         internal int eraseAt;
-        internal connection_t next;//*next;
+        internal connection_t next;
 
         internal connection_t() //initialise arrays ready for data loads
         {
@@ -886,7 +886,7 @@ namespace phantasiaclasses
     internal class tagged_list_t 	/* to create a list of tags */
     {
         internal tagged_t theTagged;
-        internal tagged_list_t next;//*next;
+        internal tagged_list_t next;
     };
 
     [Serializable]
@@ -901,7 +901,7 @@ namespace phantasiaclasses
     internal class history_list_t 	/* to create a list of history */
     {
         internal history_t theHistory;
-        internal history_list_t next; //*next
+        internal history_list_t next;
     };
 
     internal class detail_t		/* information on player's connection */
@@ -921,7 +921,7 @@ namespace phantasiaclasses
         internal string IP;  //[phantdefs.SZ_FROM];
         internal string network;  //[phantdefs.SZ_FROM];
         internal int machineID;
-        internal string dateConnected;//;// = new char[30];
+        internal string dateConnected;// = new char[30];
         internal int networkMutes;
 
     };
@@ -929,8 +929,8 @@ namespace phantasiaclasses
     internal class tagged_sort_t  : object /* strcture to help tag inheritance */
     {
         internal int tag;
-        internal tagged_t[] tagged; //*tagged[4];
-        internal tagged_sort_t next;//*next;
+        internal tagged_t[] tagged;
+        internal tagged_sort_t next;
 
         internal tagged_sort_t() //initialise arrays ready for data loads
         {

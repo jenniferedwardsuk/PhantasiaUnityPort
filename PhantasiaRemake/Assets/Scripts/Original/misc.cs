@@ -453,7 +453,7 @@ namespace phantasiaclasses
         /
         *************************************************************************/
 
-        internal void Do_truncstring(string cstring)
+        internal void Do_truncstring(ref string cstring)
         {
             try
             {
@@ -2287,9 +2287,9 @@ namespace phantasiaclasses
 
                         CFUNCTIONS.ctime_r(scoreboard.time, ref string_buffer);
 
-                        Do_truncstring(string_buffer);
+                        Do_truncstring(ref string_buffer);
 
-                        CFUNCTIONS.strcat(string_buffer, ".\n");
+                        CFUNCTIONS.strcat(ref string_buffer, ".\n");
 
                         socketclass.Do_send_string(c, string_buffer);
                     }
@@ -2312,9 +2312,9 @@ namespace phantasiaclasses
 
                         CFUNCTIONS.ctime_r(scoreboard.time, ref string_buffer);
 
-                        Do_truncstring(string_buffer);
+                        Do_truncstring(ref string_buffer);
 
-                        CFUNCTIONS.strcat(string_buffer, ".\n");
+                        CFUNCTIONS.strcat(ref string_buffer, ".\n");
 
                         socketclass.Do_send_string(c, string_buffer);
                     }
@@ -2523,7 +2523,7 @@ namespace phantasiaclasses
         /
         *************************************************************************/
 
-        int Do_replace_profanity(string theString)
+        int Do_replace_profanity(ref string theString)
         {
             string[] swears = { "shit", "fock", "fuk", "fuc", "cunt", "nigger", "crap", "damn", "dammit", "@ss", "a$$", "" };
             string replacements = "smurf ";
@@ -2761,7 +2761,7 @@ namespace phantasiaclasses
         *************************************************************************/
 
 
-        internal int Do_censor(string destString, string sourceString)
+        internal int Do_censor(ref string destString, string sourceString)
         {
             string[] swears = { "shit", "fuck", "cunt", "nigger", "cock", "dick", "penis", "pussy", "clit", "vagina", "dildo", "masturbate", "masturbation", "anal", "chink", "kike", "tits", "" };
 
@@ -3573,7 +3573,7 @@ namespace phantasiaclasses
         /
         *************************************************************************/
 
-        internal void Do_replace_repetition(string theString)
+        internal void Do_replace_repetition(ref string theString)
         {
             char previousChar, thisChar;
             char[] writePtr, readPtr;
@@ -3584,7 +3584,7 @@ namespace phantasiaclasses
                 return;
             }
 
-            writePtr = readPtr = theString.ToCharArray();
+            writePtr = readPtr = theString.ToCharArray(); //todo: set writePtr to theString?
 
             int currchar = 0;
             while (readPtr[currchar] == ' ')
@@ -3651,7 +3651,7 @@ namespace phantasiaclasses
         /
         ****************************************************************************/
 
-        internal void Do_direction(client_t c, double x, double y, string direction)
+        internal void Do_direction(client_t c, double x, double y, ref string direction)
         {
             double radians;
 
@@ -3670,7 +3670,7 @@ namespace phantasiaclasses
                 else
                 {
 
-                    CFUNCTIONS.strcat(direction, "down");
+                    CFUNCTIONS.strcat(ref direction, "down");
                     return;
                 }
             }
@@ -3691,47 +3691,47 @@ namespace phantasiaclasses
             if (radians > 4.3197)
             {
 
-                CFUNCTIONS.strcat(direction, "south");
+                CFUNCTIONS.strcat(ref direction, "south");
             }
             else if (radians > 3.5343)
             {
 
-                CFUNCTIONS.strcat(direction, "south-west");
+                CFUNCTIONS.strcat(ref direction, "south-west");
             }
             else if (radians > 2.7489)
             {
 
-                CFUNCTIONS.strcat(direction, "west");
+                CFUNCTIONS.strcat(ref direction, "west");
             }
             else if (radians > 1.9635)
             {
 
-                CFUNCTIONS.strcat(direction, "north-west");
+                CFUNCTIONS.strcat(ref direction, "north-west");
             }
             else if (radians > 1.1781)
             {
 
-                CFUNCTIONS.strcat(direction, "north");
+                CFUNCTIONS.strcat(ref direction, "north");
             }
             else if (radians > .3927)
             {
 
-                CFUNCTIONS.strcat(direction, "north-east");
+                CFUNCTIONS.strcat(ref direction, "north-east");
             }
             else if (radians > -.3927)
             {
 
-                CFUNCTIONS.strcat(direction, "east");
+                CFUNCTIONS.strcat(ref direction, "east");
             }
             else if (radians > -1.1781)
             {
 
-                CFUNCTIONS.strcat(direction, "south-east");
+                CFUNCTIONS.strcat(ref direction, "south-east");
             }
             else
             {
 
-                CFUNCTIONS.strcat(direction, "south");
+                CFUNCTIONS.strcat(ref direction, "south");
             }
 
             return;

@@ -262,7 +262,7 @@ namespace phantasiaclasses
             ioclass.Do_send_line(c, "Waiting for the other player(s)...\n");
 
             Do_it_combat_turns(c, theCombat, theCombat.opponent[0],
-                theCombat.opponentFlag[0], theCombat.opponentFlag[1]);
+                ref theCombat.opponentFlag[0], ref theCombat.opponentFlag[1]);
 
             return;
         }
@@ -379,7 +379,7 @@ namespace phantasiaclasses
             CLibPThread.sleep(2);
 
             Do_it_combat_turns(c, theCombat, theCombat.opponent[1],
-                theCombat.opponentFlag[1], theCombat.opponentFlag[0]);
+                ref theCombat.opponentFlag[1], ref theCombat.opponentFlag[0]);
 
             return;
         }
@@ -404,7 +404,7 @@ namespace phantasiaclasses
         /       tradingpost(), adjuststats(), recallplayer(), displaystats(), checktampe
         red(),
         /       Mathf.Abs(), rollnewplayer(), time(), exit(), cfunctions.sqrt(), cfunctions.floor(), wmove(),
-        /       signal(), cfunctions.strcat(), purgeoldplayers(), getuid(), isatty(), wclear(),
+        /       signal(), CFUNCTIONS.strcat(ref ), purgeoldplayers(), getuid(), isatty(), wclear(),
         /       CFUNCTIONS.strcpy(ref ), system(), altercoordinates(), cleanup(), waddstr(), procmain()
         ,
         /       playinit(), leavegame(), localtime(), getanswer(), neatstuff(), initials
@@ -416,7 +416,7 @@ namespace phantasiaclasses
         /       player input.
         /
         ****************************************************************************/
-        void Do_it_combat_turns(client_t c, it_combat_t theCombat, opponent_t myStats, bool myFlag, bool hisFlag)
+        void Do_it_combat_turns(client_t c, it_combat_t theCombat, opponent_t myStats, ref bool myFlag, ref bool hisFlag)
         {
             short theMessage;
             double theArg = -1;

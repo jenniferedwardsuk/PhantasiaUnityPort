@@ -348,7 +348,7 @@ namespace phantasiaclasses
 
             time_now = CFUNCTIONS.GetUnixEpoch(DateTime.Now);
             CFUNCTIONS.ctime_r(time_now, ref string_buffer);
-            miscclass.Do_truncstring(string_buffer);
+            miscclass.Do_truncstring(ref string_buffer);
 
             /* open the error log file */
             int errno = 0;
@@ -467,7 +467,7 @@ namespace phantasiaclasses
             while (CLibFile.fgets(ref string_buffer, phantdefs.SZ_FROM, theFile) != null)
             {
 
-                miscclass.Do_truncstring(string_buffer);
+                miscclass.Do_truncstring(ref string_buffer);
 
                 if (!CFUNCTIONS.strcmp(string_buffer, theNetwork))
                 {

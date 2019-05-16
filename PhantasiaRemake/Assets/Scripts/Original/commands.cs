@@ -3024,7 +3024,7 @@ namespace phantasiaclasses
                     /* determine the direction to the corpse */
                     error_msg = "\0";
 
-                    miscclass.Do_direction(c, theObject.x, theObject.y, error_msg);
+                    miscclass.Do_direction(c, theObject.x, theObject.y, ref error_msg);
 
                     miscclass.Do_unlock_mutex(c.realm.realm_lock);
 

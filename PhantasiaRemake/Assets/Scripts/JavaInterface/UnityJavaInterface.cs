@@ -401,25 +401,39 @@ public class UnityJavaInterface
 
         GameObject panel = popupComponents.panelComponent.gameObject;
         RectTransform parent = panel.GetComponent<RectTransform>();
-        if (!panel.GetComponent<GridLayoutGroup>() && !panel.GetComponent<UnityBorderLayoutManager>())
-            panel.AddComponent<GridLayoutGroup>(); //this is an interim solution
+        if (!panel.GetComponent<GridLayoutGroup>() && !panel.GetComponent<UnityBorderLayoutManager>() && panel.name.Contains("Panel"))
+        {
+            GridLayoutGroup grid = panel.AddComponent<GridLayoutGroup>(); //this is an interim solution
+            grid.cellSize = new Vector2(
+                panel.GetComponent<RectTransform>().sizeDelta.x / Mathf.Max(panel.transform.childCount, 1),
+                panel.GetComponent<RectTransform>().sizeDelta.y / Mathf.Max(panel.transform.childCount, 1)
+                );
+        }
+
         int componentsInPanel = parent.childCount;
         for (int i = 0; i < parent.childCount; i++)
         {
             GameObject child = parent.GetChild(i).gameObject;
-            if (!child.GetComponent<GridLayoutGroup>() && !child.GetComponent<UnityBorderLayoutManager>())
+            if (!child.GetComponent<GridLayoutGroup>() && !child.GetComponent<UnityBorderLayoutManager>() && child.name.Contains("Panel"))
             {
                 GridLayoutGroup grid = child.AddComponent<GridLayoutGroup>();
-                grid.cellSize = new Vector2(100, 50);
+                grid.cellSize = new Vector2(
+                    child.GetComponent<RectTransform>().sizeDelta.x / Mathf.Max(child.transform.childCount, 1),
+                    child.GetComponent<RectTransform>().sizeDelta.y / Mathf.Max(child.transform.childCount, 1)
+                    );
             }
 
             for (int j = 0; j < child.transform.childCount; j++)
             {
                 GameObject grandchild = child.transform.GetChild(j).gameObject;
-                if (!grandchild.GetComponent<GridLayoutGroup>() && !grandchild.GetComponent<UnityBorderLayoutManager>())
+                if (!grandchild.GetComponent<GridLayoutGroup>() && !grandchild.GetComponent<UnityBorderLayoutManager>() && grandchild.name.Contains("Panel"))
                 {
                     GridLayoutGroup grid = grandchild.AddComponent<GridLayoutGroup>();
-                    grid.cellSize = new Vector2(100, 50);
+                    //grid.cellSize = new Vector2(100, 50);
+                    grid.cellSize = new Vector2(
+                        grandchild.GetComponent<RectTransform>().sizeDelta.x / Mathf.Max(grandchild.transform.childCount, 1),
+                        grandchild.GetComponent<RectTransform>().sizeDelta.y / Mathf.Max(grandchild.transform.childCount, 1)
+                        );
                 }
             }
 

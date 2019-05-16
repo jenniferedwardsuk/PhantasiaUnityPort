@@ -123,7 +123,7 @@ namespace phantasiaclasses
 
             /* to titles and specific information */
             Do_make_character_title(c, c.game, ref examine_ptr.title);
-            CFUNCTIONS.strcat(examine_ptr.title, "\n");
+            CFUNCTIONS.strcat(ref examine_ptr.title, "\n");
 
             /* copy over the coords or description */
             if (Do_show_character_coords(requestor, c.game))
@@ -138,7 +138,7 @@ namespace phantasiaclasses
 
                 CFUNCTIONS.strcpy(ref examine_ptr.location, c.player.area);
 
-                CFUNCTIONS.strcat(examine_ptr.location, "\n");
+                CFUNCTIONS.strcat(ref examine_ptr.location, "\n");
             }
             miscclass.Do_unlock_mutex(c.realm.realm_lock);
 
@@ -151,7 +151,7 @@ namespace phantasiaclasses
             {
                 CFUNCTIONS.strcpy(ref examine_ptr.network, c.network);
 
-                CFUNCTIONS.strcat(examine_ptr.network, "\n");
+                CFUNCTIONS.strcat(ref examine_ptr.network, "\n");
             }
 
             /* determine when the next level will occur */
@@ -170,7 +170,7 @@ namespace phantasiaclasses
                 CFUNCTIONS.strcpy(ref examine_ptr.gender, "Female\n");
             }
 
-            Do_format_time(examine_ptr.time_played, c.player.time_played +
+            Do_format_time(ref examine_ptr.time_played, c.player.time_played +
                 CFUNCTIONS.GetUnixEpoch(DateTime.Now) - c.player.last_load); //todo: replace with time()?
 
             if (c.wizard > 2)
@@ -180,20 +180,20 @@ namespace phantasiaclasses
             else if (!CFUNCTIONS.strcmp(c.account, "eyhung"))
             {
                 CFUNCTIONS.strcpy(ref examine_ptr.account, c.player.name);
-                CFUNCTIONS.strcat(examine_ptr.account, "\n");
+                CFUNCTIONS.strcat(ref examine_ptr.account, "\n");
             }
             else
             {
                 CFUNCTIONS.strcpy(ref examine_ptr.account, c.account);
-                CFUNCTIONS.strcat(examine_ptr.account, "\n");
+                CFUNCTIONS.strcat(ref examine_ptr.account, "\n");
             }
 
-            Do_true_false(examine_ptr.cloaked, c.player.cloaked);
-            Do_true_false(examine_ptr.blind, c.player.blind);
-            Do_true_false(examine_ptr.virgin, c.player.virgin);
-            Do_true_false(examine_ptr.palantir, c.player.palantir);
-            Do_true_false(examine_ptr.blessing, c.player.blessing);
-            Do_true_false(examine_ptr.ring, (c.player.ring_type != 0 ? true : false));
+            Do_true_false(ref examine_ptr.cloaked, c.player.cloaked);
+            Do_true_false(ref examine_ptr.blind, c.player.blind);
+            Do_true_false(ref examine_ptr.virgin, c.player.virgin);
+            Do_true_false(ref examine_ptr.palantir, c.player.palantir);
+            Do_true_false(ref examine_ptr.blessing, c.player.blessing);
+            Do_true_false(ref examine_ptr.ring, (c.player.ring_type != 0 ? true : false));
 
             CFUNCTIONS.ctime_r(c.player.last_load, ref examine_ptr.date_loaded);
             CFUNCTIONS.ctime_r(c.player.date_created, ref examine_ptr.date_created);
@@ -472,7 +472,7 @@ namespace phantasiaclasses
         /
         *************************************************************************/
 
-        void Do_format_time(string theString, int theTime)
+        void Do_format_time(ref string theString, int theTime)
         {
             int minutes, hours;
 
@@ -514,7 +514,7 @@ namespace phantasiaclasses
         /
         *************************************************************************/
 
-        void Do_true_false(string theString, bool theBool)
+        void Do_true_false(ref string theString, bool theBool)
         {
             if (theBool)
             {
@@ -644,30 +644,30 @@ namespace phantasiaclasses
 
             /* character information */
             CFUNCTIONS.strcpy(ref detail_ptr.modifiedName, c.modifiedName);
-            CFUNCTIONS.strcat(detail_ptr.modifiedName, "\n");
+            CFUNCTIONS.strcat(ref detail_ptr.modifiedName, "\n");
             CFUNCTIONS.strcpy(ref detail_ptr.name, c.player.name);
-            CFUNCTIONS.strcat(detail_ptr.name, "\n");
-            Do_true_false(detail_ptr.faithful, c.player.faithful);
+            CFUNCTIONS.strcat(ref detail_ptr.name, "\n");
+            Do_true_false(ref detail_ptr.faithful, c.player.faithful);
             CFUNCTIONS.strcpy(ref detail_ptr.parentAccount, c.player.parent_account);
-            CFUNCTIONS.strcat(detail_ptr.parentAccount, "\n");
+            CFUNCTIONS.strcat(ref detail_ptr.parentAccount, "\n");
             CFUNCTIONS.strcpy(ref detail_ptr.charParentNetwork, c.player.parent_network);
-            CFUNCTIONS.strcat(detail_ptr.charParentNetwork, "\n");
+            CFUNCTIONS.strcat(ref detail_ptr.charParentNetwork, "\n");
             accountclass.Do_look_account(c, (c.account), ref theAccount);
             detail_ptr.playerMutes = theAccount.muteCount;
 
             /* account information */
             CFUNCTIONS.strcpy(ref detail_ptr.account, c.account);
-            CFUNCTIONS.strcat(detail_ptr.account, "\n");
+            CFUNCTIONS.strcat(ref detail_ptr.account, "\n");
             CFUNCTIONS.strcpy(ref detail_ptr.email, c.email);
-            CFUNCTIONS.strcat(detail_ptr.email, "\n");
+            CFUNCTIONS.strcat(ref detail_ptr.email, "\n");
             CFUNCTIONS.strcpy(ref detail_ptr.accParentNetwork, c.parentNetwork);
-            CFUNCTIONS.strcat(detail_ptr.accParentNetwork, "\n");
+            CFUNCTIONS.strcat(ref detail_ptr.accParentNetwork, "\n");
 
             /* connection information */
             CFUNCTIONS.strcpy(ref detail_ptr.IP, c.IP);
-            CFUNCTIONS.strcat(detail_ptr.IP, "\n");
+            CFUNCTIONS.strcat(ref detail_ptr.IP, "\n");
             CFUNCTIONS.strcpy(ref detail_ptr.network, c.network);
-            CFUNCTIONS.strcat(detail_ptr.network, "\n");
+            CFUNCTIONS.strcat(ref detail_ptr.network, "\n");
             detail_ptr.machineID = (int)c.machineID;
             CFUNCTIONS.ctime_r(c.date_connected, ref detail_ptr.dateConnected);
 

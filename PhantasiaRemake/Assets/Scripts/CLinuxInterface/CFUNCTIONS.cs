@@ -36,11 +36,6 @@ public class CFUNCTIONS
         return Convert.ToInt32(unixTime.TotalSeconds);
     }
 
-    internal static void UnityLog(string v)
-    {
-        Debug.Log(v);
-    }
-
     internal static bool isalnum(string strToCheck)
     {
         Regex objAlphaNumericPattern = new Regex("[^a-zA-Z0-9]"); //finds a letter that does NOT match a-zA-Z0-9
@@ -438,9 +433,9 @@ if Return value = 0 then it indicates str1 is equal to str2.*/
         return Mathf.Max((float)num1, (float)num2);
     }
 
-    internal static string strcat(string str1, string str2)
+    internal static void strcat(ref string str1, string str2)
     {
-        return str1 + str2;
+        str1 = str1 + str2;
     }
 
     internal static void exit(int PHANTDEFS_ERROR_NUM)

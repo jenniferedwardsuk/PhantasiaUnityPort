@@ -1970,10 +1970,10 @@ namespace phantasiaclasses
              "It says, 'To find me treasure trove, ye must move %.0lf squares to the ",
              dtemp);
 
-                miscclass.Do_direction(c, x_loc, y_loc, string_buffer);
+                miscclass.Do_direction(c, x_loc, y_loc, ref string_buffer);
 
 
-                CFUNCTIONS.strcat(string_buffer, " and then look for me next map.\n");
+                CFUNCTIONS.strcat(ref string_buffer, " and then look for me next map.\n");
             }
             else if (dtemp == 1.0)
             {
@@ -1982,9 +1982,9 @@ namespace phantasiaclasses
                   "Arr, you're almost there.  The booty is 1 square ");
 
 
-                miscclass.Do_direction(c, x_loc, y_loc, string_buffer);
+                miscclass.Do_direction(c, x_loc, y_loc, ref string_buffer);
 
-                CFUNCTIONS.strcat(string_buffer, ".\n");
+                CFUNCTIONS.strcat(ref string_buffer, ".\n");
 
             }
             else
