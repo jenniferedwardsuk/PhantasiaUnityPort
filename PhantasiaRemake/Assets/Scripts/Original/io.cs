@@ -773,6 +773,7 @@ namespace phantasiaclasses
             /* send the player information */
             socketclass.Do_send_int(c, phantdefs.ADD_PLAYER_PACKET);
             socketclass.Do_send_string(c, theSpec.name);
+            //Debug.LogError("Player list debug: " + new string(theSpec.type).Replace('\0', '$'));
             socketclass.Do_send_string(c, new string(theSpec.type));
             return;
         }
@@ -802,6 +803,7 @@ namespace phantasiaclasses
 
         internal void Do_remove_player(client_t c, string name_ptr)
         {
+            //Debug.LogError("Player list debug: removing player " + name_ptr.Replace('\0', '$'));
             socketclass.Do_send_int(c, phantdefs.REMOVE_PLAYER_PACKET);
             socketclass.Do_send_string(c, name_ptr);
             return;
@@ -858,7 +860,7 @@ namespace phantasiaclasses
                 c.run_level = phantdefs.EXIT_THREAD;
                 return;
             }
-            string filteredString = string_buffer.Replace('\0', '£');
+            string filteredString = string_buffer.Replace('\0', '$');
             Debug.Log("Thread " + System.Threading.Thread.CurrentThread.Name + ": || client version retrieved: " + filteredString + " ||");
             if (CFUNCTIONS.strcmp(string_buffer, "1004"))
             {
@@ -904,7 +906,7 @@ namespace phantasiaclasses
                 c.run_level = phantdefs.EXIT_THREAD;
                 return;
             }
-            filteredString = string_buffer.Replace('\0', '£');
+            filteredString = string_buffer.Replace('\0', '$');
             Debug.Log("Thread " + System.Threading.Thread.CurrentThread.Name + ": || client machine hash 2 retrieved: " + filteredString + " ||");
 
             /* if a machine number was passed */
@@ -919,8 +921,8 @@ namespace phantasiaclasses
                 md5c.MD5Update(ref context, error_msg.ToCharArray(), len);
                 md5c.MD5Final(ref digest, ref context);
 
-                string msgcopy = hexDigest.Replace("\0", "£");
-                msgcopy = msgcopy.Replace('\0', '£');
+                string msgcopy = hexDigest.Replace("\0", "$");
+                msgcopy = msgcopy.Replace('\0', '$');
                 Debug.Log("hexDigest: || " + msgcopy + " ||");
 
                 /* convert the 16 byte number to 32 hex digits */
@@ -1049,7 +1051,7 @@ namespace phantasiaclasses
             event_ptr.arg4 = "";// (void*)Do_malloc(event_ptr.arg3);
             string arg4 = (string)event_ptr.arg4;
             CFUNCTIONS.strcpy(ref arg4, message);
-            event_ptr.arg4 = arg4;
+            event_ptr.arg4 = arg4.Replace('\0', '$').Replace("$", "");
             event_ptr.from = c.game;
 
             /* send the event */
@@ -1153,7 +1155,7 @@ namespace phantasiaclasses
                 event_ptr.arg4 = "";// (void*) Do_malloc(uncensoredLength);
                 string arg4 = (string)event_ptr.arg4;
                 CFUNCTIONS.strcpy(ref arg4, uncensored_msg);
-                event_ptr.arg4 = arg4;
+                event_ptr.arg4 = arg4;//.Replace('\0', '$');
                 eventclass.Do_send_event(event_ptr);
             }
 
@@ -1224,7 +1226,7 @@ namespace phantasiaclasses
                             event_ptr.arg4 = "";// (void*) Do_malloc(uncensoredLength);
                             string arg4 = (string)event_ptr.arg4;
                             CFUNCTIONS.strcpy(ref arg4, uncensored_msg);
-                            event_ptr.arg4 = arg4;
+                            event_ptr.arg4 = arg4.Replace('\0', '$').Replace("$","");
                         }
                         else
                         {
@@ -1233,9 +1235,10 @@ namespace phantasiaclasses
                             event_ptr.arg4 = "";// (void*) Do_malloc(censoredLength);
                             string arg4 = (string)event_ptr.arg4;
                             CFUNCTIONS.strcpy(ref arg4, uncensored_msg);
-                            event_ptr.arg4 = arg4;
+                            event_ptr.arg4 = arg4.Replace('\0', '$').Replace("$", "");
                         }
 
+                        Debug.LogError("Chat debug: sending message event: " + event_ptr.arg4.ToString().Replace('\0', '$'));
                         /* send the chat to this player */
                         eventclass.Do_send_event(event_ptr);
                     }
@@ -1432,7 +1435,7 @@ namespace phantasiaclasses
 
                 //todo: avoiding md5 for now
                 thePassword = string_buffer.ToCharArray();
-                string filteredString = (new string(thePassword)).Replace('\0', '£');
+                string filteredString = (new string(thePassword)).Replace('\0', '$');
                 Debug.Log("<color=red>Password digest: </color>|| " + filteredString + " ||");
 
                 if (Do_password_dialog(c, ref string_buffer, phantdefs.SZ_PASSWORD,
@@ -1449,9 +1452,9 @@ namespace phantasiaclasses
                 md5c.MD5Final(ref digest, ref context);
 
                 //todo: avoiding md5 for now
-                filteredString = (new string(digest)).Replace('\0', '£');
+                filteredString = (new string(digest)).Replace('\0', '$');
                 Debug.Log("<color=red>Password digest: </color>|| " + filteredString + " ||");
-                filteredString = (new string(thePassword)).Replace('\0', '£');
+                filteredString = (new string(thePassword)).Replace('\0', '$');
                 Debug.Log("<color=red>Password thePassword: </color>|| " + filteredString + " ||");
                 digest = thePassword;
 
@@ -1642,9 +1645,9 @@ namespace phantasiaclasses
                 md5c.MD5Final(ref digest, ref context);
 
                 //todo: avoiding md5 for now. skip password validation
-                string filteredString = (new string(thePassword)).Replace('\0', '£');
+                string filteredString = (new string(thePassword)).Replace('\0', '$');
                 Debug.Log("<color=red>Password thePassword: </color>|| " + filteredString + " ||");
-                filteredString = (new string(digest)).Replace('\0', '£');
+                filteredString = (new string(digest)).Replace('\0', '$');
                 Debug.Log("<color=red>Password digest: </color>|| " + filteredString + " ||");
                 digest = thePassword;
 

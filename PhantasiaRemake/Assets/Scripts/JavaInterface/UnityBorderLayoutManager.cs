@@ -80,14 +80,21 @@ public class UnityBorderLayoutManager : MonoBehaviour {
                         );
                     unityObj.position = panelCorners[1]; //top left
                     unityObj.position += new Vector3(rect.sizeDelta.x / 2, -1 * rect.sizeDelta.y / 2, 0); //move to center
+
                     //fill any empty space
                     //unityObj.position += !hasEast ? new Vector3(rect.sizeDelta.x * (0.125f / 2), 0, 0) : new Vector3(0, 0, 0); //todo: wip 
                     //unityObj.position -= !hasWest ? new Vector3(rect.sizeDelta.x * (0.125f / 2), 0, 0) : new Vector3(0, 0, 0);
                     //unityObj.position -= !hasNorth ? new Vector3(0, -1 * (rect.sizeDelta.y * 0.125f / 2), 0) : new Vector3(0, 0, 0);
                     //unityObj.position += !hasSouth ? new Vector3(0, -1 * (rect.sizeDelta.y * 0.125f / 2), 0) : new Vector3(0, 0, 0);
+
                     break;
 
                 case "north": //12.5% of layout
+                    //if (rect.gameObject.name.Contains("PanelButton"))
+                    //{
+                    //    Debug.LogError("Layout debug: north button with hasSouth " + hasSouth + " and panel size " + rect.sizeDelta.x + "," + rect.sizeDelta.y);
+                    //}
+
                     unityObj.sizeDelta = new Vector2(
                         rect.sizeDelta.x,
                         rect.sizeDelta.y * 0.125f //+ ((!hasCenter && !hasEast && !hasWest) ? (!hasSouth ? rect.sizeDelta.y * 0.75f : rect.sizeDelta.y * 0.75f / 2) : 0) //stretch if no middle components
@@ -95,24 +102,76 @@ public class UnityBorderLayoutManager : MonoBehaviour {
                     unityObj.position = panelCorners[1]; //top left
                     unityObj.position += new Vector3(rect.sizeDelta.x / 2, -1 * (rect.sizeDelta.y * 0.125f / 2), 0); //move to top center
 
-                    //unityObj.position = (!hasCenter && !hasEast && !hasWest) ?
-                    //    (!hasSouth ? new Vector3(unityObj.position.x, -1 * rect.sizeDelta.y / 2, unityObj.position.z) //move to center
-                    //                : new Vector3(unityObj.position.x, (-1 * rect.sizeDelta.y / 2) / 2, unityObj.position.z)) //move to middle upper half
-                    //    : unityObj.position;
+                    //fill any empty vertical space
+                    if (!hasCenter && !hasEast && !hasWest)
+                    {
+                        //reposition and resize
+                        float newY = unityObj.position.y;
+                        float newH = unityObj.sizeDelta.y;
+                        if (!hasSouth)
+                        {
+                            newH = rect.sizeDelta.y;
+                            newY = -1 * rect.sizeDelta.y / 2; //move to center
+                            //if (rect.gameObject.name.Contains("PanelButton"))
+                            //{
+                            //    Debug.LogError("Layout debug: 1: setting height of north child " + unityObj.name + " to " + newH);
+                            //}
+                        }
+                        else
+                        {
+                            newH = rect.sizeDelta.y / 2;
+                            newY = -1 * rect.sizeDelta.y / 4; //move to middle upper half
+                            //if (rect.gameObject.name.Contains("PanelButton"))
+                            //{
+                            //    Debug.LogError("Layout debug: 2: setting height of north child " + unityObj.name + " to " + newH);
+                            //}
+                        }
+                        unityObj.position = new Vector3(unityObj.position.x, newY + panelCorners[1].y, unityObj.position.z);
+                        unityObj.sizeDelta = new Vector3(unityObj.sizeDelta.x, newH);
+                    }
+                    
                     break;
 
                 case "south":
+                    //if (rect.gameObject.name.Contains("PanelButton"))
+                    //{
+                    //    Debug.LogError("Layout debug: south button with hasNorth " + hasNorth + " and panel size " + rect.sizeDelta.x + "," + rect.sizeDelta.y);
+                    //}
+
                     unityObj.sizeDelta = new Vector2(
                         rect.sizeDelta.x, 
                         rect.sizeDelta.y * 0.125f //+ ((!hasCenter && !hasEast && !hasWest) ? (!hasSouth ? rect.sizeDelta.y * 0.75f : rect.sizeDelta.y * 0.75f / 2) : 0) //stretch if no middle components
                         );
                     unityObj.position = panelCorners[1]; //top left
                     unityObj.position += new Vector3(rect.sizeDelta.x / 2, -1 * (rect.sizeDelta.y * (1 - 0.125f / 2)), 0); //move to bottom center
-                    
-                    //unityObj.position = (!hasCenter && !hasEast && !hasWest) ?
-                    //    (!hasNorth ? new Vector3(unityObj.position.x, -1 * rect.sizeDelta.y / 2, unityObj.position.z) //move to center
-                    //                : new Vector3(unityObj.position.x, (-1 * rect.sizeDelta.y / 2) * 3 / 2, unityObj.position.z)) //move to middle lower half
-                    //    : unityObj.position;
+
+                    //fill any empty vertical space
+                    if (!hasCenter && !hasEast && !hasWest)
+                    {
+                        //reposition and resize
+                        float newY = unityObj.position.y;
+                        float newH = unityObj.sizeDelta.y;
+                        if (!hasNorth)
+                        {
+                            newH = rect.sizeDelta.y;
+                            newY = -1 * rect.sizeDelta.y / 2; //move to center
+                            //if (rect.gameObject.name.Contains("PanelButton"))
+                            //{
+                            //    Debug.LogError("Layout debug: 1: setting height of south child " + unityObj.name + " to " + newH);
+                            //}
+                        }
+                        else
+                        {
+                            newH = rect.sizeDelta.y / 2;
+                            newY = -1 * rect.sizeDelta.y * 3 / 4; //move to middle lower half
+                            //if (rect.gameObject.name.Contains("PanelButton"))
+                            //{
+                            //    Debug.LogError("Layout debug: 2: setting height of south child " + unityObj.name + " to " + newH);
+                            //}
+                        }
+                        unityObj.position = new Vector3(unityObj.position.x, newY + panelCorners[1].y, unityObj.position.z);
+                        unityObj.sizeDelta = new Vector3(unityObj.sizeDelta.x, newH);
+                    }
                     break;
 
                 case "east":

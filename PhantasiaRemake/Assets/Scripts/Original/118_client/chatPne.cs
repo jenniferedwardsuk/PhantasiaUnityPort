@@ -71,7 +71,10 @@ public class chatPne : JavaPanel , IJavaActionListener, IJavaKeyListener
 
     internal void PrintLine()
     {
-        textArea.append(parent.readString() + "\n");
+        string chatmsg = parent.readString();
+        chatmsg = chatmsg.Replace('\0', '¬').Replace('$', '¬').Replace("¬", "");
+        //Debug.LogError("Chat debug: Java collecting chat message: " + chatmsg.Replace('\0','¬').Replace("¬", ""));
+        textArea.append(chatmsg + "\n");
 
         /*
             textArea.addItem(parent.readString());

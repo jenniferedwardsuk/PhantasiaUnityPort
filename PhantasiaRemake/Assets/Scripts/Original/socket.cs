@@ -720,7 +720,7 @@ namespace phantasiaclasses
 
         void Do_send_out(client_t c, string the_data, int the_size)
         {
-            string filteredString = the_data.Replace('\0', '£');
+            string filteredString = the_data.Replace('\0', '$');
             Debug.Log("Thread " + System.Threading.Thread.CurrentThread.Name + ": phantasia.socket.Do_send_out: || data: " + filteredString + " || size: " + the_size + " ||");
 
             string error_msg = ""; //[phantdefs.SZ_ERROR_MESSAGE];
@@ -774,13 +774,13 @@ namespace phantasiaclasses
                     fileclass.Do_log(pathnames.DEBUG_LOG, string_buffer2);
                 }
 
-                string bufstr = c.out_buffer.Replace('\0', '£');
+                string bufstr = c.out_buffer.Replace('\0', '$');
                 //Debug.Log("debug: c.out_buffer: " + bufstr + " || c.out_buffer_size: " + c.out_buffer_size);
                 
                 //string target = "";
                 //CFUNCTIONS.memcpy(ref target, (string)the_data, the_size);
 
-                bufstr = the_data.Replace('\0', '£');
+                bufstr = the_data.Replace('\0', '$');
                 //Debug.Log("debug: the_data: " + the_data + " || c.out_buffer_size: " + c.out_buffer_size);
 
                 //c.out_buffer += target; //nope. needs to sometimes overwrite instead of append
@@ -791,7 +791,7 @@ namespace phantasiaclasses
 
                 c.out_buffer_size += (uint)the_size;
 
-                bufstr = c.out_buffer.Replace('\0', '£');
+                bufstr = c.out_buffer.Replace('\0', '$');
                 //Debug.Log("debug: c.out_buffer: " + bufstr + " || c.out_buffer_size: " + c.out_buffer_size);
 
                 //original:
@@ -831,6 +831,16 @@ namespace phantasiaclasses
         internal void Do_send_string(client_t c, string theMessage)
         {
             //Debug.Log("Thread " + System.Threading.Thread.CurrentThread.Name + ": phantasia.socket.Do_send_string");
+
+            //if (theMessage != null && theMessage.Length > 0
+            //    && theMessage[theMessage.Length - 1] == '\0') //todo: this is a quick fix for nullbroken strings
+            //{
+            //    Debug.LogError("Fixing string " + theMessage.Replace('\0', '$'));
+            //    if (theMessage.Length == 1)
+            //        theMessage = new string(new char[] { '\n' });
+            //    else
+            //        theMessage = theMessage.Substring(0, theMessage.Length - 1)  + '\n';
+            //}
 
             if (theMessage != null && theMessage.Length > 0 && theMessage[theMessage.Length - 1] != '\n') //todo: this is a quick fix for unlinebroken strings
             {
@@ -1209,7 +1219,7 @@ namespace phantasiaclasses
                 c.in_buffer_size += (uint)bytes_read;
 
                 //Debug.Log("Thread " + System.Threading.Thread.CurrentThread.Name + ": socket read successful");
-                string bufcopy = c.in_buffer.Replace('\0', '£');
+                string bufcopy = c.in_buffer.Replace('\0', '$');
                 //Debug.Log("Thread " + System.Threading.Thread.CurrentThread.Name + ": || buffer contents: " + bufcopy + " ||");
             }
 
@@ -1253,7 +1263,7 @@ namespace phantasiaclasses
             LinuxLibSIG.sigaddset(sigMask, LinuxLibSIG.SIGALRM);
 
             string test1 = "1\0";
-            //Debug.Log("STRING LENGTH CHECK: LENGTH OF 1£ = " + test1.Length); // 2
+            //Debug.Log("STRING LENGTH CHECK: LENGTH OF 1$ = " + test1.Length); // 2
 
             for (; ; )
             {
@@ -1350,8 +1360,8 @@ namespace phantasiaclasses
                             fileclass.Do_log(pathnames.DEBUG_LOG, error_msg);
                         }
                         
-                        string msgcopy = c.in_buffer.Replace("\0", "£");
-                        msgcopy = msgcopy.Replace('\0', '£');
+                        string msgcopy = c.in_buffer.Replace("\0", "$");
+                        msgcopy = msgcopy.Replace('\0', '$');
                         //Debug.Log("Thread " + System.Threading.Thread.CurrentThread.Name + ": buffer content after get: " + msgcopy);
                         //Debug.Log("!!!returning!!!");
                         return phantdefs.S_NORM;

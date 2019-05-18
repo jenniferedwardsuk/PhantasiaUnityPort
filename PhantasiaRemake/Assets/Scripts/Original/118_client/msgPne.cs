@@ -28,12 +28,17 @@ public class msgPne : JavaPanel
 
     internal void PrintLine()
     {
-	    textArea.append(parent.readString() + "\n");
+        string msgstr = parent.readString();
+        //Debug.LogError("Msg debug: " + msgstr.Replace('\0', '¬').Replace('$', '¬').Replace("¬", ""));
+        msgstr = msgstr.Replace('\0', '¬').Replace('$', '¬').Replace("¬", "");
+        textArea.append(msgstr + "\n");
+        //todo: move scrollbar if needed
     }
 
     internal void ClearScreen()
     {
 	    textArea.selectAll();
 	    textArea.replaceRange("", textArea.getSelectionStart(), textArea.getSelectionEnd());
+        //todo: reset scrollbar
     }
 }

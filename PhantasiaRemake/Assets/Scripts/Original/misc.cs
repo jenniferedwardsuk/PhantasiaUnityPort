@@ -2816,7 +2816,7 @@ namespace phantasiaclasses
                 swearNumber = 0;
 
                 /* loop through all the swear words */
-                while (swears[swearNumber][0] != '\0')
+                while (swearNumber < swears.Length && swears[swearNumber].Length > 0 && swears[swearNumber][0] != '\0')
                 {
 
                     /* start with the first letter of this swear */
@@ -3587,18 +3587,18 @@ namespace phantasiaclasses
             writePtr = readPtr = theString.ToCharArray(); //todo: set writePtr to theString?
 
             int currchar = 0;
-            while (readPtr[currchar] == ' ')
+            while (readPtr[currchar] == ' ') //todo: ?
             {
                 ++currchar;
             }
 
-            currchar = 0;
+            currchar = 0; //original bugfix?
 
             count = 1;
             previousChar = CFUNCTIONS.tolower(readPtr[currchar]);
             writePtr[currchar++] = readPtr[currchar++];
 
-            while (currchar < readPtr.Length)
+            while (currchar < readPtr.Length - 1)
             {
 
                 thisChar = CFUNCTIONS.tolower(readPtr[currchar]);

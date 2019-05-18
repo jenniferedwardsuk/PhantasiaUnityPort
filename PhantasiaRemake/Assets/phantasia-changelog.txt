@@ -14,32 +14,32 @@ bugs:
 GENERAL
 - \0 string interrupt is a potential problem
 - .Length on strings may need to be replaced with CFUNCTIONS.strlen
+- char[] strings may need to be initialised to particular sizes per commented code
 
 MINOR
-- char[] strings may need to be initialised to particular sizes per commented code
-- a socket issue remains? machineID is being set to 1004. may be intentional.
 - hexdigest is all nulls	- workaround: ignore password validation
 - scoreboard popup throws non-fatal packet errors after clicking next or prev
 - scoreboard always blank?
+- don't resize button number images
 
 MODERATE
-- chat input field throws index error after pressing button
-- player list only shows prefix, and does not clear out exited characters
-- monsters can attack many times or not at all?
+- boss monsters (Modnar) can show up and fight poorly
+- low-level monsters can one-shot player with fast attacks on first turn
 - long battles can max out main scroll area, it doesn't extend
+- main scroll area should scroll to location of end of text (up when cleared or down when overflow)
+- can't select character from list for Examine
 
 MAJOR
+- move to layout still borked
 
 VISUAL
 - main scrollview text component is too wide on the right side
 - layout issues remain on:
-	- popups (border layout expansion/minimums trouble, info>stats scrollview is too small and can't scroll)
-	- right (whole thing too wide)
-	- statuspne > PanelEnergy (and str, speed): GenRect is off edge, lines are too high		
-	- buttonpne (button height)
+	- popups (border layout expansion/minimums trouble)
+	- statuspne > PanelEnergy (and str, speed): GenRect is off edge		
 	- chatpne (buttons overlap)
   so: border layout to fill space when unused areas exist
-      some components need to take their min required size/height/width. add 'resize type' to border/gridbag?
+      some components should take their min required size/height/width. add 'resize type' to border/gridbag? or 'fixed size'
 
 BUILD ONLY
 - exception popup would be good
@@ -47,14 +47,13 @@ BUILD ONLY
 
 
 one-off issues:
-- none
+- build: didn't close fully on exit
 
 resolved:
 - non-experimento character doesn't start at 0,0 	- intentional per Do_roll_new_player
 - monsters are only encountered by Hunting 		- intentional per misc.Do_move
 - no penalty for moving; energy, hunger, ?	- seems intentional per misc.Do_move
 - grail x,y can be very large (186893,622523)	- intentional per init hides. trove 600 to 1400, grail 300k-1mill
-
 
 done:
 - set up project 
@@ -67,6 +66,25 @@ done:
 - converted bin files
 - interfaced src files
 
+
+18-may-2019
+- workaround: hardcoded main game panel sizes
+- workaround: disabled line elements
+- bugfix: display chat output properly
+- bugfix: replace and trim nulls from client output (fixes ?s after names in client output)
+- bugfix: include player name in player list
+- bugfix: remove players from player list properly
+- bugfix: strcat now used for spec name and removes trailing \0
+- added: resizing of borderlayout when no middle components exist
+- modified: don't pass a machine ID yet
+- modified: better error handling on client when exiting
+- modified: 2 d.p. for info>stats fields
+
+17-may-2019
+- workaround: resized popup inputfields
+- bugfix: better randomisation (fixes monster speed contest being all or nothing)
+- bugfix: index safety for message handling
+- modified: better error handling on client when exiting
 
 16-may-2019
 - bugfix: ref intention on CFUNCTIONS.strcat and info.Do_true_false (fixes info stats bad packets)

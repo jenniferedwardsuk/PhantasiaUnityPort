@@ -335,7 +335,7 @@ namespace phantasiaclasses
                 inputstring += input[k] + ",";
             }
 
-            Debug.Log("md5 Encode: output: " + new string(output).Replace('\0', '£') //error
+            Debug.Log("md5 Encode: output: " + new string(output).Replace('\0', '$') //error
                 + " || input: " + inputstring
                 + " || len: " + len + " ||");
 

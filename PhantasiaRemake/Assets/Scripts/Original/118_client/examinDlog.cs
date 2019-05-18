@@ -74,7 +74,12 @@ public class examinDlog : Dialog , IJavaActionListener
         textArea.append("Channel: " + readstrings[i++] + "\n\n");
 
         textArea.append("Level: " + readstrings[i++] + "\n");
-        textArea.append("Experience: " + readstrings[i++] + "\n");
+        string exp = readstrings[i++]; //added for unity: constrain to 2 d.p.
+        if (exp.IndexOf(".") > 0)
+        {
+            exp = exp.Substring(0, exp.IndexOf(".") + 2);
+        }
+        textArea.append("Experience: " + exp + "\n");
         textArea.append("Next Level At: " + readstrings[i++] + "\n\n");
 
         textArea.append("Energy: " + readstrings[i++] + " / (" + readstrings[i++] + " + " + readstrings[i++] + " shield)\n");
@@ -85,7 +90,12 @@ public class examinDlog : Dialog , IJavaActionListener
         textArea.append("Mana: " + readstrings[i++] + "\n");
         textArea.append("Gender: " + readstrings[i++] + "\n");
         textArea.append("Poison: " + readstrings[i++] + "\n");
-        textArea.append("Sin: " + readstrings[i++] + "\n");
+        string Sin = readstrings[i++]; //added for unity: constrain to 2 d.p.
+        if (Sin.IndexOf(".") > 0)
+        {
+            Sin = Sin.Substring(0, Sin.IndexOf(".") + 2);
+        }
+        textArea.append("Sin: " + Sin + "\n");
         textArea.append("Lives: " + readstrings[i++] + "\n\n");
 
         textArea.append("Gold: " + readstrings[i++] + "\n");

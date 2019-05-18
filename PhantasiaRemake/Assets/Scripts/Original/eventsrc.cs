@@ -470,6 +470,8 @@ namespace phantasiaclasses
                 /* chat messages go straight to the player */
                 case phantdefs.CHAT_EVENT:
 
+                    //Debug.LogError("Chat debug: collecting chat event: " + the_event.arg4.ToString().Replace('\0', '$'));
+
                     /* if this message is from another channel */
                     if (the_event.arg2 > 0)
                     {

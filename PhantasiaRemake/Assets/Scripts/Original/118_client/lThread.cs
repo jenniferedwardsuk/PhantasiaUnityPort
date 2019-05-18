@@ -171,6 +171,7 @@ internal class lThread : JavaThread
                         break;
 
                     case constants.CHAT_PACKET:
+
                         msg += "CHAT_PACKET";
                         Debug.Log(msg);
                         parent.chat.PrintLine();

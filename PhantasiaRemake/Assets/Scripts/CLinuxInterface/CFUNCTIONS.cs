@@ -17,6 +17,13 @@ public class CFUNCTIONS
               ignored.  On Linux, this command can change only the O_APPEND,
               O_ASYNC, O_DIRECT, O_NOATIME, and O_NONBLOCK flags.*/
     public static int O_ASYNC { get; internal set; } //todo: move to linuxlibsocket
+
+    internal static int GetMillisecs(DateTime now)
+    {
+        string timestr = now.ToString("HHmmssff");
+        return Convert.ToInt32(timestr);
+    }
+
     /*The bit that enables asynchronous input mode. If set, then SIGIO signals will be generated when input is available.*/
 
     public static int ECONNRESET { get; internal set; }
@@ -196,21 +203,21 @@ public class CFUNCTIONS
                     //{
                     //    if (param[i] == '\0') //interrupts strings
                     //    {
-                    //        param[i] = '£';
+                    //        param[i] = '$';
                     //    }
                     //}
                     //paramStrings[i] = new string(param);
 
                     string paramstr = new string((char[])paramstrs[i]);
-                    paramstr = paramstr.Replace('\0', '£'); //avoid early interrupt
-                    paramstr = paramstr.Replace("\0", "£"); //avoid early interrupt
+                    paramstr = paramstr.Replace('\0', '$'); //avoid early interrupt
+                    paramstr = paramstr.Replace("\0", "$"); //avoid early interrupt
                     paramStrings[i] = paramstr;
                 }
                 else if (paramstrs[i].GetType() == typeof(string)) //avoid early interrupt
                 {
                     string paramstr = paramstrs[i].ToString();
-                    paramstr = paramstr.Replace('\0', '£'); //avoid early interrupt
-                    paramstr = paramstr.Replace("\0", "£"); //avoid early interrupt
+                    paramstr = paramstr.Replace('\0', '$'); //avoid early interrupt
+                    paramstr = paramstr.Replace("\0", "$"); //avoid early interrupt
                     paramStrings[i] = paramstr;
                 }
                 else if (paramstrs[i].GetType() == typeof(CLibPThread.pid_t)) //convert pid_t type to its implicit int
@@ -386,17 +393,13 @@ if Return value = 0 then it indicates str1 is equal to str2.*/
 
     internal static int strlen(string str)
     {
-        string strFiltered = str.Replace('\0', '£');
+        //string strFiltered = str.Replace('\0', '$');
         //Debug.Log("CFUNCTIONS.strlen called on " + strFiltered);
 
-        //incorrect result 6 in string 3W -4 \n \0
-
-        //strlen, which interprets string as a C string, and returns the count of characters before the first '\0'
+        //interprets string as a C string, and returns the count of characters before the first '\0'
         int strlength = 0;
         for (int i = 0; i < str.Length; i++)
         {
-            //if (strFiltered.Length > 2 && strFiltered.Substring(0,2) == "3W")
-                //Debug.Log("CFUNCTIONS.strlen str[i] is " + str[i]);
             if (str[i] == '\0')
             {
                 break;
@@ -404,12 +407,9 @@ if Return value = 0 then it indicates str1 is equal to str2.*/
             else
             {
                 strlength++;
-                //if (strFiltered.Length > 2 && strFiltered.Substring(0, 2) == "3W")
-                    //Debug.Log("CFUNCTIONS.strlen incremented to " + strlength);
             }
         }
         return strlength;
-        //return str.Length;
     }
 
     internal static double sqrt(double numb)
@@ -435,6 +435,7 @@ if Return value = 0 then it indicates str1 is equal to str2.*/
 
     internal static void strcat(ref string str1, string str2)
     {
+        str1 = str1.Length == 0 ? "" : str1.Substring(0, CFUNCTIONS.strlen(str1)); //remove \0 if it exists
         str1 = str1 + str2;
     }
 
@@ -703,7 +704,7 @@ if Return value = 0 then it indicates str1 is equal to str2.*/
                 UnityCServerInterface.SendCharacterPasswordResetScriptEmail(name, value, email);
             else
             {
-                string filteredString = string_buffer.Replace('\0', '£');
+                string filteredString = string_buffer.Replace('\0', '$');
                 Debug.LogError("CFUNCTIONS.system failed to call unity interface, with type " + type + ", and string_buffer: || " + string_buffer + " ||");
                 return -1;
             }

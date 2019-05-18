@@ -202,7 +202,7 @@ public class UnityJavaInterface
             //break; //this line for java coroutine; loop is managed from top
             //WaitingData = Encoding.ASCII.GetBytes("-1"); //this line for java coroutine; loop is managed from top
         }
-        if (WaitingData != null) //new data ready to add //todo: should WaitingData be a list / stack pending messages?
+        if (WaitingData != null) //new data ready to add
         {
             string bufferString = Encoding.ASCII.GetString(bytesBuffer);
             string waitingString = Encoding.ASCII.GetString(WaitingData);
@@ -218,7 +218,7 @@ public class UnityJavaInterface
             //collect first string
             string bufferString = Encoding.ASCII.GetString(bytesBuffer);
 
-            string stringFiltered = bufferString.Replace('\0', '£');
+            //string stringFiltered = bufferString.Replace('\0', '$');
             //Debug.Log("Java client: thread " + System.Threading.Thread.CurrentThread.Name + " buffer before string collect: || " + stringFiltered + " ||");
 
             int firstNull = bufferString.IndexOf('\0');
@@ -228,7 +228,7 @@ public class UnityJavaInterface
             bufferString = bufferString.Substring(firstNull + 1);
             bytesBuffer = Encoding.ASCII.GetBytes(bufferString);
 
-            stringFiltered = bufferString.Replace('\0', '£');
+            //stringFiltered = bufferString.Replace('\0', '$');
             //Debug.Log("Java client: thread " + System.Threading.Thread.CurrentThread.Name + " buffer after collect: || " + stringFiltered + " ||");
 
         }
@@ -237,7 +237,7 @@ public class UnityJavaInterface
 
         if (!UnityGameController.StopApplication)
         {
-            string someStringFiltered = someString.Replace('\0', '£');
+            string someStringFiltered = someString.Replace('\0', '$');
             //Debug.Log("Java client: thread " + System.Threading.Thread.CurrentThread.Name + " collected message: || " + someStringFiltered + " ||");
         }
         
@@ -286,8 +286,11 @@ public class UnityJavaInterface
 
         //todo: destroy popups
 
-        // disconnect player from networkserver, so that they can reconnect if they want
-        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(DisconnectClient);
+        if (!UnityGameController.StopApplication)
+        {
+            // disconnect player from networkserver, so that they can reconnect if they want
+            UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(DisconnectClient);
+        }
     }
     internal static void DisconnectClient()
     {
@@ -432,10 +435,17 @@ public class UnityJavaInterface
                     //grid.cellSize = new Vector2(100, 50);
                     grid.cellSize = new Vector2(
                         grandchild.GetComponent<RectTransform>().sizeDelta.x / Mathf.Max(grandchild.transform.childCount, 1),
-                        grandchild.GetComponent<RectTransform>().sizeDelta.y / Mathf.Max(grandchild.transform.childCount, 1)
+                        grandchild.GetComponent<RectTransform>().sizeDelta.y // / Mathf.Max(grandchild.transform.childCount, 1)
                         );
                 }
+
+                if (grandchild.name.Contains("InputField"))
+                {
+                    grandchild.GetComponent<RectTransform>().sizeDelta = new Vector2(100, 50);
+                }
             }
+
+            RetrieveAllWanderingComponents(panel);
 
             //RectTransform child = parent.GetChild(i).gameObject.GetComponent<RectTransform>();
             //child.sizeDelta = new Vector2(parent.sizeDelta.x / componentsInPanel, parent.sizeDelta.y / componentsInPanel);
@@ -483,6 +493,11 @@ public class UnityJavaInterface
 
     internal static void RefreshAllLayouts(JavaComponent sourceComponent)
     {
+        //if (sourceComponent.unityComponentGroup != null && sourceComponent.unityComponentGroup.rectComponent != null && sourceComponent.unityComponentGroup.rectComponent.gameObject.name.Contains("PanelButton"))
+        //    Debug.LogError("Layout debug: refreshing layout for " + sourceComponent.unityComponentGroup.rectComponent.gameObject.name 
+        //        + " and " + sourceComponent.unityComponentGroup.rectComponent.transform.childCount + " children objects, "
+        //        + " and " + sourceComponent.childComponents.Count + " child components");
+
         JavaLayout layout = sourceComponent.getLayout();
         if (layout != null)
         {
@@ -518,14 +533,14 @@ public class UnityJavaInterface
             //refresh children
             RefreshAllLayouts(comp);
 
-            //check for subcanvases
+            //check for subcanvases and pull them in to parent
             GameObject compObj = comp.unityComponentGroup.rectComponent.gameObject;
             for (int i = 0; i < compObj.transform.childCount; i++)
             {
                 GameObject child = compObj.transform.GetChild(i).gameObject;
                 if (child.name.Contains("GenLabel") 
                     || child.name.Contains("GenText") 
-                    || child.name.Contains("GenButton")
+                    //|| child.name.Contains("GenButton")
                     //|| child.name.Contains("Scroll")
                     )
                 {
@@ -1107,6 +1122,7 @@ public class UnityJavaInterface
                 listComponents.contentListItems = new List<GameObject>();
                 for (int i = 0; i < ScrollContent.transform.childCount; i++)
                 {
+                    //Debug.LogError("List debug: adding template item");
                     listComponents.contentListItems.Add(ScrollContent.transform.GetChild(i).gameObject);
                 }
                 ScrollArea.transform.parent = latestPanel.transform;
@@ -1147,6 +1163,8 @@ public class UnityJavaInterface
                 lineChild.GetComponent<RectTransform>().sizeDelta = new Vector2(lineLength, 2);
                 //todo: rotate end to x2,y2
                 lineChild.GetComponent<Image>().color = contextColor.GetUnityColor();
+
+                lineChild.SetActive(false); //todo: debug: lines disabled, they're unnecessary and require positioning
             }
             else
             {
@@ -1178,13 +1196,19 @@ public class UnityJavaInterface
 
                 lineChild.name = "GenRect";
                 lineChild.transform.parent = sourceTransform;
-                lineChild.GetComponent<RectTransform>().position = panelCorners[1] + new Vector3(x, y * -1, 0); //todo - placement seems odd on lines
+
+                //lineChild.GetComponent<RectTransform>().position = panelCorners[1] + new Vector3(x, y * -1, 0); //todo - placement seems odd
+                Vector2 parentSize = lineChild.transform.parent.gameObject.GetComponent<RectTransform>().sizeDelta;
+                lineChild.GetComponent<RectTransform>().position = panelCorners[1] + new Vector3(parentSize.x, parentSize.y * -1, 0);
+
                 lineChild.GetComponent<RectTransform>().sizeDelta = new Vector2(width, height);
                 lineChild.GetComponent<Image>().color = contextColor.GetUnityColor();
+
+                lineChild.transform.SetSiblingIndex(0); //move to 'background' of element
             }
             else
             {
-                Debug.LogError("lineChild not created for drawline");
+                Debug.LogError("lineChild not created for DrawRect");
             }
         }
         else

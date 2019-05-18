@@ -45,7 +45,7 @@ public class UnityCServerInterface : NetworkBehaviour {
             while (Sockets[value].Count > 0)
             {
                 string datastring = Encoding.ASCII.GetString(Sockets[value][0]);
-                string someStringFiltered = datastring.Replace('\0', '£');
+                string someStringFiltered = datastring.Replace('\0', '$');
                 Debug.Log("................................................UNITYCSERVERINTERFACE DELIVERING DATA: " + someStringFiltered);
                 RpcSendDataToSpecificClient((short)value, Sockets[value][0]);
                 Sockets[value].RemoveAt(0);
@@ -113,8 +113,8 @@ public class UnityCServerInterface : NetworkBehaviour {
         string emailSubject = "Phantasia Old Account Information";
         string emailRecipient = Arg2;
 
-        string Arg0filtered = Arg0.Replace('\0', '£');
-        string Arg1filtered = Arg1.Replace('\0', '£');
+        string Arg0filtered = Arg0.Replace('\0', '$');
+        string Arg1filtered = Arg1.Replace('\0', '$');
         Debug.Log("<color=red>Email sending is not implemented yet.</color> Confirmation code for " + Arg0filtered + " is: " + Arg1filtered + ""); //todo: display on screen
         //todo: send email
         //        system("mail -s \"Phantasia Old Account Information\" $ARGV[2] < /tmp/$ARGV[2].mail");
@@ -139,8 +139,8 @@ public class UnityCServerInterface : NetworkBehaviour {
         string emailSubject = "Account " + Arg0 + " Password Reset";
         string emailRecipient = Arg2;
 
-        string Arg0filtered = Arg0.Replace('\0', '£');
-        string Arg1filtered = Arg1.Replace('\0', '£');
+        string Arg0filtered = Arg0.Replace('\0', '$');
+        string Arg1filtered = Arg1.Replace('\0', '$');
         Debug.Log("<color=red>Email sending is not implemented yet.</color> New password for " + Arg0filtered + " is: " + Arg1filtered + ""); //todo: display on screen
         //todo: send email
         //        system("mail -s \"Account $ARGV[0] Password Reset\" $ARGV[2] < /tmp/$ARGV[2].mail");
@@ -164,8 +164,8 @@ public class UnityCServerInterface : NetworkBehaviour {
         string emailSubject = "Character " + Arg0 + " Password Reset";
         string emailRecipient = Arg2;
 
-        string Arg0filtered = Arg0.Replace('\0', '£');
-        string Arg1filtered = Arg1.Replace('\0', '£');
+        string Arg0filtered = Arg0.Replace('\0', '$');
+        string Arg1filtered = Arg1.Replace('\0', '$');
         Debug.Log("<color=red>Email sending is not implemented yet.</color> New password for " + Arg0filtered + " is: " + Arg1filtered + ""); //todo: display on screen
         //todo: send email
         //        system("mail -s \"Character $ARGV[0] Password Reset\" $ARGV[2] < /tmp/$ARGV[2].mail");

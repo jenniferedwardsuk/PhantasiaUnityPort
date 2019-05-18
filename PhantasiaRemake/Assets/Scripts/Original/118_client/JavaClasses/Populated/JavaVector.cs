@@ -21,14 +21,30 @@ public class JavaVector
         Count += 1;
     }
 
-    internal int indexOf(string v)
+    internal int indexOf(string v) //calls with player name only, does not include prefix
     {
+        //int foundIndex = -1;
+        //for (int i = 0; i < vectorList.Count; i++)
+        //{
+        //    int spaceIndex = vectorList[i].IndexOf("- ");
+        //    Debug.LogError("element " + vectorList[i] + ", spaceindex " + spaceIndex + ", length " + vectorList[i].Length);
+        //    if (spaceIndex > 0 && spaceIndex + 2 < vectorList[i].Length)
+        //    {
+        //        if (vectorList[i].Substring(spaceIndex + 2) == v)
+        //        {
+        //            foundIndex = i;
+        //        }
+        //    }
+        //}
+        //return foundIndex;// 
+
         return vectorList.IndexOf(v);
     }
 
     internal void removeElementAt(int index)
     {
-        vectorList.RemoveAt(index);
+        if (index >= 0)
+            vectorList.RemoveAt(index);
     }
 
     internal string elementAt(int p)

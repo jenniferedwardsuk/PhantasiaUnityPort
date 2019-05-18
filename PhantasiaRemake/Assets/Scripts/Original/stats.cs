@@ -273,7 +273,10 @@ namespace phantasiaclasses
         {
             /* send the name */
             socketclass.Do_send_int(c, phantdefs.NAME_PACKET);
-            socketclass.Do_send_string(c, c.modifiedName);
+            string namestr = c.modifiedName.Replace('\0', '¬').Replace("¬", "");
+            if (namestr.Length == 0)
+                namestr = new string(new char[] { '\0' });
+            socketclass.Do_send_string(c, namestr);
             socketclass.Do_send_string(c, "\n");
 
             miscclass.Do_lock_mutex(c.realm.realm_lock);

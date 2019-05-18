@@ -184,7 +184,7 @@ namespace phantasiaclasses
 
             /* copy the information */
             spec_ptr.name = c.modifiedName;
-            spec_ptr.name = "\n";
+            CFUNCTIONS.strcat(ref spec_ptr.name,"\n");
 
             spec_ptr.type[0] = c.realm.charstats[c.player.type].short_class_name;
 
@@ -283,7 +283,7 @@ namespace phantasiaclasses
 
                     /* copy the information */
                     spec_ptr.name = game_ptr.description.name;
-                    spec_ptr.name += "\n";
+                    CFUNCTIONS.strcat(ref spec_ptr.name, "\n");
 
                     spec_ptr.type[0] = c.realm.charstats[game_ptr.description.type].short_class_name;
 
@@ -937,8 +937,8 @@ namespace phantasiaclasses
                 /* loop through the the files */
                 while (CLibFile.fread(ref thePlayer, phantdefs.SZ_PLAYER, 1, character_file) == 1)
                 {
-                    string filter1 = thePlayer.lcname.Replace('\0', '£');
-                    string filter2 = the_name.Replace('\0', '£');
+                    string filter1 = thePlayer.lcname.Replace('\0', '$');
+                    string filter2 = the_name.Replace('\0', '$');
                     //Debug.LogError("Look character debug: || " + filter1 + " || " + filter2 + " ||");
 
                     if (!CFUNCTIONS.strcmp(thePlayer.lcname, the_name))
@@ -1247,7 +1247,7 @@ namespace phantasiaclasses
             {
                 string_buffer = CFUNCTIONS.sprintfSinglestring("\"%s\" is too long.  Please use %d characters or less.\n", name, phantdefs.MAX_NAME_LEN);
 
-                string filteredstring = name.Replace('\0', '£');
+                string filteredstring = name.Replace('\0', '$');
                 Debug.LogError("Debug name: " + filteredstring + ", chars " + phantdefs.MAX_NAME_LEN);
 
                 ioclass.Do_send_line(c, string_buffer);
@@ -1727,8 +1727,8 @@ namespace phantasiaclasses
                 while (CLibFile.fread(ref readPlayer, phantdefs.SZ_PLAYER, 1, character_file) == 1)
                 {
 
-                    string filter1 = c.lcaccount.Replace('\0', '£');
-                    string filter2 = readPlayer.parent_account.Replace('\0', '£');
+                    string filter1 = c.lcaccount.Replace('\0', '$');
+                    string filter2 = readPlayer.parent_account.Replace('\0', '$');
                     //Debug.LogError("Character options debug: || " + filter1 + " || " + filter2 + " ||");
                     if (!CFUNCTIONS.strcmp(c.lcaccount, readPlayer.parent_account))
                     {

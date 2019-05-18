@@ -57,6 +57,7 @@ internal class JavaList : JavaComponent //The List component presents the user w
             int buttonNum = unityComponents.contentListItems.Count;
             newItem.GetComponent<Button>().onClick.AddListener(delegate { ItemClicked(buttonNum); });
             unityComponents.contentListItems.Add(newItem);
+            //Debug.LogError("List debug: adding new item to contentListItems, count now " + unityComponents.contentListItems.Count);
         }
         else
         {
@@ -72,7 +73,8 @@ internal class JavaList : JavaComponent //The List component presents the user w
 
     internal void delItem(int index)
     {
-        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(M_delItem, index);
+        if (index >= 0)
+            UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(M_delItem, index);
     }
     internal void M_delItem(int index)
     {
@@ -83,8 +85,8 @@ internal class JavaList : JavaComponent //The List component presents the user w
         }
         else
         {
-            GameObject.Destroy(unityComponents.contentListItems[index]);
-            unityComponents.contentListItems.RemoveAt(index);
+            GameObject.Destroy(unityComponents.contentListItems[index + 1]);
+            unityComponents.contentListItems.RemoveAt(index + 1);
         }
     }
 

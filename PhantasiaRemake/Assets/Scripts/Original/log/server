@@ -1454,3 +1454,253 @@ DD-Apr-YYYY 10:22:09 Server is shut down.
 16-May-2019 23:11:00 Server started up.  pid=99
 16-May-2019 23:11:02 New connection on socket 0.
 16-May-2019 23:11:05 Server is shut down.
+17-May-2019 18:37:32 Server started up.  pid=99
+17-May-2019 18:37:33 New connection on socket 0.
+17-May-2019 18:38:32 Server is shut down.
+17-May-2019 18:41:29 [0.0.0.0:?] testfi? restored
+17-May-2019 18:41:29 Server restored 1 characters.
+17-May-2019 18:41:29 Server started up.  pid=99
+17-May-2019 18:41:30 New connection on socket 0.
+17-May-2019 18:42:27 Server is shut down.
+17-May-2019 18:42:49 [0.0.0.0:?] pp? restored
+17-May-2019 18:42:49 Server restored 1 characters.
+17-May-2019 18:42:49 Server started up.  pid=99
+17-May-2019 18:42:54 New connection on socket 0.
+17-May-2019 21:06:39 Server started up.  pid=99
+17-May-2019 21:06:43 New connection on socket 0.
+17-May-2019 21:08:18 Server is shut down.
+17-May-2019 21:12:16 [0.0.0.0:?] testfi? restored
+17-May-2019 21:12:16 Server restored 1 characters.
+17-May-2019 21:12:16 Server started up.  pid=99
+17-May-2019 21:12:18 New connection on socket 0.
+17-May-2019 21:13:14 Server is shut down.
+17-May-2019 21:14:39 [0.0.0.0:?] pp? restored
+17-May-2019 21:14:39 Server restored 1 characters.
+17-May-2019 21:14:39 Server started up.  pid=99
+17-May-2019 21:14:41 New connection on socket 0.
+17-May-2019 21:20:23 Server started up.  pid=99
+17-May-2019 21:20:25 New connection on socket 0.
+17-May-2019 21:21:45 Server is shut down.
+17-May-2019 21:30:57 Server started up.  pid=99
+17-May-2019 21:31:00 New connection on socket 0.
+17-May-2019 21:31:55 Server is shut down.
+17-May-2019 21:33:00 Server started up.  pid=99
+17-May-2019 21:33:02 New connection on socket 0.
+17-May-2019 21:33:40 Server is shut down.
+17-May-2019 21:34:44 Server started up.  pid=99
+17-May-2019 21:41:16 New connection on socket 0.
+17-May-2019 21:43:55 Server started up.  pid=99
+17-May-2019 21:43:57 New connection on socket 0.
+17-May-2019 21:45:03 Server is shut down.
+18-May-2019 10:15:05 Server started up.  pid=99
+18-May-2019 10:15:08 New connection on socket 0.
+18-May-2019 10:22:57 Server started up.  pid=99
+18-May-2019 10:22:58 New connection on socket 0.
+18-May-2019 10:24:02 Server is shut down.
+18-May-2019 10:25:44 [0.0.0.0:?] pp? restored
+18-May-2019 10:25:44 Server restored 1 characters.
+18-May-2019 10:25:44 Server started up.  pid=99
+18-May-2019 10:25:46 New connection on socket 0.
+18-May-2019 10:26:21 Server is shut down.
+18-May-2019 10:28:33 [0.0.0.0:?] pp? restored
+18-May-2019 10:28:33 Server restored 1 characters.
+18-May-2019 10:28:33 Server started up.  pid=99
+18-May-2019 10:28:35 New connection on socket 0.
+18-May-2019 10:50:21 Server started up.  pid=99
+18-May-2019 10:50:31 New connection on socket 0.
+18-May-2019 10:51:10 Server is shut down.
+18-May-2019 10:55:06 Server started up.  pid=99
+18-May-2019 10:55:06 New connection on socket 0.
+18-May-2019 10:58:21 Server started up.  pid=99
+18-May-2019 10:58:23 New connection on socket 0.
+18-May-2019 10:59:07 Server is shut down.
+18-May-2019 11:01:44 [0.0.0.0:?] pp? restored
+18-May-2019 11:01:44 Server restored 1 characters.
+18-May-2019 11:01:44 Server started up.  pid=99
+18-May-2019 11:01:47 New connection on socket 0.
+18-May-2019 11:11:16 Server started up.  pid=99
+18-May-2019 11:11:19 New connection on socket 0.
+18-May-2019 11:11:22 Server is shut down.
+18-May-2019 11:11:59 Server started up.  pid=99
+18-May-2019 11:12:02 New connection on socket 0.
+18-May-2019 11:15:47 Server started up.  pid=99
+18-May-2019 11:15:49 New connection on socket 0.
+18-May-2019 11:17:49 Server started up.  pid=99
+18-May-2019 11:17:49 New connection on socket 0.
+18-May-2019 11:23:49 Server started up.  pid=99
+18-May-2019 11:23:53 New connection on socket 0.
+18-May-2019 11:25:56 Server started up.  pid=99
+18-May-2019 11:25:59 New connection on socket 0.
+18-May-2019 11:28:34 Server started up.  pid=99
+18-May-2019 11:28:36 New connection on socket 0.
+18-May-2019 11:33:51 Server started up.  pid=99
+18-May-2019 11:33:52 New connection on socket 0.
+18-May-2019 11:36:51 Server started up.  pid=99
+18-May-2019 11:36:52 New connection on socket 0.
+18-May-2019 11:40:30 Server started up.  pid=99
+18-May-2019 11:40:30 New connection on socket 0.
+18-May-2019 11:44:51 Server started up.  pid=99
+18-May-2019 11:44:56 New connection on socket 0.
+18-May-2019 11:45:29 Server is shut down.
+18-May-2019 11:46:56 Server started up.  pid=99
+18-May-2019 11:46:57 New connection on socket 0.
+18-May-2019 11:53:55 Server started up.  pid=99
+18-May-2019 11:53:57 New connection on socket 0.
+18-May-2019 11:56:36 Server started up.  pid=99
+18-May-2019 11:56:38 New connection on socket 0.
+18-May-2019 12:00:02 Server started up.  pid=99
+18-May-2019 12:00:04 New connection on socket 0.
+18-May-2019 12:01:53 Server started up.  pid=99
+18-May-2019 12:01:54 New connection on socket 0.
+18-May-2019 12:03:35 Server started up.  pid=99
+18-May-2019 12:03:36 New connection on socket 0.
+18-May-2019 12:07:30 Server started up.  pid=99
+18-May-2019 12:07:33 New connection on socket 0.
+18-May-2019 12:08:46 Server started up.  pid=99
+18-May-2019 12:08:47 New connection on socket 0.
+18-May-2019 12:09:09 Server is shut down.
+18-May-2019 12:09:13 Server started up.  pid=99
+18-May-2019 12:10:03 Server started up.  pid=99
+18-May-2019 12:10:06 New connection on socket 0.
+18-May-2019 12:11:15 Server started up.  pid=99
+18-May-2019 12:11:16 New connection on socket 0.
+18-May-2019 12:12:38 Server started up.  pid=99
+18-May-2019 12:12:39 New connection on socket 0.
+18-May-2019 12:15:26 Server is shut down.
+18-May-2019 12:24:28 [0.0.0.0:?] pppp$ restored
+18-May-2019 12:24:28 Server restored 1 characters.
+18-May-2019 12:24:28 Server started up.  pid=99
+18-May-2019 12:24:30 New connection on socket 0.
+18-May-2019 12:26:39 Server started up.  pid=99
+18-May-2019 12:26:40 New connection on socket 0.
+18-May-2019 12:31:28 Server started up.  pid=99
+18-May-2019 12:31:30 New connection on socket 0.
+18-May-2019 12:35:41 Server started up.  pid=99
+18-May-2019 12:35:43 New connection on socket 0.
+18-May-2019 12:46:27 Server started up.  pid=99
+18-May-2019 12:46:29 New connection on socket 0.
+18-May-2019 12:52:44 Server started up.  pid=99
+18-May-2019 12:52:46 New connection on socket 0.
+18-May-2019 12:53:43 Server is shut down.
+18-May-2019 12:56:49 Server started up.  pid=99
+18-May-2019 12:56:51 New connection on socket 0.
+18-May-2019 13:02:23 Server started up.  pid=99
+18-May-2019 13:02:24 New connection on socket 0.
+18-May-2019 16:32:49 Server started up.  pid=99
+18-May-2019 16:32:51 New connection on socket 0.
+18-May-2019 16:33:26 Server is shut down.
+18-May-2019 16:56:20 Server started up.  pid=99
+18-May-2019 16:56:23 New connection on socket 0.
+18-May-2019 17:01:21 Server is shut down.
+18-May-2019 17:05:47 Server started up.  pid=99
+18-May-2019 17:05:49 New connection on socket 0.
+18-May-2019 17:06:00 Server is shut down.
+18-May-2019 17:12:32 Server started up.  pid=99
+18-May-2019 17:12:47 New connection on socket 0.
+18-May-2019 17:15:40 Server is shut down.
+18-May-2019 17:16:00 Server started up.  pid=99
+18-May-2019 17:16:02 New connection on socket 0.
+18-May-2019 17:17:01 Server is shut down.
+18-May-2019 17:17:30 Server started up.  pid=99
+18-May-2019 17:17:32 New connection on socket 0.
+18-May-2019 17:19:09 Server is shut down.
+18-May-2019 17:19:25 Server started up.  pid=99
+18-May-2019 17:19:27 New connection on socket 0.
+18-May-2019 17:19:43 Server is shut down.
+18-May-2019 17:19:58 Server started up.  pid=99
+18-May-2019 17:19:59 New connection on socket 0.
+18-May-2019 17:20:15 Server is shut down.
+18-May-2019 17:21:32 Server started up.  pid=99
+18-May-2019 17:21:33 New connection on socket 0.
+18-May-2019 17:21:49 Server is shut down.
+18-May-2019 17:22:57 Server started up.  pid=99
+18-May-2019 17:23:05 New connection on socket 0.
+18-May-2019 17:30:39 Server started up.  pid=99
+18-May-2019 17:30:42 New connection on socket 0.
+18-May-2019 17:31:01 Server is shut down.
+18-May-2019 17:31:35 Server started up.  pid=99
+18-May-2019 17:31:37 New connection on socket 0.
+18-May-2019 17:32:29 Server is shut down.
+18-May-2019 17:32:40 Server started up.  pid=99
+18-May-2019 17:33:20 New connection on socket 0.
+18-May-2019 17:33:28 Server is shut down.
+18-May-2019 17:33:42 Server started up.  pid=99
+18-May-2019 17:33:44 New connection on socket 0.
+18-May-2019 17:35:28 Server is shut down.
+18-May-2019 17:36:37 Server started up.  pid=99
+18-May-2019 17:36:45 New connection on socket 0.
+18-May-2019 17:37:04 Server is shut down.
+18-May-2019 17:37:14 Server started up.  pid=99
+18-May-2019 17:37:19 New connection on socket 0.
+18-May-2019 17:37:45 Server is shut down.
+18-May-2019 17:37:51 Server started up.  pid=99
+18-May-2019 17:37:52 New connection on socket 0.
+18-May-2019 17:38:01 Server is shut down.
+18-May-2019 17:38:06 Server started up.  pid=99
+18-May-2019 17:38:12 New connection on socket 0.
+18-May-2019 17:38:37 Server is shut down.
+18-May-2019 17:40:29 Server started up.  pid=99
+18-May-2019 17:40:34 New connection on socket 0.
+18-May-2019 17:40:39 Server is shut down.
+18-May-2019 17:55:15 Server started up.  pid=99
+18-May-2019 17:55:17 New connection on socket 0.
+18-May-2019 17:55:56 Server is shut down.
+18-May-2019 17:59:46 Server started up.  pid=99
+18-May-2019 17:59:48 New connection on socket 0.
+18-May-2019 18:00:28 Server is shut down.
+18-May-2019 18:04:47 Server started up.  pid=99
+18-May-2019 18:04:51 New connection on socket 0.
+18-May-2019 18:05:53 Server is shut down.
+18-May-2019 18:08:53 Server started up.  pid=99
+18-May-2019 18:08:55 New connection on socket 0.
+18-May-2019 18:09:29 Server is shut down.
+18-May-2019 18:11:32 Server started up.  pid=99
+18-May-2019 18:11:33 New connection on socket 0.
+18-May-2019 18:11:42 Server is shut down.
+18-May-2019 18:12:37 Server started up.  pid=99
+18-May-2019 18:12:39 New connection on socket 0.
+18-May-2019 18:13:09 Server is shut down.
+18-May-2019 18:14:21 Server started up.  pid=99
+18-May-2019 18:14:23 New connection on socket 0.
+18-May-2019 18:14:38 Server is shut down.
+18-May-2019 18:16:24 Server started up.  pid=99
+18-May-2019 18:16:25 New connection on socket 0.
+18-May-2019 18:16:29 Server is shut down.
+18-May-2019 18:18:08 Server started up.  pid=99
+18-May-2019 18:18:10 New connection on socket 0.
+18-May-2019 18:18:18 Server is shut down.
+18-May-2019 18:19:34 Server started up.  pid=99
+18-May-2019 18:19:37 New connection on socket 0.
+18-May-2019 18:19:51 Server is shut down.
+18-May-2019 18:20:16 Server started up.  pid=99
+18-May-2019 18:20:22 New connection on socket 0.
+18-May-2019 18:20:36 Server is shut down.
+18-May-2019 18:26:03 Server started up.  pid=99
+18-May-2019 18:26:05 New connection on socket 0.
+18-May-2019 18:28:18 Server is shut down.
+18-May-2019 18:30:10 Server started up.  pid=99
+18-May-2019 18:30:11 New connection on socket 0.
+18-May-2019 18:30:58 Server is shut down.
+18-May-2019 18:31:42 Server started up.  pid=99
+18-May-2019 18:31:43 New connection on socket 0.
+18-May-2019 18:31:51 Server is shut down.
+18-May-2019 18:32:50 Server started up.  pid=99
+18-May-2019 18:32:51 New connection on socket 0.
+18-May-2019 18:33:05 Server is shut down.
+18-May-2019 18:36:10 Server started up.  pid=99
+18-May-2019 18:36:11 New connection on socket 0.
+18-May-2019 18:36:35 Server is shut down.
+18-May-2019 18:39:03 Server started up.  pid=99
+18-May-2019 18:39:05 New connection on socket 0.
+18-May-2019 18:40:54 Server is shut down.
+18-May-2019 18:43:10 Server started up.  pid=99
+18-May-2019 18:43:11 New connection on socket 0.
+18-May-2019 18:43:49 Server is shut down.
+18-May-2019 18:44:58 Server started up.  pid=99
+18-May-2019 18:44:59 New connection on socket 0.
+18-May-2019 18:48:29 Server is shut down.
+18-May-2019 18:54:41 [0.0.0.0:?] testfi$ restored
+18-May-2019 18:54:41 Server restored 1 characters.
+18-May-2019 18:54:41 Server started up.  pid=99
+18-May-2019 18:54:42 New connection on socket 0.
+18-May-2019 18:56:12 Server is shut down.

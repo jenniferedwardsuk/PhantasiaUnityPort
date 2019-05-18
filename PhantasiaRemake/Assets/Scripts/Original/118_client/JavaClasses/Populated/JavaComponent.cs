@@ -28,6 +28,8 @@ public class JavaComponent
     public List<JavaComponent> childComponents;
 
     internal GridBagConstraints gridBagConstraints;
+    internal string layoutName;
+
     //used for JavaPanel.add
 
     public JavaComponent()
@@ -48,6 +50,9 @@ public class JavaComponent
     {
         layout = gridLayout;
         UnityJavaInterface.SetLayout(this, unityComponentGroup, gridLayout);
+        
+        //added for unity: refresh whole layout after adding and loading everything
+        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(UnityJavaInterface.RefreshAllLayouts, this);
     }
 
     internal JavaLayout getLayout()

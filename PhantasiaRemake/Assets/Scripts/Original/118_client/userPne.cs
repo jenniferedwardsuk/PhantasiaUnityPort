@@ -32,6 +32,7 @@ public class userPne : JavaPanel, IJavaActionListener
     internal void AddUser()
     {
         String name = parent.readString();
+        name = name.Replace('\0', '¬').Replace('$', '¬').Replace("¬", "");
 
         theDisplay.addItem(parent.readString() + "- " + name);
 
@@ -40,9 +41,12 @@ public class userPne : JavaPanel, IJavaActionListener
 
     internal void RemoveUser()
     {
+
         int index = 0;
 
-        index = theList.indexOf(parent.readString());
+        string playerstr = parent.readString();
+        index = theList.indexOf(playerstr);
+        //Debug.LogError("Player list debug: Java removing player " + playerstr + " at index " + index);
 
         theDisplay.delItem(index);
         theList.removeElementAt(index);

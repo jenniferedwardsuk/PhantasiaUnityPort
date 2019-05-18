@@ -76,11 +76,11 @@ public class pClient : JavaApplet, IJavaKeyListener
         f.addWindowListener(new WindowAdapter(windowClosing)); //unnecessary for unity
 
         //addComponent include constraint setting
-        addComponent(status, 0, 0, 2, 1, 0, 0);
-        addComponent(messages, 0, 1, 1, 1, 1, 1);
-        addComponent(buttons, 0, 2, 1, 1, 0, 0);
-        addComponent(chat, 0, 3, 1, 1, 1, 2);
-        addComponent(rightPane, 1, 1, 1, 3, 0, 0);
+        addComponent(status, 0, 0, 2, 1, 0, 0, "status");
+        addComponent(messages, 0, 1, 1, 1, 1, 1, "messages");
+        addComponent(buttons, 0, 2, 1, 1, 0, 0, "buttons");
+        addComponent(chat, 0, 3, 1, 1, 1, 2, "chat");
+        addComponent(rightPane, 1, 1, 1, 3, 0, 0, "right");
 
         f.setLayout(bagLayout);
 
@@ -124,7 +124,7 @@ public class pClient : JavaApplet, IJavaKeyListener
         listen.start();
     }
 
-    private void addComponent(JavaPanel item, int gridx, int gridy, int gridwidth, int gridheight, int weightx, int weighty)
+    private void addComponent(JavaPanel item, int gridx, int gridy, int gridwidth, int gridheight, int weightx, int weighty, string panelType) //unity: added panelType
     {
         GridBagConstraints constraints = new GridBagConstraints();
 
@@ -142,7 +142,7 @@ public class pClient : JavaApplet, IJavaKeyListener
         constraints.insets.left = 2;
         constraints.insets.right = 2;
 
-        GridBagLayout.setConstraints(item, constraints);
+        GridBagLayout.setConstraints(item, constraints, panelType);
         f.add(item);
     }
 
@@ -187,6 +187,7 @@ public class pClient : JavaApplet, IJavaKeyListener
         try
         {
             message = input.readLine();
+            message = message.Replace('\0', '¬').Replace('$', '¬').Replace("¬", "");
         }
         catch (Exception e)
         {
@@ -212,7 +213,7 @@ public class pClient : JavaApplet, IJavaKeyListener
         {
             if (str != "")
             {
-                string someStringFiltered = str.Replace('\0', '£');
+                string someStringFiltered = str.Replace('\0', '$');
                 Debug.LogError("Java client: Readlong exception: " + e);
                 Debug.LogError("Java client continued: input string: || " + someStringFiltered + " ||");
             }

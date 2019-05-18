@@ -62,40 +62,92 @@ public class UnityGridBagLayoutManager : MonoBehaviour
         //if (components != null)
             //Debug.Log("child component count for setlayout: " + sourceComponent.childComponents.Count);
 
-        foreach (JavaComponent comp in components)
-        {
-            //Debug.Log(comp.unityComponentGroup.rectComponent.gameObject.name + " has constraint grid position " + comp.gridBagConstraints.gridx + "," + comp.gridBagConstraints.gridy);
-        }
-
-        //if (components != null) //frame inits its layout without components and then reruns
-        {
-            DeduceGridAndCellSize();
-            PositionAndResizeComponents();
-            //DistributeWeight(); //todo
-        }
-        
         //foreach (JavaComponent comp in components)
         //{
-        //    GameObject compUnityObj = comp.unityComponentGroup.rectComponent.gameObject;
-        //    UnityGridBagLayoutManager compManager = compUnityObj.GetComponent<UnityGridBagLayoutManager>();
-        //    if (compManager)
-        //    {
-        //        compManager.refreshLayout = true;
-        //    }
-
-        //    //in case component isn't gridbag but has a gridbag
-        //    foreach (JavaComponent child in comp.childComponents)
-        //    {
-        //        GameObject childUnityObj = child.unityComponentGroup.rectComponent.gameObject;
-        //        UnityGridBagLayoutManager childManager = childUnityObj.GetComponent<UnityGridBagLayoutManager>();
-        //        if (childManager)
-        //        {
-        //            childManager.refreshLayout = true;
-        //        }
-        //    } 
-            
-        //    //further levels unnecessary - no gridbags are disconnected by more than one child in phantasia
+        //    //Debug.Log(comp.unityComponentGroup.rectComponent.gameObject.name + " has constraint grid position " + comp.gridBagConstraints.gridx + "," + comp.gridBagConstraints.gridy);
         //}
+
+        DeduceGridAndCellSize();
+        PositionAndResizeComponents();
+
+        //DistributeWeight(); //todo
+
+        OverrideSpecialComponents();
+    }
+
+    private void OverrideSpecialComponents()
+    {
+        foreach (JavaComponent comp in components)
+        {
+            if (comp.layoutName != null)
+            {
+                RectTransform unityObj = comp.unityComponentGroup.rectComponent;
+                Vector2 hardcodedSize = unityObj.sizeDelta;
+                Vector3 hardcodedPosition = unityObj.position;
+                bool changed = false;
+                switch (comp.layoutName)
+                {
+                    case "status":
+                        //approx original game's proportions
+                        //hardcodedSize = new Vector2(960.05f, 272.6f);
+                        //hardcodedPosition = new Vector3(480.02f, -136.32f, 0);
+                        break;
+                    case "messages":
+                        //approx original game's proportions
+                        //hardcodedSize = new Vector2(730.8f, 138.4f);
+                        //hardcodedPosition = new Vector3(365.4f, -350.57f, 0);
+
+                        //taller, wider
+                        hardcodedSize = new Vector2(624f, 217.1f);
+                        hardcodedPosition = new Vector3(314.15f, -260.55f, 0);
+
+                        changed = true;
+                        break;
+                    case "buttons":
+                        //approx original game's proportions
+                        //hardcodedSize = new Vector2(730.8f, 47.7f);
+                        //hardcodedPosition = new Vector3(365.4f, -443.62f, 0);
+
+                        //shorter, wider
+                        hardcodedSize = new Vector2(624f, 50f);
+                        hardcodedPosition = new Vector3(314.15f, -394.1f, 0);
+
+                        changed = true;
+                        break;
+                    case "chat":
+                        //approx original game's proportions
+                        //hardcodedSize = new Vector2(730.8f, 110.3f);
+                        //hardcodedPosition = new Vector3(365.4f, -526.27f, 0);
+
+                        //taller, wider
+                        hardcodedSize = new Vector2(624f, 182.9f);
+                        hardcodedPosition = new Vector3(314.15f, -510.55f, 0);
+
+                        changed = true;
+                        break;
+                    case "right":
+                        //approx original game's proportions
+                        //hardcodedSize = new Vector2(229.2f, 327.36f);
+                        //hardcodedPosition = new Vector3(845.4f, -436.32f, 0);
+
+                        //narrower
+                        hardcodedSize = new Vector2(336f, 450f);
+                        hardcodedPosition = new Vector3(794.3f, -377f, 0);
+
+                        changed = true;
+                        break;
+                }
+                if (changed)
+                {
+                    Vector3[] panelCorners = new Vector3[4];
+                    rect.GetWorldCorners(panelCorners);
+
+                    unityObj.sizeDelta = hardcodedSize;
+                    unityObj.position = hardcodedPosition + new Vector3(0, panelCorners[1].y, 0);
+                    //+ new Vector3(unityObj.sizeDelta.x / 2, -1 * (unityObj.sizeDelta.y / 2), 0); //default to top left corner
+                }
+            }
+        }
     }
 
     GridBagConstraints constraints;

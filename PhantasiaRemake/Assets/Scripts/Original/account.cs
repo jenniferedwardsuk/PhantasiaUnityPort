@@ -782,8 +782,8 @@ namespace phantasiaclasses
             /* run through the account entries */
             while (CLibFile.fread(ref theAccount, phantdefs.SZ_ACCOUNT, 1, account_file) == 1)
             {
-                string filter1 = theAccount.lcname.Replace('\0', '£');
-                string filter2 = accountName.Replace('\0', '£');
+                string filter1 = theAccount.lcname.Replace('\0', '$');
+                string filter2 = accountName.Replace('\0', '$');
                 //Debug.LogError("Look account debug: || " + filter1 + " || " + filter2 + " ||");
                 /* if this is the account */
                 if (!CFUNCTIONS.strcmp(theAccount.lcname, accountName)) //false = a match

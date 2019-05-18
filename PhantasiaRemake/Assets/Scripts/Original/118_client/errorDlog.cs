@@ -70,29 +70,36 @@ public class errorDlog : Dialog , IJavaActionListener
 
     internal void bringUp(string string1, string string2, string string3)
     {
-        Debug.LogError("Java client error: " + string1 + ", " + string2 + ", " + string3);
-
-        if (UnityJavaUIFuncQueue.GetInstance())
+        if (UnityGameController.StopApplication || string2.Contains("Thread was being aborted"))
         {
-            textJavaLabel1.setAlignment(JavaLabel.CENTER);
-            textJavaLabel1.setText(string1);
-            //UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(textJavaLabel1.setAlignment, JavaLabel.CENTER);
-            //UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(textJavaLabel1.setText, string1);
-
-            textJavaLabel2.setAlignment(JavaLabel.CENTER);
-            textJavaLabel2.setText(string2);
-            //UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(textJavaLabel2.setAlignment, JavaLabel.CENTER);
-            //UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(textJavaLabel2.setText, string2);
-
-            textJavaLabel3.setAlignment(JavaLabel.CENTER);
-            textJavaLabel3.setText(string3);
-            //UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(textJavaLabel3.setAlignment, JavaLabel.CENTER);
-            //UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(textJavaLabel3.setText, string3);
+            Debug.Log("Java client error: " + string1 + ", " + string2 + ", " + string3);
         }
+        else
+        {
+            Debug.LogError("Java client error: " + string1 + ", " + string2 + ", " + string3);
 
-        pack();
-        toFront();
-        setVisible(true);
+            if (UnityJavaUIFuncQueue.GetInstance())
+            {
+                textJavaLabel1.setAlignment(JavaLabel.CENTER);
+                textJavaLabel1.setText(string1);
+                //UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(textJavaLabel1.setAlignment, JavaLabel.CENTER);
+                //UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(textJavaLabel1.setText, string1);
+
+                textJavaLabel2.setAlignment(JavaLabel.CENTER);
+                textJavaLabel2.setText(string2);
+                //UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(textJavaLabel2.setAlignment, JavaLabel.CENTER);
+                //UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(textJavaLabel2.setText, string2);
+
+                textJavaLabel3.setAlignment(JavaLabel.CENTER);
+                textJavaLabel3.setText(string3);
+                //UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(textJavaLabel3.setAlignment, JavaLabel.CENTER);
+                //UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(textJavaLabel3.setText, string3);
+            }
+
+            pack();
+            toFront();
+            setVisible(true);
+        }
     }
 
     public void actionPerformed(ActionEvent evt) 

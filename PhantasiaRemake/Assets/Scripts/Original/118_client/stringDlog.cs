@@ -35,6 +35,7 @@ public class stringDlog : Dialog , IJavaActionListener
     {
         parent = c;
         string labelString = parent.readString();
+
         UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(init, c, maskTextChars, labelString);
     }
     internal void init(pClient c, bool maskTextChars, string labelString)

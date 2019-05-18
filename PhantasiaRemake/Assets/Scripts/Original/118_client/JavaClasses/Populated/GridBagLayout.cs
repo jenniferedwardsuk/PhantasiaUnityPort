@@ -19,9 +19,10 @@ internal class GridBagLayout : JavaLayout
 
     }
 
-    internal static void setConstraints(JavaComponent item, GridBagConstraints constraints)
+    internal static void setConstraints(JavaComponent item, GridBagConstraints constraints, string panelType = null)
     {
         item.layoutType = JavaComponent.LayoutType.GridBag;
         item.gridBagConstraints = new GridBagConstraints(constraints);
+        item.layoutName = panelType;
     }
 }

@@ -21,29 +21,28 @@ public class UnityPlayerController : NetworkBehaviour
         {
             instance = this;
 
-            //todo: should do this first time only? irrelevant until other versions exist or cookie features are used
-            ParamNum = "1004";
-            ParamHash = "0";
-            //PlayerPrefs.SetString("num", ParamNum); //client version
-            //PlayerPrefs.SetString("hash", ParamHash); //machine ID //0 => no machine ID, cookies disabled. see io.Do_handshake 'if a machine number was passed'     //todo: set a machine ID to allow cookie features
-
-            if (!PlayerPrefs.HasKey("num"))
-            {
+            //irrelevant until cookie features are used - see io.Do_handshake 'if a machine number was passed'     
+            ParamNum = "0";// "1004"; //machine number: 0 if no cookie
+            ParamHash = "0"; //machine hash
+            
+            //todo: save a machine ID/hash in playerprefs to allow cookie features
+            //if (!PlayerPrefs.HasKey("num"))
+            //{
                 PlayerPrefs.SetString("num", ParamNum);
-            }
-            else
-            {
-                ParamNum = PlayerPrefs.GetString("num", ParamNum);
-            }
+            //}
+            //else
+            //{
+            //    ParamNum = PlayerPrefs.GetString("num", ParamNum);
+            //}
 
-            if (!PlayerPrefs.HasKey("hash"))
-            {
-                PlayerPrefs.SetString("hash", ParamHash);
-            }
-            else
-            {
-                ParamHash = PlayerPrefs.GetString("hash", ParamHash);
-            }
+            //if (!PlayerPrefs.HasKey("hash"))
+            //{
+                 PlayerPrefs.SetString("hash", ParamHash);
+            //}
+            //else
+            //{
+            //    ParamHash = PlayerPrefs.GetString("hash", ParamHash);
+            //}
             PlayerPrefs.Save();
         }
         else
@@ -63,7 +62,7 @@ public class UnityPlayerController : NetworkBehaviour
         //todo: move to coroutine if performance suffers
         while (pendingData.Count > 0)
         {
-            string datastring = Encoding.ASCII.GetString(pendingData[0]);
+            string datastring = Encoding.ASCII.GetString(pendingData[0]).Replace('\0','$');
             Debug.Log("................................................UNITYPLAYERCONTROLLER DELIVERING DATA: " + datastring);
             CmdSendDataToServer(pendingData[0]);
             pendingData.RemoveAt(0);

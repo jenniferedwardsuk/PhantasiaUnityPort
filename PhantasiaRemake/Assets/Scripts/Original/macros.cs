@@ -30,8 +30,8 @@ public class macros //: MonoBehaviour
         //randNum = rand.NextDouble() * range + 1; //NextDouble is between 0 and 1
         //return randNum;
         randoffset++;
-        System.Random rand = new System.Random(CFUNCTIONS.GetUnixEpoch(DateTime.Now) + randoffset); //todo: random enough?
-        rand.NextDouble(); //increase randomness?
+        System.Random rand = new System.Random(CFUNCTIONS.GetMillisecs(DateTime.Now) + randoffset); //todo: random enough?
+        //rand.NextDouble(); //increase randomness?
 
         double divisor = 2147483647.0;
         double randNum = rand.NextDouble();// / divisor; //commented divisor; NextDouble is between 0 and 1

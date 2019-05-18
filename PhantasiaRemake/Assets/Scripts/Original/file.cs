@@ -336,8 +336,8 @@ namespace phantasiaclasses
         {
             if (filename != pathnames.ERROR_LOG) //unity: added
             {
-                string msgcopy = message.Replace("\0", "£");
-                msgcopy = msgcopy.Replace('\0', '£');
+                string msgcopy = message.Replace("\0", "$");
+                msgcopy = msgcopy.Replace('\0', '$');
                 Debug.Log("Thread " + System.Threading.Thread.CurrentThread.Name + ": phantasia.file.Do_log: || " + msgcopy + " ||");
             }
 

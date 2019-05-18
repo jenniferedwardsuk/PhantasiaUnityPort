@@ -513,7 +513,9 @@ FIN_WAIT2	TCP; the connection has been closed; our socket is waiting for the rem
         LinuxSocket requestedSocket = SocketListManager.GetSocket(socket);
         if (requestedSocket != null)
         {
-            byte[] data = Encoding.ASCII.GetBytes(out_buffer.Substring(0, (int)out_buffer_size));
+            string msg = out_buffer.Substring(0, (int)out_buffer_size);//.Replace('\0','$');
+            //Debug.LogError("Questionmark debug: " + msg.Replace('\0', '$'));
+            byte[] data = Encoding.ASCII.GetBytes(msg);
             UnityCServerInterface unityintf = UnityCServerInterface.GetInstance();
             if (unityintf)// && requestedSocket.sourceThread != null)
             {
