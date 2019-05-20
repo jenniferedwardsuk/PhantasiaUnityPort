@@ -20,24 +20,23 @@ MINOR
 - hexdigest is all nulls	- workaround: ignore password validation
 - scoreboard popup throws non-fatal packet errors after clicking next or prev
 - scoreboard always blank?
-- don't resize button number images
+- can't select character from list for Examine
 
 MODERATE
-- boss monsters (Modnar) can show up and fight poorly
-- low-level monsters can one-shot player with fast attacks on first turn
 - long battles can max out main scroll area, it doesn't extend
 - main scroll area should scroll to location of end of text (up when cleared or down when overflow)
-- can't select character from list for Examine
+- colors are bad after logging in character
 
 MAJOR
 - move to layout still borked
+- monsters don't flock
 
 VISUAL
 - main scrollview text component is too wide on the right side
 - layout issues remain on:
 	- popups (border layout expansion/minimums trouble)
-	- statuspne > PanelEnergy (and str, speed): GenRect is off edge		
-	- chatpne (buttons overlap)
+	- statuspne > PanelEnergy (and str, speed): main bars should be longer, icon and num smaller	
+	- chatpne (scroll area isn't tall enough - resize central if south but no north)
   so: border layout to fill space when unused areas exist
       some components should take their min required size/height/width. add 'resize type' to border/gridbag? or 'fixed size'
 
@@ -54,6 +53,7 @@ resolved:
 - monsters are only encountered by Hunting 		- intentional per misc.Do_move
 - no penalty for moving; energy, hunger, ?	- seems intentional per misc.Do_move
 - grail x,y can be very large (186893,622523)	- intentional per init hides. trove 600 to 1400, grail 300k-1mill
+- low-level monsters can still one-shot player with fast attacks on first turn	- seems intentional per initiative contest in fight
 
 done:
 - set up project 
@@ -66,6 +66,14 @@ done:
 - converted bin files
 - interfaced src files
 
+
+20-may-2019
+- added: resizing of borderlayout when no east/west or north/south components exist
+- modified: smaller button images
+- modified: better error handling on client when exiting
+- modified: color adjustments
+- in progress: event queueing issue (preventing flocking etc)
+- in progress: hardcoded resizing of status pane
 
 18-may-2019
 - workaround: hardcoded main game panel sizes

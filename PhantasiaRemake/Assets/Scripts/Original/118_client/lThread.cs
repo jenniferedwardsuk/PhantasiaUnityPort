@@ -231,8 +231,16 @@ internal class lThread : JavaThread
         }
         catch (Exception e)
         {
-            Debug.LogError("Exception in java thread: " + e.Message + " || " + e.InnerException);
-            Debug.LogError(e.StackTrace);
+            if (UnityGameController.StopApplication || e.Message.Contains("Thread was being aborted"))
+            {
+                Debug.Log("Exception in java thread: " + e.Message + " || " + e.InnerException);
+                Debug.Log(e.StackTrace);
+            }
+            else
+            {
+                Debug.LogError("Exception in java thread: " + e.Message + " || " + e.InnerException);
+                Debug.LogError(e.StackTrace);
+            }
         }
     }
 

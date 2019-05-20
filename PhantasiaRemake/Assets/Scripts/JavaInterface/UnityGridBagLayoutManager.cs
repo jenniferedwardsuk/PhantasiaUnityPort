@@ -91,6 +91,25 @@ public class UnityGridBagLayoutManager : MonoBehaviour
                         //approx original game's proportions
                         //hardcodedSize = new Vector2(960.05f, 272.6f);
                         //hardcodedPosition = new Vector3(480.02f, -136.32f, 0);
+                        for (int i = 0; i < unityObj.childCount; i++)
+                        {
+                            //left
+                            if (unityObj.GetChild(i).name.Contains("Stats"))
+                            {
+                                RectTransform childrect = unityObj.GetChild(i).GetComponent<RectTransform>();
+                                childrect.position = new Vector3(childrect.position.x, childrect.position.y, childrect.position.z);
+                                childrect.sizeDelta = new Vector2(620, childrect.sizeDelta.y);
+                            }
+                            //right
+                            if (unityObj.GetChild(i).name.Contains("Head") || unityObj.GetChild(i).name.Contains("Treasure") || unityObj.GetChild(i).name.Contains("Equipment"))
+                            {
+                                RectTransform childrect = unityObj.GetChild(i).GetComponent<RectTransform>();
+                                childrect.position = new Vector3(childrect.position.x, childrect.position.y, childrect.position.z);
+                                childrect.sizeDelta = new Vector2(340, childrect.sizeDelta.y);
+                            }
+                            //todo - no apparent effect
+                        }
+
                         break;
                     case "messages":
                         //approx original game's proportions

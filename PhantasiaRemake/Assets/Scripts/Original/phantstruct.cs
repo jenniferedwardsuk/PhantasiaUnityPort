@@ -443,6 +443,23 @@ namespace phantasiaclasses
         internal game_t from;		/* who created the event */
         internal game_t to;			/* where the event is going */
         internal event_t next_event;		/* pointer to the next event */
+
+        internal event_t()
+        {
+
+        }
+        internal event_t(event_t eventtocopy)
+        {
+            type = eventtocopy.type;
+            arg1 = eventtocopy.arg1;
+            arg2 = eventtocopy.arg2;
+            arg3 = eventtocopy.arg3;
+            arg4 = eventtocopy.arg4;
+
+            from = eventtocopy.from;
+            to = eventtocopy.to;
+            next_event = eventtocopy.next_event;
+        }
     };
 
     [Serializable]

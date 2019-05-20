@@ -70,9 +70,9 @@ internal static class constants
         internal static  Color backgroundColor = new Color(240, 236, 199);
         internal static  Color highlightColor = new Color(232, 220, 183);
     */
-    internal static  Color foregroundColor = new Color(000, 51, 000);
-    internal static  Color backgroundColor = new Color(255, 255, 204);
-    internal static  Color highlightColor = new Color(204, 204, 153);
+    //internal static  Color foregroundColor = new Color(000, 51, 000); //superceded by JavaCanvas
+    //internal static  Color backgroundColor = new Color(255, 255, 204);
+    //internal static  Color highlightColor = new Color(204, 204, 153);
 
     /* i/o identifiers */
     internal const  int NO_REQUEST = 0;

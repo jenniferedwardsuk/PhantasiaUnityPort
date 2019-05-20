@@ -884,7 +884,7 @@ public class UnityJavaInterface
     public static void AddPanel(string name, bool isCanvasParent, bool isMiddleParent, bool parentToPreviousLevel, JavaComponent source)
     {
         mainCanvas = GameObject.FindGameObjectWithTag("MainCanvas");
-        mainCanvas.GetComponent<Image>().color = new Color(1,1,1,1);
+        //mainCanvas.GetComponent<Image>().color = constants.backgroundColor;
         GameObject Panel = new GameObject("GenPanel" + name);
         UnityPanelComponents panelComponents = new UnityPanelComponents();
         panelComponents.rectComponent = Panel.AddComponent<RectTransform>();
@@ -894,6 +894,12 @@ public class UnityJavaInterface
         panelComponents.imageComponent = Panel.AddComponent<Image>();
         Color imgcolor = new Color(1, 1, 1, 1); //todo: only works sometimes
         panelComponents.imageComponent.color = imgcolor;
+
+        //commented: ugly
+        //Shadow shadow1 = Panel.AddComponent<Shadow>();
+        //Shadow shadow2 = Panel.AddComponent<Shadow>();
+        //shadow1.effectDistance = new Vector2(1, 1);
+        //shadow2.effectDistance = new Vector2(-1, -1);
 
         if (name == "-CanvasDialog")
         {
@@ -1205,6 +1211,8 @@ public class UnityJavaInterface
                 lineChild.GetComponent<Image>().color = contextColor.GetUnityColor();
 
                 lineChild.transform.SetSiblingIndex(0); //move to 'background' of element
+
+                lineChild.SetActive(false); //todo: hiding genrects; they're the wrong size and other components aren't transparent to them anyway
             }
             else
             {

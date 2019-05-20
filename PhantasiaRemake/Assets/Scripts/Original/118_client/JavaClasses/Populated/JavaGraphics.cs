@@ -34,7 +34,7 @@ internal class JavaGraphics
     {
         if (sourceImage) //assumes x/y/width/height are equivalent to component's bounds (always the case for phantasia)
         {
-            sourceImage.color = constants.backgroundColor;
+            sourceImage.color = JavaCanvas.backgroundColor.GetUnityColor();// constants.backgroundColor;
         }
     }
 

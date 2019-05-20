@@ -939,7 +939,6 @@ namespace phantasiaclasses
             /* monster flocks */
             if (macros.RND() < c.battle.opponent.flock_percent / 100.0)
             {
-
                 event_ptr = eventclass.Do_create_event();
                 event_ptr.type = (short)phantdefs.MONSTER_EVENT;
                 event_ptr.arg1 = phantdefs.MONSTER_FLOCKED;
