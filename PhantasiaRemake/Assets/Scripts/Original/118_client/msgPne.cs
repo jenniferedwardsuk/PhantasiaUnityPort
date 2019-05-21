@@ -32,13 +32,28 @@ public class msgPne : JavaPanel
         //Debug.LogError("Msg debug: " + msgstr.Replace('\0', '¬').Replace('$', '¬').Replace("¬", ""));
         msgstr = msgstr.Replace('\0', '¬').Replace('$', '¬').Replace("¬", "");
         textArea.append(msgstr + "\n");
-        //todo: move scrollbar if needed
+
+        SetScroll(new Vector2(0, 1));
+    }
+
+    internal void SetScroll(Vector2 position) //added for unity
+    {
+        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(M_SetScroll, position);
+    }
+    internal void M_SetScroll(Vector2 position) //added for unity
+    {
+        if (textArea.unityComponentGroup != null)
+        {
+            UnityScrollComponents scrollcomponents = (UnityScrollComponents)textArea.unityComponentGroup;
+            scrollcomponents.scrollComponent.normalizedPosition = position;
+        }
     }
 
     internal void ClearScreen()
     {
 	    textArea.selectAll();
 	    textArea.replaceRange("", textArea.getSelectionStart(), textArea.getSelectionEnd());
-        //todo: reset scrollbar
+
+        //SetScroll(new Vector2(0, 0));
     }
 }

@@ -740,9 +740,11 @@ namespace phantasiaclasses
                 /* age the player */
                 statsclass.Do_age(c);
 
+                //Debug.LogError("Events debug: checking for event " + c.events);
                 /* if there are events to handle */
                 if (c.events != null)
                 {
+                    //Debug.LogError("Events debug: handling event " + c.events.type);
 
                     /* remove the next event */
                     event_ptr = c.events;

@@ -2076,3 +2076,110 @@ DD-Apr-YYYY 10:22:09 [0.0.0.0:0] CLibFile.fwrite of data/realmdata failed in Do_
 20-May-2019 22:37:44 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
 20-May-2019 22:37:44 [0:0$:0] Received unknown signal -1.
 20-May-2019 22:37:44 UNITY: STOPPING GAME
+21-May-2019 18:39:56 UNITY: STARTING GAME
+21-May-2019 18:43:44 UNITY: STARTING GAME
+21-May-2019 18:45:12 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 18:45:12 UNITY: STOPPING GAME
+21-May-2019 18:45:44 UNITY: STARTING GAME
+21-May-2019 19:31:51 UNITY: STARTING GAME
+21-May-2019 19:32:09 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 19:32:09 UNITY: STOPPING GAME
+21-May-2019 19:33:02 UNITY: STARTING GAME
+21-May-2019 19:33:21 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 19:33:21 UNITY: STOPPING GAME
+21-May-2019 19:36:37 UNITY: STARTING GAME
+21-May-2019 19:36:44 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 19:36:44 UNITY: STOPPING GAME
+21-May-2019 19:44:12 UNITY: STARTING GAME
+21-May-2019 19:44:42 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 19:44:42 UNITY: STOPPING GAME
+21-May-2019 19:45:41 UNITY: STARTING GAME
+21-May-2019 19:46:25 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 19:46:25 UNITY: STOPPING GAME
+21-May-2019 19:47:12 UNITY: STARTING GAME
+21-May-2019 19:47:22 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 19:47:22 UNITY: STOPPING GAME
+21-May-2019 19:47:46 UNITY: STARTING GAME
+21-May-2019 19:47:54 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 19:47:54 UNITY: STOPPING GAME
+21-May-2019 19:48:19 UNITY: STARTING GAME
+21-May-2019 19:48:48 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 19:48:48 UNITY: STOPPING GAME
+21-May-2019 19:49:36 UNITY: STARTING GAME
+21-May-2019 19:50:00 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 19:50:00 UNITY: STOPPING GAME
+21-May-2019 19:50:32 UNITY: STARTING GAME
+21-May-2019 19:50:47 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 19:50:47 UNITY: STOPPING GAME
+21-May-2019 19:53:39 UNITY: STARTING GAME
+21-May-2019 19:53:54 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 19:53:54 UNITY: STOPPING GAME
+21-May-2019 19:54:21 UNITY: STARTING GAME
+21-May-2019 19:55:56 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 19:55:56 UNITY: STOPPING GAME
+21-May-2019 19:56:25 UNITY: STARTING GAME
+21-May-2019 19:56:41 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 19:56:41 UNITY: STOPPING GAME
+21-May-2019 19:56:56 UNITY: STARTING GAME
+21-May-2019 19:57:09 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 19:57:09 UNITY: STOPPING GAME
+21-May-2019 19:57:33 UNITY: STARTING GAME
+21-May-2019 19:57:58 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 19:57:58 UNITY: STOPPING GAME
+21-May-2019 19:58:20 UNITY: STARTING GAME
+21-May-2019 19:59:13 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 19:59:13 UNITY: STOPPING GAME
+21-May-2019 20:01:46 UNITY: STARTING GAME
+21-May-2019 20:02:42 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 20:02:42 UNITY: STOPPING GAME
+21-May-2019 20:05:21 UNITY: STARTING GAME
+21-May-2019 20:05:53 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 20:05:53 UNITY: STOPPING GAME
+21-May-2019 20:07:02 UNITY: STARTING GAME
+21-May-2019 20:07:19 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 20:07:19 UNITY: STOPPING GAME
+21-May-2019 20:09:15 UNITY: STARTING GAME
+21-May-2019 20:11:19 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 20:11:19 UNITY: STOPPING GAME
+21-May-2019 20:14:22 UNITY: STARTING GAME
+21-May-2019 20:14:38 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 20:14:38 UNITY: STOPPING GAME
+21-May-2019 20:16:21 UNITY: STARTING GAME
+21-May-2019 20:16:28 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 20:16:28 UNITY: STOPPING GAME
+21-May-2019 20:20:16 UNITY: STARTING GAME
+21-May-2019 20:22:48 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 20:22:48 UNITY: STOPPING GAME
+21-May-2019 20:23:47 UNITY: STARTING GAME
+21-May-2019 20:25:16 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 20:25:16 UNITY: STOPPING GAME
+21-May-2019 20:27:03 UNITY: STARTING GAME
+21-May-2019 20:27:37 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 20:27:37 UNITY: STOPPING GAME
+21-May-2019 20:31:37 UNITY: STARTING GAME
+21-May-2019 20:32:27 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 20:32:27 UNITY: STOPPING GAME
+21-May-2019 20:36:20 UNITY: STARTING GAME
+21-May-2019 20:36:46 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 20:36:46 UNITY: STOPPING GAME
+21-May-2019 20:37:41 UNITY: STARTING GAME
+21-May-2019 20:38:22 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 20:38:22 UNITY: STOPPING GAME
+21-May-2019 20:39:27 UNITY: STARTING GAME
+21-May-2019 20:39:37 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 20:39:37 UNITY: STOPPING GAME
+21-May-2019 20:42:41 UNITY: STARTING GAME
+21-May-2019 20:43:17 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 20:43:17 UNITY: STOPPING GAME
+21-May-2019 20:54:16 UNITY: STARTING GAME
+21-May-2019 21:04:24 UNITY: STARTING GAME
+21-May-2019 21:05:07 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 21:05:07 UNITY: STOPPING GAME
+21-May-2019 21:07:52 UNITY: STARTING GAME
+21-May-2019 21:08:01 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 21:08:01 UNITY: STOPPING GAME
+21-May-2019 21:08:49 UNITY: STARTING GAME
+21-May-2019 21:09:01 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 21:09:01 UNITY: STOPPING GAME
+21-May-2019 21:14:06 UNITY: STARTING GAME
+21-May-2019 21:20:51 UNITY: STARTING GAME

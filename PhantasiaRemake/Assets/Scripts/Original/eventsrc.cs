@@ -756,7 +756,6 @@ namespace phantasiaclasses
             while (event_ptr_ptr != null && (event_ptr_ptr).type <
                   the_event.type)
             {
-                Debug.LogError("Event debug: finding next opening in event queue");
 
                 event_ptr_ptr = (event_ptr_ptr).next_event;
             }
@@ -765,7 +764,10 @@ namespace phantasiaclasses
             the_event.next_event = event_ptr_ptr == null ? null : new event_t(event_ptr_ptr);
             event_ptr_ptr = the_event;
 
-            Debug.LogError("Event debug: the_event.next_event " + the_event.next_event + " event_ptr_ptr " + event_ptr_ptr + " with type " + event_ptr_ptr.type);
+            if (c.events == null) //added for unity; allow for empty queue
+                c.events = event_ptr_ptr;
+
+            //Debug.LogError("Event debug: the_event.next_event " + the_event.next_event + " event_ptr_ptr " + event_ptr_ptr + " with type " + event_ptr_ptr.type);
 
             return;
         }
@@ -892,7 +894,7 @@ namespace phantasiaclasses
 
             fileclass.Do_log(pathnames.EVENT_LOG, error_msg);
 
-            Debug.LogError("Event debug: handling event type " + the_event.type);
+            //Debug.LogError("Event debug: handling event type " + the_event.type);
             switch (the_event.type)
             {
 

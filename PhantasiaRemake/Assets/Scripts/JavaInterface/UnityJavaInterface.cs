@@ -447,6 +447,9 @@ public class UnityJavaInterface
 
             RetrieveAllWanderingComponents(panel);
 
+            foreach (JavaComponent comp in sourceComponent.childComponents)
+                RefreshAllLayouts(comp);
+
             //RectTransform child = parent.GetChild(i).gameObject.GetComponent<RectTransform>();
             //child.sizeDelta = new Vector2(parent.sizeDelta.x / componentsInPanel, parent.sizeDelta.y / componentsInPanel);
             //child.position = parent.position;
@@ -538,7 +541,7 @@ public class UnityJavaInterface
             for (int i = 0; i < compObj.transform.childCount; i++)
             {
                 GameObject child = compObj.transform.GetChild(i).gameObject;
-                if (child.name.Contains("GenLabel") 
+                if (child.name.Contains("GenLabel") //fixes e.g. labels on buttons
                     || child.name.Contains("GenText") 
                     //|| child.name.Contains("GenButton")
                     //|| child.name.Contains("Scroll")
@@ -599,7 +602,7 @@ public class UnityJavaInterface
             if (!group)
                 group = componentUnityRect.gameObject.AddComponent<GridLayoutGroup>();
 
-            group.spacing = new Vector2(grid.hgap, grid.vgap);
+            //group.spacing = new Vector2(grid.hgap, grid.vgap);
             group.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
             group.constraintCount = grid.cols;
             group.childAlignment = TextAnchor.MiddleCenter;

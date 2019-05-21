@@ -1797,3 +1797,129 @@ DD-Apr-YYYY 10:22:09 Server is shut down.
 20-May-2019 22:37:04 Server started up.  pid=99
 20-May-2019 22:37:05 New connection on socket 0.
 20-May-2019 22:37:44 Server is shut down.
+21-May-2019 18:39:57 Server started up.  pid=99
+21-May-2019 18:40:03 New connection on socket 0.
+21-May-2019 18:43:45 Server started up.  pid=99
+21-May-2019 18:43:45 New connection on socket 0.
+21-May-2019 18:45:12 Server is shut down.
+21-May-2019 18:45:44 Server started up.  pid=99
+21-May-2019 18:45:49 New connection on socket 0.
+21-May-2019 19:31:51 Server started up.  pid=99
+21-May-2019 19:32:00 New connection on socket 0.
+21-May-2019 19:32:09 Server is shut down.
+21-May-2019 19:33:02 Server started up.  pid=99
+21-May-2019 19:33:05 New connection on socket 0.
+21-May-2019 19:33:21 Server is shut down.
+21-May-2019 19:36:37 Server started up.  pid=99
+21-May-2019 19:36:39 New connection on socket 0.
+21-May-2019 19:36:44 Server is shut down.
+21-May-2019 19:44:12 Server started up.  pid=99
+21-May-2019 19:44:13 New connection on socket 0.
+21-May-2019 19:44:42 Server is shut down.
+21-May-2019 19:45:41 Server started up.  pid=99
+21-May-2019 19:45:46 New connection on socket 0.
+21-May-2019 19:46:25 Server is shut down.
+21-May-2019 19:47:13 Server started up.  pid=99
+21-May-2019 19:47:17 New connection on socket 0.
+21-May-2019 19:47:22 Server is shut down.
+21-May-2019 19:47:47 Server started up.  pid=99
+21-May-2019 19:47:50 New connection on socket 0.
+21-May-2019 19:47:54 Server is shut down.
+21-May-2019 19:48:20 Server started up.  pid=99
+21-May-2019 19:48:32 New connection on socket 0.
+21-May-2019 19:48:48 Server is shut down.
+21-May-2019 19:49:36 Server started up.  pid=99
+21-May-2019 19:49:39 New connection on socket 0.
+21-May-2019 19:50:00 Server is shut down.
+21-May-2019 19:50:32 Server started up.  pid=99
+21-May-2019 19:50:34 New connection on socket 0.
+21-May-2019 19:50:47 Server is shut down.
+21-May-2019 19:53:39 Server started up.  pid=99
+21-May-2019 19:53:45 New connection on socket 0.
+21-May-2019 19:53:54 Server is shut down.
+21-May-2019 19:54:21 Server started up.  pid=99
+21-May-2019 19:54:24 New connection on socket 0.
+21-May-2019 19:55:56 Server is shut down.
+21-May-2019 19:56:25 Server started up.  pid=99
+21-May-2019 19:56:27 New connection on socket 0.
+21-May-2019 19:56:41 Server is shut down.
+21-May-2019 19:56:56 Server started up.  pid=99
+21-May-2019 19:56:57 New connection on socket 0.
+21-May-2019 19:57:09 Server is shut down.
+21-May-2019 19:57:33 Server started up.  pid=99
+21-May-2019 19:57:35 New connection on socket 0.
+21-May-2019 19:57:58 Server is shut down.
+21-May-2019 19:58:20 Server started up.  pid=99
+21-May-2019 19:58:22 New connection on socket 0.
+21-May-2019 19:59:13 Server is shut down.
+21-May-2019 20:01:46 Server started up.  pid=99
+21-May-2019 20:01:52 New connection on socket 0.
+21-May-2019 20:02:42 Server is shut down.
+21-May-2019 20:05:21 Server started up.  pid=99
+21-May-2019 20:05:26 New connection on socket 0.
+21-May-2019 20:05:53 Server is shut down.
+21-May-2019 20:07:02 Server started up.  pid=99
+21-May-2019 20:07:04 New connection on socket 0.
+21-May-2019 20:07:19 Server is shut down.
+21-May-2019 20:09:16 Server started up.  pid=99
+21-May-2019 20:09:18 New connection on socket 0.
+21-May-2019 20:11:19 Server is shut down.
+21-May-2019 20:14:22 Server started up.  pid=99
+21-May-2019 20:14:26 New connection on socket 0.
+21-May-2019 20:14:39 Server is shut down.
+21-May-2019 20:16:22 Server started up.  pid=99
+21-May-2019 20:16:24 New connection on socket 0.
+21-May-2019 20:16:28 Server is shut down.
+21-May-2019 20:20:16 Server started up.  pid=99
+21-May-2019 20:20:19 New connection on socket 0.
+21-May-2019 20:22:48 Server is shut down.
+21-May-2019 20:23:48 [0.0.0.0:?] testfi$ restored
+21-May-2019 20:23:48 Server restored 1 characters.
+21-May-2019 20:23:48 Server started up.  pid=99
+21-May-2019 20:23:49 New connection on socket 0.
+21-May-2019 20:25:16 Server is shut down.
+21-May-2019 20:27:03 [0.0.0.0:?] testfi$ restored
+21-May-2019 20:27:03 Server restored 1 characters.
+21-May-2019 20:27:03 Server started up.  pid=99
+21-May-2019 20:27:15 New connection on socket 0.
+21-May-2019 20:27:37 Server is shut down.
+21-May-2019 20:31:37 [0.0.0.0:?] pp$ restored
+21-May-2019 20:31:37 Server restored 1 characters.
+21-May-2019 20:31:37 Server started up.  pid=99
+21-May-2019 20:31:39 New connection on socket 0.
+21-May-2019 20:32:27 Server is shut down.
+21-May-2019 20:36:20 [0.0.0.0:?] testfi$ restored
+21-May-2019 20:36:20 Server restored 1 characters.
+21-May-2019 20:36:20 Server started up.  pid=99
+21-May-2019 20:36:22 New connection on socket 0.
+21-May-2019 20:36:46 Server is shut down.
+21-May-2019 20:37:42 [0.0.0.0:?] pp$ restored
+21-May-2019 20:37:42 Server restored 1 characters.
+21-May-2019 20:37:42 Server started up.  pid=99
+21-May-2019 20:37:45 New connection on socket 0.
+21-May-2019 20:38:22 Server is shut down.
+21-May-2019 20:39:27 [0.0.0.0:?] pp$ restored
+21-May-2019 20:39:27 Server restored 1 characters.
+21-May-2019 20:39:27 Server started up.  pid=99
+21-May-2019 20:39:29 New connection on socket 0.
+21-May-2019 20:39:37 Server is shut down.
+21-May-2019 20:42:41 Server started up.  pid=99
+21-May-2019 20:42:43 New connection on socket 0.
+21-May-2019 20:43:17 Server is shut down.
+21-May-2019 20:54:17 [0.0.0.0:?] pp$ restored
+21-May-2019 20:54:17 Server restored 1 characters.
+21-May-2019 20:54:17 Server started up.  pid=99
+21-May-2019 20:54:19 New connection on socket 0.
+21-May-2019 21:04:24 Server started up.  pid=99
+21-May-2019 21:04:40 New connection on socket 0.
+21-May-2019 21:05:07 Server is shut down.
+21-May-2019 21:07:52 Server started up.  pid=99
+21-May-2019 21:07:55 New connection on socket 0.
+21-May-2019 21:08:01 Server is shut down.
+21-May-2019 21:08:49 Server started up.  pid=99
+21-May-2019 21:08:52 New connection on socket 0.
+21-May-2019 21:09:01 Server is shut down.
+21-May-2019 21:14:07 Server started up.  pid=99
+21-May-2019 21:14:08 New connection on socket 0.
+21-May-2019 21:20:52 Server started up.  pid=99
+21-May-2019 21:20:54 New connection on socket 0.

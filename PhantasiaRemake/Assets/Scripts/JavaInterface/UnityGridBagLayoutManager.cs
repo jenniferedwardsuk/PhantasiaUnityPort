@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnityGridBagLayoutManager : MonoBehaviour
 {
@@ -79,9 +80,9 @@ public class UnityGridBagLayoutManager : MonoBehaviour
     {
         foreach (JavaComponent comp in components)
         {
+            RectTransform unityObj = comp.unityComponentGroup.rectComponent;
             if (comp.layoutName != null)
             {
-                RectTransform unityObj = comp.unityComponentGroup.rectComponent;
                 Vector2 hardcodedSize = unityObj.sizeDelta;
                 Vector3 hardcodedPosition = unityObj.position;
                 bool changed = false;
@@ -91,24 +92,6 @@ public class UnityGridBagLayoutManager : MonoBehaviour
                         //approx original game's proportions
                         //hardcodedSize = new Vector2(960.05f, 272.6f);
                         //hardcodedPosition = new Vector3(480.02f, -136.32f, 0);
-                        for (int i = 0; i < unityObj.childCount; i++)
-                        {
-                            //left
-                            if (unityObj.GetChild(i).name.Contains("Stats"))
-                            {
-                                RectTransform childrect = unityObj.GetChild(i).GetComponent<RectTransform>();
-                                childrect.position = new Vector3(childrect.position.x, childrect.position.y, childrect.position.z);
-                                childrect.sizeDelta = new Vector2(620, childrect.sizeDelta.y);
-                            }
-                            //right
-                            if (unityObj.GetChild(i).name.Contains("Head") || unityObj.GetChild(i).name.Contains("Treasure") || unityObj.GetChild(i).name.Contains("Equipment"))
-                            {
-                                RectTransform childrect = unityObj.GetChild(i).GetComponent<RectTransform>();
-                                childrect.position = new Vector3(childrect.position.x, childrect.position.y, childrect.position.z);
-                                childrect.sizeDelta = new Vector2(340, childrect.sizeDelta.y);
-                            }
-                            //todo - no apparent effect
-                        }
 
                         break;
                     case "messages":
@@ -164,6 +147,56 @@ public class UnityGridBagLayoutManager : MonoBehaviour
                     unityObj.sizeDelta = hardcodedSize;
                     unityObj.position = hardcodedPosition + new Vector3(0, panelCorners[1].y, 0);
                     //+ new Vector3(unityObj.sizeDelta.x / 2, -1 * (unityObj.sizeDelta.y / 2), 0); //default to top left corner
+                }
+            }
+            else
+            {
+                //status left
+                if (unityObj.name.Contains("Stats"))
+                {
+                    //Debug.LogError("hardcoding panel stats");
+                    RectTransform childrect = unityObj.GetComponent<RectTransform>();
+                    childrect.position = new Vector3(310, childrect.position.y, childrect.position.z);
+                    childrect.sizeDelta = new Vector2(620, childrect.sizeDelta.y);
+
+                    if (!unityObj.gameObject.GetComponent<Shadow>())
+                    {
+                        Shadow outline1 = unityObj.gameObject.AddComponent<Shadow>();
+                        Shadow outline2 = unityObj.gameObject.AddComponent<Shadow>();
+                        outline1.effectDistance = new Vector2(1, 1);
+                        outline2.effectDistance = new Vector2(-1, -1);
+                    }
+
+                    //status subs
+                    for (int i = 0; i < unityObj.childCount; i++)
+                    {
+                        if (unityObj.GetChild(i).name.Contains("PanelEnergy") || unityObj.GetChild(i).name.Contains("PanelStrength") || unityObj.GetChild(i).name.Contains("PanelQuickness"))
+                        {
+                            if (!unityObj.GetChild(i).gameObject.GetComponent<Shadow>())
+                            {
+                                Shadow outline1 = unityObj.GetChild(i).gameObject.AddComponent<Shadow>();
+                                Shadow outline2 = unityObj.GetChild(i).gameObject.AddComponent<Shadow>();
+                                outline1.effectDistance = new Vector2(1, 1);
+                                outline2.effectDistance = new Vector2(-1, -1);
+                            }
+                        }
+                    }
+                }
+                //status right
+                if (unityObj.name.Contains("Head") || unityObj.name.Contains("Treasure") || unityObj.name.Contains("Equipment"))
+                {
+                    //Debug.LogError("hardcoding panel " + unityObj.name);
+                    RectTransform childrect = unityObj.GetComponent<RectTransform>();
+                    childrect.position = new Vector3(790, childrect.position.y + 2, childrect.position.z);
+                    childrect.sizeDelta = new Vector2(340, childrect.sizeDelta.y);
+
+                    if (!unityObj.gameObject.GetComponent<Shadow>())
+                    {
+                        Shadow outline1 = unityObj.gameObject.AddComponent<Shadow>();
+                        Shadow outline2 = unityObj.gameObject.AddComponent<Shadow>();
+                        outline1.effectDistance = new Vector2(1, 0);
+                        outline2.effectDistance = new Vector2(-1, 0);
+                    }
                 }
             }
         }

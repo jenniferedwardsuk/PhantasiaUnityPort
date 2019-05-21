@@ -232,7 +232,7 @@ public class statusPne : JavaPanel
 
         constraints.gridx = 0;
         constraints.gridy = 0;
-        constraints.gridwidth = 3;
+        constraints.gridwidth = 7;// 3;
         constraints.gridheight = 1;
         constraints.weightx = 0;
         constraints.weighty = 0;
@@ -244,7 +244,7 @@ public class statusPne : JavaPanel
 
         constraints.gridx = 0;
         constraints.gridy = 1;
-        constraints.gridwidth = 1;
+        constraints.gridwidth = 5;// 1;
         constraints.gridheight = 1;
         constraints.weightx = 1;
         constraints.weighty = 0;
@@ -253,7 +253,7 @@ public class statusPne : JavaPanel
         GridBagLayout.setConstraints(energyGraph, constraints);
         energyPane.add(energyGraph);
 
-        constraints.gridx = 1;
+        constraints.gridx = 5;// 1;
         constraints.gridy = 1;
         constraints.gridwidth = 1;
         constraints.gridheight = 1;
@@ -267,7 +267,7 @@ public class statusPne : JavaPanel
         shieldImage.setSize(18, 18);
         energyPane.add(shieldImage);
 
-        constraints.gridx = 2;
+        constraints.gridx = 6;// 2;
         constraints.gridy = 1;
         constraints.gridwidth = 1;
         constraints.gridheight = 1;
@@ -287,7 +287,7 @@ public class statusPne : JavaPanel
 
         constraints.gridx = 0;
         constraints.gridy = 0;
-        constraints.gridwidth = 3;
+        constraints.gridwidth = 7;// 3;
         constraints.gridheight = 1;
         constraints.weightx = 0;
         constraints.weighty = 0;
@@ -299,7 +299,7 @@ public class statusPne : JavaPanel
 
         constraints.gridx = 0;
         constraints.gridy = 1;
-        constraints.gridwidth = 1;
+        constraints.gridwidth = 5;// 1;
         constraints.gridheight = 1;
         constraints.weightx = 1;
         constraints.weighty = 0;
@@ -308,7 +308,7 @@ public class statusPne : JavaPanel
         GridBagLayout.setConstraints(strengthGraph, constraints);
         strengthPane.add(strengthGraph);
 
-        constraints.gridx = 1;
+        constraints.gridx = 5;// 1;
         constraints.gridy = 1;
         constraints.gridwidth = 1;
         constraints.gridheight = 1;
@@ -322,7 +322,7 @@ public class statusPne : JavaPanel
         swordImage.setSize(18, 18);
         strengthPane.add(swordImage);
 
-        constraints.gridx = 2;
+        constraints.gridx = 6;// 2;
         constraints.gridy = 1;
         constraints.gridwidth = 1;
         constraints.gridheight = 1;
@@ -342,7 +342,7 @@ public class statusPne : JavaPanel
 
         constraints.gridx = 0;
         constraints.gridy = 0;
-        constraints.gridwidth = 3;
+        constraints.gridwidth = 7;// 3;
         constraints.gridheight = 1;
         constraints.weightx = 0;
         constraints.weighty = 0;
@@ -354,7 +354,7 @@ public class statusPne : JavaPanel
 
         constraints.gridx = 0;
         constraints.gridy = 1;
-        constraints.gridwidth = 1;
+        constraints.gridwidth = 5;// 1;
         constraints.gridheight = 1;
         constraints.weightx = 1;
         constraints.weighty = 0;
@@ -363,7 +363,7 @@ public class statusPne : JavaPanel
         GridBagLayout.setConstraints(quicknessGraph, constraints);
         quicknessPane.add(quicknessGraph);
 
-        constraints.gridx = 1;
+        constraints.gridx = 5;// 1;
         constraints.gridy = 1;
         constraints.gridwidth = 1;
         constraints.gridheight = 1;
@@ -377,7 +377,7 @@ public class statusPne : JavaPanel
         quicksilverImage.setSize(18, 18);
         quicknessPane.add(quicksilverImage);
 
-        constraints.gridx = 2;
+        constraints.gridx = 6;// 2;
         constraints.gridy = 1;
         constraints.gridwidth = 1;
         constraints.gridheight = 1;
