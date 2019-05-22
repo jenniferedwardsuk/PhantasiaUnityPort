@@ -281,3 +281,11 @@
 21-May-2019 21:22:00 [0:0$:0] pp$ died
 21-May-2019 21:22:18 [0:0$:0] pp$ created by p$
 21-May-2019 21:26:50 [0:0$:0] pp$ saved
+21-May-2019 21:59:16 [0:0$:0] pp$ loaded by p$
+21-May-2019 22:04:48 [0.0.0.0:?] pp$ restored
+21-May-2019 22:05:01 [0:0$:0] pp$ loaded by p$
+21-May-2019 22:08:22 [0.0.0.0:?] pp$ restored
+21-May-2019 22:08:37 [0:0$:0] pp$ loaded by p$
+21-May-2019 22:12:48 [0.0.0.0:?] pp$ restored
+21-May-2019 22:12:59 [0:0$:0] pp$ loaded by p$
+21-May-2019 22:13:38 [0:0$:0] pp$ saved

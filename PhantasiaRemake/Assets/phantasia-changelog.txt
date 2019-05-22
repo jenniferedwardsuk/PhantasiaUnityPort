@@ -11,8 +11,8 @@ todo list:
 
 bugs:
 
-GENERAL
-- \0 string interrupt is a potential problem
+POTENTIAL
+- \0 string interrupt could cause issues
 - .Length on strings may need to be replaced with CFUNCTIONS.strlen
 - char[] strings may need to be initialised to particular sizes per commented code
 
@@ -25,7 +25,6 @@ MINOR
 MODERATE
 - long battles can max out main scroll area, it doesn't extend
 - main scroll area should scroll to location of end of text (up when cleared or down when overflow)
-- colors are bad after logging in character
 
 MAJOR
 - none
@@ -33,11 +32,7 @@ MAJOR
 VISUAL
 - main scrollview text component is too wide on the right side
 - layout issues remain on:
-	- popups (border layout expansion/minimums trouble)
-	- statuspne > PanelEnergy (and str, speed): main bars should be longer, icon and num smaller	
 	- chatpne (scroll area isn't tall enough - resize central if south but no north)
-  so: border layout to fill space when unused areas exist
-      some components should take their min required size/height/width. add 'resize type' to border/gridbag? or 'fixed size'
 
 BUILD ONLY
 - exception popup would be good
@@ -65,13 +60,22 @@ done:
 - converted bin files
 - interfaced src files
 
+
+
+22-may-2019
+- bugfix: correctly validate account names containing uppercase letters
+
 21-may-2019
 - bugfix: allow for empty event queue when filing events (fixes monsters not flocking)
 - bugfix: layout: don't set spacing on gridlayouts
 - bugfix: popups: refresh layout properly (fixes x/y fields being incorrect size/position)
 - added: outline on main status panels
 - modified: color adjustments
-- modified: layout adjustments
+- modified: layout adjustments for main status panels
+(late)
+- bugfix: append \0 to chat messages if needed (fixes chat softlocking game)
+
+BUILD 3
 
 20-may-2019
 - added: resizing of borderlayout when no east/west or north/south components exist
@@ -99,6 +103,8 @@ done:
 - bugfix: better randomisation (fixes monster speed contest being all or nothing)
 - bugfix: index safety for message handling
 - modified: better error handling on client when exiting
+
+BUILD 2
 
 16-may-2019
 - bugfix: ref intention on CFUNCTIONS.strcat and info.Do_true_false (fixes info stats bad packets)
@@ -129,7 +135,7 @@ done:
 (regular)
 - added: dummy button image (to allow build)
 
-FIRST BUILD (nb: in build folder, had to create \Assets\Scripts\Original with \log\ and \data\)
+BUILD 1 (nb: in build folder, had to create \Assets\Scripts\Original with \log\ and \data\)
 
 12-may-2019
 - bugfix: creation of opened files when appropriate

@@ -80,6 +80,7 @@ public class CFUNCTIONS
     }
     internal static char tolower(char chr)
     {
+        //Debug.LogError("tolower: " + new string(new char[] { chr }).Replace('\0','$'));
         string str = chr.ToString();
         return str.ToLower().ToCharArray()[0];
     }

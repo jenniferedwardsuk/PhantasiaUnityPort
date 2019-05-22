@@ -2183,3 +2183,22 @@ DD-Apr-YYYY 10:22:09 [0.0.0.0:0] CLibFile.fwrite of data/realmdata failed in Do_
 21-May-2019 21:09:01 UNITY: STOPPING GAME
 21-May-2019 21:14:06 UNITY: STARTING GAME
 21-May-2019 21:20:51 UNITY: STARTING GAME
+21-May-2019 21:46:03 UNITY: STARTING GAME
+21-May-2019 21:59:02 UNITY: STARTING GAME
+21-May-2019 21:59:42 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 21:59:42 UNITY: STOPPING GAME
+21-May-2019 22:04:47 UNITY: STARTING GAME
+21-May-2019 22:05:28 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 22:05:28 UNITY: STOPPING GAME
+21-May-2019 22:08:22 UNITY: STARTING GAME
+21-May-2019 22:09:00 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+21-May-2019 22:09:01 UNITY: STOPPING GAME
+21-May-2019 22:12:48 UNITY: STARTING GAME
+22-May-2019 22:17:41 UNITY: STARTING GAME
+22-May-2019 22:18:01 [0:0$:0] Client returned a string of 53 bytes, 32 max in Do_get_socket_string.
+22-May-2019 22:19:11 [0:0$:0] Couldn't find account "Aivun$" to modify in Do_modify_account.
+22-May-2019 22:25:30 UNITY: STARTING GAME
+22-May-2019 22:26:34 [0:0$:0] Couldn't find account "A$" to modify in Do_modify_account.
+22-May-2019 22:26:50 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+22-May-2019 22:26:50 UNITY: STOPPING GAME
+22-May-2019 22:30:23 UNITY: STARTING GAME

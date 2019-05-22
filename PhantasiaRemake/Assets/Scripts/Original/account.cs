@@ -864,6 +864,9 @@ namespace phantasiaclasses
             while (CLibFile.fread(ref readAccount, phantdefs.SZ_ACCOUNT, 1, account_file) == 1)
             {
 
+                /* convert the name to lower case and store it */ //added for unity. bug in original?
+                accountName = accountName.ToLower();
+
                 /* if this is the account */
                 if (readAccount.lcname == accountName)
                 {

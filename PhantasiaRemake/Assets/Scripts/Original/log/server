@@ -1923,3 +1923,29 @@ DD-Apr-YYYY 10:22:09 Server is shut down.
 21-May-2019 21:14:08 New connection on socket 0.
 21-May-2019 21:20:52 Server started up.  pid=99
 21-May-2019 21:20:54 New connection on socket 0.
+21-May-2019 21:46:04 Server started up.  pid=99
+21-May-2019 21:46:06 New connection on socket 0.
+21-May-2019 21:59:02 Server started up.  pid=99
+21-May-2019 21:59:05 New connection on socket 0.
+21-May-2019 21:59:42 Server is shut down.
+21-May-2019 22:04:48 [0.0.0.0:?] pp$ restored
+21-May-2019 22:04:48 Server restored 1 characters.
+21-May-2019 22:04:48 Server started up.  pid=99
+21-May-2019 22:04:50 New connection on socket 0.
+21-May-2019 22:05:28 Server is shut down.
+21-May-2019 22:08:22 [0.0.0.0:?] pp$ restored
+21-May-2019 22:08:22 Server restored 1 characters.
+21-May-2019 22:08:22 Server started up.  pid=99
+21-May-2019 22:08:27 New connection on socket 0.
+21-May-2019 22:09:01 Server is shut down.
+21-May-2019 22:12:48 [0.0.0.0:?] pp$ restored
+21-May-2019 22:12:48 Server restored 1 characters.
+21-May-2019 22:12:48 Server started up.  pid=99
+21-May-2019 22:12:49 New connection on socket 0.
+22-May-2019 22:17:42 Server started up.  pid=99
+22-May-2019 22:17:44 New connection on socket 0.
+22-May-2019 22:25:31 Server started up.  pid=99
+22-May-2019 22:25:32 New connection on socket 0.
+22-May-2019 22:26:50 Server is shut down.
+22-May-2019 22:30:23 Server started up.  pid=99
+22-May-2019 22:30:25 New connection on socket 0.

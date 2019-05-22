@@ -1129,6 +1129,8 @@ namespace phantasiaclasses
             fileclass.Do_log(pathnames.CHAT_LOG, censored_msg);
 
             CFUNCTIONS.strcat(ref uncensored_msg, "\n");
+            if (uncensored_msg[uncensored_msg.Length - 1] != '\0') //added for unity; strings don't implicitly include \0
+                CFUNCTIONS.strcat(ref uncensored_msg, "\0");
             uncensoredLength = CFUNCTIONS.strlen(uncensored_msg) + 1;
 
             /* create a censored message */
@@ -1238,7 +1240,7 @@ namespace phantasiaclasses
                             event_ptr.arg4 = arg4.Replace('\0', '$').Replace("$", "");
                         }
 
-                        Debug.LogError("Chat debug: sending message event: " + event_ptr.arg4.ToString().Replace('\0', '$'));
+                        //Debug.LogError("Chat debug: sending message event: " + event_ptr.arg4.ToString().Replace('\0', '$'));
                         /* send the chat to this player */
                         eventclass.Do_send_event(event_ptr);
                     }
