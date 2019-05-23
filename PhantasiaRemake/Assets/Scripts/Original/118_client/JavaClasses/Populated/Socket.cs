@@ -15,7 +15,7 @@ public class Socket
     InputStream inStream;
 
     //	Socket(String host, int port)        //Creates a stream socket and connects it to the specified port number on the named host.
-    public Socket(string host, int port) //todo: use port?
+    public Socket(string host, int port) //port is unused
     {
         outStream = new OutputStream();
         inStream = new InputStream();

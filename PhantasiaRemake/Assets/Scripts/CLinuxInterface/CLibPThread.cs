@@ -244,7 +244,6 @@ public class CLibPThread : MonoBehaviour {
                 newThread.Name = networkPlayerID.ToString();// "pthread" + nextThreadID;
                 the_thread = new pthread_t(newThread); //sets pid_t //ensuring Thread name has been set before running this
                 knownThreads.Add(newThread.Name, the_thread);
-                //the_thread.associatedSocket = LinuxLibSocket.SocketListManager.AddSocket(the_thread); //new LinuxLibSocket.LinuxSocket(the_thread.tID, LinuxLibSocket.SocketState.LISTEN); //todo: untested
 
                 newThread.Start(methodParams);
 
@@ -282,8 +281,16 @@ public class CLibPThread : MonoBehaviour {
             Debug.LogError("Unable to find thread for kill delivery");
         }
     }
-    internal static void pthread_join(pthread_t the_thread, object p)
+    internal static void pthread_join(pthread_t the_thread, object retval)
     {
+        /*The pthread_join() function waits for the thread specified by thread to terminate.  If that thread has already terminated, then
+       pthread_join() returns immediately.  The thread specified by thread must be joinable.
+
+       If retval is not NULL, then pthread_join() copies the exit status of the target thread (i.e., the value that the target thread supplied to
+       pthread_exit(3)) into the location pointed to by retval.  If the target thread was canceled, then PTHREAD_CANCELED is placed in the
+       location pointed to by retval.*/
+        //RETURN VALUE         On success, pthread_join() returns 0; on error, it returns an error number.
+
         Thread theThread = the_thread.associatedThread;
         if (theThread != null)
         {
@@ -293,7 +300,7 @@ public class CLibPThread : MonoBehaviour {
         {
             Debug.LogError("Unable to find thread for kill: " + the_thread.associatedThread.Name);
         }
-        //todo: p?
+        //retval holder object is always null in phantasia
     }
 
 

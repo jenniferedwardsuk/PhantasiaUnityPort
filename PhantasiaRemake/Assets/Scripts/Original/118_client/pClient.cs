@@ -60,7 +60,6 @@ public class pClient : JavaApplet, IJavaKeyListener
     internal void init()
     {
         Debug.Log("Thread " + System.Threading.Thread.CurrentThread.Name + ": PCLIENT INIT");
-        //mainThread = Thread.currentThread(); //todo
 
         f.addIJavaKeyListener(this);
 

@@ -289,3 +289,9 @@
 21-May-2019 22:12:48 [0.0.0.0:?] pp$ restored
 21-May-2019 22:12:59 [0:0$:0] pp$ loaded by p$
 21-May-2019 22:13:38 [0:0$:0] pp$ saved
+23-May-2019 20:07:36 [0:0$:0] testfi$ loaded by testacc1$
+23-May-2019 20:08:02 [0:0$:0] testfi$ died
+23-May-2019 20:10:40 [0:0$:0] testfi$ created by testacc1$
+23-May-2019 20:15:23 [0:0$:0] testfi$ saved
+23-May-2019 23:12:19 [0:0$:0] testfi$ loaded by testacc1$
+23-May-2019 23:12:31 [0:0$:0] testfi$ saved

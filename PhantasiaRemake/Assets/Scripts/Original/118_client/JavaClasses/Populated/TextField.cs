@@ -76,7 +76,7 @@ Constructs a new empty text field with the specified number of columns.
 
     internal string getText()
     {
-        //todo: this causes text sent to be empty. also masking isn't working anyway
+        //todo: this causes text sent to be empty. also masking isn't working anyway. use unity's setting
         //if (echoChar != 'K') //don't update from unityComponent if echo masking in use 
         //    return TEXT;
         TEXT = unityComponents.inputFieldComponent.text; // textComponent.text; //textcomponent holds only the visible text

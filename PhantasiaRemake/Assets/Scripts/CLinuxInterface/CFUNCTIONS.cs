@@ -135,9 +135,8 @@ public class CFUNCTIONS
     }
 
     internal static void sprintf(ref string target, string str, params object[] paramstrs) //(theHistory.description, "%s restored the character named %s\n", c.modifiedName, readPlayer.name);
-    { //todo: string target as ref string? causes unity crash
+    {
       /*The C library function int sprintf(char *str, const char *format, ...) sends formatted output to a string pointed to, by str.*/
-      //todo: str1 purpose?
 
         //error_msg = CFUNCTIONS.sprintfSinglestring("[%s] Connection on socket %d.\n", c.connection_id, c.socket);
 
@@ -195,8 +194,7 @@ public class CFUNCTIONS
         {
             if (paramstrs[i] != null)
             {
-                //todo: early interrupt avoidance needed elsewhere also?
-                if (paramstrs[i].GetType() == typeof(char[])) //convert char arrays to strings //todo: interrupts strings...?
+                if (paramstrs[i].GetType() == typeof(char[])) //convert char arrays to strings
                 {
                     ////Debug.Log("converting char[] param to string");
                     //char[] param = (char[])paramstrs[i];
@@ -242,7 +240,7 @@ public class CFUNCTIONS
             //Debug.Log("string format debug: target: " + target + " || readystr: " + readystr + " || paramStrings[0]: " + paramStrings[0] + " ...");
         try
         {
-            target = String.Format(readystr, paramStrings); //todo: sufficient?
+            target = String.Format(readystr, paramStrings);
         }
         catch (Exception e)
         {
@@ -298,16 +296,15 @@ public class CFUNCTIONS
         return dest; 
     }
 
-    internal static bool strcmp(string string1, string string2) //todo: check whether accidentally reversed signs anywhere (str1==str2 => 0, in C => false as condition, not true)
+    internal static bool strcmp(string string1, string string2)
     {
-        //todo
         /*This function return values that are as follows −    
 if Return value < 0 then it indicates str1 is less than str2.
 if Return value > 0 then it indicates str2 is less than str1.
 if Return value = 0 then it indicates str1 is equal to str2.*/
 
         bool compare = true;
-        if (string1 == null || string2 == null) // todo: null strings are not a match?
+        if (string1 == null || string2 == null) // todo: check null strings are not a match?
         {
             compare = false;
             return !compare;
@@ -315,7 +312,7 @@ if Return value = 0 then it indicates str1 is equal to str2.*/
 
         int str1end = CFUNCTIONS.strlen(string1);
         int str2end = CFUNCTIONS.strlen(string2);
-        if (str1end == 0 || str2end == 0) // todo: empty strings are not a match?
+        if (str1end == 0 || str2end == 0) // todo: check empty strings are not a match?
         {
             compare = false;
             return !compare;
@@ -478,8 +475,6 @@ if Return value = 0 then it indicates str1 is equal to str2.*/
                 rand = new System.Random(seed);
             }
         }
-
-        //todo: set as global variable in main
     }
     internal static int random_r(random_data randData, ref int result)
     {
@@ -726,9 +721,7 @@ if Return value = 0 then it indicates str1 is equal to str2.*/
          * If sig is 0 (the null signal), error checking is performed but no signal is actually sent. The null signal can be used to check the validity of pid.*/
 
         //used at end of client thread loop (SIGUSR1) to tell server thread to clean up, and in itcombat (SIGIO) to contact opponent's process
-
-        //todo: want to use pid to activate sig on appropriate thread. check that pid is accurate
-        //todo: do this more efficiently
+        
         bool delivered = false;
         foreach(CLibPThread.pthread_t pthread in CLibPThread.knownThreads.Values)
         {

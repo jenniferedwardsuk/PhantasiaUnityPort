@@ -622,7 +622,7 @@ namespace phantasiaclasses
         {
             int i;
 
-            button_ptr.compass = (char)0; //todo: sufficient?
+            button_ptr.compass = (char)0;
             for (i = starting; i < 8; i++)
             {
 

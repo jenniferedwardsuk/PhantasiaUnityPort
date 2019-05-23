@@ -20,7 +20,7 @@ public class imagePne : JavaCanvas
     {
         if (componentGraphics == null)
             componentGraphics = new JavaGraphics(this);
-        paint(componentGraphics); //todo?
+        paint(componentGraphics);
     }
 
     internal void paint(JavaGraphics g)

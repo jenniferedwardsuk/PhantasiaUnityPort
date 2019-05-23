@@ -84,7 +84,7 @@ public class UnityJavaInterface
         RefreshAllLayouts(JavaClient.chat);
         RefreshAllLayouts(JavaClient.rightPane);
 
-        RetrieveAllWanderingComponents(mainCanvas); //todo: doesn't work - too soon?
+        RetrieveAllWanderingComponents(mainCanvas);
         GameObject[] popups = GameObject.FindGameObjectsWithTag("PopupCanvas");
         foreach (GameObject obj in popups)
         {
@@ -189,7 +189,7 @@ public class UnityJavaInterface
                 Debug.Log(msg);
             }
 
-            if (UnityGameController.StopApplication) //time to quit  //todo: share between client and server
+            if (UnityGameController.StopApplication) //time to quit
             {
                 Debug.Log("Java client: thread " + System.Threading.Thread.CurrentThread.Name + " stopping in ReadFromSocket");
                 WaitingData = new byte[] { };
@@ -328,16 +328,16 @@ public class UnityJavaInterface
     }
 
     #region main canvas
-    internal static void setMainTitle()
+    internal static void setMainTitle() //sets window title //only called on main frame init, with "Phantasia v4"
     {
-        //todo      //throw new NotImplementedException();
+        //unnecessary for unity
     }
 
     internal static void setMainCanvasSize(int v1, int v2)
     {
         if (mainCanvas && mainCanvas.GetComponent<RectTransform>())
         {
-            //mainCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(v1,v2); //todo ? no can do on main canvas
+            //mainCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(v1,v2); // no can do on main canvas currently, and some elements are currently hardcoded
         }
         else
         {
@@ -527,7 +527,6 @@ public class UnityJavaInterface
         }
         else
         {
-            //todo - no layout rule on obj, so retrieve any stray children - and lay them out? (vertical layout group?)
             RetrieveAllWanderingComponents(sourceComponent.unityComponentGroup.rectComponent.gameObject);
         }
 
@@ -562,9 +561,6 @@ public class UnityJavaInterface
     {
         if (gridLayout.GetType() == typeof(BorderLayout))
         {
-            //GridLayoutGroup group = unityPanel.rectComponent.gameObject.AddComponent<GridLayoutGroup>();
-            //group.spacing = new Vector2(((BorderLayout)gridLayout).XGap, ((BorderLayout)gridLayout).YGap);
-            //todo
             CreateOrRefreshBorderLayout(sourceComponent);
         }
         else if (gridLayout.GetType() == typeof(GridBagLayout))
@@ -895,7 +891,7 @@ public class UnityJavaInterface
         panelComponents.rectComponent.anchorMax = new Vector2(0, 1); //top left
         Panel.AddComponent<CanvasRenderer>();
         panelComponents.imageComponent = Panel.AddComponent<Image>();
-        Color imgcolor = new Color(1, 1, 1, 1); //todo: only works sometimes
+        Color imgcolor = new Color(1, 1, 1, 1);
         panelComponents.imageComponent.color = imgcolor;
 
         //commented: ugly
@@ -1003,7 +999,7 @@ public class UnityJavaInterface
             image.sprite = img;
             image.type = Image.Type.Sliced;
             buttonComponents.buttonComponent = Button.AddComponent<Button>();
-            buttonComponents.buttonComponent.enabled = true; //todo - not working?
+            buttonComponents.buttonComponent.enabled = true;
             buttonComponents.buttonComponent.targetGraphic = image;
             buttonComponents.textComponent = ButtonText.AddComponent<Text>();
             buttonComponents.textComponent.color = new Color(0, 0, 0, 1);

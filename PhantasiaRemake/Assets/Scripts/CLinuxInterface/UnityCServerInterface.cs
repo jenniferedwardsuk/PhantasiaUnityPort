@@ -41,7 +41,7 @@ public class UnityCServerInterface : NetworkBehaviour {
     {      
         foreach(int value in Sockets.Keys)
         {
-            //todo: move to coroutine if performance suffers
+            //can move to coroutine if performance suffers
             while (Sockets[value].Count > 0)
             {
                 string datastring = Encoding.ASCII.GetString(Sockets[value][0]);
@@ -54,7 +54,7 @@ public class UnityCServerInterface : NetworkBehaviour {
 
         foreach (string value in ThreadSIGALRMflags.Keys)
         {
-            //todo: move to coroutine if performance suffers
+            //can move to coroutine if performance suffers
             while (ThreadSIGALRMflags[value].Count > 0)
             {
                 Debug.Log("<color=green>UNITYCSERVERINTERFACE SCHEDULING ALARMS</color>");
@@ -75,8 +75,7 @@ public class UnityCServerInterface : NetworkBehaviour {
     {
         Sockets.Add(socketFD, new List<byte[]> { });
     }
-
-    //todo: call
+    
     public void OnNewPlayer(UnityPlayerController newPlayer)
     {
         players.Add(newPlayer);
@@ -115,7 +114,7 @@ public class UnityCServerInterface : NetworkBehaviour {
 
         string Arg0filtered = Arg0.Replace('\0', '$');
         string Arg1filtered = Arg1.Replace('\0', '$');
-        Debug.Log("<color=red>Email sending is not implemented yet.</color> Confirmation code for " + Arg0filtered + " is: " + Arg1filtered + ""); //todo: display on screen
+        Debug.Log("<color=red>Email sending is not implemented yet.</color> Confirmation code for " + Arg0filtered + " is: " + Arg1filtered + "");
         //todo: send email
         //        system("mail -s \"Phantasia Old Account Information\" $ARGV[2] < /tmp/$ARGV[2].mail");
 
@@ -201,7 +200,7 @@ public class UnityCServerInterface : NetworkBehaviour {
     //This function will now be run on clients when it is called on the server. Any arguments will automatically be passed to the clients
 
     [ClientRpc]
-    public void RpcSendDataToAllClients(byte[] message) //todo: call
+    public void RpcSendDataToAllClients(byte[] message) 
     {
         foreach (UnityPlayerController player in players)
         {
@@ -213,11 +212,11 @@ public class UnityCServerInterface : NetworkBehaviour {
     }
 
     [ClientRpc]
-    public void RpcSendDataToSpecificClient(short targetPlayerID, byte[] message)  //this method runs on all clients when called by the server //todo: call
+    public void RpcSendDataToSpecificClient(short targetPlayerID, byte[] message)  //this method runs on all clients when called by the server 
     {
         foreach(UnityPlayerController player in players)
         {
-            if (player.playerControllerId == targetPlayerID) //todo: set playerControllerId as thread pid
+            if (player.playerControllerId == targetPlayerID)
             {
                 player.ReceiveDataFromServer(message);
             }
@@ -248,7 +247,6 @@ public class UnityCServerInterface : NetworkBehaviour {
         {
             Debug.LogError("Server client thread not found for player " + playerID);
         }
-        //todo: identify player's C thread, set message as waiting data? and signal it
     }
     internal void DoSIGALRMCountdownForThread(int time, Thread relevantThread)
     {

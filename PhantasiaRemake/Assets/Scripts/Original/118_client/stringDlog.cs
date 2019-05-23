@@ -49,7 +49,7 @@ public class stringDlog : Dialog , IJavaActionListener
         okJavaButton = new JavaButton(constants.OK_LABEL);
         cancelJavaButton = new JavaButton(constants.CANCEL_LABEL);
 
-        textJavaLabel = new JavaLabel(null, labelString, JavaLabel.CENTER); //todo: gets parented to previous panel, not popup
+        textJavaLabel = new JavaLabel(null, labelString, JavaLabel.CENTER);
 
         super(c.f, false);
 

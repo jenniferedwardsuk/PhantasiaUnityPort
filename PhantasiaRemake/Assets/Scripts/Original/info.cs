@@ -171,7 +171,7 @@ namespace phantasiaclasses
             }
 
             Do_format_time(ref examine_ptr.time_played, c.player.time_played +
-                CFUNCTIONS.GetUnixEpoch(DateTime.Now) - c.player.last_load); //todo: replace with time()?
+                CFUNCTIONS.GetUnixEpoch(DateTime.Now) - c.player.last_load);
 
             if (c.wizard > 2)
             {

@@ -52,13 +52,13 @@ public class UnityPlayerUIController : NetworkBehaviour {
                 if (UnityJavaInterface.startThread)
                 {
                     Debug.Log(Thread.CurrentThread.Name + ": Starting listen thread");
-                    StartCoroutine(RunThread(UnityJavaInterface.lthread)); //todo: replace with thread    //todo - freezes unity
+                    //StartCoroutine(RunThread(UnityJavaInterface.lthread));
                     UnityJavaInterface.startThread = false;
                 }
                 if (UnityJavaInterface.stopThread)
                 {
                     Debug.Log(Thread.CurrentThread.Name + ": Stopping listen thread");
-                    StopCoroutine(RunThread(UnityJavaInterface.lthread)); //todo: replace with thread
+                    //StopCoroutine(RunThread(UnityJavaInterface.lthread));
                     UnityJavaInterface.stopThread = false;
                 }
             }
@@ -72,13 +72,11 @@ public class UnityPlayerUIController : NetworkBehaviour {
                     if (Input.GetKeyDown(kcode))
                     {
                         Debug.Log("KeyCode down: " + kcode);
-                        //todo: ignore if chat messagebox is in use?
+                        //todo: ignore if chat messagebox is in use
                         JavaInterface.KeyPressed(kcode);
                     }
                 }
             }
-
-            //todo
         }
 
         if (retrieveAllUI)

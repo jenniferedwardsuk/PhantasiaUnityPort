@@ -68,15 +68,15 @@ public class UnityBorderLayoutManager : MonoBehaviour {
             Vector3[] panelCorners = new Vector3[4];
             rect.GetWorldCorners(panelCorners);
 
-            //todo - include xgap and ygap
+            // xgap and ygap excluded
 
             //set size and position
             switch (component.layoutLocation.ToLower())
             {
                 case "center": //75% of layout
                     unityObj.sizeDelta = new Vector2( //stretch if any component missing
-                        rect.sizeDelta.x * 0.75f, //+ (!hasEast ? rect.sizeDelta.x * 0.125f : 0) + (!hasWest ? rect.sizeDelta.x * 0.125f : 0), //todo: wip 
-                        rect.sizeDelta.y * 0.75f //+ (!hasNorth ? rect.sizeDelta.x * 0.125f : 0) + (!hasSouth ? rect.sizeDelta.x * 0.125f : 0)
+                        rect.sizeDelta.x * 0.75f,
+                        rect.sizeDelta.y * 0.75f
                         );
                     unityObj.position = panelCorners[1]; //top left
                     unityObj.position += new Vector3(rect.sizeDelta.x / 2, -1 * rect.sizeDelta.y / 2, 0); //move to center

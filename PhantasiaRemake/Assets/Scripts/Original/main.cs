@@ -479,7 +479,7 @@ namespace phantasiaclasses
 
                 //Debug.Log("record connection");
                 /* record this connection */
-                CFUNCTIONS.sprintf(ref c.connection_id, "?:%s:%d", c.IP, c.game.clientPid); //todo: debug
+                CFUNCTIONS.sprintf(ref c.connection_id, "?:%s:%d", c.IP, c.game.clientPid);
 
                 //Debug.Log("log connection");
                 error_msg = CFUNCTIONS.sprintfSinglestring("[%s] Connection on socket %d.\n",
@@ -576,7 +576,7 @@ namespace phantasiaclasses
             }
             catch (Exception e)
             {
-                if (!e.Message.Contains("Thread was being aborted")) //todo: this is for debug, filtering out 'thread aborted while sleeping' exception
+                if (!e.Message.Contains("Thread was being aborted")) // this is for debug, filtering out 'thread aborted while sleeping' exception
                 {
                     Debug.LogError("Exception in client C thread: " + e.Message + " || " + e.InnerException);
                     Debug.LogError(e.StackTrace);
@@ -857,7 +857,7 @@ namespace phantasiaclasses
 
             /* print status line */
             CFUNCTIONS.strcpy(ref buttons.button[1], "Move To\n");
-            buttons.compass = '1';// true; //todo
+            buttons.compass = '1';// true;
             CFUNCTIONS.strcpy(ref buttons.button[2], "Info\n");
             CFUNCTIONS.strcpy(ref buttons.button[7], "Quit\n");
             /*

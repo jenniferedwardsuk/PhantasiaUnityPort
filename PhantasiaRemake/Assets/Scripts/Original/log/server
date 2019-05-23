@@ -1949,3 +1949,7 @@ DD-Apr-YYYY 10:22:09 Server is shut down.
 22-May-2019 22:26:50 Server is shut down.
 22-May-2019 22:30:23 Server started up.  pid=99
 22-May-2019 22:30:25 New connection on socket 0.
+23-May-2019 20:06:28 Server started up.  pid=99
+23-May-2019 20:07:16 New connection on socket 0.
+23-May-2019 23:11:56 Server started up.  pid=99
+23-May-2019 23:11:59 New connection on socket 0.

@@ -702,10 +702,13 @@ namespace phantasiaclasses
 
                         event_ptr_ptr = (event_ptr_ptr).next_event;
                     }
-
+                    
                     /* put the event in that location */
                     the_event.next_event = event_ptr_ptr;
                     event_ptr_ptr = the_event;
+                    
+                    if (c.events == null) //added for unity; allow for empty queue
+                        c.events = event_ptr_ptr;
 
                     break;
             }

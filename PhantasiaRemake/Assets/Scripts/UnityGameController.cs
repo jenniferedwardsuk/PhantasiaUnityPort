@@ -54,7 +54,7 @@ public class UnityGameController : NetworkBehaviour {
         }
         if (networkManager && serverManager)
         {
-            //todo
+            
         }
         else
         {
@@ -75,8 +75,7 @@ public class UnityGameController : NetworkBehaviour {
         //add to phantasia's thread list (this is the main server thread)
         CLibPThread.pthread_t the_thread = new CLibPThread.pthread_t(childThread); //sets pid_t //ensuring Thread name has been set before running this
         CLibPThread.knownThreads.Add(childThread.Name, the_thread);
-        //todo
-        //the_thread.associatedSocket = LinuxLibSocket.SocketListManager.AddSocket();//new LinuxLibSocket.LinuxSocket(the_thread.tID, LinuxLibSocket.SocketState.LISTEN); //todo: untested
+        //the_thread.associatedSocket = LinuxLibSocket.SocketListManager.AddSocket();//new LinuxLibSocket.LinuxSocket(the_thread.tID, LinuxLibSocket.SocketState.LISTEN); 
         childThread.Start();
     }
 
@@ -176,7 +175,7 @@ public class UnityGameController : NetworkBehaviour {
         }
         catch (Exception e)
         {
-            if (!e.Message.Contains("Thread was being aborted") && !e.StackTrace.Contains("Thread:Sleep_internal")) //todo: this is for debug, filtering out 'thread aborted while socket selecting/sleeping' or exceptions
+            if (!e.Message.Contains("Thread was being aborted") && !e.StackTrace.Contains("Thread:Sleep_internal")) // this is for debug, filtering out 'thread aborted while socket selecting/sleeping' or exceptions
             {
                 Debug.LogError("Exception in server thread: " + e.Message + " || " + e.InnerException);
                 Debug.LogError(e.StackTrace);

@@ -64,7 +64,7 @@ public class HUDController : MonoBehaviour {
         if (NetworkServer.active && NetworkClient.active)
             manager.StopHost();
 
-        StartButton.gameObject.SetActive(false); //todo: debug editor; hiding button until able to restart cleanly
-        Application.Quit(); //todo: debug general; quit until able to restart cleanly
+        StartButton.gameObject.SetActive(false); //todo: debug for editor; hiding button until able to restart cleanly
+        Application.Quit(); //todo: debug for build; quitting until able to restart cleanly
     }
 }

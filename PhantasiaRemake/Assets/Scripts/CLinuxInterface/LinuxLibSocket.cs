@@ -156,7 +156,7 @@ public class LinuxLibSocket : MonoBehaviour {
 
         internal static LinuxSocket GetSocketForThread(Thread currentThread)
         {
-            LinuxSocket linkedSocket = FileDescriptors.Find(x => x.sourceThread.associatedThread == currentThread); //todo: don't know whether this will work
+            LinuxSocket linkedSocket = FileDescriptors.Find(x => x.sourceThread.associatedThread == currentThread);
             return linkedSocket;
         }
     }
@@ -266,7 +266,7 @@ FIN_WAIT2	TCP; the connection has been closed; our socket is waiting for the rem
             CanWrite = false;
             currentState = SocketState.CLOSED;
         }
-        public int AddPendingConnection(int newConn) //todo: must be called
+        public int AddPendingConnection(int newConn)
         {
             if (pendingConnRequests.Count < maxPendingConns)
             {
@@ -695,7 +695,6 @@ FIN_WAIT2	TCP; the connection has been closed; our socket is waiting for the rem
             Debug.LogError("No CServerInstance available for alarm function");
         else
         {
-            //unityintf.DoSIGALRMCountdownSocket(time, SocketListManager.GetSocketForThread(Thread.CurrentThread)); //todo: link thread to socket on creation
             unityintf.DoSIGALRMCountdownForThread(time, Thread.CurrentThread);
         }
     }
@@ -775,7 +774,7 @@ FIN_WAIT2	TCP; the connection has been closed; our socket is waiting for the rem
                 newSocket.CanWrite = true;
 
                 newFD = newSocket.FileDescriptor;
-                requestedSocket.pendingConnRequests.RemoveAt(0); //todo: populate pendingConnRequests somewhere
+                requestedSocket.pendingConnRequests.RemoveAt(0);
             }
             else
             {
@@ -831,7 +830,7 @@ FIN_WAIT2	TCP; the connection has been closed; our socket is waiting for the rem
         }
         else if (typ == typeof(sockaddr_in))
         {
-            return sizeof(int); //System.Runtime.InteropServices.Marshal.SizeOf(value); //todo: this errors: Type sockaddr_in cannot be marshaled as an unmanaged structure.
+            return sizeof(int); //System.Runtime.InteropServices.Marshal.SizeOf(value); //this errors: Type sockaddr_in cannot be marshaled as an unmanaged structure.
             //sizeof's result is ignored by unity interface anyway, so this shouldn't cause problems as is
         }
         //no further implementations needed for phantasia

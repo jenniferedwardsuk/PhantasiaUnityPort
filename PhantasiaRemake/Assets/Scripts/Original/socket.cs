@@ -415,7 +415,7 @@ namespace phantasiaclasses
                         CFUNCTIONS.strncpy(ref client_ptr.network, new string(string_ptr_two), phantdefs.SZ_FROM - 1);
                         char[] networkChar = new char[client_ptr.network.Length + 1];
                         client_ptr.network.ToCharArray().CopyTo(networkChar, 0);
-                        networkChar[client_ptr.network.Length] = '\0'; //todo: causes interruption in string concatenation
+                        networkChar[client_ptr.network.Length] = '\0';
                         client_ptr.network = new string(networkChar); //[phantdefs.SZ_FROM - 1] = '\0';
                         client_ptr.addressResolved = true;
                     }
@@ -432,7 +432,7 @@ namespace phantasiaclasses
 
                     char[] IPChar = new char[client_ptr.IP.Length + 1];
                     client_ptr.IP.ToCharArray().CopyTo(IPChar, 0);
-                    IPChar[client_ptr.IP.Length] = '\0'; //todo: causes interruption in string concatenation
+                    IPChar[client_ptr.IP.Length] = '\0';
                     client_ptr.IP = new string(IPChar); //[phantdefs.SZ_FROM - 1] = '\0'; //CFUNCTIONS.CharArrayToString(IPChar);  to remove \0?
 
                     /* get the class C network address */
@@ -444,7 +444,7 @@ namespace phantasiaclasses
                     CFUNCTIONS.strncpy(ref client_ptr.network, new string(string_ptr), phantdefs.SZ_FROM - 1);
                     char[] networkChar = new char[client_ptr.network.Length + 1];
                     client_ptr.network.ToCharArray().CopyTo(networkChar, 0);
-                    networkChar[client_ptr.network.Length] = '\0'; //todo: causes interruption in string concatenation
+                    networkChar[client_ptr.network.Length] = '\0';
                     client_ptr.network = new string(networkChar); //[phantdefs.SZ_FROM - 1] = '\0';
 
                     /* stop logging this an an error - too common */
@@ -833,7 +833,7 @@ namespace phantasiaclasses
             //Debug.Log("Thread " + System.Threading.Thread.CurrentThread.Name + ": phantasia.socket.Do_send_string");
 
             //if (theMessage != null && theMessage.Length > 0
-            //    && theMessage[theMessage.Length - 1] == '\0') //todo: this is a quick fix for nullbroken strings
+            //    && theMessage[theMessage.Length - 1] == '\0') //this is a quick fix for nullbroken strings
             //{
             //    Debug.LogError("Fixing string " + theMessage.Replace('\0', '$'));
             //    if (theMessage.Length == 1)

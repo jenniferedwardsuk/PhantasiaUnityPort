@@ -154,7 +154,7 @@ sigismember(), sigpending() or sigprocmask(), the results are undefined.*/
 
             if (sig >= 0 && sig < 5)
             {
-                //reset source signal //todo: not working?
+                //reset source signal
                 Debug.Log("SIGWAIT RESETTING SIGNAL " + sig); //todo: what about stacked socket messages?
                 pthread.SetSignal(sig, false);
             }

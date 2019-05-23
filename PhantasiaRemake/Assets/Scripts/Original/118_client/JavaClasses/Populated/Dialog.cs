@@ -75,31 +75,7 @@ public class Dialog : JavaCanvas //JavaComponent
     {
         component.layoutLocation = location;
         childComponents.Add(component);
-
-        if (component != null)
-        {
-            //Debug.LogError("scoreboard debug: component is not null");
-            if (component.unityComponentGroup != null) //todo: problem is here
-            {
-                //Debug.LogError("scoreboard debug: unityComponentGroup is not null");
-                //if (component.unityComponentGroup.rectComponent != null)
-                //{
-                //    Debug.LogError("scoreboard debug: rectComponent is not null");
-                //    if (unityComponents != null)
-                //    {
-                //        Debug.LogError("scoreboard debug: unityComponents is not null");
-                //        if (unityComponents.panelComponent != null)
-                //        {
-                //            Debug.LogError("scoreboard debug: panelComponent is not null");
-                //        }
-                //    }
-                //}
-            }
-        }
-        else
-        {
-            Debug.LogError("scoreboard debug: component IS NULL");
-        }
+        
         component.unityComponentGroup.rectComponent.parent = unityComponents.panelComponent.transform;
         //pack(); //todo: causes issue with scoreboard 
     }

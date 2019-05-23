@@ -3075,13 +3075,13 @@ namespace phantasiaclasses
             if (c.wizaccount != null && c.wizaccount[0] != '\0')
             {
                 c.account = c.wizaccount;
-                c.wizaccount = "\0"; //todo
+                c.wizaccount = new string(new char[] {'\0'});
             }
 
-            if (c.wizIP != null && c.wizIP != "\0")
+            if (c.wizIP != null && c.wizIP[0] != '\0')
             {
                 c.IP = c.wizIP;
-                c.wizIP = "\0"; //todo
+                c.wizIP = new string(new char[] { '\0' });
             }
         }
     }

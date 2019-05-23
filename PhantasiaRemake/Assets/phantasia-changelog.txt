@@ -4,9 +4,7 @@ Phantasia Port changelog
 
 todo list:
 - reduce todos
-- finish unity-java interface
-- finish unity-c/linux interface
-- check for object arguments called with subclass instances; won't update at source; replace with generic method + ref arg
+- implement mutexes (unnecessary?) and multiplayer
 - file decompile and edit tool for debug purposes
 
 bugs:
@@ -15,16 +13,18 @@ POTENTIAL
 - \0 string interrupt could cause issues
 - .Length on strings may need to be replaced with CFUNCTIONS.strlen
 - char[] strings may need to be initialised to particular sizes per commented code
+- risk of object arguments called with subclass instances; won't update at source; replace with generic method + ref arg
 
 MINOR
 - hexdigest is all nulls	- workaround: ignore password validation
 - scoreboard popup throws non-fatal packet errors after clicking next or prev
-- scoreboard always blank?
 - can't select character from list for Examine
+- allow copy of text from scroll areas
 
 MODERATE
 - long battles can max out main scroll area, it doesn't extend
 - main scroll area should scroll to location of end of text (up when cleared or down when overflow)
+- bars should empty/fill
 
 MAJOR
 - none
@@ -40,7 +40,6 @@ BUILD ONLY
 
 
 one-off issues:
-- build: didn't close fully on exit
 
 resolved:
 - non-experimento character doesn't start at 0,0 	- intentional per Do_roll_new_player
@@ -48,6 +47,7 @@ resolved:
 - no penalty for moving; energy, hunger, ?	- seems intentional per misc.Do_move
 - grail x,y can be very large (186893,622523)	- intentional per init hides. trove 600 to 1400, grail 300k-1mill
 - low-level monsters can still one-shot player with fast attacks on first turn	- seems intentional per initiative contest in fight
+- scoreboard always blank	- intentional per commands.Do_death: adds to scoreboard if player level >= 100, not beyond, and didn't die unusually
 
 done:
 - set up project 
@@ -60,13 +60,15 @@ done:
 - converted bin files
 - interfaced src files
 
-
+23-may-2019
+- bugfix: allow for empty event queue when filing random events (fixes no random monsters/treasure/etc)
+- general tidyup
 
 22-may-2019
 - bugfix: correctly validate account names containing uppercase letters
 
 21-may-2019
-- bugfix: allow for empty event queue when filing events (fixes monsters not flocking)
+- bugfix: allow for empty event queue when filing specific events (fixes monsters not flocking)
 - bugfix: layout: don't set spacing on gridlayouts
 - bugfix: popups: refresh layout properly (fixes x/y fields being incorrect size/position)
 - added: outline on main status panels

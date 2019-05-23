@@ -46,7 +46,7 @@ public class CLibFile : MonoBehaviour {
 
         internal void Close()
         {
-            datafile.Close(); //todo: may be run multiple times. necessary to check whether already closed?
+            datafile.Close();
         }
     }
 
@@ -414,7 +414,7 @@ stream − This is the pointer to a FILE object that specifies an output stream.
         {
             //Debug.Log("fread debug: size: " + size + " || Length: " + file.datafile.Length + " || Position: " + file.datafile.Position);
             //if size is not set, assume this is a whole-file object
-            if (size == 0) //todo: config file?
+            if (size == 0)
             {
                 size = (int)file.datafile.Length;
             }
@@ -489,7 +489,7 @@ stream − This is the pointer to a FILE object that specifies an output stream.
     //        try
     //        {
     //            //if size is not set, assume this is a whole-file object
-    //            if (size == 0) //todo: config file?
+    //            if (size == 0)
     //            {
     //                size = (int)file.datafile.Length;
     //            }

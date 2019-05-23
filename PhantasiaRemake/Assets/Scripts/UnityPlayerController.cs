@@ -47,7 +47,7 @@ public class UnityPlayerController : NetworkBehaviour
         }
         else
         {
-            //Debug.LogError("Tried to create more than one player"); //todo: this would limit game to one player only
+            //Debug.LogError("Tried to create more than one player"); // this would limit game to one player only
                                                                       //instead, only setting instance if islocalplayer
             //DestroyImmediate(this);
         }
@@ -59,7 +59,7 @@ public class UnityPlayerController : NetworkBehaviour
         if (!isLocalPlayer)
             return;
         
-        //todo: move to coroutine if performance suffers
+        //can move to coroutine if performance suffers
         while (pendingData.Count > 0)
         {
             string datastring = Encoding.ASCII.GetString(pendingData[0]).Replace('\0','$');
