@@ -81,7 +81,7 @@ public class barGraph : JavaCanvas
         {
             g.setColor(new JavaColor(Color.blue));
             theFill = (int)(otherPercent * canvasWidth);
-            g.fillRect(0, 0, theFill, canvasHeight);
+            g.fillRect(0, 0, theFill, canvasHeight, otherPercent);
         }
 
         g.setColor(foregroundColor);
@@ -90,7 +90,7 @@ public class barGraph : JavaCanvas
 
         g.setColor(new JavaColor(fillColor));
         theFill = (int)(percent * (canvasWidth - 7));
-        g.fillRect(4, 4, theFill, canvasHeight - 7);
+        g.fillRect(4, 4, theFill, canvasHeight - 7, percent);
 
         g.setColor(foregroundColor);
         g.setFont(theFont);

@@ -130,6 +130,7 @@ namespace phantasiaclasses
             /* get the time the ban expires */
             string err = new string(error_msg);
             CFUNCTIONS.ctime_r(theTag.validUntil, ref err);
+            error_msg = err.ToCharArray();
             error_msg[CFUNCTIONS.strlen(new string(error_msg)) - 1] = '\0';
 
             /* log the tag creation */
@@ -973,6 +974,7 @@ namespace phantasiaclasses
             /* get the time the ban expires */
             string str = new string(string_buffer);
             CFUNCTIONS.ctime_r(theTag.validUntil, ref str);
+            string_buffer = str.ToCharArray();
             string_buffer[CFUNCTIONS.strlen(new string(string_buffer)) - 1] = '\0';
 
             CFUNCTIONS.sprintf(ref theHistory.description,
@@ -1397,6 +1399,7 @@ namespace phantasiaclasses
             /* put together something for the logs */
             string str = new string(error_msg);
             CFUNCTIONS.ctime_r(theTagged.validUntil, ref str);
+            error_msg = str.ToCharArray();
             error_msg[CFUNCTIONS.strlen(new string(error_msg)) - 1] = '\0';
             theHistory.date = timeNow;
             CFUNCTIONS.strcpy(ref theHistory.name, theTagged.name);
@@ -1569,6 +1572,7 @@ namespace phantasiaclasses
             /* get the time the ban expires */
             string err = new string(error_msg);
             CFUNCTIONS.ctime_r(theTag.validUntil, ref err);
+            error_msg = err.ToCharArray();
             error_msg[CFUNCTIONS.strlen(new string(error_msg)) - 1] = '\0';
 
             CFUNCTIONS.sprintf(ref string_buffer,
@@ -2002,6 +2006,7 @@ namespace phantasiaclasses
 
             string err = new string(error_msg);
             CFUNCTIONS.ctime_r(theTag.validUntil, ref err);
+            error_msg = err.ToCharArray();
             error_msg[CFUNCTIONS.strlen(new string(error_msg)) - 1] = '\0';
 
             return 0;

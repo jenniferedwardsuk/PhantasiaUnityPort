@@ -1034,7 +1034,11 @@ public class UnityJavaInterface
                 GameObject TextPlaceholder = InputField.transform.GetChild(0).gameObject;
                 GameObject TextMain = InputField.transform.GetChild(1).gameObject;
 
-                inputfieldComponents = new UnityInputFieldComponents();
+                InputField input = InputField.GetComponent<InputField>();
+                //input.OnFocus += InputFieldSelected;
+                InputFieldSelectDetector detector = InputField.AddComponent<InputFieldSelectDetector>();
+
+                    inputfieldComponents = new UnityInputFieldComponents();
                 inputfieldComponents.rectComponent = InputField.GetComponent<RectTransform>();
                 inputfieldComponents.rectComponent.anchorMin = new Vector2(0, 1); //top left
                 inputfieldComponents.rectComponent.anchorMax = new Vector2(0, 1); //top left
@@ -1055,6 +1059,9 @@ public class UnityJavaInterface
         }
         return inputfieldComponents;
     }
+
+    public static bool IsInputFieldSelected;
+
     public static UnityScrollComponents AddScrollArea()
     {
         UnityScrollComponents scrollComponents = null;

@@ -1095,6 +1095,8 @@ namespace phantasiaclasses
             game_t game_ptr = new game_t();
             bool excessiveFlag = false;
 
+            Debug.LogError("Chat debug 1: " + message);
+
             /* if this is not a wizard chatting */
             if (c.wizard == 0)
             {
@@ -1110,6 +1112,7 @@ namespace phantasiaclasses
                 /* remove extra characters */
                 miscclass.Do_replace_repetition(ref message);
             }
+            Debug.LogError("Chat debug 2: " + message);
 
             /* add the player name */
             CFUNCTIONS.strcpy(ref uncensored_msg, c.modifiedName);
@@ -1123,6 +1126,9 @@ namespace phantasiaclasses
             /* add the message */
             CFUNCTIONS.strcat(ref uncensored_msg, ": ");
             CFUNCTIONS.strcat(ref uncensored_msg, message);
+
+            Debug.LogError("Chat debug 3: " + uncensored_msg);
+            //broken from here
 
             /* log the chat message */
             CFUNCTIONS.sprintf(ref censored_msg, "(%d) %s\n", c.channel, uncensored_msg);

@@ -81,6 +81,26 @@ public class chatPne : JavaPanel , IJavaActionListener, IJavaKeyListener
             if (textArea.countItems() > 50)
                 textArea.delItem(1);
         */
+        SetScroll(new Vector2(0, 0));
+    }
+
+    internal void SetScroll(Vector2 position) //added for unity
+    {
+        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(M_SetScroll, position);
+    }
+    internal void M_SetScroll(Vector2 position) //added for unity
+    {
+        if (textArea.unityComponentGroup != null)
+        {
+            UnityScrollComponents scrollcomponents = (UnityScrollComponents)textArea.unityComponentGroup;
+            scrollcomponents.scrollComponent.normalizedPosition = position;
+
+            LayoutRebuilder.ForceRebuildLayoutImmediate(scrollcomponents.rectComponent); //refresh layout
+        }
+        else
+        {
+            Debug.LogError("Can't find scroll rect to set position");
+        }
     }
 
     public void actionPerformed(ActionEvent evt) 

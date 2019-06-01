@@ -145,40 +145,45 @@ public class CFUNCTIONS
 
         string readystr = str;
         int paramNum = 0;
-        
-        //if (str != "%s %s" && !str.Contains("Mutex") && !str.Contains("mutex"))
-            //Debug.Log("string format debug: str: " + str);
 
+        //if (str != "%s %s" && !str.Contains("Mutex") && !str.Contains("mutex"))
+        //Debug.Log("string format debug: str: " + str);
+        bool debug = false;
         foreach (object obj in paramstrs)
         {
+            if (readystr.Contains(":0.lf"))
+            {
+                debug = true;
+            }
+
             //insert param num
             readystr = ReplaceFirst(readystr, "%", "{" + paramNum + ":");
             //add closing bracket for this paramnum //inefficient but wcyd
             readystr = readystr.Replace("{" + paramNum + ":s", "{" + paramNum + ":s}");
             readystr = readystr.Replace("{" + paramNum + ":d", "{" + paramNum + ":d}");
             readystr = readystr.Replace("{" + paramNum + ":ld", "{" + paramNum + ":ld}");
-            readystr = readystr.Replace("{" + paramNum + ":1d", "{" + paramNum + ":1d}");
-            readystr = readystr.Replace("{" + paramNum + ":2.0f", "{" + paramNum + ":2.0f}");
-            readystr = readystr.Replace("{" + paramNum + ":.01f", "{" + paramNum + ":.01f}");
-            readystr = readystr.Replace("{" + paramNum + ":.0lf", "{" + paramNum + ":.0lf}");
-            readystr = readystr.Replace("{" + paramNum + ":0.1f", "{" + paramNum + ":0.1f}");
-            readystr = readystr.Replace("{" + paramNum + ":0.lf", "{" + paramNum + ":0.lf}");
-            readystr = readystr.Replace("{" + paramNum + ":3.0f", "{" + paramNum + ":3.0f}");
-            readystr = readystr.Replace("{" + paramNum + ":6.0f", "{" + paramNum + ":6.0f}");
-            readystr = readystr.Replace("{" + paramNum + ":9.0f", "{" + paramNum + ":9.0f}");
-            readystr = readystr.Replace("{" + paramNum + ":-12s", "{" + paramNum + ":-12s}");
-            readystr = readystr.Replace("{" + paramNum + ":-l2s", "{" + paramNum + ":-l2s}");
-            readystr = readystr.Replace("{" + paramNum + ":6d", "{" + paramNum + ":6d}");
-            readystr = readystr.Replace("{" + paramNum + ":.0f", "{" + paramNum + ":.0f}");
-            readystr = readystr.Replace("{" + paramNum + ":lf", "{" + paramNum + ":lf}");
-            readystr = readystr.Replace("{" + paramNum + ":1f", "{" + paramNum + ":1f}");
+            //readystr = readystr.Replace("{" + paramNum + ":1d", "{" + paramNum + ":1d}");
+            readystr = readystr.Replace("{" + paramNum + ":2.0f", "{" + paramNum + ":F0}"); // 2 => ensure at least 2 characters, add spaces to do so
+            //readystr = readystr.Replace("{" + paramNum + ":.01f", "{" + paramNum + ":.01f}");
+            readystr = readystr.Replace("{" + paramNum + ":.0lf", "{" + paramNum + ":F0}");
+            //readystr = readystr.Replace("{" + paramNum + ":0.1f", "{" + paramNum + ":0.1f}");
+            readystr = readystr.Replace("{" + paramNum + ":0.lf", "{" + paramNum + ":F0}"); //":0.lf}"); // in printf("%0.lf", sqrt(...)) the floating point number is rounded to zero decimal digits, so 2.9 is written as 3.
+            readystr = readystr.Replace("{" + paramNum + ":3.0f", "{" + paramNum + ":F0}"); // 3 => ensure at least 3 characters, add spaces to do so
+            readystr = readystr.Replace("{" + paramNum + ":6.0f", "{" + paramNum + ":F0}"); // 6 => ensure at least 6 characters, add spaces to do so
+            readystr = readystr.Replace("{" + paramNum + ":9.0f", "{" + paramNum + ":F0}"); // 9 => ensure at least 9 characters, add spaces to do so
+            readystr = readystr.Replace("{" + paramNum + ":-12s", "{" + paramNum + ":-12s}"); 
+            //readystr = readystr.Replace("{" + paramNum + ":-l2s", "{" + paramNum + ":-l2s}");
+            readystr = readystr.Replace("{" + paramNum + ":6d", "{" + paramNum + ":d}"); // 6 => ensure at least 6 characters, add spaces to do so
+            readystr = readystr.Replace("{" + paramNum + ":.0f", "{" + paramNum + ":F0}");
+            readystr = readystr.Replace("{" + paramNum + ":lf", "{" + paramNum + ":F0}");
+            //readystr = readystr.Replace("{" + paramNum + ":1f", "{" + paramNum + ":1f}");
             readystr = readystr.Replace("{" + paramNum + ":hd", "{" + paramNum + ":d}"); //hd is ignored, replaced with d. "[0.0.0.0:%d] bad realm object of type %hd read in Do_load_data_file.\n"
-            readystr = readystr.Replace("{" + paramNum + ":.21f", "{" + paramNum + ":.21f}");
-            readystr = readystr.Replace("{" + paramNum + ":.2lf", "{" + paramNum + ":.2lf}");
-            readystr = readystr.Replace("{" + paramNum + ":2.2d", "{" + paramNum + ":2.2d}");
-            readystr = readystr.Replace("{" + paramNum + ":02x", "{" + paramNum + ":02x}"); //todo: likely ignored
-            readystr = readystr.Replace("{" + paramNum + ":x", "{" + paramNum + ":s}"); //todo: still ignored as s
-            readystr = readystr.Replace("{" + paramNum + ":.4lf", "{" + paramNum + ":.4lf}");
+            //readystr = readystr.Replace("{" + paramNum + ":.21f", "{" + paramNum + ":.21f}");
+            readystr = readystr.Replace("{" + paramNum + ":.2lf", "{" + paramNum + ":.F2}");
+            readystr = readystr.Replace("{" + paramNum + ":2.2d", "{" + paramNum + ":D2}");
+            readystr = readystr.Replace("{" + paramNum + ":02x", "{" + paramNum + ":02x}"); //todo: ignored
+            readystr = readystr.Replace("{" + paramNum + ":x", "{" + paramNum + ":s}"); //todo: still ignored as s?
+            readystr = readystr.Replace("{" + paramNum + ":.4lf", "{" + paramNum + ":F4}");
             paramNum++;
         }
 
@@ -224,6 +229,11 @@ public class CFUNCTIONS
                     int param = (CLibPThread.pid_t)paramstrs[i];
                     paramStrings[i] = param.ToString(); //"pid_t " + param.ToString();
                 }
+                else if (paramstrs[i].GetType() == typeof(double) || paramstrs[i].GetType() == typeof(float) || paramstrs[i].GetType() == typeof(int))
+                {
+                    //don't convert to string, to allow rounding etc
+                    paramStrings[i] = paramstrs[i];
+                }
                 else //otherwise write value or type
                 {
                     paramStrings[i] = paramstrs[i].ToString();
@@ -240,11 +250,25 @@ public class CFUNCTIONS
             //Debug.Log("string format debug: target: " + target + " || readystr: " + readystr + " || paramStrings[0]: " + paramStrings[0] + " ...");
         try
         {
+            if (debug)
+            {
+                Debug.Log("readystr " + readystr);
+                foreach (var item in paramStrings)
+                {
+                    Debug.Log("paramStrings " + item.ToString());
+                }
+            }
+
             target = String.Format(readystr, paramStrings);
+
+            if (debug)
+            {
+                Debug.Log("formatted string: " + target);
+            }
         }
         catch (Exception e)
         {
-            Debug.Log("exception in sprintf: " + e.Message + " || " + e.InnerException + " || " + e.StackTrace);
+            Debug.LogError("exception in sprintf: " + e.Message + " || " + e.InnerException + " || " + e.StackTrace);
         }
         //if (str != "%s %s" && !str.Contains("Mutex") && !str.Contains("mutex"))
             //Debug.Log("string format debug: target: " + target + " ...");

@@ -54,10 +54,10 @@ public class macros //: MonoBehaviour
         return (int)Mathf.Floor((float)(BASE + (INTERVAL * macros.RND())));
     }
     //#define 
-    internal static int SGN<T>(T X) 
-        where T : IComparable
+    internal static int SGN(double x)//SGN<T>(T X) 
+        //where T : IComparable
     {
-        return X.CompareTo(0) < 0 ? -1 : 1;
+        return x < 0 ? -1 : 1; //X.CompareTo(0) < 0 ? -1 : 1;
     }
     //    /*
     //    #define CIRCLE(X, Y)    cfunctions.floor(miscclass.Do_distance(X, 0.0, Y, 0.0) / phantdefs.D_CIRCLE + 1)

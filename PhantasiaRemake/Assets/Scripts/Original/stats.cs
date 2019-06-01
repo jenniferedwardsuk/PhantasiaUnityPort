@@ -1691,6 +1691,7 @@ namespace phantasiaclasses
 
             dtemp = c.player.circle - 17;
 
+            //Debug.LogError("POISON DEBUG: SETTING POISON");
             poison *= (macros.SGN(dtemp) * CFUNCTIONS.pow(Mathf.Abs((float)dtemp), .33) + 5.52) / 3;
 
             Do_poison(c, poison);

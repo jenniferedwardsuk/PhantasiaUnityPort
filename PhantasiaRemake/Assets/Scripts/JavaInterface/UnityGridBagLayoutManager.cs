@@ -100,8 +100,8 @@ public class UnityGridBagLayoutManager : MonoBehaviour
                         //hardcodedPosition = new Vector3(365.4f, -350.57f, 0);
 
                         //taller, wider
-                        hardcodedSize = new Vector2(624f, 217.1f);
-                        hardcodedPosition = new Vector3(314.15f, -260.55f, 0);
+                        hardcodedSize = new Vector2(624f, 212.34f);// 217.1f);
+                        hardcodedPosition = new Vector3(314.15f, -261.47f, 0);// - 260.55f, 0);
 
                         changed = true;
                         break;

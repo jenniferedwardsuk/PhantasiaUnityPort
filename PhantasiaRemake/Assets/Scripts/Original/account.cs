@@ -342,7 +342,7 @@ namespace phantasiaclasses
 
             string formattedConfCode = new string(theAccount.confirmation);
             formattedConfCode = formattedConfCode.Substring(0, CFUNCTIONS.strlen(formattedConfCode));
-            ioclass.Do_send_line(c, "Your account has been created and your confirmation code has been e-mailed to the address you provided.  To activate the account, log in with the information you provided, but have the confirmation code handy as you will need it. \n \n- NOTE FROM UNITY PORT: emailing is not yet active. Your confirmation code is: " + formattedConfCode + "\n");
+            ioclass.Do_send_line(c, "Your account has been created and your confirmation code has been e-mailed to the address you provided.  To activate the account, log in with the information you provided, but have the confirmation code handy as you will need it. \n \n- NOTE FROM UNITY PORT: emailing is not yet active. Your confirmation code will not be needed.\n");// Your confirmation code is: " + formattedConfCode + "\n");
 
             ioclass.Do_more(c);
             ioclass.Do_send_clear(c);
@@ -652,13 +652,14 @@ namespace phantasiaclasses
                 for (i = 0; i < 2; i++)
                 {
                     /* Inquire the account to load */
-                    if (ioclass.Do_string_dialog(c, ref string_buffer, phantdefs.SZ_LINE - 1, "Please enter the confirmation code mailed to you.\n"))
+                    if (ioclass.Do_string_dialog(c, ref string_buffer, phantdefs.SZ_LINE - 1, "UNITY: Confirmation code disabled. Enter any text here.\n")) //Please enter the confirmation code mailed to you.\n NOTE FROM UNITY PORT: emailing is not yet active. Enter any text to continue.\n"))
                     {
                         return;
                     }
 
                     /* good code */
-                    if (!CFUNCTIONS.strcmp(string_buffer, new string(theAccount.confirmation)))
+                    if (!CFUNCTIONS.strcmp(string_buffer, new string(theAccount.confirmation))
+                        || true) //todo: while emailing isn't used, confirmation code is skipped
                     {
                         Do_clear_account_mod(theMod);
                         theMod.confirm = true;

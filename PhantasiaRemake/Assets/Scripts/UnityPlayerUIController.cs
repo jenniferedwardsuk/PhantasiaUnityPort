@@ -65,7 +65,8 @@ public class UnityPlayerUIController : NetworkBehaviour {
 
             //detect keyboard input
             if (Input.anyKeyDown
-                && !Input.GetMouseButtonDown(0) && !Input.GetMouseButtonDown(1) && !Input.GetMouseButtonDown(2) && !Input.GetMouseButtonDown(3))
+                && !Input.GetMouseButtonDown(0) && !Input.GetMouseButtonDown(1) && !Input.GetMouseButtonDown(2) && !Input.GetMouseButtonDown(3)
+                && !UnityJavaInterface.IsInputFieldSelected)
             {
                 foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode))) //todo: slow? restrict to only expected keys?
                 {

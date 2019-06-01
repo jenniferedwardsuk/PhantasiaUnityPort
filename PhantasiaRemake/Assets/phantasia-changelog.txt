@@ -5,7 +5,6 @@ Phantasia Port changelog
 todo list:
 - reduce todos
 - implement mutexes (unnecessary?) and multiplayer
-- file decompile and edit tool for debug purposes
 
 bugs:
 
@@ -17,29 +16,28 @@ POTENTIAL
 
 MINOR
 - hexdigest is all nulls	- workaround: ignore password validation
-- scoreboard popup throws non-fatal packet errors after clicking next or prev
 - can't select character from list for Examine
-- allow copy of text from scroll areas
+- allow copy of text from scroll areas?
+- allow use of enter button?
 
 MODERATE
-- long battles can max out main scroll area, it doesn't extend
-- main scroll area should scroll to location of end of text (up when cleared or down when overflow)
-- bars should empty/fill
+- trove error on find: Do_hide_trove found a trove already in the realm.
+- scoreboard popup layout is glitchy, and throws non-fatal packet errors after clicking next or prev
+- swear word in chat triggers exception
 
 MAJOR
-- none
+- buying quicksilver gives exception
 
 VISUAL
-- main scrollview text component is too wide on the right side
 - layout issues remain on:
-	- chatpne (scroll area isn't tall enough - resize central if south but no north)
+	- chatpne (scroll area isn't tall enough; resize central if south but no north)
 
 BUILD ONLY
 - exception popup would be good
 - create necessary files/folders in build folder (or appdata?) if they don't exist
 
-
 one-off issues:
+- none
 
 resolved:
 - non-experimento character doesn't start at 0,0 	- intentional per Do_roll_new_player
@@ -48,17 +46,48 @@ resolved:
 - grail x,y can be very large (186893,622523)	- intentional per init hides. trove 600 to 1400, grail 300k-1mill
 - low-level monsters can still one-shot player with fast attacks on first turn	- seems intentional per initiative contest in fight
 - scoreboard always blank	- intentional per commands.Do_death: adds to scoreboard if player level >= 100, not beyond, and didn't die unusually
+- space = button 1	- activates the first active button. intentional per buttonPne.spacebar()
 
-done:
-- set up project 
-- added placeholders for 118_client
-- added placeholders for phantasiadata
-- added placeholders for phantasiautilities
-- converted src files
-- converted 118_client files
-- interfaced 118_client files
-- converted bin files
-- interfaced src files
+
+
+01-jun-2019
+- bugfix: terminate strings in chat checks properly
+- bugfix: remove duplicate chars from chat message properly
+- bugfix: scroll content does not go behind scrollbar
+- bugfix: can't use keyboard shortcuts while input field is selected
+- added: scroll areas resize and set scroll position dynamically
+- added: stat bars fill and empty, and have outlines
+- modified: until emailing happens, confirmation code is ignored
+
+31-may-2019
+- bugfix: numbers are formatted by string.format (fixes poison/curse causing crash)
+- high-level-character test: guru can be met (blessing advice, does not cap walking)
+- high-level-character test: guru can be met (receive charm, does not cap walking)
+- high-level-character test: can find village (too strong to be pillaged)
+- high-level-character test: can reach end of realm
+- high-level-character test: can die and have another chance
+- character test: can examine treasure (holy water)
+- character test: can examine treasure (holy orb)
+- low-level-character test: holy water can kill monsters
+- low-level-character test: can examine treasure (protection amulet)
+- low-level-character test: can be hit and affected by plague
+- low-level-character test: can meet medic and be cured
+
+28-may-2019
+- high-level-character test: virgin can be received
+- high-level-character test: scroll can be read and works (str increase)
+- high-level-character test: can see fleeing unicorn
+- high-level-character test: guru can be met (virtuous) (but caps walking at 2?)
+- high-level-character test: treasure item can be received (buckler)
+- high-level-character test: can be hit by plague (saved by charm)
+- high-level-character test: can find holy grail (when too inexperienced)
+- high-level-character test: can find holy grail (when special council)
+
+25-may-2019
+- created a phantasia character file decoder/encoder for debug purposes
+- high-level-character test: trove can be found	- but errors on re-hide
+- high-level-character test: monsters can drop treasure
+- high-level-character test: blessing can be received
 
 23-may-2019
 - bugfix: allow for empty event queue when filing random events (fixes no random monsters/treasure/etc)

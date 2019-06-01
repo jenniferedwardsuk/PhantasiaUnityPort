@@ -176,3 +176,325 @@
 23-May-2019 20:15:09 testfi$ killed size 1 A Centipede
 23-May-2019 20:15:10 testfi$ killed size 1 A Centipede
 23-May-2019 20:15:12 testfi$ killed size 1 A Centipede
+25-May-2019 23:25:22 pp$ killed size 3 A Gnome
+25-May-2019 23:25:42 pp$ killed size 6 A Hydra
+25-May-2019 23:25:52 pp$ killed size 6 A Gnome
+28-May-2019 18:59:11 pp$ killed size 7 A Spider
+28-May-2019 18:59:14 pp$ killed size 7 A Spider
+28-May-2019 18:59:22 pp$ killed size 8 A Jubjub Bird
+28-May-2019 18:59:33 pp$ killed size 10 A Hob-goblin
+28-May-2019 18:59:36 pp$ killed size 10 A Hob-goblin
+28-May-2019 18:59:41 pp$ killed size 11 A Killmoulis
+28-May-2019 19:00:31 pp$ killed size 14 A Bonnacon
+28-May-2019 19:01:05 pp$ killed size 18 A Gargoyle
+28-May-2019 19:01:20 pp$ killed size 20 A Moron
+28-May-2019 19:01:22 pp$ killed size 20 A Moron
+28-May-2019 19:01:25 pp$ survived_with size 20 A Moron
+28-May-2019 19:01:36 pp$ killed size 20 An Idiot
+28-May-2019 19:01:47 pp$ killed size 20 A Naiad
+28-May-2019 19:03:45 pp$ killed size 10 A Carrion Crawler
+28-May-2019 19:03:48 pp$ killed size 10 A Carrion Crawler
+28-May-2019 19:03:51 pp$ killed size 10 A Carrion Crawler
+28-May-2019 19:03:54 pp$ killed size 10 A Carrion Crawler
+28-May-2019 19:03:56 pp$ survived_with size 10 A Carrion Crawler
+28-May-2019 19:04:06 pp$ killed size 12 A Jello Blob
+28-May-2019 19:04:16 pp$ survived_with size 17 A Unicorn
+28-May-2019 19:04:41 pp$ killed size 20 A Naiad
+28-May-2019 19:04:45 pp$ killed size 20 A Naiad
+28-May-2019 19:06:18 pp$ killed size 12 A Cocodrill
+28-May-2019 19:06:21 pp$ survived_with size 12 A Cocodrill
+28-May-2019 19:06:58 pp$ killed_by size 16 A Chimaera
+28-May-2019 19:07:41 pp$ killed size 16 A Phooka
+28-May-2019 19:08:28 pp$ survived_with size 20 A Moron
+28-May-2019 19:09:10 pp$ killed size 20 Modnar
+28-May-2019 19:09:24 pp$ killed size 20 Modnar
+28-May-2019 19:09:27 pp$ survived_with size 20 Modnar
+28-May-2019 19:09:33 pp$ survived_with size 20 Modnar
+28-May-2019 19:09:39 pp$ killed size 20 An Idiot
+28-May-2019 19:09:54 pp$ killed size 20 An Idiot
+28-May-2019 19:10:33 pp$ survived_with size 21 An Aspidchelone
+28-May-2019 19:10:53 pp$ killed size 21 A Naiad
+28-May-2019 19:11:34 pp$ killed size 21 A Naiad
+28-May-2019 19:11:39 pp$ survived_with size 21 A Naiad
+28-May-2019 19:11:56 pp$ survived_with size 21 An Aspidchelone
+28-May-2019 19:12:04 pp$ survived_with size 21 A Moron
+28-May-2019 19:12:11 pp$ survived_with size 21 An Idiot
+28-May-2019 19:12:49 pp$ survived_with size 21 An Aspidchelone
+28-May-2019 19:13:00 pp$ survived_with size 22 An Aspidchelone
+28-May-2019 19:13:11 pp$ killed size 22 A Glaistig
+28-May-2019 19:13:20 pp$ survived_with size 22 An Aspidchelone
+28-May-2019 19:13:32 pp$ survived_with size 22 An Aspidchelone
+28-May-2019 19:13:37 pp$ survived_with size 22 A Glaistig
+28-May-2019 19:13:42 pp$ survived_with size 22 Modnar
+28-May-2019 19:13:48 pp$ survived_with size 22 An Idiot
+28-May-2019 19:13:54 pp$ survived_with size 22 A Nixie
+31-May-2019 16:43:02 pp$ survived_with size 5200 A Dodo
+31-May-2019 16:43:15 pp$ survived_with size 5195 Saruman
+31-May-2019 16:43:24 pp$ survived_with size 5191 An Ogre
+31-May-2019 16:43:29 pp$ survived_with size 5191 A Nuckelavee
+31-May-2019 16:43:35 pp$ survived_with size 5189 A Warg
+31-May-2019 16:43:43 pp$ survived_with size 5188 Saruman
+31-May-2019 16:43:51 pp$ survived_with size 5187 A Red Dragon
+31-May-2019 16:45:23 pp$ survived_with size 5183 A Jabberwock
+31-May-2019 16:45:29 pp$ survived_with size 5182 A Shrieker
+31-May-2019 16:51:08 pp$ survived_with size 5178 An Ogre
+31-May-2019 16:51:42 pp$ survived_with size 5173 Saruman
+31-May-2019 16:52:25 pp$ survived_with size 5171 Leanan-Sidhe
+31-May-2019 16:52:47 pp$ survived_with size 14001 Red Cap
+31-May-2019 16:52:56 pp$ survived_with size 13999 A Fenoderee
+31-May-2019 16:53:48 pp$ survived_with size 13991 Saruman
+31-May-2019 16:54:15 pp$ survived_with size 32106 Ungoliant
+31-May-2019 16:54:41 pp$ survived_with size 98898 A Warg
+31-May-2019 16:54:57 pp$ survived_with size 261472 A Smurf
+31-May-2019 16:55:14 pp$ survived_with size 843072 A Stirge
+31-May-2019 17:38:28 pp$ survived_with size 5198 Scatha the Worm
+31-May-2019 17:38:48 pp$ survived_with size 5187 A Ghillie Dhu
+31-May-2019 17:38:59 pp$ survived_with size 5182 A Fenoderee
+31-May-2019 17:39:09 pp$ survived_with size 5177 A Ghillie Dhu
+31-May-2019 17:39:13 pp$ survived_with size 5176 A Hob-goblin
+31-May-2019 17:39:48 pp$ survived_with size 5175 An Orc
+31-May-2019 17:39:55 pp$ survived_with size 5172 A Nuckelavee
+31-May-2019 17:39:59 pp$ survived_with size 5171 An Ogre
+31-May-2019 17:40:02 pp$ survived_with size 5170 Red Cap
+31-May-2019 17:40:14 pp$ survived_with size 5165 Scatha the Worm
+31-May-2019 17:40:17 pp$ survived_with size 5164 A Smurf
+31-May-2019 17:40:20 pp$ survived_with size 5163 A Shrieker
+31-May-2019 17:40:31 pp$ survived_with size 5158 A Hob-goblin
+31-May-2019 17:41:26 pp$ killed_by size 5157 A Titan
+31-May-2019 17:41:50 pp$ survived_with size 5157 A Titan
+31-May-2019 17:42:26 pp$ survived_with size 5156 Begion
+31-May-2019 17:42:35 pp$ survived_with size 5154 An Incubus
+31-May-2019 17:42:39 pp$ survived_with size 5152 A Gnoll
+31-May-2019 17:42:52 pp$ survived_with size 5147 Saruman
+31-May-2019 17:43:03 pp$ survived_with size 5144 Grendel
+31-May-2019 17:53:25 pp$ survived_with size 5200 An Ogre
+31-May-2019 17:54:00 pp$ killed_by size 5197 A Titan
+31-May-2019 17:54:13 pp$ survived_with size 5197 A Titan
+31-May-2019 17:54:25 pp$ survived_with size 5195 Cerberus
+31-May-2019 17:54:59 pp$ survived_with size 5183 A Ghillie Dhu
+31-May-2019 17:55:06 pp$ survived_with size 5182 A Smurf
+31-May-2019 17:55:09 pp$ survived_with size 5180 A Nazgul
+31-May-2019 17:55:14 pp$ survived_with size 5179 A Red Dragon
+31-May-2019 17:55:29 pp$ survived_with size 5172 Grendel
+31-May-2019 17:55:40 pp$ survived_with size 5168 An Incubus
+31-May-2019 17:55:52 pp$ survived_with size 5163 A Jabberwock
+31-May-2019 17:55:55 pp$ survived_with size 5162 A Jabberwock
+31-May-2019 17:56:08 pp$ killed_by size 5160 A Titan
+31-May-2019 17:56:14 pp$ survived_with size 5160 A Titan
+31-May-2019 17:56:21 pp$ survived_with size 5158 A Dodo
+31-May-2019 17:56:33 pp$ survived_with size 5154 Saruman
+31-May-2019 17:56:40 pp$ survived_with size 5150 An Orc
+31-May-2019 17:56:54 pp$ killed_by size 5149 Leanan-Sidhe
+31-May-2019 17:57:00 pp$ survived_with size 5149 Leanan-Sidhe
+31-May-2019 17:57:17 pp$ survived_with size 5139 A Smurf
+31-May-2019 17:57:54 pp$ survived_with size 5136 Begion
+31-May-2019 17:58:01 pp$ survived_with size 5135 A Nazgul
+31-May-2019 17:58:05 pp$ survived_with size 5133 An Orc
+31-May-2019 17:58:12 pp$ survived_with size 5132 A Jabberwock
+31-May-2019 17:58:22 pp$ survived_with size 5126 Red Cap
+31-May-2019 17:58:34 pp$ survived_with size 5120 A Gnoll
+31-May-2019 17:58:37 pp$ survived_with size 5120 A Nuckelavee
+31-May-2019 17:58:54 pp$ killed_by size 5116 Leanan-Sidhe
+31-May-2019 17:59:41 pp$ survived_with size 1 A Fachan
+31-May-2019 18:06:44 pp$ survived_with size 1 A Cluricaun
+31-May-2019 18:06:50 pp$ killed_by size 1 An Uldra
+31-May-2019 18:07:31 pp$ survived_with size 1 A Serpent
+31-May-2019 18:07:36 pp$ killed size 1 A Crebain
+31-May-2019 18:07:39 pp$ killed size 1 A Crebain
+31-May-2019 18:07:40 pp$ killed size 1 A Crebain
+31-May-2019 18:07:43 pp$ killed size 1 A Bogle
+31-May-2019 18:07:49 pp$ killed size 1 A Stirge
+31-May-2019 18:07:51 pp$ killed size 1 A Stirge
+31-May-2019 18:07:53 pp$ killed size 1 A Stirge
+31-May-2019 18:07:54 pp$ killed size 1 A Stirge
+31-May-2019 18:07:56 pp$ killed size 1 A Stirge
+31-May-2019 18:07:59 pp$ killed size 1 A Bogle
+31-May-2019 18:08:01 pp$ killed size 1 A Bogle
+31-May-2019 18:08:03 pp$ killed size 1 A Serpent
+31-May-2019 18:08:14 pp$ killed size 1 A Crebain
+31-May-2019 18:08:16 pp$ killed size 1 A Crebain
+31-May-2019 18:08:19 pp$ killed size 1 A Crebain
+31-May-2019 18:08:21 pp$ killed size 1 A Crebain
+31-May-2019 18:08:26 pp$ killed size 1 A Crebain
+31-May-2019 18:08:27 pp$ killed size 1 A Crebain
+31-May-2019 18:08:28 pp$ killed size 1 A Crebain
+31-May-2019 18:08:30 pp$ killed size 1 A Crebain
+31-May-2019 18:08:32 pp$ killed size 1 A Crebain
+31-May-2019 18:08:33 pp$ killed size 1 A Crebain
+31-May-2019 18:08:34 pp$ killed size 1 A Crebain
+31-May-2019 18:08:36 pp$ killed size 1 A Crebain
+31-May-2019 18:08:37 pp$ killed size 1 A Crebain
+31-May-2019 18:08:38 pp$ killed size 1 A Crebain
+31-May-2019 18:08:40 pp$ killed size 1 A Crebain
+31-May-2019 18:08:43 pp$ survived_with size 1 A Crebain
+31-May-2019 18:08:48 pp$ killed size 1 A Centipede
+31-May-2019 18:09:08 pp$ killed size 1 A Crebain
+31-May-2019 18:09:09 pp$ killed size 1 A Crebain
+31-May-2019 18:09:12 pp$ survived_with size 1 A Crebain
+31-May-2019 18:09:26 pp$ killed size 1 An Imp
+31-May-2019 18:09:33 pp$ killed size 1 A Crebain
+31-May-2019 18:09:35 pp$ killed size 1 A Crebain
+31-May-2019 18:09:38 pp$ killed size 1 A Crebain
+31-May-2019 18:09:40 pp$ survived_with size 1 A Crebain
+31-May-2019 18:09:47 pp$ killed size 1 A Fachan
+31-May-2019 18:09:52 pp$ killed size 1 An Imp
+31-May-2019 18:09:54 pp$ killed size 1 A Bogle
+31-May-2019 18:10:18 pp$ killed size 1 A Bogle
+31-May-2019 18:10:19 pp$ killed size 1 A Bogle
+31-May-2019 18:12:42 pp$ killed size 1 A Cluricaun
+31-May-2019 18:12:45 pp$ killed size 1 A Fachan
+31-May-2019 18:13:12 pp$ killed size 1 A Crebain
+31-May-2019 18:13:17 pp$ killed size 1 A Fachan
+31-May-2019 18:13:38 pp$ killed size 1 An Uldra
+31-May-2019 18:13:46 pp$ killed size 1 A Bogle
+31-May-2019 18:13:49 pp$ killed size 1 A Stirge
+31-May-2019 18:13:50 pp$ killed size 1 A Stirge
+31-May-2019 18:13:51 pp$ killed size 1 A Stirge
+31-May-2019 18:13:52 pp$ killed size 1 A Stirge
+31-May-2019 18:13:53 pp$ killed size 1 A Stirge
+31-May-2019 18:13:54 pp$ killed size 1 A Stirge
+31-May-2019 18:13:56 pp$ killed size 1 A Stirge
+31-May-2019 18:13:57 pp$ killed size 1 A Stirge
+31-May-2019 18:14:00 pp$ survived_with size 1 A Stirge
+31-May-2019 18:14:06 pp$ killed size 1 A Fachan
+31-May-2019 18:14:11 pp$ killed size 1 A Stirge
+31-May-2019 18:14:13 pp$ killed size 1 A Stirge
+31-May-2019 18:14:14 pp$ killed size 1 A Stirge
+31-May-2019 18:14:15 pp$ killed size 1 A Stirge
+31-May-2019 18:14:17 pp$ killed size 1 A Stirge
+31-May-2019 18:14:19 pp$ survived_with size 1 A Stirge
+31-May-2019 18:14:26 pp$ killed size 1 An Imp
+31-May-2019 18:14:30 pp$ killed size 1 A Bogle
+31-May-2019 18:14:32 pp$ killed size 1 A Bogle
+31-May-2019 18:14:43 pp$ killed size 1 A Centipede
+31-May-2019 18:14:44 pp$ killed size 1 A Centipede
+31-May-2019 18:14:58 pp$ killed size 1 A Crebain
+31-May-2019 18:15:02 pp$ killed size 1 A Crebain
+31-May-2019 18:15:05 pp$ killed size 1 A Crebain
+31-May-2019 18:15:07 pp$ killed size 1 A Crebain
+31-May-2019 18:15:14 pp$ killed size 1 A Crebain
+31-May-2019 18:15:19 pp$ killed size 1 A Crebain
+31-May-2019 18:15:21 pp$ killed size 1 A Crebain
+31-May-2019 18:15:25 pp$ killed size 1 A Crebain
+31-May-2019 18:15:27 pp$ killed size 1 A Crebain
+31-May-2019 18:15:30 pp$ survived_with size 1 A Crebain
+31-May-2019 18:15:40 pp$ killed size 1 A Fachan
+31-May-2019 18:15:47 pp$ killed size 1 A Cluricaun
+31-May-2019 18:15:56 pp$ killed size 1 A Stirge
+31-May-2019 18:15:58 pp$ killed size 1 A Stirge
+31-May-2019 18:16:02 pp$ killed size 1 A Stirge
+31-May-2019 18:16:06 pp$ survived_with size 1 A Stirge
+31-May-2019 18:16:21 pp$ killed size 1 An Uldra
+31-May-2019 18:16:30 pp$ killed size 1 A Bogle
+31-May-2019 18:16:33 pp$ killed size 1 A Serpent
+31-May-2019 18:16:41 pp$ killed size 1 A Fachan
+31-May-2019 18:16:46 pp$ killed size 1 An Imp
+31-May-2019 18:16:51 pp$ killed size 1 An Uldra
+31-May-2019 18:16:54 pp$ killed size 1 A Bogle
+31-May-2019 18:16:57 pp$ killed size 1 A Stirge
+31-May-2019 18:17:00 pp$ survived_with size 1 A Stirge
+31-May-2019 18:17:05 pp$ killed size 1 A Centipede
+31-May-2019 18:17:06 pp$ killed size 1 A Centipede
+31-May-2019 18:17:07 pp$ killed size 1 A Centipede
+31-May-2019 18:17:09 pp$ killed size 1 A Centipede
+31-May-2019 18:17:10 pp$ killed size 1 A Centipede
+31-May-2019 18:17:11 pp$ killed size 1 A Centipede
+31-May-2019 18:17:13 pp$ survived_with size 1 A Centipede
+31-May-2019 18:17:17 pp$ killed size 1 A Stirge
+31-May-2019 18:17:18 pp$ killed size 1 A Stirge
+31-May-2019 18:17:19 pp$ killed size 1 A Stirge
+31-May-2019 18:17:21 pp$ killed size 1 A Stirge
+31-May-2019 18:17:23 pp$ survived_with size 1 A Stirge
+31-May-2019 18:17:25 pp$ killed size 1 A Bogle
+31-May-2019 18:17:30 pp$ killed size 1 A Centipede
+31-May-2019 18:17:31 pp$ killed size 1 A Centipede
+31-May-2019 18:38:55 pp$ killed size 1 A Crebain
+31-May-2019 18:38:59 pp$ survived_with size 1 A Crebain
+31-May-2019 18:39:04 pp$ survived_with size 1 A Stirge
+31-May-2019 18:39:11 pp$ survived_with size 1 A Serpent
+31-May-2019 18:39:15 pp$ killed size 1 A Centipede
+31-May-2019 18:39:17 pp$ survived_with size 1 A Centipede
+31-May-2019 18:39:21 pp$ survived_with size 1 A Stirge
+31-May-2019 18:39:33 pp$ killed size 1 A Fachan
+31-May-2019 18:39:44 pp$ killed size 1 A Fachan
+31-May-2019 18:39:48 pp$ killed size 1 A Bogle
+31-May-2019 18:39:52 pp$ killed size 1 A Crebain
+31-May-2019 18:40:00 pp$ killed size 1 A Stirge
+31-May-2019 18:40:01 pp$ killed size 1 A Stirge
+31-May-2019 18:40:01 pp$ killed size 1 A Stirge
+31-May-2019 18:40:04 pp$ killed size 1 A Stirge
+31-May-2019 18:40:06 pp$ survived_with size 1 A Stirge
+31-May-2019 18:40:09 pp$ killed size 1 A Stirge
+31-May-2019 18:40:11 pp$ survived_with size 1 A Stirge
+31-May-2019 18:40:18 pp$ killed size 1 A Cluricaun
+31-May-2019 18:40:23 pp$ killed size 1 A Serpent
+31-May-2019 18:40:26 pp$ killed size 1 A Crebain
+31-May-2019 18:40:33 pp$ killed size 1 A Bogle
+31-May-2019 18:40:34 pp$ killed size 1 A Bogle
+31-May-2019 18:40:36 pp$ killed size 1 A Centipede
+31-May-2019 18:40:45 pp$ killed size 1 A Centipede
+31-May-2019 18:40:48 pp$ killed size 1 A Crebain
+31-May-2019 18:40:49 pp$ killed size 1 A Crebain
+31-May-2019 18:40:50 pp$ killed size 1 A Crebain
+31-May-2019 18:40:52 pp$ killed size 1 A Crebain
+31-May-2019 18:40:53 pp$ killed size 1 A Crebain
+31-May-2019 18:40:54 pp$ killed size 1 A Crebain
+31-May-2019 18:40:56 pp$ killed size 1 A Crebain
+31-May-2019 18:41:00 pp$ survived_with size 1 A Crebain
+31-May-2019 18:41:05 pp$ killed size 1 An Imp
+31-May-2019 18:41:08 pp$ killed size 1 A Bogle
+31-May-2019 18:41:09 pp$ killed size 1 A Bogle
+31-May-2019 18:41:11 pp$ killed size 1 A Centipede
+31-May-2019 18:41:12 pp$ killed size 1 A Centipede
+31-May-2019 18:41:16 pp$ killed size 1 A Serpent
+31-May-2019 18:42:00 pp$ killed size 1 A Moron
+31-May-2019 18:42:02 pp$ survived_with size 1 A Moron
+01-Jun-2019 11:03:07 pp$ killed_by size 1 An Imp
+01-Jun-2019 11:04:10 pp$ killed_by size 1 A Serpent
+01-Jun-2019 11:04:57 pp$ killed_by size 1 A Crebain
+01-Jun-2019 11:08:37 pp$ killed size 1 A Crebain
+01-Jun-2019 11:35:15 pp$ killed size 1 A Gnome
+01-Jun-2019 11:38:00 pp$ survived_with size 1 An Imp
+01-Jun-2019 11:41:09 pp$ survived_with size 1 A Serpent
+01-Jun-2019 11:43:04 pp$ killed size 1 A Fir Darrig
+01-Jun-2019 11:58:54 pp$ killed size 1 A Cluricaun
+01-Jun-2019 11:59:00 pp$ killed size 1 A Bogle
+01-Jun-2019 12:00:14 pp$ killed size 1 A Centipede
+01-Jun-2019 12:00:26 pp$ killed size 1 A Stirge
+01-Jun-2019 12:00:29 pp$ killed size 1 A Stirge
+01-Jun-2019 12:00:36 pp$ killed size 1 A Stirge
+01-Jun-2019 12:00:42 pp$ killed size 1 A Stirge
+01-Jun-2019 12:00:52 pp$ killed size 1 A Stirge
+01-Jun-2019 12:01:06 pp$ killed size 1 A Stirge
+01-Jun-2019 12:01:31 pp$ killed size 1 A Stirge
+01-Jun-2019 12:01:36 pp$ killed size 1 A Stirge
+01-Jun-2019 12:01:41 pp$ killed size 1 A Stirge
+01-Jun-2019 12:01:45 pp$ killed size 1 A Stirge
+01-Jun-2019 12:01:51 pp$ killed size 1 A Stirge
+01-Jun-2019 12:01:59 pp$ survived_with size 1 A Stirge
+01-Jun-2019 12:16:21 pp$ survived_with size 2 Some Green Slime
+01-Jun-2019 12:16:28 pp$ survived_with size 2 A Sprite
+01-Jun-2019 12:16:32 pp$ survived_with size 2 A Trow
+01-Jun-2019 12:16:46 pp$ survived_with size 2 Morgoth
+01-Jun-2019 12:16:59 pp$ survived_with size 2 A Fachan
+01-Jun-2019 12:17:03 pp$ survived_with size 2 A Gnome
+01-Jun-2019 12:17:06 pp$ survived_with size 2 A Ghillie Dhu
+01-Jun-2019 12:17:09 pp$ survived_with size 2 An Idiot
+01-Jun-2019 12:17:12 pp$ killed size 2 A Beetle
+01-Jun-2019 12:17:15 pp$ survived_with size 2 A Beetle
+01-Jun-2019 12:17:20 pp$ survived_with size 2 A Carrion Crawler
+01-Jun-2019 12:17:23 pp$ survived_with size 2 A Fachan
+01-Jun-2019 12:17:25 pp$ survived_with size 2 A Gnome
+01-Jun-2019 12:17:28 pp$ survived_with size 2 A Serpent
+01-Jun-2019 12:17:49 pp$ killed size 2 A Carrion Crawler
+01-Jun-2019 12:18:03 pp$ killed size 2 A Beetle
+01-Jun-2019 12:20:03 oo$ killed size 1 An Uldra
+01-Jun-2019 12:24:35 oo$ killed_by size 1 A Pixie
+01-Jun-2019 12:32:28 oo$ killed_by size 1 A Sprite
+01-Jun-2019 12:36:10 oo$ killed size 1 A Mimic
+01-Jun-2019 12:36:15 oo$ killed size 1 An Uldra
+01-Jun-2019 12:36:22 oo$ killed size 1 A Bogle
+01-Jun-2019 12:36:24 oo$ survived_with size 1 A Bogle
+01-Jun-2019 13:11:42 oo$ killed_by size 1 A Pixie
+01-Jun-2019 13:15:56 oo$ killed size 1 A Pixie
+01-Jun-2019 18:18:30 pp$ killed size 2 An Imp

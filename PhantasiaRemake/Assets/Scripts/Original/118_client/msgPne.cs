@@ -32,8 +32,8 @@ public class msgPne : JavaPanel
         //Debug.LogError("Msg debug: " + msgstr.Replace('\0', '¬').Replace('$', '¬').Replace("¬", ""));
         msgstr = msgstr.Replace('\0', '¬').Replace('$', '¬').Replace("¬", "");
         textArea.append(msgstr + "\n");
-
-        SetScroll(new Vector2(0, 1));
+        
+        SetScroll(new Vector2(0, 0));
     }
 
     internal void SetScroll(Vector2 position) //added for unity
@@ -46,6 +46,12 @@ public class msgPne : JavaPanel
         {
             UnityScrollComponents scrollcomponents = (UnityScrollComponents)textArea.unityComponentGroup;
             scrollcomponents.scrollComponent.normalizedPosition = position;
+
+            LayoutRebuilder.ForceRebuildLayoutImmediate(scrollcomponents.rectComponent); //refresh layout
+        }
+        else
+        {
+            Debug.LogError("Can't find scroll rect to set position");
         }
     }
 
@@ -54,6 +60,6 @@ public class msgPne : JavaPanel
 	    textArea.selectAll();
 	    textArea.replaceRange("", textArea.getSelectionStart(), textArea.getSelectionEnd());
 
-        //SetScroll(new Vector2(0, 0));
+        SetScroll(new Vector2(0, 1));
     }
 }

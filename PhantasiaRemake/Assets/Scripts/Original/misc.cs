@@ -2365,6 +2365,11 @@ namespace phantasiaclasses
         {
             string[] swears = { "shit", "fuck", "fuc", "fuk", "fock", "piss", "cunt", "cock", "ass", "dick", "penis", "pussy", "clit", "bitch", "butt", "twat", "vagina", "dork", "dildo", "masturbat", "fag", "homo", "lesbian", "screw", "anal", "poo", "nigger", "nigga", "chink", "jap", "wop", "kike", "bitch", "whore", "crap", "hell", "damn", "rape", "suck", "abortion", "mute", "sex", "kkk", "balls", "bush", "tits", "dammit", "snatch", "sauron", "morgoth", "osama", "alatar", "stfu", "wtf", "" };
 
+            for (int i = 0; i < swears.Length; i++) //added for unity
+            {
+                swears[i] += '\0';
+            }
+
             char currentChar;
             int stringPtr, currentSwear, swearPtr, wordBeginning, swearBeginning, spaceCount;
 
@@ -2376,13 +2381,15 @@ namespace phantasiaclasses
             currentSwear = 0;
 
             /* loop through all the swear words */
-            while (swears[currentSwear] != "")
+            while (swears[currentSwear] != "" && swears[currentSwear] != "\0"
+                && !UnityGameController.StopApplication)
             {
 
                 stringPtr = swearPtr = wordBeginning = swearBeginning = spaceCount = 0;
 
                 /* look for the next letter in the swear */
-                while (theString.Length > stringPtr)//theString[stringPtr] != "\0")
+                while (theString.Length > stringPtr //theString[stringPtr] != "\0")
+                && !UnityGameController.StopApplication)
                 {
 
                     currentChar = theString.ToCharArray()[stringPtr];
@@ -2815,13 +2822,13 @@ namespace phantasiaclasses
                 swearFlag = false;
                 swearNumber = 0;
 
+                /* start with the first letter of this swear */
+                swearLetter = 0;
+
                 /* loop through all the swear words */
-                while (swearNumber < swears.Length && swears[swearNumber].Length > 0 && swears[swearNumber][0] != '\0')
+                while (swearNumber < swears.Length && swearLetter < swears[swearNumber].Length && swears[swearNumber][0] != '\0'
+                    && !UnityGameController.StopApplication) //todo: debug
                 {
-
-                    /* start with the first letter of this swear */
-                    swearLetter = 0;
-
                     /* we start checking from our current position */
                     letterPtr = sourceLetter;
                     spaceFlag = false;
@@ -2925,7 +2932,8 @@ namespace phantasiaclasses
                                 row = 0;
 
                                 /* run through the substitute list */
-                                while (substitute[row][0] != '\0')
+                                while (substitute[row][0] != '\0'
+                    && !UnityGameController.StopApplication) //todo: debug
                                 {
 
                                     /* if this sub char is the previous one in the swear */
@@ -3063,8 +3071,8 @@ namespace phantasiaclasses
             }
 
             /* add a null */
-            destString = "\0";
             destString = new string(destStringchar); //added
+            destString += '\0';
 
             /* see if this was an buffer overflow attempt */
             if (count > 20)
@@ -3584,24 +3592,24 @@ namespace phantasiaclasses
                 return;
             }
 
-            writePtr = readPtr = theString.ToCharArray(); //todo: set writePtr to theString?
+            writePtr = new char[theString.Length];
+            readPtr = theString.ToCharArray();
 
-            int currchar = 0;
-            while (readPtr[currchar] == ' ') //todo: ?
+            int currcharRead = 0;
+            int currcharWrite = 0;
+            while (readPtr[currcharRead] == ' ')
             {
-                ++currchar;
+                ++currcharRead;
             }
 
-            currchar = 0; //original bugfix?
-
             count = 1;
-            previousChar = CFUNCTIONS.tolower(readPtr[currchar]);
-            writePtr[currchar++] = readPtr[currchar++];
+            previousChar = CFUNCTIONS.tolower(readPtr[currcharRead]);
+            writePtr[currcharWrite++] = readPtr[currcharRead++];
 
-            while (currchar < readPtr.Length - 1)
+            while (currcharRead < readPtr.Length - 1)
             {
 
-                thisChar = CFUNCTIONS.tolower(readPtr[currchar]);
+                thisChar = CFUNCTIONS.tolower(readPtr[currcharRead]);
 
                 /* if this is the same character */
                 if (thisChar == previousChar)
@@ -3614,7 +3622,7 @@ namespace phantasiaclasses
                     {
 
                         /* skip over it */
-                        currchar++;
+                        currcharRead++;
                         continue;
                     }
 
@@ -3626,11 +3634,15 @@ namespace phantasiaclasses
                 }
 
                 /* copy the character over */
-                writePtr[currchar++] = readPtr[currchar++];
+                writePtr[currcharWrite++] = readPtr[currcharRead++];
             }
 
             /* add a null */
-            writePtr[currchar] = '\0';
+            if (currcharWrite < writePtr.Length)
+                writePtr[currcharWrite] = '\0';
+
+            theString = new string(writePtr);
+            theString += '\0';
         }
 
 

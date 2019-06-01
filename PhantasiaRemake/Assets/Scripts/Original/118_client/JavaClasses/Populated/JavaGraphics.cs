@@ -39,11 +39,58 @@ internal class JavaGraphics
     }
 
     //fillRect(int x, int y, int width, int height)    //Fills the specified rectangle.
-    internal void fillRect(int v1, int v2, int canvasWidth, int canvasHeight) //The rectangle is filled using the graphics context's current color.
+    internal void fillRect(int v1, int v2, int canvasWidth, int canvasHeight, float percentFill) //The rectangle is filled using the graphics context's current color. //percentFill added for unity
     {
         if (sourceImage)
         {
             sourceImage.color = currentColor.GetUnityColor();
+
+            if (!sourceImage.sprite)
+            {
+                sourceImage.sprite = Resources.Load("EmptySprite", typeof(Sprite)) as Sprite;
+                sourceImage.type = Image.Type.Filled;
+                sourceImage.fillMethod = Image.FillMethod.Horizontal;
+
+                GameObject borderChild = new GameObject("BorderChild");
+                RectTransform childRect = borderChild.gameObject.AddComponent<RectTransform>();
+                childRect.parent = sourceImage.transform;
+                childRect.position = sourceImage.transform.position;
+                childRect.rotation = sourceImage.transform.rotation;
+                childRect.localScale = sourceImage.transform.localScale;
+                childRect.anchorMin = new Vector2(0, 0);
+                childRect.anchorMax = new Vector2(1, 1);
+                childRect.offsetMax = new Vector2(0, 0);
+                childRect.offsetMin = new Vector2(0, 0);
+                Image childImg = borderChild.gameObject.AddComponent<Image>();
+                childImg.sprite = Resources.Load("BorderSprite", typeof(Sprite)) as Sprite;
+                childImg.type = Image.Type.Sliced;
+
+                Outline border = sourceImage.gameObject.AddComponent<Outline>();
+                border.effectDistance = new Vector2(1,1);
+                border.useGraphicAlpha = false;
+            }
+            sourceImage.fillAmount = percentFill;
+
+            //if (percentFill >= 0) //scale-based version - unused
+            //{
+            //    Vector3 imageScale = sourceImage.GetComponent<RectTransform>().localScale;
+            //    imageScale.x = percentFill;
+            //    sourceImage.GetComponent<RectTransform>().localScale = imageScale;
+            //    for (int i = 0; i < sourceImage.gameObject.transform.childCount; i++)
+            //    {
+            //        Vector3 childScale = sourceImage.gameObject.transform.GetChild(i).localScale;
+            //        if (percentFill > 0)
+            //        {
+            //            childScale.x = 1 / percentFill;
+            //        }
+            //        else
+            //        {
+            //            childScale.x = 1;
+            //        }
+            //        sourceImage.gameObject.transform.GetChild(i).localScale = childScale;
+            //    }
+            //}
+
         }
         else
         {

@@ -1217,6 +1217,7 @@ namespace phantasiaclasses
                 /* get the time of the event */
                 string err = new string(error_msg);
                 CFUNCTIONS.ctime_r(theList.theHistory.date, ref err);
+                error_msg = err.ToCharArray();
                 error_msg[CFUNCTIONS.strlen(new string(error_msg)) - 1] = '\0';
 
                 /* format the message */
