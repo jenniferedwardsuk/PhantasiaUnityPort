@@ -431,3 +431,12 @@
 01-Jun-2019 18:17:31 [0.0.0.0:?] pp$ restored
 01-Jun-2019 18:18:01 [0:0$:0] pp$ loaded by p$
 01-Jun-2019 18:18:33 [0:0$:0] pp$ saved
+02-Jun-2019 17:48:00 [0:0$:0] testfi$ deleted
+02-Jun-2019 17:48:00 [0:0$:0] pp$ loaded by p$
+02-Jun-2019 17:58:02 [0:0$:0] pp$ saved
+02-Jun-2019 17:59:46 [0:0$:0] testfi$ deleted
+02-Jun-2019 17:59:46 [0:0$:0] pp$ loaded by p$
+02-Jun-2019 18:00:37 [0:0$:0] pp$ saved
+02-Jun-2019 18:01:51 [0:0$:0] testfi$ deleted
+02-Jun-2019 18:01:51 [0:0$:0] pp$ loaded by p$
+02-Jun-2019 18:03:41 [0:0$:0] pp$ saved

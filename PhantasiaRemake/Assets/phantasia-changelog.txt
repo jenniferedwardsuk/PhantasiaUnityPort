@@ -5,6 +5,7 @@ Phantasia Port changelog
 todo list:
 - reduce todos
 - implement mutexes (unnecessary?) and multiplayer
+- create necessary files/folders in build folder (or appdata?) if they don't exist
 
 bugs:
 
@@ -26,15 +27,13 @@ MODERATE
 - swear word in chat triggers exception
 
 MAJOR
-- buying quicksilver gives exception
+- none
 
 VISUAL
-- layout issues remain on:
-	- chatpne (scroll area isn't tall enough; resize central if south but no north)
+- none
 
 BUILD ONLY
-- exception popup would be good
-- create necessary files/folders in build folder (or appdata?) if they don't exist
+- none
 
 one-off issues:
 - none
@@ -48,7 +47,8 @@ resolved:
 - scoreboard always blank	- intentional per commands.Do_death: adds to scoreboard if player level >= 100, not beyond, and didn't die unusually
 - space = button 1	- activates the first active button. intentional per buttonPne.spacebar()
 
-
+02-jun-2019
+- added: layout handling for borderlayout south-but-not-north
 
 01-jun-2019
 - bugfix: terminate strings in chat checks properly

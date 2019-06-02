@@ -92,6 +92,17 @@ public class UnityBorderLayoutManager : MonoBehaviour {
                         float newH = rect.sizeDelta.y;
                         unityObj.sizeDelta = new Vector3(unityObj.sizeDelta.x, newH);
                     }
+                    if (!hasNorth && hasSouth)
+                    {
+                        float newY = unityObj.position.y;
+                        float newH = unityObj.sizeDelta.y;
+
+                        newY = -1 * rect.sizeDelta.y / (2 + (0.125f) * 2);
+                        newH = rect.sizeDelta.y * 0.75f + rect.sizeDelta.y * 0.125f;
+
+                        unityObj.position = new Vector3(unityObj.position.x, newY + panelCorners[1].y, unityObj.position.z);
+                        unityObj.sizeDelta = new Vector3(unityObj.sizeDelta.x, newH);
+                    }
 
                     break;
 
