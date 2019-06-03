@@ -436,6 +436,7 @@ namespace phantasiaclasses
                 return phantdefs.DATA_FILE_ERROR;
             }
 
+            CLibFile.fclose(data_file); //added for Unity
             return 0;   /* no problems */
         }
 

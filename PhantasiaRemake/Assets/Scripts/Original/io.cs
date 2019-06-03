@@ -1095,7 +1095,7 @@ namespace phantasiaclasses
             game_t game_ptr = new game_t();
             bool excessiveFlag = false;
 
-            Debug.LogError("Chat debug 1: " + message);
+            //Debug.LogError("Chat debug 1: " + message);
 
             /* if this is not a wizard chatting */
             if (c.wizard == 0)
@@ -1112,7 +1112,7 @@ namespace phantasiaclasses
                 /* remove extra characters */
                 miscclass.Do_replace_repetition(ref message);
             }
-            Debug.LogError("Chat debug 2: " + message);
+            //Debug.LogError("Chat debug 2: " + message);
 
             /* add the player name */
             CFUNCTIONS.strcpy(ref uncensored_msg, c.modifiedName);
@@ -1127,7 +1127,7 @@ namespace phantasiaclasses
             CFUNCTIONS.strcat(ref uncensored_msg, ": ");
             CFUNCTIONS.strcat(ref uncensored_msg, message);
 
-            Debug.LogError("Chat debug 3: " + uncensored_msg);
+            //Debug.LogError("Chat debug 3: " + uncensored_msg);
             //broken from here
 
             /* log the chat message */
@@ -1140,12 +1140,13 @@ namespace phantasiaclasses
             uncensoredLength = CFUNCTIONS.strlen(uncensored_msg) + 1;
 
             /* create a censored message */
-            if (miscclass.Do_censor(ref censored_msg, uncensored_msg) != 0)
+            if (false)//miscclass.Do_censor(ref censored_msg, uncensored_msg) != 0) //todo: skipping censor
             {
 
                 /* if it contains excessive swearing, don't print it */
                 excessiveFlag = true;
             }
+            censored_msg = uncensored_msg;  //todo: skipping censor
 
             censoredLength = CFUNCTIONS.strlen(censored_msg) + 1;
 

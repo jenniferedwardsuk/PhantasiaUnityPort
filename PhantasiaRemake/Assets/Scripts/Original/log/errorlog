@@ -2420,3 +2420,48 @@ DD-Apr-YYYY 10:22:09 [0.0.0.0:0] CLibFile.fwrite of data/realmdata failed in Do_
 02-Jun-2019 18:20:45 UNITY: STARTING GAME
 02-Jun-2019 18:21:01 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
 02-Jun-2019 18:21:01 UNITY: STOPPING GAME
+03-Jun-2019 18:34:29 UNITY: STARTING GAME
+03-Jun-2019 18:34:29 [0.0.0.0:99] CLibFile.fread of data/realmdata failed in Do_load_data_file: 0
+03-Jun-2019 18:34:29 [0.0.0.0:99] Phantasia will continue with no objects from previous games.
+03-Jun-2019 18:36:02 UNITY: STARTING GAME
+03-Jun-2019 18:36:02 [0.0.0.0:99] CLibFile.fread of data/realmdata failed in Do_load_data_file: 0
+03-Jun-2019 18:36:02 [0.0.0.0:99] Phantasia will continue with no objects from previous games.
+03-Jun-2019 18:36:52 UNITY: STARTING GAME
+03-Jun-2019 18:36:53 [0.0.0.0:99] CLibFile.fread of data/realmdata failed in Do_load_data_file: 0
+03-Jun-2019 18:36:53 [0.0.0.0:99] Phantasia will continue with no objects from previous games.
+03-Jun-2019 18:39:35 UNITY: STARTING GAME
+03-Jun-2019 18:42:23 UNITY: STARTING GAME
+03-Jun-2019 18:42:23 [0.0.0.0:99] No grail found in Do_load_data_file. Creating a new one.
+03-Jun-2019 18:43:55 UNITY: STARTING GAME
+03-Jun-2019 18:43:56 [0.0.0.0:99] No grail found in Do_load_data_file. Creating a new one.
+03-Jun-2019 18:56:01 UNITY: STARTING GAME
+03-Jun-2019 18:56:01 [0.0.0.0:99] No grail found in Do_load_data_file. Creating a new one.
+03-Jun-2019 19:05:22 UNITY: STARTING GAME
+03-Jun-2019 19:05:22 [0.0.0.0:99] No grail found in Do_load_data_file. Creating a new one.
+03-Jun-2019 19:05:28 [0.0.0.0:99] sigwait caught bad signal -1 in Do_main_loop.
+03-Jun-2019 19:05:28 UNITY: STOPPING GAME
+03-Jun-2019 19:05:28 [0.0.0.0:99] CLibFile.fopen of data/realmdata failed in Do_close: (C Error Code 1)
+03-Jun-2019 19:42:51 UNITY: STARTING GAME
+03-Jun-2019 19:42:51 [0.0.0.0:99] No grail found in Do_load_data_file. Creating a new one.
+03-Jun-2019 19:46:49 UNITY: STARTING GAME
+03-Jun-2019 19:46:49 [0.0.0.0:99] No grail found in Do_load_data_file. Creating a new one.
+03-Jun-2019 19:48:01 UNITY: STARTING GAME
+03-Jun-2019 19:48:01 [0.0.0.0:99] No grail found in Do_load_data_file. Creating a new one.
+03-Jun-2019 19:48:07 [0.0.0.0:99] sigwait caught bad signal -1 in Do_main_loop.
+03-Jun-2019 19:48:07 UNITY: STOPPING GAME
+03-Jun-2019 19:48:07 [0.0.0.0:99] CLibFile.fopen of data/realmdata failed in Do_close: (C Error Code 1)
+03-Jun-2019 19:50:29 UNITY: STARTING GAME
+03-Jun-2019 19:50:29 [0.0.0.0:99] No grail found in Do_load_data_file. Creating a new one.
+03-Jun-2019 19:50:38 [0.0.0.0:99] sigwait caught bad signal -1 in Do_main_loop.
+03-Jun-2019 19:50:38 UNITY: STOPPING GAME
+03-Jun-2019 19:54:49 UNITY: STARTING GAME
+03-Jun-2019 19:55:48 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+03-Jun-2019 20:03:26 UNITY: STARTING GAME
+03-Jun-2019 20:03:30 [0.0.0.0:99] sigwait caught bad signal -1 in Do_main_loop.
+03-Jun-2019 20:03:30 UNITY: STOPPING GAME
+03-Jun-2019 20:04:38 UNITY: STARTING GAME
+03-Jun-2019 20:07:05 [0.0.0.0:99] Do_hide_trove found a trove already in the realm.
+03-Jun-2019 20:08:03 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+03-Jun-2019 20:08:37 UNITY: STARTING GAME
+03-Jun-2019 20:08:41 [0.0.0.0:99] sigwait caught bad signal -1 in Do_main_loop.
+03-Jun-2019 20:08:41 UNITY: STOPPING GAME

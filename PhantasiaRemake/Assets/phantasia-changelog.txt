@@ -20,11 +20,12 @@ MINOR
 - can't select character from list for Examine
 - allow copy of text from scroll areas?
 - allow use of enter button?
+- swear word in chat triggers exception		- workaround: skip censoring
 
 MODERATE
 - trove error on find: Do_hide_trove found a trove already in the realm.
 - scoreboard popup layout is glitchy, and throws non-fatal packet errors after clicking next or prev
-- swear word in chat triggers exception
+- realm save of corpses can be corrupted / do corpses work?
 
 MAJOR
 - none
@@ -46,6 +47,13 @@ resolved:
 - low-level monsters can still one-shot player with fast attacks on first turn	- seems intentional per initiative contest in fight
 - scoreboard always blank	- intentional per commands.Do_death: adds to scoreboard if player level >= 100, not beyond, and didn't die unusually
 - space = button 1	- activates the first active button. intentional per buttonPne.spacebar()
+
+
+03-jun-2019
+- bugfix: don't abort threads, to allow cleanup
+- bugfix: close realmdata file after loading
+- workaround: don't censor chat messages
+449,723
 
 02-jun-2019
 - added: layout handling for borderlayout south-but-not-north

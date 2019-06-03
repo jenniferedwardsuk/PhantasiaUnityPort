@@ -1135,8 +1135,8 @@ namespace phantasiaclasses
 
                             object_ptr = object_ptr_ptr;
 
-                            object_ptr_ptr = object_ptr.next_object;
-
+                            object_ptr_ptr = object_ptr.next_object; //todo throughout: this fails to remove obj from orig list
+                            
                             event_ptr = eventclass.Do_create_event();
 
                             switch (object_ptr.type)

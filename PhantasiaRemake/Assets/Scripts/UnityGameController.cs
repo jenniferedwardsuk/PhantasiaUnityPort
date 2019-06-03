@@ -118,7 +118,7 @@ public class UnityGameController : NetworkBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            StopApplication = true;
+            StopGameThreads();
         }
 
         if (StopApplication)
@@ -153,10 +153,15 @@ public class UnityGameController : NetworkBehaviour {
         //Debug.Log("killing threads, current count: " + CLibPThread.knownThreads.Values.Count);
         foreach (CLibPThread.pthread_t thread in CLibPThread.knownThreads.Values)
         {
-            thread.associatedThread.Interrupt(); //fails to end thread caught in infinite method call loop
-            thread.associatedThread.Abort(); //generally works but throws catch-avoiding exception, and does not work for infinite while loops
+            //thread.associatedThread.Interrupt(); //fails to end thread caught in infinite method call loop
+            //thread.associatedThread.Abort(); //generally works but throws catch-avoiding exception, and does not work for infinite while loops
             //mostly relying on threads checking for stopApplication and stopping themselves
         }
+    }
+
+    public void StopGameThreads()
+    {
+        UnityGameController.StopApplication = true;
     }
 
     private void OnDestroy()
