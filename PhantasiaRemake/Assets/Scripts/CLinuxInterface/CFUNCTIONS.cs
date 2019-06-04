@@ -269,6 +269,15 @@ public class CFUNCTIONS
         catch (Exception e)
         {
             Debug.LogError("exception in sprintf: " + e.Message + " || " + e.InnerException + " || " + e.StackTrace);
+            try
+            {
+                Debug.Log("readystr " + readystr);
+                foreach (var item in paramStrings)
+                {
+                    Debug.Log("paramStrings " + item.ToString());
+                }
+            }
+            catch { }
         }
         //if (str != "%s %s" && !str.Contains("Mutex") && !str.Contains("mutex"))
             //Debug.Log("string format debug: target: " + target + " ...");
@@ -475,7 +484,11 @@ if Return value = 0 then it indicates str1 is equal to str2.*/
             //Debug.Log("setting UnityGameController stop flag");
             UnityGameController.StopApplication = true;
             //Thread.CurrentThread.Interrupt(); //this fails to stop current thread, as it waits for the thread to block
-            Thread.CurrentThread.Abort(); //this works sometimes but throws a catch-dodging exception
+
+            if (Thread.CurrentThread != UnityGameController.childThread)
+            {
+                //Thread.CurrentThread.Abort(); //this works sometimes but throws a catch-dodging exception
+            }
             //letting threads manage themselves
         }
     }

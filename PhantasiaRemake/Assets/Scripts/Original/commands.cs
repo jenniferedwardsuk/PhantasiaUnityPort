@@ -595,7 +595,6 @@ namespace phantasiaclasses
                 object_ptr.x = c.player.x;
                 object_ptr.y = c.player.y;
                 object_ptr.arg1 = characterclass.Do_copy_record(c.player);//, false);
-
                 /* put the new event in the realm object list */
                 miscclass.Do_lock_mutex(c.realm.realm_lock);
                 object_ptr.next_object = c.realm.objects;

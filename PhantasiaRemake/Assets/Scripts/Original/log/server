@@ -2277,3 +2277,77 @@ DD-Apr-YYYY 10:22:09 Server is shut down.
 03-Jun-2019 20:04:40 New connection on socket 0.
 03-Jun-2019 20:08:38 Server started up.  pid=99
 03-Jun-2019 20:08:41 Server is shut down.
+04-Jun-2019 18:39:33 Server started up.  pid=99
+04-Jun-2019 18:39:38 New connection on socket 0.
+04-Jun-2019 18:42:12 Server started up.  pid=99
+04-Jun-2019 18:42:14 New connection on socket 0.
+04-Jun-2019 20:02:41 Server started up.  pid=99
+04-Jun-2019 20:02:50 New connection on socket 0.
+04-Jun-2019 20:05:31 Server started up.  pid=99
+04-Jun-2019 20:05:36 New connection on socket 0.
+04-Jun-2019 20:10:33 Server started up.  pid=99
+04-Jun-2019 20:10:36 New connection on socket 0.
+04-Jun-2019 20:33:56 Server started up.  pid=99
+04-Jun-2019 20:33:59 New connection on socket 0.
+04-Jun-2019 20:41:19 [0.0.0.0:?] pp$ restored
+04-Jun-2019 20:41:19 Server restored 1 characters.
+04-Jun-2019 20:41:19 Server started up.  pid=99
+04-Jun-2019 20:41:21 New connection on socket 0.
+04-Jun-2019 20:42:40 Server started up.  pid=99
+04-Jun-2019 20:42:42 Server is shut down.
+04-Jun-2019 20:43:00 Server started up.  pid=99
+04-Jun-2019 20:43:01 New connection on socket 0.
+04-Jun-2019 20:44:46 Server started up.  pid=99
+04-Jun-2019 20:44:56 New connection on socket 0.
+04-Jun-2019 20:56:35 Server started up.  pid=99
+04-Jun-2019 20:56:39 Server is shut down.
+04-Jun-2019 20:56:56 Server started up.  pid=99
+04-Jun-2019 20:56:59 New connection on socket 0.
+04-Jun-2019 20:57:51 Server is shut down.
+04-Jun-2019 20:58:21 Server started up.  pid=99
+04-Jun-2019 20:58:22 New connection on socket 0.
+04-Jun-2019 21:00:33 Server is shut down.
+04-Jun-2019 21:03:37 Server started up.  pid=99
+04-Jun-2019 21:03:38 New connection on socket 0.
+04-Jun-2019 21:04:33 Server is shut down.
+04-Jun-2019 21:13:16 Server started up.  pid=99
+04-Jun-2019 21:13:44 Server is shut down.
+04-Jun-2019 21:17:28 Server started up.  pid=99
+04-Jun-2019 21:17:29 New connection on socket 0.
+04-Jun-2019 21:18:51 Server is shut down.
+04-Jun-2019 21:19:22 Server started up.  pid=99
+04-Jun-2019 21:19:23 New connection on socket 0.
+04-Jun-2019 21:21:16 Server is shut down.
+04-Jun-2019 21:25:23 Server started up.  pid=99
+04-Jun-2019 21:25:41 Server is shut down.
+04-Jun-2019 21:35:16 Server started up.  pid=99
+04-Jun-2019 21:35:48 Server is shut down.
+04-Jun-2019 22:07:15 Server started up.  pid=99
+04-Jun-2019 22:07:30 New connection on socket 0.
+04-Jun-2019 22:07:38 Server is shut down.
+04-Jun-2019 22:07:52 Server started up.  pid=99
+04-Jun-2019 22:07:58 New connection on socket 0.
+04-Jun-2019 22:08:07 Server is shut down.
+04-Jun-2019 22:08:20 Server started up.  pid=99
+04-Jun-2019 22:08:22 New connection on socket 0.
+04-Jun-2019 22:09:45 Server is shut down.
+04-Jun-2019 22:16:24 Server started up.  pid=99
+04-Jun-2019 22:17:07 New connection on socket 0.
+04-Jun-2019 22:24:43 Server is shut down.
+04-Jun-2019 22:27:20 Server started up.  pid=99
+04-Jun-2019 22:27:37 New connection on socket 0.
+04-Jun-2019 22:29:33 Server is shut down.
+04-Jun-2019 22:29:59 Server started up.  pid=99
+04-Jun-2019 22:30:05 Server is shut down.
+04-Jun-2019 23:02:33 Server started up.  pid=99
+04-Jun-2019 23:02:36 New connection on socket 0.
+04-Jun-2019 23:05:10 Server is shut down.
+04-Jun-2019 23:06:25 Server started up.  pid=99
+04-Jun-2019 23:06:26 New connection on socket 0.
+04-Jun-2019 23:07:06 Server is shut down.
+04-Jun-2019 23:07:32 Server started up.  pid=99
+04-Jun-2019 23:07:33 New connection on socket 0.
+04-Jun-2019 23:07:41 Server is shut down.
+04-Jun-2019 23:07:57 Server started up.  pid=99
+04-Jun-2019 23:08:00 New connection on socket 0.
+04-Jun-2019 23:08:10 Server is shut down.

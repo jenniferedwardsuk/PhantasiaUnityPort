@@ -309,7 +309,8 @@ namespace phantasiaclasses
                     case phantdefs.CORPSE:
 
                         /* create an strcture to hold the character information */
-                        object_ptr.arg1 = null;// (void*) malloc(phantdefs.SZ_PLAYER);
+                        //Debug.LogError(object_ptr.arg1);
+                        object_ptr.arg1 = new player_t();// (void*) malloc(phantdefs.SZ_PLAYER);
 
                         /* and read in the dead player's information */
                         if (CLibFile.fread(ref object_ptr.arg1, phantdefs.SZ_PLAYER, 1, data_file) == 0)
@@ -330,7 +331,7 @@ namespace phantasiaclasses
 
                         /* used to be phantdefs.CORPSE_LIFE */
                         if (86400 * CFUNCTIONS.sqrt(((player_t)object_ptr.arg1).level)
-                                < CFUNCTIONS.GetUnixEpoch(DateTime.Now) - ((player_t)object_ptr.arg1).last_load)
+                                < CFUNCTIONS.GetUnixEpoch(DateTime.Now) - ((player_t)object_ptr.arg1).last_load) // => level 0 means corpse disappears at once, level 1 lasts 1 day, level 4 lasts 2 days
                         {
 
                             /* delete the object */
@@ -841,6 +842,7 @@ namespace phantasiaclasses
                 fileclass.Do_log_error(error_msg);
                 CFUNCTIONS.exit(phantdefs.DATA_FILE_ERROR);
             }
+
 
             if (CLibFile.fwrite(state_ptr, ref phantdefs.SZ_REALM_STATE, 1, data_file)
                     != 1)

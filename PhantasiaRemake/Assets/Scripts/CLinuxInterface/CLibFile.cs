@@ -100,11 +100,12 @@ public class CLibFile : MonoBehaviour {
             }
             else if (mode == "w")
             {
-                if (!File.Exists(filename) && mode == "w")
+                if (!File.Exists(filename))
                 {
                     FileStream filestr = File.Create(filename);
                     filestr.Close();
                 }
+                System.IO.File.WriteAllText(filename, string.Empty); //clear file first
                 file = new CFILE(File.OpenWrite(filename));
                 file.mode = mode;
             }
@@ -114,6 +115,10 @@ public class CLibFile : MonoBehaviour {
                 {
                     FileStream filestr = File.Create(filename);
                     filestr.Close();
+                }
+                else if (mode == "w+")
+                {
+                    System.IO.File.WriteAllText(filename, string.Empty); //clear file first
                 }
                 file = new CFILE(File.Open(filename, FileMode.Open, FileAccess.ReadWrite));
                 file.mode = mode;
@@ -375,10 +380,11 @@ stream − This is the pointer to a FILE object that specifies an output stream.
             {
                 realm_object_t realmobj = (realm_object_t)destinationobj;
                 Debug.Log("realm object detected, with type " + realmobj.type + " and loc " + realmobj.x + "," + realmobj.y);
+                //Debug.LogError("file position " + file.datafile.Position);
             }
             if (objectData.Length > size)
             {
-                Debug.Log("Size update needed for " + destinationobj + " - from " + size + " to " + objectData.Length); //error
+                Debug.LogError("Size update needed for " + destinationobj + " - from " + size + " to " + objectData.Length); //error
                 size = objectData.Length; //update size - C sizes may not be accurate
             }
             file.datafile.Write(objectData, 0, objectData.Length); //0 is the offset into the array, not the file

@@ -279,7 +279,7 @@ namespace phantasiaclasses
                 {
 
                     /* create a spec for this player */
-                    //spec_ptr = (struct player_spec_t *) Do_malloc(phantdefs.SZ_PLAYER_SPEC);
+                    spec_ptr = new player_spec_t(); //spec_ptr = (struct player_spec_t *) Do_malloc(phantdefs.SZ_PLAYER_SPEC);
 
                     /* copy the information */
                     spec_ptr.name = game_ptr.description.name;

@@ -583,8 +583,9 @@ namespace phantasiaclasses
 
 
                 fileclass.Do_log_error(error_msg);
-                CFUNCTIONS.exit(phantdefs.SOCKET_SELECT_ERROR);
-                return 0; //added; exit does not halt thread
+                //if (!UnityGameController.StopApplication) //added; interrupt can be due to stopping game, in which case allow continue in order to cleanup
+                    CFUNCTIONS.exit(phantdefs.SOCKET_SELECT_ERROR);
+                return 0; //added; in case exit does not halt thread
             }
 
             /* if select found no matches, return */

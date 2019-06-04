@@ -82,7 +82,7 @@ public class UnityGameController : NetworkBehaviour {
     public static string ServerThreadName = "ServerThread";
 
     //Thread unityThread;
-    Thread childThread;
+    public static Thread childThread;
 
     internal static bool editorIsPlaying;
 

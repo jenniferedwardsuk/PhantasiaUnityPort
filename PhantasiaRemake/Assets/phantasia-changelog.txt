@@ -23,9 +23,8 @@ MINOR
 - swear word in chat triggers exception		- workaround: skip censoring
 
 MODERATE
-- trove error on find: Do_hide_trove found a trove already in the realm.
 - scoreboard popup layout is glitchy, and throws non-fatal packet errors after clicking next or prev
-- realm save of corpses can be corrupted / do corpses work?
+- linked list removals need to be amended throughout
 
 MAJOR
 - none
@@ -41,19 +40,23 @@ one-off issues:
 
 resolved:
 - non-experimento character doesn't start at 0,0 	- intentional per Do_roll_new_player
-- monsters are only encountered by Hunting 		- intentional per misc.Do_move
-- no penalty for moving; energy, hunger, ?	- seems intentional per misc.Do_move
+- no penalty for moving; energy, hunger, ?	- intentional per misc.Do_move
 - grail x,y can be very large (186893,622523)	- intentional per init hides. trove 600 to 1400, grail 300k-1mill
 - low-level monsters can still one-shot player with fast attacks on first turn	- seems intentional per initiative contest in fight
-- scoreboard always blank	- intentional per commands.Do_death: adds to scoreboard if player level >= 100, not beyond, and didn't die unusually
+- scoreboard blank despite deaths	- intentional per commands.Do_death: adds to scoreboard if player level >= 100, not beyond, and didn't die unusually
 - space = button 1	- activates the first active button. intentional per buttonPne.spacebar()
 
+
+04-jun-2019
+- bugfix: allow re-hide of treasure trove when found
+- bugfix: allow server thread to shut down manually
+- bugfix: fopen for write clears existing file contents (fixes disappeared corpses corrupting realmdata file)
+- character test: can find and loot corpses (same session)
 
 03-jun-2019
 - bugfix: don't abort threads, to allow cleanup
 - bugfix: close realmdata file after loading
 - workaround: don't censor chat messages
-449,723
 
 02-jun-2019
 - added: layout handling for borderlayout south-but-not-north

@@ -1136,7 +1136,25 @@ namespace phantasiaclasses
                             object_ptr = object_ptr_ptr;
 
                             object_ptr_ptr = object_ptr.next_object; //todo throughout: this fails to remove obj from orig list
-                            
+                            if (object_ptr_ptr == c.realm.objects) //added for unity
+                            {
+                                c.realm.objects = object_ptr.next_object;
+                            }
+                            else
+                            {
+                                realm_object_t obj = c.realm.objects;
+                                bool done = false;
+                                while (!done && obj.next_object != null)
+                                {
+                                    if (obj.next_object == object_ptr_ptr)
+                                    {
+                                        obj.next_object = object_ptr.next_object;
+                                        done = true;
+                                    }
+                                    obj = obj.next_object;
+                                }
+                            }
+
                             event_ptr = eventclass.Do_create_event();
 
                             switch (object_ptr.type)

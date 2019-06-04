@@ -1079,7 +1079,36 @@ namespace phantasiaclasses
 
                             object_ptr = object_ptr_ptr;
 
-                            object_ptr_ptr = object_ptr.next_object;
+
+                            if (object_ptr_ptr == c.realm.objects) //added for unity
+                            {
+                                c.realm.objects = object_ptr.next_object;
+                            }
+                            else
+                            {
+                                realm_object_t obj = c.realm.objects;
+                                realm_object_t firstobj = obj;
+                                bool done = false;
+                                bool first = true;
+                                while (!done && obj.next_object != null)
+                                {
+                                    if (obj.next_object == object_ptr_ptr)
+                                    {
+                                        Debug.LogError("LINKED LIST OBJ FOUND");
+                                        obj.next_object = object_ptr_ptr.next_object;
+                                        done = true;
+                                    }
+                                    if (first)
+                                    {
+                                        firstobj = obj;
+                                        first = false;
+                                    }
+                                    obj = obj.next_object;
+                                }
+                                c.realm.objects = firstobj;
+                            }
+
+                            object_ptr_ptr = object_ptr.next_object; //commented for unity
 
                             event_ptr = eventclass.Do_create_event();
 
