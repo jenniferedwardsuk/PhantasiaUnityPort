@@ -23,7 +23,13 @@ public class scoreDlog : Dialog , IJavaActionListener
     {
         if (UnityGameController.inSetup)
         {
-            init(c, 0, 50, "DUMMY STRING");
+            List<string> textstrings = new List<string>();
+            for (int i = 0; i < 50; i++)
+            {
+                textstrings.Add("");
+                textstrings.Add("");
+            }
+            init(c, 0, 50, textstrings);
         }
         else
         {
@@ -36,10 +42,15 @@ public class scoreDlog : Dialog , IJavaActionListener
         parent = c;
         long long1 = parent.readLong();
         long long2 = parent.readLong();
-        string textstring = parent.readString();
-        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(init, c, long1, long2, textstring);
+        List<string> textstrings = new List<string>();
+        for (int i = 0; i < long2 * 2; i++)
+        {
+            textstrings.Add(parent.readString());
+        }
+        //string textstring = parent.readString();
+        UnityJavaUIFuncQueue.GetInstance().QueueUIMethod(init, c, long1, long2, textstrings);
     }
-    public void init(pClient c, long long1, long long2, string textstring)
+    public void init(pClient c, long long1, long long2, List<string> textstring)
     {
         top_panel = new JavaPanel("Top", false);
         bottom_panel = new JavaPanel("Bottom", false);
@@ -65,6 +76,7 @@ public class scoreDlog : Dialog , IJavaActionListener
         bottom_panel.add(theJavaButton);
 
         //setLayout(new BorderLayout());
+        add("North", top_panel); //added for unity
         add("South", bottom_panel);
         add("Center", textArea);
         setLayout(new BorderLayout());
@@ -84,9 +96,9 @@ public class scoreDlog : Dialog , IJavaActionListener
         }
 
         /* print out all the high scores */
-        for (int i = 0; i < records; i++)
+        for (int i = 0; i < records * 2; i++)
         {
-            textArea.append(textstring + "\n"); 
+            textArea.append(textstring[i] + "\n"); 
         }
 
         pack();

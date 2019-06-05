@@ -603,3 +603,19 @@
 04-Jun-2019 23:04:14 bup$ killed_by size 1 A Crebain
 04-Jun-2019 23:04:45 pp$ killed size 1 A Fachan
 04-Jun-2019 23:06:58 ppp$ killed_by size 1 A Cluricaun
+05-Jun-2019 20:14:27 pp$ survived_with size 3 A Gnoll
+05-Jun-2019 20:14:42 pp$ survived_with size 8 A Jubjub Bird
+05-Jun-2019 20:14:48 pp$ survived_with size 12 A Hamadryad
+05-Jun-2019 20:14:51 pp$ survived_with size 13 A Vortex
+05-Jun-2019 20:15:12 pp$ survived_with size 14 A Hydra
+05-Jun-2019 20:15:54 pp$ survived_with size 16 Smeagol
+05-Jun-2019 20:16:02 pp$ killed size 18 A Gargoyle
+05-Jun-2019 20:17:02 pp$ killed size 21 An Aspidchelone
+05-Jun-2019 20:17:19 pp$ survived_with size 21 A Nixie
+05-Jun-2019 20:17:39 pp$ survived_with size 22 A Mermaid
+05-Jun-2019 20:18:04 pp$ survived_with size 23 An Aspidchelone
+05-Jun-2019 20:18:09 pp$ survived_with size 23 An Aspidchelone
+05-Jun-2019 20:18:49 pp$ killed_by size 23 Morgoth
+05-Jun-2019 22:35:14 testfi$ survived_with size 1 A Serpent
+05-Jun-2019 22:35:38 testfi$ survived_with size 1 A Serpent
+05-Jun-2019 22:36:22 testfi$ killed size 1 A Fachan

@@ -9,3 +9,4 @@ PhantasiaRemake/PhantasiaRemake.csproj
 PhantasiaRemake/PhantasiaRemake.Editor.csproj
 PhantasiaRemake/PhantasiaRemake.sln
 PhantasiaRemake/Temp/
+*.zip

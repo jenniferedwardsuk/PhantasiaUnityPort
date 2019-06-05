@@ -2231,11 +2231,11 @@ namespace phantasiaclasses
             }
             else
             {
-                if ((scoreboard_file = CLibFile.fopen(pathnames.OLD_SCOREBOARD_FILE, "w+", ref errno)) == null) //changed r to w+ to allow creation. bug in original?
+                if ((scoreboard_file = CLibFile.fopen(pathnames.SCOREBOARD_FILE, "r", ref errno)) == null) //changed OLD_SCOREBOARD_FILE to SCOREBOARD_FILE
                 {
 
                     error_msg = CFUNCTIONS.sprintfSinglestring("[%s] CLibFile.fopen of %s failed in Do_scoreboard: %s\n",
-                    c.connection_id, pathnames.OLD_SCOREBOARD_FILE, CFUNCTIONS.strerror(errno));
+                    c.connection_id, pathnames.SCOREBOARD_FILE, CFUNCTIONS.strerror(errno));
 
                     fileclass.Do_log_error(error_msg);
 
@@ -2277,7 +2277,7 @@ namespace phantasiaclasses
             }
 
             /* we'll only show 50 records maximum */
-            records = 50;
+            records = 50; //todo: overwrites the above?
 
             /* tell the client number of records and their start */
             socketclass.Do_send_int(c, start);
@@ -2286,7 +2286,7 @@ namespace phantasiaclasses
 
             /* move to the starting record */
             EOF_flag = 0;
-            start = phantdefs.SZ_SCOREBOARD;
+            start = 0;// phantdefs.SZ_SCOREBOARD; //todo: replaced with 0 - correct?
             CLibFile.fseek(scoreboard_file, start, CLibFile.SEEK_SET);
             /* read the next 50 or so records */
             for (i = start + 1; i < records + start + 1; i++)
@@ -2354,6 +2354,7 @@ namespace phantasiaclasses
 
                     string_buffer = CFUNCTIONS.sprintfSinglestring("%d> No entry.\n", i);
                     socketclass.Do_send_string(c, string_buffer);
+                    socketclass.Do_send_string(c, " "); //added for unity; so client can expect two packets per record
                 }
             }
 

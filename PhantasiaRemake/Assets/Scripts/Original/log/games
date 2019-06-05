@@ -488,3 +488,9 @@
 04-Jun-2019 23:05:08 [0:0$:0] pp$ saved
 04-Jun-2019 23:06:45 [0:0$:0] ppp$ created by p$
 04-Jun-2019 23:07:00 [0:0$:0] ppp$ died
+05-Jun-2019 20:14:13 [0:0$:0] pp$ loaded by p$
+05-Jun-2019 20:18:53 [0:0$:0] pp$ died
+05-Jun-2019 22:17:04 [0:0$:0] testfi$ created by p$
+05-Jun-2019 22:17:11 [0:0$:0] testfi$ saved
+05-Jun-2019 22:34:58 [0:0$:0] testfi$ loaded by p$
+05-Jun-2019 22:37:02 [0:0$:0] testfi$ saved

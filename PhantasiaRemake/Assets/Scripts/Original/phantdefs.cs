@@ -280,7 +280,7 @@ namespace phantasiaclasses
         internal static int SZ_EVENT;// sizeof(event_t); /* size of event_t */
         internal static int SZ_REALM_STATE = 250; // actual test: 129     // sizeof(realm_state_t); /* size of realm_state_t */
         internal static int SZ_REALM_OBJECT = 1700; // actual test: 237, 204, 1317, 15xx      // sizeof(realm_object_t); /* size of realm_object_t */
-        internal static int SZ_SCOREBOARD;// sizeof(scoreboard_t); /* size of scoreboard_t */
+        internal static int SZ_SCOREBOARD = 200;// sizeof(scoreboard_t); /* size of scoreboard_t */
         internal static int SZ_CLIENT;// sizeof(client_t); /* size of client_t */
         internal static int SZ_OPPONENT;// sizeof(opponent_t); /* size of opponent_t */
         internal static int SZ_BUTTON;// sizeof(button_t); /* size of button_t */

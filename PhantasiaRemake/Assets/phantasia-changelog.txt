@@ -21,9 +21,9 @@ MINOR
 - allow copy of text from scroll areas?
 - allow use of enter button?
 - swear word in chat triggers exception		- workaround: skip censoring
+- scoreboard popup layout is cramped, no longer adds new records, and needs page management
 
 MODERATE
-- scoreboard popup layout is glitchy, and throws non-fatal packet errors after clicking next or prev
 - linked list removals need to be amended throughout
 
 MAJOR
@@ -43,9 +43,19 @@ resolved:
 - no penalty for moving; energy, hunger, ?	- intentional per misc.Do_move
 - grail x,y can be very large (186893,622523)	- intentional per init hides. trove 600 to 1400, grail 300k-1mill
 - low-level monsters can still one-shot player with fast attacks on first turn	- seems intentional per initiative contest in fight
-- scoreboard blank despite deaths	- intentional per commands.Do_death: adds to scoreboard if player level >= 100, not beyond, and didn't die unusually
+- scoreboard blank despite deaths	- intentional per commands.Do_death: adds to scoreboard if player lvl >= 100, not beyond, and didn't die unusually
 - space = button 1	- activates the first active button. intentional per buttonPne.spacebar()
 
+
+
+
+05-jun-2019
+- bugfix: scoreboard collects all its packets
+- bugfix: scoreboard is given consistent number of packets 
+- bugfix: scoreboard top panel is included in layout
+- added: scoreboard file size
+
+BUILD 5
 
 04-jun-2019
 - bugfix: allow re-hide of treasure trove when found
@@ -83,6 +93,10 @@ resolved:
 - low-level-character test: can examine treasure (protection amulet)
 - low-level-character test: can be hit and affected by plague
 - low-level-character test: can meet medic and be cured
+
+30-may-2019
+
+BUILD 4
 
 28-may-2019
 - high-level-character test: virgin can be received
