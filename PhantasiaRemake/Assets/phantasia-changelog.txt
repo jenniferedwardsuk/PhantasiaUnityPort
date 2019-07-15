@@ -47,7 +47,11 @@ resolved:
 - space = button 1	- activates the first active button. intentional per buttonPne.spacebar()
 
 
+15-jul-2019
+- bugfix: string format handled correctly when levelling up
+- modified: monsters have to win additional speed contests to get multiple hits in a row
 
+BUILD 6
 
 05-jun-2019
 - bugfix: scoreboard collects all its packets

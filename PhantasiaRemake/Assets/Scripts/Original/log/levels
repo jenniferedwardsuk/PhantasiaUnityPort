@@ -120,3 +120,10 @@
 04-Jun-2019 23:07:00 ppp$, Elf, 6 age, 15 seconds, dead
 05-Jun-2019 20:18:53 pp$, Fighter, 313 age, 1575 seconds, dead
 05-Jun-2019 22:17:04 testfi$, Fighter, 0 age, 0 seconds, level 0
+15-Jul-2019 10:13:25 elfy$, Elf, 0 age, 0 seconds, level 0
+15-Jul-2019 10:15:34 %s, %s, %d age, %d seconds, level %0.0lf
+15-Jul-2019 10:19:22 %s, %s, %d age, %d seconds, level %0.0lf
+15-Jul-2019 10:26:07 elfy$, Elf, 279 age, 658 seconds, dead
+15-Jul-2019 10:55:12 %s, %s, %d age, %d seconds, level %0.0lf
+15-Jul-2019 11:02:27 %s, %s, %d age, %d seconds, level %0.0lf
+15-Jul-2019 11:13:08 elfy$, Elf, 477 age, 1014 seconds, level 4

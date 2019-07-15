@@ -166,6 +166,7 @@ public class CFUNCTIONS
             readystr = readystr.Replace("{" + paramNum + ":2.0f", "{" + paramNum + ":F0}"); // 2 => ensure at least 2 characters, add spaces to do so
             //readystr = readystr.Replace("{" + paramNum + ":.01f", "{" + paramNum + ":.01f}");
             readystr = readystr.Replace("{" + paramNum + ":.0lf", "{" + paramNum + ":F0}");
+            readystr = readystr.Replace("{" + paramNum + ":0.0lf", "{" + paramNum + ":F0}");
             //readystr = readystr.Replace("{" + paramNum + ":0.1f", "{" + paramNum + ":0.1f}");
             readystr = readystr.Replace("{" + paramNum + ":0.lf", "{" + paramNum + ":F0}"); //":0.lf}"); // in printf("%0.lf", sqrt(...)) the floating point number is rounded to zero decimal digits, so 2.9 is written as 3.
             readystr = readystr.Replace("{" + paramNum + ":3.0f", "{" + paramNum + ":F0}"); // 3 => ensure at least 3 characters, add spaces to do so
@@ -271,10 +272,10 @@ public class CFUNCTIONS
             Debug.LogError("exception in sprintf: " + e.Message + " || " + e.InnerException + " || " + e.StackTrace);
             try
             {
-                Debug.Log("readystr " + readystr);
+                Debug.LogError("readystr " + readystr);
                 foreach (var item in paramStrings)
                 {
-                    Debug.Log("paramStrings " + item.ToString());
+                    Debug.LogError("paramStrings " + item.ToString());
                 }
             }
             catch { }

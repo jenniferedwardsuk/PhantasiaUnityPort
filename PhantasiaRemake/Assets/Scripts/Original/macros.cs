@@ -21,6 +21,7 @@ public class macros //: MonoBehaviour
 
     //#define 
     static int randoffset = 0;
+    static System.Random rand;
     internal static double RND()
     {
         //#define RND()		((double)Do_random() / 2147483647.0)        //Do_random is from miscclass : return a random floating point number from 0.0 < 1.0
@@ -29,10 +30,20 @@ public class macros //: MonoBehaviour
         //double range = 2147483647.0 - 1;
         //randNum = rand.NextDouble() * range + 1; //NextDouble is between 0 and 1
         //return randNum;
+
+        if (randoffset > 1000000)
+            randoffset = 0;
+
         randoffset++;
-        System.Random rand = new System.Random(CFUNCTIONS.GetMillisecs(DateTime.Now) + randoffset);
+
+        if (rand == null) //don't recreate every time to avoid skewing distribution
+        {
+            UnityEngine.Debug.Log("creating rand with offset " + randoffset);
+            rand = new System.Random(CFUNCTIONS.GetMillisecs(DateTime.Now) + randoffset);
+        }
 
         double divisor = 2147483647.0;
+
         double randNum = rand.NextDouble();// / divisor; //commented divisor; NextDouble is between 0 and 1
 
         //Debug.LogError("Rand debug: " + randNum);

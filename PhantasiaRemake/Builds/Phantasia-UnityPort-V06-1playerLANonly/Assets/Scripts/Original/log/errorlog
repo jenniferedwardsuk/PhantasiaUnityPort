@@ -1,0 +1,9 @@
+05-Jun-2019 22:26:17 UNITY: STARTING GAME
+05-Jun-2019 22:27:11 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+05-Jun-2019 22:27:11 UNITY: STOPPING GAME
+05-Jun-2019 22:37:34 UNITY: STARTING GAME
+05-Jun-2019 22:38:22 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+05-Jun-2019 22:38:22 UNITY: STOPPING GAME
+15-Jul-2019 11:27:15 UNITY: STARTING GAME
+15-Jul-2019 11:30:14 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+15-Jul-2019 11:30:14 UNITY: STOPPING GAME

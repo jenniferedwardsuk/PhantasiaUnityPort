@@ -782,7 +782,7 @@ namespace phantasiaclasses
                 fileclass.Do_log(pathnames.COMBAT_LOG, string_buffer);
             }
 
-
+            int monstTotalHitsThisRound = 0;
             while (c.battle.opponent.energy > 0.0)
             {
 
@@ -812,8 +812,7 @@ namespace phantasiaclasses
                 }
 
                 /* monster is faster */
-                if (macros.RND() * c.battle.opponent.speed >
-                (macros.RND() * c.player.quickness)
+                if ((macros.RND() * c.battle.opponent.speed) > (macros.RND() * c.player.quickness)
                     /* not darklord */
                     && c.battle.opponent.special_type != phantdefs.SM_DARKLORD
                         /* not shrieker */
@@ -823,15 +822,25 @@ namespace phantasiaclasses
                         /* not first attack with a blessing */
                         && !firsthit)
                 {
+                    //added for unity: additional contests to reduce hitspamming from closely-matched monsters
+                    bool monsthit2 = true;
+                    for (count = 0; count < monstTotalHitsThisRound; count++)
+                    {
+                        monsthit2 &= (macros.RND() * c.battle.opponent.speed) > (macros.RND() * c.player.quickness);
+                    }
+                    if (monsthit2 == true)
+                    {
+                        monstTotalHitsThisRound++;
 
-                    /* monster gets a hit */
-                    Do_monsthits(c);
+                        /* monster gets a hit */
+                        Do_monsthits(c);
+                    }
 
                 }
                 /* player gets a hit */
                 else
                 {
-
+                    monstTotalHitsThisRound = 0;
                     firsthit = false;
 
                     /* if the player has a good ring in use */
