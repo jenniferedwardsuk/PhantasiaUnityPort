@@ -47,8 +47,12 @@ resolved:
 - space = button 1	- activates the first active button. intentional per buttonPne.spacebar()
 
 
+20-may-2020
+- stability: make backups of data files when accessing them
+
 15-jul-2019
 - bugfix: string format handled correctly when levelling up
+- modified: randomisation adjustment
 - modified: monsters have to win additional speed contests to get multiple hits in a row
 
 BUILD 6
