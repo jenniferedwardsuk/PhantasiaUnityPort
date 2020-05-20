@@ -93,6 +93,12 @@ public class CLibFile : MonoBehaviour {
         CLibFile.CFILE file = null;
         try
         {
+            //backup before accessing
+            if (File.Exists(filename))
+            {
+                File.Copy(filename, filename + "-backup");
+            }
+
             if (mode == "r")
             {
                 file = new CFILE(File.OpenRead(filename));
