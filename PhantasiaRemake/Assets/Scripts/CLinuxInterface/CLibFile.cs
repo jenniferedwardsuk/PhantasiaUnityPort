@@ -63,6 +63,12 @@ public class CLibFile : MonoBehaviour {
     {
         //Debug.Log("CLibFile.fclose"); 
         file.Close();
+
+        //backup after accessing
+        if (File.Exists(file.Name) && (new FileInfo(file.Name).Length != 0))
+        {
+            File.Copy(file.Name, file.Name + "-backup2", true);
+        }
     }
 
     static string filesLocation = Directory.GetCurrentDirectory() + "\\Assets\\Scripts\\Original\\";
@@ -94,9 +100,9 @@ public class CLibFile : MonoBehaviour {
         try
         {
             //backup before accessing
-            if (File.Exists(filename))
+            if (File.Exists(filename) && (new FileInfo(filename).Length != 0))
             {
-                File.Copy(filename, filename + "-backup");
+                File.Copy(filename, filename + "-backup", true);
             }
 
             if (mode == "r")

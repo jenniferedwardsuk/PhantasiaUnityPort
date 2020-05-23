@@ -717,30 +717,39 @@ public class UnityJavaInterface
                 JavaKey = KeyEvent.VK_8;
                 break;
             case KeyCode.Keypad1:
+            case KeyCode.B:
                 JavaKey = KeyEvent.VK_NUMPAD1;
                 break;
             case KeyCode.Keypad2:
+            case KeyCode.K:
                 JavaKey = KeyEvent.VK_NUMPAD2;
                 break;
             case KeyCode.Keypad3:
+            case KeyCode.N:
                 JavaKey = KeyEvent.VK_NUMPAD3;
                 break;
             case KeyCode.Keypad4:
+            case KeyCode.H:
                 JavaKey = KeyEvent.VK_NUMPAD4;
                 break;
             case KeyCode.Keypad5:
+            case KeyCode.Period:
                 JavaKey = KeyEvent.VK_NUMPAD5;
                 break;
             case KeyCode.Keypad6:
+            case KeyCode.L:
                 JavaKey = KeyEvent.VK_NUMPAD6;
                 break;
             case KeyCode.Keypad7:
+            case KeyCode.Y:
                 JavaKey = KeyEvent.VK_NUMPAD7;
                 break;
             case KeyCode.Keypad8:
+            case KeyCode.J:
                 JavaKey = KeyEvent.VK_NUMPAD8;
                 break;
             case KeyCode.Keypad9:
+            case KeyCode.U:
                 JavaKey = KeyEvent.VK_NUMPAD9;
                 break;
             case KeyCode.Space:
