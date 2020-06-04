@@ -16,5 +16,6 @@
 23-May-2020 11:11:36 UNITY: STARTING GAME
 23-May-2020 11:13:28 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
 23-May-2020 11:13:28 UNITY: STOPPING GAME
-04-Jun-2020 15:30:11 UNITY: STARTING GAME
-04-Jun-2020 15:30:30 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+04-Jun-2020 15:59:57 UNITY: STARTING GAME
+04-Jun-2020 16:00:11 [0.0.0.0:?] select on socket failed with error code of -1 in Do_check_socket
+04-Jun-2020 16:00:11 UNITY: STOPPING GAME

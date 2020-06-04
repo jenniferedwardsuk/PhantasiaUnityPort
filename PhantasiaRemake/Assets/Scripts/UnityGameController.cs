@@ -44,8 +44,9 @@ public class UnityGameController : NetworkBehaviour {
     // Use this for initialization
     void Start ()
     {
+        Application.wantsToQuit += QuitCleanly;
+
         StopApplication = false;
-        editorIsPlaying = true;
         networkManagerObj = GameObject.FindGameObjectWithTag("NetworkManager");
         if (networkManagerObj)
         {
@@ -83,8 +84,6 @@ public class UnityGameController : NetworkBehaviour {
 
     //Thread unityThread;
     public static Thread childThread;
-
-    internal static bool editorIsPlaying;
 
     [SyncVar] internal bool stopApplicationShared = false;
     private static bool stopApplication = false;
@@ -151,7 +150,7 @@ public class UnityGameController : NetworkBehaviour {
     private void OnApplicationQuit()
     {
         StopApplication = true;
-        editorIsPlaying = false;
+
         //Debug.Log("killing threads, current count: " + CLibPThread.knownThreads.Values.Count);
         foreach (CLibPThread.pthread_t thread in CLibPThread.knownThreads.Values)
         {
@@ -161,6 +160,21 @@ public class UnityGameController : NetworkBehaviour {
         }
     }
 
+    private bool QuitCleanly()
+    {
+        Debug.Log("Caught quit request - delaying");
+        Application.wantsToQuit -= QuitCleanly;
+        StartCoroutine(SlowQuit());
+        return false;
+    }
+
+    private IEnumerator SlowQuit()
+    {
+        UnityGameController.StopApplication = true;
+        yield return new WaitForSeconds(1);
+        Application.Quit();
+    }
+
     public void StopGameThreads()
     {
         UnityGameController.StopApplication = true;
@@ -168,8 +182,7 @@ public class UnityGameController : NetworkBehaviour {
 
     private void OnDestroy()
     {
-        //if (editorIsPlaying) //don't be redundant
-            OnApplicationQuit(); //kill threads
+        OnApplicationQuit(); //kill threads
     }
 
     void StartMain()
