@@ -41,6 +41,9 @@ public class KeyEvent
 
     public const int VK_RETURN = 27;
 
+    public const int VK_PU = 28;
+    public const int VK_PD = 29;
+
     int currentKeyCode;
 
     internal void setCurrentKeyCode(int key)

@@ -1146,7 +1146,11 @@ namespace phantasiaclasses
                     event_ptr.type = (short)phantdefs.REST_EVENT;
                     break;
 
-                    /*    default: phantdefs.NULL_EVENT	stupid people deserve no reward */
+                /*    default: phantdefs.NULL_EVENT	stupid people deserve no reward */
+
+                case phantdefs.EXAMINE_EVENT:            /* go direct to stats */
+                    event_ptr.type = (short)phantdefs.EXAMINE_EVENT;
+                    break;
             }
 
             if (event_ptr.type != phantdefs.NULL_EVENT)

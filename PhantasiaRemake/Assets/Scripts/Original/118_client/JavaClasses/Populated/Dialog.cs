@@ -80,7 +80,7 @@ public class Dialog : JavaCanvas //JavaComponent
         //pack(); //todo: causes issue with scoreboard 
     }
 
-    internal void dispose()
+    internal virtual void dispose()
     {
         GameObject.Destroy(unityComponents.rectComponent.gameObject);
     }

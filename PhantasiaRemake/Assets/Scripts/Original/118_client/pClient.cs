@@ -398,6 +398,12 @@ public class pClient : JavaApplet, IJavaKeyListener
             case KeyEvent.VK_SPACE:
                 buttons.spacebar();
                 break;
+            case KeyEvent.VK_PU:
+                //popup
+                break;
+            case KeyEvent.VK_PD:
+
+                break;
         }
 
         return;

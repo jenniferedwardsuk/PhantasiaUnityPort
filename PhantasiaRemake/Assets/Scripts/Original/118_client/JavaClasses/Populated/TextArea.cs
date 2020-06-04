@@ -43,6 +43,15 @@ public class TextArea : JavaComponent
         scrollcomponents = (UnityScrollComponents)unityComponentGroup;
     }
 
+    internal void addPageListener(IJavaActionListener listener)
+    {
+        UnityJavaInterface.AddPageListener(listener);
+    }
+    internal void removePageListener(IJavaActionListener listener)
+    {
+        UnityJavaInterface.RemovePageListener(listener);
+    }
+
     internal void setFont(JavaFont chatFont)
     {
         if (chatFont != null)
@@ -54,6 +63,32 @@ public class TextArea : JavaComponent
         else
         {
             Debug.LogError("chatFont doesn't exist");
+        }
+    }
+
+    internal void setVerticalScrollPos(int pos)
+    {
+        scrollcomponents.scrollComponent.verticalScrollbar.value = pos;
+    }
+
+    internal void scrollPageUp()
+    {
+        scrollPage(1);
+    }
+
+    internal void scrollPageDown()
+    {
+        scrollPage(-1);
+    }
+
+    private void scrollPage(int direction)
+    {
+        float scrollHeight = scrollcomponents.scrollComponent.GetComponent<RectTransform>().sizeDelta.y;
+        float contentHeight = scrollcomponents.scrollComponent.content.sizeDelta.y;
+        if (contentHeight > 0 && scrollHeight < contentHeight)
+        {
+            float normPosChange = scrollHeight / contentHeight;
+            scrollcomponents.scrollComponent.verticalScrollbar.value += normPosChange * 2 * direction;
         }
     }
 

@@ -73,7 +73,6 @@ public class UnityPlayerUIController : NetworkBehaviour {
                     if (Input.GetKeyDown(kcode))
                     {
                         Debug.Log("KeyCode down: " + kcode);
-                        //todo: ignore if chat messagebox is in use
                         JavaInterface.KeyPressed(kcode);
                     }
                 }

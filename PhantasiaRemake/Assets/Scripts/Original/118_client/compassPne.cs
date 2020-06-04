@@ -14,12 +14,13 @@ public class compassPne : JavaPanel , IJavaActionListener
     private pClient parent = null;
     public JavaButton[] theJavaButtons = new JavaButton[9];
     private bool compassStatus;
+    int restNumber = 4;
 
     public compassPne(pClient c) : base("Compass", true)
     {
         parent = c;
 
-        string[] buttonTitle = { "NW", "N", "NE", "W", "Rest", "E", "SW", "S", "SE" };
+        string[] buttonTitle = { "NW", "N", "NE", "W", "Stats", "E", "SW", "S", "SE" };
 
         //this.setLayout(new JavaGridLayout(3, 3));
 
@@ -58,7 +59,18 @@ public class compassPne : JavaPanel , IJavaActionListener
 
     internal void DoJavaButton(int theNumber)
     {
-        if (compassStatus)
+        if (theNumber == restNumber)
+        {
+            if (parent.pollSendFlag(BUTTONS))
+            {
+                parent.chat.takeFocus();
+                parent.buttons.Deactivate();
+                Deactivate();
+                parent.sendString(constants.C_RESPONSE_PACKET + phantasiaclasses.phantdefs.EXAMINE_EVENT.ToString() + "\0");
+            }
+            //customisation: open stats instead of resting
+        }
+        else if (compassStatus)
         {
 
             if (parent.pollSendFlag(BUTTONS))

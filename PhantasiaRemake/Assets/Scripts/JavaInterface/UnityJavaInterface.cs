@@ -758,6 +758,22 @@ public class UnityJavaInterface
             case KeyCode.Return:
                 JavaKey = KeyEvent.VK_RETURN;
                 break;
+            case KeyCode.PageUp:
+                if (pageListener != null)
+                {
+                    ActionEvent pgEvt = new ActionEvent();
+                    pgEvt.setActionCommand("pgup");
+                    pageListener.actionPerformed(pgEvt);
+                }
+                break;
+            case KeyCode.PageDown:
+                if (pageListener != null)
+                {
+                    ActionEvent pgEvt = new ActionEvent();
+                    pgEvt.setActionCommand("pgdown");
+                    pageListener.actionPerformed(pgEvt);
+                }
+                break;
         }
         if (JavaKey > 0)
         {
@@ -766,6 +782,20 @@ public class UnityJavaInterface
             JavaClient.keyPressed(evt);
         }
     }
+
+    static IJavaActionListener pageListener;
+    internal static void AddPageListener(IJavaActionListener listener)
+    {
+        pageListener = listener;
+    }
+    internal static void RemovePageListener(IJavaActionListener listener)
+    {
+        if (pageListener == listener)
+        {
+            pageListener = null;
+        }
+    }
+
     internal static UnityKeyListener AddKeyListener()
     {
         //not required / handled universally

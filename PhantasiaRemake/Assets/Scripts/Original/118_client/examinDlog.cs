@@ -33,6 +33,12 @@ public class examinDlog : Dialog , IJavaActionListener
         }
     }
 
+    internal override void dispose()
+    {
+        textArea.removePageListener(this);
+        base.dispose();
+    }
+
     internal void init_deferred(pClient c)
     {
         parent = c;
@@ -49,6 +55,7 @@ public class examinDlog : Dialog , IJavaActionListener
 
         bottom_panel = new JavaPanel("Bottom", false);
         textArea = new TextArea(20, 40);
+        textArea.addPageListener(this);
         theJavaButton = new JavaButton(constants.OK_LABEL);
 
         super(c.f, false);
@@ -123,8 +130,19 @@ public class examinDlog : Dialog , IJavaActionListener
 
     public void actionPerformed(ActionEvent evt) 
     {
-        setVisible(false);
-        dispose();
-        return;
+        if (evt.getActionCommand() == "pgup")
+        {
+            textArea.scrollPageUp();
+        }
+        else if (evt.getActionCommand() == "pgdown")
+        {
+            textArea.scrollPageDown();
+        }
+        else
+        {
+            setVisible(false);
+            dispose();
+            return;
+        }
     }
 }
