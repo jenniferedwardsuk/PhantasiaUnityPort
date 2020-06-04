@@ -619,7 +619,7 @@ namespace phantasiaclasses
                 if (UnityGameController.StopApplication) //time to quit
                 {
                     Debug.Log("Thread " + System.Threading.Thread.CurrentThread.Name + " stopping in Do_thread_loop");
-                    break;
+                    c.run_level = phantdefs.EXIT_THREAD;
                 }
                 else
                 {
@@ -674,7 +674,8 @@ namespace phantasiaclasses
 
                 /* see if the character needs to be saved */
                 if (c.run_level == phantdefs.SAVE_AND_CONTINUE ||
-                    c.run_level == phantdefs.SAVE_AND_EXIT)
+                    c.run_level == phantdefs.SAVE_AND_EXIT
+                    || (c.run_level == phantdefs.EXIT_THREAD && c.characterLoaded == true))
                 {
                     
                     characterclass.Do_handle_save(c);
